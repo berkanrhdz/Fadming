@@ -1,0 +1,2 @@
+# Evitar ficheros .DS_Store, creados por Mac (OS X).
+*.DS_Store
