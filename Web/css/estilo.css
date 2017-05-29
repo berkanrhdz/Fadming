@@ -1,0 +1,17 @@
+/*
+ * Documento con el estilo de la versión web de la aplicación GricApp.
+ * Autor: Eduardo Escobar Alberto
+ * Fecha de creación: 20/05/2017
+ * Correo electrónico: eduescal13@gmail.com.
+ * Centro: Universidad de La Laguna.
+ */
+
+/* ------------------------------------------- ESTILO INICIO -------------------------------------------*/
+    
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	background-color: black;
+	overflow: hidden;
+}
