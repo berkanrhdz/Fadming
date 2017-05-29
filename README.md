@@ -1,6 +1,6 @@
-# ESIT ULL Grado de Informática
+# ESIT ULL Grado de Ingeniería Informática
 ## TRABAJO FINAL DE GRADO. GricApp
-#### Realizada por Eduardo Escobar Alberto.
+#### Realizada por Eduardo Escobar Alberto
 
 ##### Introducción
 El proyecto consiste en la elaboración de una aplicación en Android para el tratamiento y cuidado de fincas.
