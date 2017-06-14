@@ -27,40 +27,126 @@ body {
 .contenedor-principal {
 	width: 100%;
 	height: 100%;
-	background: #a90329; /* Old browsers */
-	background: -moz-linear-gradient(top, #a90329 0%, #8f0222 44%, #6d0019 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, #a90329 0%,#8f0222 44%,#6d0019 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, #a90329 0%,#8f0222 44%,#6d0019 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ); /* IE6-9 */
 	display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    opacity: 0.9;
+    background-image: url("../images/fondo_principal.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 }
 
 .contenedor-login {
-	width: 30%;
+	width: 25%;
 	height: 70%;
-	margin-left: 65%;
-	background-color: #FFFFFF;
+	margin-left: 70%;
     border-radius: 0.5em;
+    border: 0.2px solid #C5C8C5;
 }
 
-.contenedor-login .contenedor-input-iniciar-sesion {
+.contenedor-login .contenedor-logo {
 	width: 100%;
-	height: 30%;
-	margin-top: 70%;
-	background-color: blue;
+	height: 60%;
+	display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    background-image: url("../images/logo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 80%;
+	background-color: #FFFFFF;
+}
+
+.contenedor-login .contenedor-inicio-registro {
+	width: 100%;
+	height: 40%;
+	background-color: #1A600E;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    font: ca;
+}
+
+.contenedor-login .contenedor-inicio-registro .contenedor-inicio {
+	width: 100%;
+	height: 80%;
+	font-family: fuente-principal;
+	font-weight: bold;
+}
+
+.contenedor-inicio-registro .contenedor-inicio .input-usuario-contrasena {
+	width: 100%;
+	height: 70%;
 	display: flex;
     justify-content: center;
     align-content: center;
     flex-direction: column;
 }
 
-.contenedor-login .contenedor-input-iniciar-sesion .contenedor-input-label {
+.contenedor-inicio-registro .contenedor-inicio .input-usuario-contrasena input {
+	width: 80%;
+	height: 30%;
+	margin: 0 auto;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	border: none;
+	margin-top: 3%;
+	padding-left: 3%;
+	font-size: 0.8em;
+}
+
+.contenedor-inicio-registro .contenedor-inicio .boton-inicio {
+	width: 60%;
+	height: 30%;
+	margin: 0 auto;
+}
+
+.contenedor-inicio-registro .contenedor-inicio .boton-inicio button {
+	width: 100%;
+	height: 70%;
+	background-color: orange;
+	border: none;
+	border-radius: 0.3em;
+	color: black;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+
+.contenedor-login .contenedor-inicio-registro .contenedor-registro {
 	width: 100%;
 	height: 20%;
-	background-color: red;
-	marg
+	background-color: #FFFFFF;
+	border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+    color: black;
+	font-weight: bold;
+	font-size: 1.0em;
+}
+
+.contenedor-login .contenedor-inicio-registro .contenedor-registro .boton-registrarse {
+	width: 60%;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.contenedor-login .contenedor-inicio-registro .contenedor-registro .boton-registrarse button {
+	width: 100%;
+	height: 55%;
+	background-color: orange;
+	margin-top: 4%;
+	border: none;
+	border-radius: 0.3em;
+	color: black;
+	font-size: 1.0em;
+	font-weight: bold;
+}
+
+/* ------------------------------------------- FONTS ------------------------------------------- */
+
+@font-face {
+    font-family: fuente-principal;
+    src: url(../fonts/Calibri.ttf) format("truetype");
 }
