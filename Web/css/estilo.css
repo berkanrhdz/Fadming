@@ -26,23 +26,131 @@ body {
 
 .contenedor-principal {
 	width: 100%;
-	height: 100%;
-	display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+	height: 95%;
     background-image: url("../images/fondo_principal.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
 }
 
-.contenedor-login {
-	width: 25%;
-	height: 70%;
-	margin-left: 70%;
+.pie-pagina {
+	width: 100%;
+	height: 5%;
+	position: bottom;
+	background-color: #7C807D;
+	background-image: url("../images/logo_ull.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 8% 70%;
+	border-top: 0.2px solid #575957;
+}
+
+.contenedor-principal .contenedor-izquierdo {
+	width: 65%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-izquierdo .contenedor-informacion-registro {
+	width: 85%;
+	height: 100%;
+    border: 0.2px solid #C5C8C5;
+    background-image: url("../images/fondo_transparente.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	margin-left: 10%;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro {
+	width: 100%;
+	height: 15%;
+	margin-top: 11%;
+	background-color: #1A600E;
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: fuente-titulo;
+    letter-spacing: 0.05em;
+}
+
+.contenedor-informacion-registro .contenedor-informacion {
+	width: 100%;
+	height: 30%;
+	margin: 0 auto;
+	font-family: fuente-principal;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-informacion .informacion {
+	width: 90%;
+	height: 90%;
+	margin: 0 auto;
+}
+
+.informacion text {
+	font-size: 1.5em;
+	font-family: fuente-principal;
+	font-weight: bold;
+	margin-left: 1.5%;
+}
+
+.contenedor-informacion-registro .contenedor-descarga-android {
+	width: 100%;
+	height: 10%;
+	background-color: #1A600E;
+	color: white;
+	font-size: 2.0em;
+	font-weight: bold;
+	text-align: center;
+	border-bottom-right-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: fuente-principal;
+}
+
+.contenedor-principal .contenedor-derecho {
+	width: 35%;
+	height: 100%;
+	float: right;
+	display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-derecho .contenedor-login {
+	width: 80%;
+	height: 75%;
     border-radius: 0.5em;
     border: 0.2px solid #C5C8C5;
+    background-image: url("../images/fondo_transparente.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(245,245,245,0.81)), color-stop(100%, rgba(237,237,237,0.6)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
 }
 
 .contenedor-login .contenedor-logo {
@@ -58,26 +166,15 @@ body {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 60% 80%;
-	background-color: #FFFFFF;
 }
 
-.contenedor-login .contenedor-inicio-registro {
+.contenedor-login .contenedor-inicio-sesion {
 	width: 100%;
-	height: 40%;
+	height: 30%;
 	background-color: #1A600E;
-    border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    font: ca;
 }
 
-.contenedor-login .contenedor-inicio-registro .contenedor-inicio {
-	width: 100%;
-	height: 80%;
-	font-family: fuente-principal;
-	font-weight: bold;
-}
-
-.contenedor-inicio-registro .contenedor-inicio .input-usuario-contrasena {
+.contenedor-inicio-sesion .input-usuario-contrasena {
 	width: 100%;
 	height: 70%;
 	display: flex;
@@ -86,7 +183,7 @@ body {
     flex-direction: column;
 }
 
-.contenedor-inicio-registro .contenedor-inicio .input-usuario-contrasena input {
+.contenedor-inicio-sesion .input-usuario-contrasena input {
 	width: 80%;
 	height: 30%;
 	margin: 0 auto;
@@ -98,50 +195,21 @@ body {
 	font-size: 0.8em;
 }
 
-.contenedor-inicio-registro .contenedor-inicio .boton-inicio {
+.contenedor-inicio-sesion .boton-inicio {
 	width: 60%;
 	height: 30%;
 	margin: 0 auto;
 }
 
-.contenedor-inicio-registro .contenedor-inicio .boton-inicio button {
+.contenedor-inicio-sesion .boton-inicio button {
 	width: 100%;
 	height: 70%;
-	background-color: orange;
+	background-color: #FAA911;
 	border: none;
 	border-radius: 0.3em;
-	color: black;
+	color: #000000;
 	font-weight: bold;
 	font-size: 1.0em;
-}
-
-.contenedor-login .contenedor-inicio-registro .contenedor-registro {
-	width: 100%;
-	height: 20%;
-	background-color: #FFFFFF;
-	border-bottom-left-radius: 0.5em;
-    border-bottom-right-radius: 0.5em;
-    color: black;
-	font-weight: bold;
-	font-size: 1.0em;
-}
-
-.contenedor-login .contenedor-inicio-registro .contenedor-registro .boton-registrarse {
-	width: 60%;
-	height: 100%;
-	margin: 0 auto;
-}
-
-.contenedor-login .contenedor-inicio-registro .contenedor-registro .boton-registrarse button {
-	width: 100%;
-	height: 55%;
-	background-color: orange;
-	margin-top: 4%;
-	border: none;
-	border-radius: 0.3em;
-	color: black;
-	font-size: 1.0em;
-	font-weight: bold;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
@@ -149,4 +217,9 @@ body {
 @font-face {
     font-family: fuente-principal;
     src: url(../fonts/Calibri.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: fuente-titulo;
+    src: url(../fonts/KeepCalm-Medium.ttf) format("truetype");
 }
