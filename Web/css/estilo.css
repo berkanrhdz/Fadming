@@ -259,7 +259,7 @@ body {
 
 .contenedor-login .contenedor-inicio-sesion {
 	width: 100%;
-	height: 30%;
+	height: 33%;
 	background-color: #1A600E;
 }
 
@@ -281,7 +281,7 @@ body {
 	border: none;
 	margin-top: 3%;
 	padding-left: 3%;
-	font-size: 0.8em;
+	font-size: 0.9em;
 }
 
 .contenedor-inicio-sesion .boton-inicio {
@@ -299,6 +299,10 @@ body {
 	color: #000000;
 	font-weight: bold;
 	font-size: 1.0em;
+}
+
+.contenedor-principal button:hover {
+	cursor: pointer;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
