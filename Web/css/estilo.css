@@ -41,7 +41,7 @@ body {
 	background-image: url("../images/logo_ull.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 8% 70%;
+	background-size: 8% 65%;
 	border-top: 0.2px solid #575957;
 }
 
@@ -69,10 +69,10 @@ body {
 .contenedor-informacion-registro .titulo-informacion-registro {
 	width: 100%;
 	height: 15%;
-	margin-top: 11%;
+	margin-top: 3%;
 	background-color: #1A600E;
 	color: white;
-	font-size: 2em;
+	font-size: 1.6em;
 	font-weight: bold;
 	text-align: center;
 	display: flex;
@@ -85,43 +85,132 @@ body {
 
 .contenedor-informacion-registro .contenedor-informacion {
 	width: 100%;
-	height: 30%;
+	height: 40%;
 	margin: 0 auto;
-	font-family: fuente-principal;
-	display: flex;
-	justify-content: center;
-    align-content: center;
-    flex-direction: column;
+	margin-top: 3%;
+	background: rgba(255,255,255,1);
+	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(245,245,245,0.81)), color-stop(100%, rgba(237,237,237,0.6)));
+	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+	border-top: 3px solid #575957;
+	border-bottom: 3px solid #575957;
 }
 
-.contenedor-informacion .informacion {
-	width: 90%;
-	height: 90%;
-	margin: 0 auto;
-}
-
-.informacion text {
-	font-size: 1.5em;
-	font-family: fuente-principal;
-	font-weight: bold;
-	margin-left: 1.5%;
-}
-
-.contenedor-informacion-registro .contenedor-descarga-android {
+.contenedor-informacion .lista-informacion {
 	width: 100%;
-	height: 10%;
-	background-color: #1A600E;
-	color: white;
-	font-size: 2.0em;
-	font-weight: bold;
-	text-align: center;
-	border-bottom-right-radius: 0.2em;
-	border-bottom-left-radius: 0.2em;
+	height: 20%;
+}
+
+.contenedor-informacion .lista-informacion #imagen-tick {
+	width: 10%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/tick_lista.png");
+	background-repeat: no-repeat;
+	background-position: 85%;
+	background-size: 35% 55%;
+}
+
+.contenedor-informacion .lista-informacion #informacion {
+	width: 90%;
+	height: 100%;
+	float: right;
+	font-family: fuente-titulo;
+	font-size: 1em;
+	color: #000000;
 	display: flex;
 	justify-content: center;
     align-content: center;
     flex-direction: column;
-    font-family: fuente-principal;
+}
+
+.contenedor-informacion-registro .contenedor-registro {
+	width: 100%;
+	height: 30%;
+	margin-top: 3%;
+}
+
+.contenedor-registro .fila-registro {
+	width: 100%;
+	height: 25%;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-registro .fila-registro .inputs-nombre,
+.contenedor-registro .fila-registro .inputs-datos-personales,
+.contenedor-registro .fila-registro .inputs-cuenta {
+	width: 93%;
+	height: 75%;
+	margin: 0 auto;
+}
+
+.contenedor-registro .fila-registro input {
+	height: 92%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	border: 0.3px solid #7C807D;
+	padding-left: 1.5%;
+	font-size: 0.9em;
+}
+
+.contenedor-registro .fila-registro .inputs-nombre #nombre {
+	width: 25%;
+}
+
+.contenedor-registro .fila-registro .inputs-nombre #apellido1 {
+	width: 33.5%;
+}
+
+.contenedor-registro .fila-registro .inputs-nombre #apellido2 {
+	width: 33.5%;
+}
+
+.contenedor-registro .fila-registro .inputs-datos-personales #dni {
+	width: 18%;
+}
+
+.contenedor-registro .fila-registro .inputs-datos-personales #telefono {
+	width: 18%;
+}
+
+.contenedor-registro .fila-registro .inputs-datos-personales #correo {
+	width: 56%;
+}
+
+.contenedor-registro .fila-registro .inputs-cuenta #usuario {
+	width: 32%;
+}
+
+.contenedor-registro .fila-registro .inputs-cuenta #contrasena {
+	width: 30%;
+}
+
+.contenedor-registro .fila-registro .inputs-cuenta #repetir-contrasena {
+	width: 30%;
+}
+
+.fila-registro .contenedor-boton-registro {
+	width: 35%;
+	height: 75%;
+	margin: 0 auto;
+}
+
+.contenedor-boton-registro button {
+	width: 100%;
+	height: 100%;
+	background-color: #FAA911;
+	border: 0.3px solid #7C807D;
+	border-radius: 0.3em;
+	color: #000000;
+	font-weight: bold;
+	font-size: 1.0em;
 }
 
 .contenedor-principal .contenedor-derecho {
@@ -196,7 +285,7 @@ body {
 }
 
 .contenedor-inicio-sesion .boton-inicio {
-	width: 60%;
+	width: 50%;
 	height: 30%;
 	margin: 0 auto;
 }
