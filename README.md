@@ -1,5 +1,5 @@
 # ESIT ULL Grado de Ingeniería Informática
-## TRABAJO FINAL DE GRADO. GricApp
+## TRABAJO DE FIN DE GRADO. GricApp
 #### Realizada por Eduardo Escobar Alberto
 
 ##### Introducción
