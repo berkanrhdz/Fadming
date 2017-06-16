@@ -1,5 +1,5 @@
 /*
- * Documento con el estilo de la versión web de la aplicación GricApp.
+ * Documento con el estilo de la página de inicio de la versión web de la aplicación GricApp.
  * Autor: Eduardo Escobar Alberto
  * Fecha de creación: 20/05/2017
  * Correo electrónico: eduescal13@gmail.com.
@@ -270,6 +270,11 @@ body {
     justify-content: center;
     align-content: center;
     flex-direction: column;
+}
+
+.contenedor-login .contenedor-inicio-sesion form {
+	width: 100%;
+	height: 100%;
 }
 
 .contenedor-inicio-sesion .input-usuario-contrasena input {

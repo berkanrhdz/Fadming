@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
-        <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>GricApp</title>
     </head>
 
@@ -47,13 +47,20 @@
                 <div class="contenedor-login">
                     <div class="contenedor-logo"></div>
                     <div class="contenedor-inicio-sesion">
-                        <div class="input-usuario-contrasena">
-                            <input id="correo" name="correo" type="text" placeholder="Usuario">
-                            <input id="contrasena" name="contrasena" type="password" placeholder="Contraseña">
-                        </div>
-                        <div class="boton-inicio">
-                            <button id="boton-iniciar-sesion" name="boton-iniciar-sesion">Iniciar sesión</button>
-                        </div>
+                        <form method="POST">
+                            <div class="input-usuario-contrasena">
+                                <input id="usuario" name="usuario" type="text" placeholder="Usuario">
+                                <input id="contrasena" name="contrasena" type="password" placeholder="Contraseña">
+                            </div>
+                            <div class="boton-inicio">
+                                <button id="boton-iniciar-sesion" name="boton-iniciar-sesion">Iniciar sesión</button>
+                            </div>
+                        </form>
+                        <?php
+                            if(isset($_POST['boton-iniciar-sesion'])) {
+                                require("actions/iniciar_sesion.php");
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

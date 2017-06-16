@@ -1,0 +1,112 @@
+/*
+ * Documento con el estilo general de la versión web de la aplicación GricApp.
+ * Autor: Eduardo Escobar Alberto
+ * Fecha de creación: 20/05/2017
+ * Correo electrónico: eduescal13@gmail.com.
+ * Centro: Universidad de La Laguna.
+ */
+
+/* ------------------------------------------- ESTILO INICIO -------------------------------------------*/
+    
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow: hidden;
+}
+
+body .barra-superior {
+	width: 100%;
+	height: 7.5%;
+	border-bottom: 0.4px solid #363835;
+	background: rgba(98,125,77,1);
+	background: -moz-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(26,96,14,0.41) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.41)));
+	background: -webkit-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(26,96,14,0.41) 100%);
+	background: -o-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(26,96,14,0.41) 100%);
+	background: -ms-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(26,96,14,0.41) 100%);
+	background: linear-gradient(to right, rgba(98,125,77,1) 0%, rgba(26,96,14,0.41) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=1 );
+}
+
+.barra-superior .contenedor-logo {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/logo_horizontal.png");
+	background-repeat: no-repeat;
+	background-position: 15%;
+	background-size: 50% 70%;
+}
+
+.barra-superior .contenedor-informacion-usuario {
+	width: 25%;
+	height: 100%;
+	float: right;
+}
+
+.barra-superior .contenedor-informacion-usuario #nombre-usuario {
+	width: 80%;
+	height: 100%;
+	float: left;
+	font-family: fuente-principal;
+	text-align: right;
+	color: #000000;
+	font-size: 1.1em;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.barra-superior .contenedor-informacion-usuario #icono-ajustes {
+	width: 10%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/ajustes.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 42%;
+}
+
+.barra-superior .contenedor-informacion-usuario #icono-cerrar-sesion {
+	width: 10%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/cerrar-sesion.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 45%;
+}
+
+body .contenedor-principal {
+	width: 100%;
+	height: 92.5%;
+}
+
+.contenedor-principal .barra-lateral-izquierda {
+	width: 15%;
+	height: 100%;
+	background-color: #70756D;
+	border-right: 0.4px solid #363835;
+}
+
+/* ------------------------------------------- FONTS ------------------------------------------- */
+
+@font-face {
+    font-family: fuente-principal;
+    src: url(../fonts/Calibri.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: fuente-titulo;
+    src: url(../fonts/KeepCalm-Medium.ttf) format("truetype");
+}
