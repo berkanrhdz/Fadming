@@ -5,9 +5,11 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <title>GricApp</title>
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/general.css">
-        <title>GricApp</title>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/perfil.js"></script>
     </head>
 
     <body>
