@@ -134,6 +134,11 @@ body {
 	margin-top: 3%;
 }
 
+.contenedor-informacion-registro .contenedor-registro form {
+	width: 100%;
+	height: 100%;
+}
+
 .contenedor-registro .fila-registro {
 	width: 100%;
 	height: 25%;

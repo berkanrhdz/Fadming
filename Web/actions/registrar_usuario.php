@@ -1,20 +1,21 @@
 <?php 
 
-    require("conectar_database.php");
+    require("conectar_basedatos.php");
 
 	$nombre      = $_POST['nombre'];
-	$apellidos   = $_POST['apellidos'];
-	$fecha       = $_POST['fecha-nacimiento'];
-	$sexo        = $_POST['sexo'];
-	$correo 	 = $_POST['correo'];
-    $telefono    = $_POST['telefono'];
+	$apellido1   = $_POST['apellido1'];
+	$apellido2   = $_POST['apellido2'];
+	$dni         = $_POST['dni'];
+	$telefono 	 = $_POST['telefono'];
+    $correo      = $_POST['correo'];
+    $usuario     = $_POST['usuario'];
     $contrasena  = $_POST['contrasena'];
 
-    $consulta = "INSERT INTO `USUARIO`(`NOMBRE`, `APELLIDOS`, `FECHA_NACIMIENTO`, `SEXO`, `CORREO`, `TELEFONO`, `CONTRASENA`) 
-	    	     VALUES ('$nombre','$apellidos','$fecha','$sexo','$correo','$telefono','$contrasena');";
+    $consulta = "INSERT INTO `USUARIO`(`DNI`, `NOMBRE_USUARIO`, `NOMBRE`, `APELLIDO1`, `APELLIDO2`, `CORREO`, `CONTRASENA`, `TELEFONO`, `FECHA_REGISTRO`, `CIF_EMPRESA`, `ROL`) 
+    			 VALUES ('$dni', '$usuario', '$nombre', '$apellido1', '$apellido2', '$correo', '$contrasena', '$telefono', CURRENT_TIMESTAMP, NULL, '1');";
 
 	mysql_query($consulta);
 
-	header("Location: http://localhost/Cafesit/index.php");
+	header("Location: http://localhost/GricApp/Web/index.php");
 	
 ?> 
