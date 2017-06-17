@@ -3,8 +3,8 @@
 
     require("conectar_basedatos.php");
 
-    $usuario    = 'eduescalb';//$_POST['usuario'];
-    $contrasena = 'admin';//$_POST['contrasena'];
+    $usuario    = $_POST['usuario'];
+    $contrasena = $_POST['contrasena'];
 
     $consulta = "SELECT DNI
 	    		 FROM USUARIO

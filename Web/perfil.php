@@ -17,8 +17,8 @@
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
     			<div id="nombre-usuario"><?php echo $_SESSION['nombre'] . ' ' . $_SESSION['apellido1'] ?></div>
-    			<div id="icono-cerrar-sesion"></div>
     			<div id="icono-ajustes"></div>
+    			<div id="icono-cerrar-sesion"><a href="actions/cerrar_sesion.php"></a></div>
     		</div>
     	</div>
     	<div class="contenedor-principal">
