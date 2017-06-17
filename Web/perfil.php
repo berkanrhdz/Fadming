@@ -22,7 +22,26 @@
     		</div>
     	</div>
     	<div class="contenedor-principal">
-    		<div class="barra-lateral-izquierda"></div>
+    		<div class="barra-lateral-izquierda">
+    			<div class="fila-acceso" id="fila-acceso-empresa">
+    				<div id="icono-empresa"></div><div class="nombre-acceso">Empresas</div>
+    			</div>
+    			<div class="fila-acceso" id="fila-acceso-usuario">
+    				<div id="icono-usuario"></div><div class="nombre-acceso">Usuarios</div>
+    			</div>
+    			<div class="fila-acceso" id="fila-acceso-estado">
+    				<div id="icono-estado"></div><div class="nombre-acceso">Estados</div>
+    			</div>
+    			<div class="fila-acceso" id="fila-acceso-finca">
+    				<div id="icono-finca"></div><div class="nombre-acceso">Fincas</div>
+    			</div>
+    			<div class="fila-acceso" id="fila-acceso-huerto">
+    				<div id="icono-huerto"></div><div class="nombre-acceso">Huertos</div>
+    			</div>
+    			<div class="fila-acceso" id="fila-acceso-planta">
+    				<div id="icono-planta"></div><div class="nombre-acceso">Plantas</div>
+    			</div>
+    		</div>
     		<div class="contenedor-informacion"></div>
     	</div>
     </body>
