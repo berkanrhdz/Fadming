@@ -118,29 +118,11 @@ body {
 	border-bottom: 3px solid #575957;
 }
 
-.contenedor-informacion .lista-informacion {
-	width: 100%;
-	height: 20%;
-}
-
-.contenedor-informacion .lista-informacion #informacion {
-	width: 90%;
-	height: 100%;
-	float: right;
-	font-family: fuente-titulo;
-	font-size: 1em;
-	color: #000000;
-	display: flex;
-	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-}
-
 .contenedor-informacion-registro .contenedor-registro {
 	width: 100%;
 	height: 28%;
 	margin-top: 2%;
-	background: rgba(98,125,77,1);
+    background: rgba(98,125,77,1);
 	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
 	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
@@ -152,8 +134,9 @@ body {
 
 .contenedor-informacion-registro .contenedor-registro .desplegar-registrar {
 	width: 100%;
-	height: 25%;
-	border-bottom: 1.5px solid #FFFFFF;
+	height: 20%;
+	margin: 0 auto;
+	border-bottom: 1.25px solid #FFFFFF;
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 1.0em;
@@ -163,73 +146,30 @@ body {
     flex-direction: column;
     font-family: sans-serif;
     text-align: center;
-}
-
-.contenedor-informacion-registro .contenedor-registro .informacion-android {
-	width: 100%;
-	height: 75%;
-	background-color: #1B1C1B;
-}
-
-.contenedor-informacion-registro .contenedor-registro .informacion-android #imagen-android {
-	width: 20%;
-	height: 100%;
-	float: left;
-	background-image: url("../images/android.png");
-	background-repeat: no-repeat;
-	background-position: right;
-	background-size: 100% 100%;
-}
-
-.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android {
-	width: 79%;
-	height: 100%;
-	float: right;
-}
-
-.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android #titulo-texto-descarga {
-	width: 90%;
-	height: 50%;
-	color: #FFFFFF;
-	font-weight: bold;
-	font-size: 1.5em;
-	font-family: sans-serif;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    text-align: left;
-}
-
-.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android #informacion-descarga {
-	width: 90%;
-	height: 50%;
-	margin: 0 auto;
-	color: #FFFFFF;
-	font-size: 1.0em;
-	font-family: sans-serif;
-	text-align: justify;
-	font-weight: bold;
+    background-color: transparent;
 }
 
 .contenedor-informacion-registro .contenedor-registro form {
 	width: 100%;
 	height: 100%;
 	display: none;
-	background: rgba(98,125,77,1);
-	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
-	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
-	background: -o-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
-	background: -ms-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
-	background: linear-gradient(to bottom, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=0 );
+	background-color: transparent;
+}
+
+.contenedor-informacion-registro .contenedor-registro form .ocultar-registro {
+	width: 100%;
+	height: 12%;
+	background-color: transparent;
+	background-image: url("../images/iconos/blanco/flecha-abajo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 3% 90%;
+
 }
 
 .contenedor-registro .fila-registro {
 	width: 100%;
-	height: 33%;
+	height: 29%;
 	display: flex;
 	justify-content: center;
     align-content: center;

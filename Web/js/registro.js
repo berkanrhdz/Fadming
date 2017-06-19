@@ -2,14 +2,14 @@
 
 $(document).ready(function() {
 	cambiar_color_registro();
-	mostrar_registro();
+	mostrar_ocultar_registro();
 	comprobacion_datos();
 });
 
 function cambiar_color_registro() { // Función para cambiar el color del div de acceso al registro.
-	$(".titulo-registrar").hover(
+	$(".desplegar-registrar").hover(
 		function() {
-			$(this).css('background-color', '#F7DB5C');
+			$(this).css('background', '#F7DB5C');
 			$(this).css('cursor', 'pointer');
 			$(this).css('color', '#000000');
 	  	}, function() {
@@ -17,14 +17,24 @@ function cambiar_color_registro() { // Función para cambiar el color del div d
 			$(this).css('color', '#FFFFFF');
 	  	}
 	);
+	$(".ocultar-registro").hover(
+		function() {
+			$(this).css('cursor', 'pointer');
+			$(this).css('background-image', 'url("images/iconos/naranja/flecha-abajo.png")');
+	  	}, function() {
+			$(this).css('background-image', 'url("images/iconos/blanco/flecha-abajo.png")');
+	  	}
+	);
 }
 
-function mostrar_registro() {
-	$(".titulo-registrar").click(function() {
-		$(this).slideUp(250);
-		$(".informacion-android").slideUp();
-		$("#formulario-registro").fadeIn();
-		$(".contenedor-registro").css('background', 'transparent');
+function mostrar_ocultar_registro() {
+	$(".desplegar-registrar").click(function() {
+		$(this).slideUp();
+		$("#formulario-registro").fadeIn(500);
+	});
+	$(".ocultar-registro").click(function() {
+		$("#formulario-registro").fadeOut();
+		$(".desplegar-registrar").slideDown(500);
 	});
 }
 

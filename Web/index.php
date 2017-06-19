@@ -18,9 +18,10 @@
                         <div id="texto-titulo"></div>
                     </div>
                     <div class="contenedor-informacion"></div>
-                    <div class="desplegar-registrar">Regístrate</div>
                     <div class="contenedor-registro">
+                        <div class="desplegar-registrar">Regístrate</div>
                         <form id="formulario-registro" method="POST">
+                            <div class="ocultar-registro"></div>
                             <div class="fila-registro">
                                 <div class="inputs-nombre">
                                     <input id="nombre" name="nombre" type="text" autocomplete="off" placeholder="Nombre">
