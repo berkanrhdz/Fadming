@@ -6,22 +6,22 @@
     $usuario    = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
 
-    $consulta = "SELECT DNI
+    $consulta = "SELECT IDENTIFICADOR
 	    		 FROM USUARIO
 	    		 WHERE ((NOMBRE_USUARIO = '$usuario') AND (CONTRASENA = '$contrasena')) 
 	    		 LIMIT 1;";
 
 	$resultado_consulta = mysql_query($consulta);
 	$datos = mysql_fetch_array($resultado_consulta);
-	$dni = $datos[0];
+	$identificador = $datos[0];
 
-	$_SESSION['dni'] = $dni;
+	$_SESSION['identificador'] = $identificador;
 
 	// ----------- Obtención del resto de información -----------
 
 	$consulta_general = "SELECT NOMBRE, APELLIDO1, APELLIDO2 
 	    			 	 FROM USUARIO
-	    		     	 WHERE DNI = '$dni'";
+	    		     	 WHERE identificador = '$identificador'";
 
 	$resultado_consulta_general = mysql_query($consulta_general);
 	$datos = mysql_fetch_array($resultado_consulta_general);

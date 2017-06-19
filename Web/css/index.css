@@ -37,11 +37,11 @@ body {
 	width: 100%;
 	height: 5%;
 	position: bottom;
-	background-color: #7C807D;
+	background-color: #1B1C1B;
 	background-image: url("../images/logo_ull.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 8% 65%;
+	background-size: 7% 65%;
 	border-top: 0.2px solid #575957;
 }
 
@@ -58,7 +58,8 @@ body {
 .contenedor-izquierdo .contenedor-informacion-registro {
 	width: 85%;
 	height: 100%;
-    border: 0.2px solid #C5C8C5;
+    border-left: 0.2px solid #C5C8C5;
+    border-right: 0.2px solid #C5C8C5;
     background-image: url("../images/fondo_transparente.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -70,24 +71,41 @@ body {
 	width: 100%;
 	height: 15%;
 	margin-top: 3%;
-	background-color: #1A600E;
+	background-color: #1B1C1B;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro #imagen-titulo {
+	width: 20%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro #texto-titulo {
+	width: 80%;
+	height: 100%;
+	float: right;
 	color: white;
-	font-size: 1.6em;
+	font-size: 1.7em;
 	font-weight: bold;
 	text-align: center;
 	display: flex;
 	justify-content: center;
     align-content: center;
     flex-direction: column;
-    font-family: fuente-titulo;
-    letter-spacing: 0.05em;
+    font-family: fuente-principal;
+    letter-spacing: 0.025em;
+    font-weight: bold;
 }
 
 .contenedor-informacion-registro .contenedor-informacion {
 	width: 100%;
-	height: 40%;
+	height: 50%;
 	margin: 0 auto;
-	margin-top: 3%;
+	margin-top: 2%;
 	background: rgba(255,255,255,1);
 	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
 	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(245,245,245,0.81)), color-stop(100%, rgba(237,237,237,0.6)));
@@ -105,16 +123,6 @@ body {
 	height: 20%;
 }
 
-.contenedor-informacion .lista-informacion #imagen-tick {
-	width: 10%;
-	height: 100%;
-	float: left;
-	background-image: url("../images/tick_lista.png");
-	background-repeat: no-repeat;
-	background-position: 85%;
-	background-size: 35% 55%;
-}
-
 .contenedor-informacion .lista-informacion #informacion {
 	width: 90%;
 	height: 100%;
@@ -130,18 +138,27 @@ body {
 
 .contenedor-informacion-registro .contenedor-registro {
 	width: 100%;
-	height: 30%;
-	margin-top: 3%;
+	height: 23%;
+	margin-top: 2%;
+	background: rgba(98,125,77,1);
+	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
+	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -o-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -ms-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: linear-gradient(to bottom, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=0 );
 }
 
 .contenedor-informacion-registro .contenedor-registro form {
 	width: 100%;
 	height: 100%;
+	display: none;
 }
 
 .contenedor-registro .fila-registro {
 	width: 100%;
-	height: 25%;
+	height: 33%;
 	display: flex;
 	justify-content: center;
     align-content: center;
@@ -160,7 +177,7 @@ body {
 	height: 92%;
 	background-color: #FFFFFF;
 	border-radius: 0.3em;
-	border: 0.3px solid #7C807D;
+	border: 0.3px solid #E2E8E3;
 	padding-left: 1.5%;
 	font-size: 0.9em;
 }
@@ -169,28 +186,16 @@ body {
 	width: 25%;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre #apellido1 {
-	width: 33.5%;
+.contenedor-registro .fila-registro .inputs-nombre #apellidos {
+	width: 40%;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre #apellido2 {
-	width: 33.5%;
-}
-
-.contenedor-registro .fila-registro .inputs-datos-personales #dni {
-	width: 18%;
-}
-
-.contenedor-registro .fila-registro .inputs-datos-personales #telefono {
-	width: 18%;
+.contenedor-registro .fila-registro .inputs-cuenta #usuario {
+	width: 30%;
 }
 
 .contenedor-registro .fila-registro .inputs-datos-personales #correo {
 	width: 56%;
-}
-
-.contenedor-registro .fila-registro .inputs-cuenta #usuario {
-	width: 32%;
 }
 
 .contenedor-registro .fila-registro .inputs-cuenta #contrasena {
@@ -210,7 +215,7 @@ body {
 .contenedor-boton-registro button {
 	width: 100%;
 	height: 100%;
-	background-color: #FAA911;
+	background-color: #EADB5C;
 	border: 0.3px solid #7C807D;
 	border-radius: 0.3em;
 	color: #000000;
@@ -265,7 +270,14 @@ body {
 .contenedor-login .contenedor-inicio-sesion {
 	width: 100%;
 	height: 33%;
-	background-color: #1A600E;
+	background: rgba(98,125,77,1);
+	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
+	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -o-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -ms-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: linear-gradient(to bottom, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=0 );
 }
 
 .contenedor-inicio-sesion .input-usuario-contrasena {
@@ -303,16 +315,18 @@ body {
 .contenedor-inicio-sesion .boton-inicio button {
 	width: 100%;
 	height: 70%;
-	background-color: #FAA911;
-	border: none;
-	border-radius: 0.3em;
-	color: #000000;
+	background-color: transparent;
+	border: 1px solid #FFFFFF;
+	border-radius: 0.5em;
+	color: #FFFFFF;
 	font-weight: bold;
-	font-size: 1.0em;
+	font-size: 0.9em;
 }
 
 .contenedor-principal button:hover {
+	background-color: #F7DB5C;
 	cursor: pointer;
+	color: #000000;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
