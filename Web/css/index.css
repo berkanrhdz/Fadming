@@ -69,7 +69,7 @@ body {
 
 .contenedor-informacion-registro .titulo-informacion-registro {
 	width: 100%;
-	height: 15%;
+	height: 20%;
 	margin-top: 3%;
 	background-color: #1B1C1B;
 }
@@ -103,7 +103,7 @@ body {
 
 .contenedor-informacion-registro .contenedor-informacion {
 	width: 100%;
-	height: 50%;
+	height: 40%;
 	margin: 0 auto;
 	margin-top: 2%;
 	background: rgba(255,255,255,1);
@@ -138,7 +138,7 @@ body {
 
 .contenedor-informacion-registro .contenedor-registro {
 	width: 100%;
-	height: 23%;
+	height: 28%;
 	margin-top: 2%;
 	background: rgba(98,125,77,1);
 	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
@@ -150,10 +150,81 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=0 );
 }
 
+.contenedor-informacion-registro .contenedor-registro .desplegar-registrar {
+	width: 100%;
+	height: 25%;
+	border-bottom: 1.5px solid #FFFFFF;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.0em;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.contenedor-informacion-registro .contenedor-registro .informacion-android {
+	width: 100%;
+	height: 75%;
+	background-color: #1B1C1B;
+}
+
+.contenedor-informacion-registro .contenedor-registro .informacion-android #imagen-android {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/android.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 100% 100%;
+}
+
+.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android {
+	width: 79%;
+	height: 100%;
+	float: right;
+}
+
+.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android #titulo-texto-descarga {
+	width: 90%;
+	height: 50%;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.5em;
+	font-family: sans-serif;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+
+.contenedor-informacion-registro .contenedor-registro .informacion-android #texto-android #informacion-descarga {
+	width: 90%;
+	height: 50%;
+	margin: 0 auto;
+	color: #FFFFFF;
+	font-size: 1.0em;
+	font-family: sans-serif;
+	text-align: justify;
+	font-weight: bold;
+}
+
 .contenedor-informacion-registro .contenedor-registro form {
 	width: 100%;
 	height: 100%;
 	display: none;
+	background: rgba(98,125,77,1);
+	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
+	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -o-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: -ms-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	background: linear-gradient(to bottom, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1a600e', GradientType=0 );
 }
 
 .contenedor-registro .fila-registro {
@@ -180,6 +251,8 @@ body {
 	border: 0.3px solid #E2E8E3;
 	padding-left: 1.5%;
 	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
 }
 
 .contenedor-registro .fila-registro .inputs-nombre #nombre {
@@ -190,24 +263,24 @@ body {
 	width: 40%;
 }
 
-.contenedor-registro .fila-registro .inputs-cuenta #usuario {
-	width: 30%;
+.contenedor-registro .fila-registro .inputs-nombre #usuario {
+	width: 27.5%;
 }
 
-.contenedor-registro .fila-registro .inputs-datos-personales #correo {
-	width: 56%;
+.contenedor-registro .fila-registro .inputs-cuenta #correo {
+	width: 42%;
 }
 
 .contenedor-registro .fila-registro .inputs-cuenta #contrasena {
-	width: 30%;
+	width: 25%;
 }
 
 .contenedor-registro .fila-registro .inputs-cuenta #repetir-contrasena {
-	width: 30%;
+	width: 25.5%;
 }
 
 .fila-registro .contenedor-boton-registro {
-	width: 35%;
+	width: 30%;
 	height: 75%;
 	margin: 0 auto;
 }
@@ -215,12 +288,12 @@ body {
 .contenedor-boton-registro button {
 	width: 100%;
 	height: 100%;
-	background-color: #EADB5C;
-	border: 0.3px solid #7C807D;
-	border-radius: 0.3em;
-	color: #000000;
+	background-color: transparent;
+	border: 1px solid #FFFFFF;
+	border-radius: 0.5em;
+	color: #FFFFFF;
 	font-weight: bold;
-	font-size: 1.0em;
+	font-size: 0.9em;
 }
 
 .contenedor-principal .contenedor-derecho {

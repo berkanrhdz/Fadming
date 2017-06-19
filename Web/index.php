@@ -5,7 +5,6 @@
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/index.js"></script>
         <script src="js/registro.js"></script>
         <title>GricApp</title>
     </head>
@@ -19,8 +18,9 @@
                         <div id="texto-titulo"></div>
                     </div>
                     <div class="contenedor-informacion"></div>
+                    <div class="desplegar-registrar">Regístrate</div>
                     <div class="contenedor-registro">
-                        <form method="POST">
+                        <form id="formulario-registro" method="POST">
                             <div class="fila-registro">
                                 <div class="inputs-nombre">
                                     <input id="nombre" name="nombre" type="text" autocomplete="off" placeholder="Nombre">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="fila-registro">
                                 <div class="contenedor-boton-registro">
-                                    <button id="boton-registro" name="boton-registro">Registrarse</button>
+                                    <button id="boton-registro" name="boton-registro">Registrarme</button>
                                 </div>
                             </div>
                         </form>

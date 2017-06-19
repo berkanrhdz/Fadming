@@ -1,8 +1,32 @@
-// DOCUMENTO JAVASCRIPT DE perfil.php
+// DOCUMENTO JAVASCRIPT DE index.php
 
 $(document).ready(function() {
+	cambiar_color_registro();
+	mostrar_registro();
 	comprobacion_datos();
 });
+
+function cambiar_color_registro() { // Función para cambiar el color del div de acceso al registro.
+	$(".titulo-registrar").hover(
+		function() {
+			$(this).css('background-color', '#F7DB5C');
+			$(this).css('cursor', 'pointer');
+			$(this).css('color', '#000000');
+	  	}, function() {
+			$(this).css('background-color', 'transparent');
+			$(this).css('color', '#FFFFFF');
+	  	}
+	);
+}
+
+function mostrar_registro() {
+	$(".titulo-registrar").click(function() {
+		$(this).slideUp(250);
+		$(".informacion-android").slideUp();
+		$("#formulario-registro").fadeIn();
+		$(".contenedor-registro").css('background', 'transparent');
+	});
+}
 
 function comprobacion_datos() { // Función para la validación del formulario de registro.
 	$("#correo").change(function() {
