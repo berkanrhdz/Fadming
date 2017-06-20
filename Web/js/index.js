@@ -4,7 +4,7 @@ $(document).ready(function() {
 	acciones_slide();
 	cambiar_color_registro();
 	mostrar_ocultar_registro();
-	comprobacion_datos();
+	comprobar_datos();
 });
 
 function acciones_slide() { // Método para realizar las acciones del slide de imágenes.
@@ -76,19 +76,71 @@ function mostrar_ocultar_registro() {
 	});
 }
 
-function comprobacion_datos() { // Función para la validación del formulario de registro.
-	$("#correo").change(function() {
-		if ((/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("correo").value))) {
-			$('#correo').css('background-color', '#9DE2AC');
-
-    	}
-    	else {
-    		$("#correo").css('background-color', '#F1B5B4');
-    		document.getElementById("correo").innerHTML = "Formato incorrecto";
-	    	setTimeout(function(){ 
-				$("#correo").text("");
+function comprobar_datos() { // Función para la validación del formulario de registro.
+	$("#boton-registro").click( function() {
+		if(document.getElementById("nombre").value.length == 0) { // Comprobación de introducción del nombre.
+			$('#nombre').css('background-color', '#F3DEDE');
+			document.getElementById("nombre").value = "Obligatorio";
+	    	setTimeout(function() { 
+				document.getElementById("nombre").value = "";
+				$('#nombre').css('background-color', '#FFFFFF');
 			}, 1500);
-	    }
+			if(document.getElementById("apellidos").value.length == 0) { // Comprobación de introducción del apellidos.
+				$('#apellidos').css('background-color', '#F3DEDE');
+				document.getElementById("apellidos").value = "Obligatorio";
+		    	setTimeout(function() { 
+					document.getElementById("apellidos").value = "";
+					$("#apellidos").css('background-color', '#FFFFFF');
+				}, 1500);
+				if(document.getElementById("usuario").value.length == 0) { // Comprobación de introducción del apellidos.
+					$('#usuario').css('background-color', '#F3DEDE');
+					document.getElementById("usuario").value = "Obligatorio";
+			    	setTimeout(function() { 
+						document.getElementById("usuario").value = "";
+						$("#usuario").css('background-color', '#FFFFFF');
+					}, 1500);
+					if(document.getElementById("correo").value.length == 0) { // Comprobación de introducción del apellidos.
+						$('#correo').css('background-color', '#F3DEDE');
+						document.getElementById("correo").value = "Obligatorio";
+				    	setTimeout(function() { 
+							document.getElementById("correo").value = "";
+							$("#correo").css('background-color', '#FFFFFF');
+						}, 1500);
+						if(document.getElementById("contrasena").value.length == 0) { // Comprobación de introducción del apellidos.
+							$('#contrasena').css('background-color', '#F3DEDE');
+							document.getElementById("contrasena").type = 'text';
+							document.getElementById("contrasena").value = "Obligatorio";
+					    	setTimeout(function() { 
+					    		document.getElementById("contrasena").type = 'password';
+								document.getElementById("contrasena").value = "";
+								$("#contrasena").css('background-color', '#FFFFFF');
+							}, 1500);
+							if(document.getElementById("repetir-contrasena").value.length == 0) { // Comprobación de introducción del apellidos.
+								$('#repetir-contrasena').css('background-color', '#F3DEDE');
+								document.getElementById("repetir-contrasena").type = 'text';
+								document.getElementById("repetir-contrasena").value = "Obligatorio";
+						    	setTimeout(function() { 
+						    		document.getElementById("repetir-contrasena").type = 'password';
+									document.getElementById("repetir-contrasena").value = "";
+									$("#repetir-contrasena").css('background-color', '#FFFFFF');
+								}, 1500);
+								return false;
+							}
+						}
+					}
+				}
+			}
+		}
+		$("#correo").change(function() { // Comprobación de introducción y formato del correo.
+			if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("correo").value))) {
+				$('#correo').css('background-color', '#F3DEDE');
+				document.getElementById("correo").value = "Formato incorrecto";
+		    	setTimeout(function(){ 
+				document.getElementById("correo").value = "";
+					$('#correo').css('background-color', '#FFFFFF');
+				}, 1500);
+		    }
+		});
 	});
 	/*else if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("input_email").value))) {
 		alert("Debe rellenar con formato el campo EMAIL");

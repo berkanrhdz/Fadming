@@ -11,7 +11,7 @@
 
     <body>
         <div class="contenedor-principal">
-            <!--<div class="contenedor-izquierdo">
+            <div class="contenedor-izquierdo">
                 <div class="contenedor-informacion-registro">
                     <div class="titulo-informacion-registro">
                         <div class="contenedor-texto-titulo">Actualiza tu cultivo y disfruta de todas sus ventajas</div>
@@ -60,12 +60,12 @@
                         ?>
                     </div>
                 </div>
-            </div>-->
+            </div>
             <div class="contenedor-derecho">
                 <div class="contenedor-login">
                     <div class="contenedor-logo"></div>
                     <div class="contenedor-inicio-sesion">
-                        <form method="POST">
+                        <form method="POST" onsubmit="return comprobar_datos()">
                             <div class="input-usuario-contrasena">
                                 <input id="usuario" name="usuario" type="text" autocomplete="off" placeholder="Usuario">
                                 <input id="contrasena" name="contrasena" type="password" autocomplete="off" placeholder="Contraseña">
@@ -74,7 +74,7 @@
                                 <button id="boton-iniciar-sesion" name="boton-iniciar-sesion">Iniciar sesión</button>
                             </div>
                         </form>
-                        <?php
+                        <?php 
                             if(isset($_POST['boton-iniciar-sesion'])) {
                                 require("php/iniciar_sesion.php");
                             }
