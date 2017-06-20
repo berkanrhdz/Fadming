@@ -74,8 +74,68 @@ body {
 	background-color: #1B1C1B;
 }
 
-.contenedor-informacion-registro .titulo-informacion-registro #imagen-titulo {
-	width: 20%;
+.contenedor-informacion-registro .titulo-informacion-registro .contenedor-texto-titulo {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro .contenedor-android {
+	width: 50%;
+	height: 30%;
+	background-color: #F7DB5C;
+	float: right;
+	border-top-left-radius: 1em;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro .contenedor-android #imagen-android {
+	width: 19%;
+	height: 100%;
+	float: left;
+	border-top-left-radius: 1em;
+	background-image: url("../images/android.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80% 100%;
+}
+
+.contenedor-informacion-registro .titulo-informacion-registro .contenedor-android #texto-android {
+	width: 80%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #000000;
+    font-size: 1.0em;
+}
+
+.contenedor-informacion-registro .contenedor-informacion {
+	width: 100%;
+	height: 40%;
+	margin: 0 auto;
+	margin-top: 2%;
+	border-top: 3px solid #575957;
+	border-bottom: 3px solid #575957;
+	background-image: url("../images/slide/1.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-izquierda {
+	width: 9.5%;
 	height: 100%;
 	float: left;
 	display: flex;
@@ -84,38 +144,57 @@ body {
     flex-direction: column;
 }
 
-.contenedor-informacion-registro .titulo-informacion-registro #texto-titulo {
-	width: 80%;
-	height: 100%;
-	float: right;
-	color: white;
-	font-size: 1.7em;
-	font-weight: bold;
-	text-align: center;
+.contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-izquierda #flecha-izquierda {
+	width: 100%;
+	height: 15%;
+	background-image: url("../images/iconos/negro/flecha-izquierda.png");
+	background-repeat: no-repeat;
+	background-position: 15%;
+	background-size: 45% 70%;
 	display: flex;
 	justify-content: center;
     align-content: center;
     flex-direction: column;
-    font-family: fuente-principal;
-    letter-spacing: 0.025em;
-    font-weight: bold;
+    opacity: 0.6;
 }
 
-.contenedor-informacion-registro .contenedor-informacion {
+.contenedor-informacion-registro .contenedor-informacion .contenedor-informacion-imagen {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/fondo-transparente-imagenes.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	color: #000000;
+	font-weight: bold;
+	font-size: 0.9em;
+	text-align: justify;
+	font-family: sans-serif;
+}
+
+.contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-derecha {
+	width: 9.5%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-derecha #flecha-derecha {
 	width: 100%;
-	height: 40%;
-	margin: 0 auto;
-	margin-top: 2%;
-	background: rgba(255,255,255,1);
-	background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
-	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(245,245,245,0.81)), color-stop(100%, rgba(237,237,237,0.6)));
-	background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
-	background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
-	background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
-	background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,0.81) 47%, rgba(237,237,237,0.6) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
-	border-top: 3px solid #575957;
-	border-bottom: 3px solid #575957;
+	height: 15%;
+	background-image: url("../images/iconos/negro/flecha-derecha.png");
+	background-repeat: no-repeat;
+	background-position: 85%;
+	background-size: 45% 70%;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    opacity: 0.6;
 }
 
 .contenedor-informacion-registro .contenedor-registro {
@@ -200,11 +279,11 @@ body {
 }
 
 .contenedor-registro .fila-registro .inputs-nombre #apellidos {
-	width: 40%;
+	width: 37%;
 }
 
 .contenedor-registro .fila-registro .inputs-nombre #usuario {
-	width: 27.5%;
+	width: 30.5%;
 }
 
 .contenedor-registro .fila-registro .inputs-cuenta #correo {
@@ -317,6 +396,8 @@ body {
 	margin-top: 3%;
 	padding-left: 3%;
 	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
 }
 
 .contenedor-inicio-sesion .boton-inicio {

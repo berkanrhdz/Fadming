@@ -14,10 +14,21 @@
             <div class="contenedor-izquierdo">
                 <div class="contenedor-informacion-registro">
                     <div class="titulo-informacion-registro">
-                        <div id="imagen-titulo"></div>
-                        <div id="texto-titulo"></div>
+                        <div class="contenedor-texto-titulo">Actualiza tu cultivo y disfruta de todas sus ventajas</div>
+                        <div class="contenedor-android">
+                            <div id="imagen-android"></div>
+                            <div id="texto-android">Aplicación displonible para Android</div>
+                        </div>
                     </div>
-                    <div class="contenedor-informacion"></div>
+                    <div class="contenedor-informacion">
+                        <div class="contenedor-flecha-izquierda">
+                            <div id="flecha-izquierda"></div>
+                        </div>
+                        <div class="contenedor-informacion-imagen"></div>
+                        <div class="contenedor-flecha-derecha">
+                            <div id="flecha-derecha"></div>
+                        </div>
+                    </div>
                     <div class="contenedor-registro">
                         <div class="desplegar-registrar">Regístrate</div>
                         <form id="formulario-registro" method="POST">

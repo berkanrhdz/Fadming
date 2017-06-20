@@ -8,11 +8,8 @@
     $usuario     = 'eduescal13';//$_POST['usuario'];
     $contrasena  = 'admin';//$_POST['contrasena'];
 
-    $consulta = "INSERT INTO `USUARIO`(`IDENTIFICADOR`, `NOMBRE_USUARIO`, `NOMBRE`, `APELLIDOS`, `CORREO`, `CONTRASENA`, `FECHA_REGISTRO`, `CIF_EMPRESA`, `ROL`) 
-    			 VALUES ($usuario', '$nombre', '$apellidos', '$correo', '$contrasena', '$telefono', CURRENT_TIMESTAMP, NULL, '1');";
+    $consulta = "INSERT INTO `USUARIO`(`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `CORREO`, `NOMBRE_USUARIO`, `CONTRASENA`, `FECHA_REGISTRO`, `CIF_EMPRESA`, `ROL`) 
+    			 VALUES ('$nombre', '$apellidos', '$correo', '$usuario', '$contrasena', CURRENT_TIMESTAMP, NULL, '1');";
 
-	mysql_query($consulta);
-
-	header("Location: http://localhost/GricApp/Web/index.php");
-	
+	mysql_query($consulta);	
 ?> 
