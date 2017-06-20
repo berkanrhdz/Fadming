@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,30 +13,30 @@
     	<div class="barra-superior">
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
-    			<div id="nombre-usuario"><?php echo $_SESSION['nombre']?></div>
+    			<div id="nombre-usuario"><?php echo $_SESSION['usuario'] ?></div>
     			<div id="icono-ajustes"></div>
-    			<div id="icono-cerrar-sesion"><a href="actions/cerrar_sesion.php"></a></div>
+    			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>
     	</div>
     	<div class="contenedor-principal">
     		<div class="barra-lateral-izquierda">
-    			<div class="fila-acceso" id="fila-acceso-empresa">
-    				<div id="icono-empresa"></div><div class="nombre-acceso">Empresas</div>
+    			<div class="fila-acceso" id="empresa">
+    				<div id="icono-empresa"></div><div class="nombre-acceso" id="texto-empresa">Empresas</div>
     			</div>
-    			<div class="fila-acceso" id="fila-acceso-usuario">
-    				<div id="icono-usuario"></div><div class="nombre-acceso">Usuarios</div>
+    			<div class="fila-acceso" id="usuario">
+    				<div id="icono-usuario"></div><div class="nombre-acceso" id="texto-usuario">Usuarios</div>
     			</div>
-    			<div class="fila-acceso" id="fila-acceso-estado">
-    				<div id="icono-estado"></div><div class="nombre-acceso">Estados</div>
+    			<div class="fila-acceso" id="estado">
+    				<div id="icono-estado"></div><div class="nombre-acceso" id="texto-estado">Estados</div>
     			</div>
-    			<div class="fila-acceso" id="fila-acceso-finca">
-    				<div id="icono-finca"></div><div class="nombre-acceso">Fincas</div>
+    			<div class="fila-acceso" id="finca">
+    				<div id="icono-finca"></div><div class="nombre-acceso" id="texto-finca">Fincas</div>
     			</div>
-    			<div class="fila-acceso" id="fila-acceso-huerto">
-    				<div id="icono-huerto"></div><div class="nombre-acceso">Huertos</div>
+    			<div class="fila-acceso" id="huerto">
+    				<div id="icono-huerto"></div><div class="nombre-acceso" id="texto-huerto">Huertos</div>
     			</div>
-    			<div class="fila-acceso" id="fila-acceso-planta">
-    				<div id="icono-planta"></div><div class="nombre-acceso">Plantas</div>
+    			<div class="fila-acceso" id="planta">
+    				<div id="icono-planta"></div><div class="nombre-acceso" id="texto-planta">Plantas</div>
     			</div>
     		</div>
     		<div class="contenedor-informacion"></div>

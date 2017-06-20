@@ -29,11 +29,14 @@ function cambiar_colores_accesos() { // Función para cambiar los colores de lo
 	$(".fila-acceso").hover(
 		function() {
 			identificador = $(this).attr('ID');
-			$('#' + identificador).css('background-color', '#A3A7A3');
+			$('#' + identificador).css('background-color', '#F7DB5C');
 			$('#' + identificador).css('cursor', 'pointer');
+			$('#texto-' + identificador).css('color', '#000000');
+			$('.icono-' + identificador).css('background-image', 'url("images/iconos/negro/' + identificador + '.png")');
 	  	}, function() {
 			identificador = $(this).attr('ID');
 			$('#' + identificador).css('background-color', '#2A2B2A');
+			$('#texto-' + identificador).css('color', '#FFFFFF');
 	  	}
 	);
 }

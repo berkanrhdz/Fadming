@@ -5,13 +5,13 @@
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/registro.js"></script>
+        <script src="js/index.js"></script>
         <title>GricApp</title>
     </head>
 
     <body>
         <div class="contenedor-principal">
-            <div class="contenedor-izquierdo">
+            <!--<div class="contenedor-izquierdo">
                 <div class="contenedor-informacion-registro">
                     <div class="titulo-informacion-registro">
                         <div class="contenedor-texto-titulo">Actualiza tu cultivo y disfruta de todas sus ventajas</div>
@@ -55,12 +55,12 @@
                         </form>
                         <?php
                             if(isset($_POST['boton-registro'])) {
-                                require("actions/registrar_usuario.php");
+                                require("php/registrar_usuario.php");
                             }
                         ?>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="contenedor-derecho">
                 <div class="contenedor-login">
                     <div class="contenedor-logo"></div>
@@ -76,7 +76,7 @@
                         </form>
                         <?php
                             if(isset($_POST['boton-iniciar-sesion'])) {
-                                require("actions/iniciar_sesion.php");
+                                require("php/iniciar_sesion.php");
                             }
                         ?>
                     </div>
