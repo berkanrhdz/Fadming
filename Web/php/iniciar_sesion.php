@@ -1,5 +1,5 @@
 <?php 
-    /*session_start(); 
+    session_start(); 
 
     require("conectar_basedatos.php");
 
@@ -26,7 +26,7 @@
 	$resultado_consulta_general = mysql_query($consulta_general);
     $datos = mysql_fetch_array($resultado_consulta_general);
 
-    $_SESSION['usuario'] = $datos[0];*/
+    $_SESSION['usuario'] = $datos[0];
 		    
-	header("Location: http://localhost/Cafesit/perfil_personal.php");
+	header("Location: http://localhost/GricApp/Web/perfil.php");
 ?> 

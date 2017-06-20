@@ -77,94 +77,86 @@ function mostrar_ocultar_registro() {
 }
 
 function comprobar_datos() { // Función para la validación del formulario de registro.
-	$("#boton-registro").click( function() {
-		if(document.getElementById("nombre").value.length == 0) { // Comprobación de introducción del nombre.
+	$("#boton-registro").click(function() {
+		if (document.getElementById("nombre").value.length == 0) { // Comprobación de introducción del nombre.
 			$('#nombre').css('background-color', '#F3DEDE');
-			document.getElementById("nombre").value = "Obligatorio";
+			document.getElementById("nombre").placeholder = "Obligatorio";
 	    	setTimeout(function() { 
-				document.getElementById("nombre").value = "";
+	    		document.getElementById("nombre").placeholder = "Nombre";
 				$('#nombre').css('background-color', '#FFFFFF');
 			}, 1500);
-			if(document.getElementById("apellidos").value.length == 0) { // Comprobación de introducción del apellidos.
-				$('#apellidos').css('background-color', '#F3DEDE');
-				document.getElementById("apellidos").value = "Obligatorio";
-		    	setTimeout(function() { 
-					document.getElementById("apellidos").value = "";
-					$("#apellidos").css('background-color', '#FFFFFF');
-				}, 1500);
-				if(document.getElementById("usuario").value.length == 0) { // Comprobación de introducción del apellidos.
-					$('#usuario').css('background-color', '#F3DEDE');
-					document.getElementById("usuario").value = "Obligatorio";
-			    	setTimeout(function() { 
-						document.getElementById("usuario").value = "";
-						$("#usuario").css('background-color', '#FFFFFF');
-					}, 1500);
-					if(document.getElementById("correo").value.length == 0) { // Comprobación de introducción del apellidos.
-						$('#correo').css('background-color', '#F3DEDE');
-						document.getElementById("correo").value = "Obligatorio";
-				    	setTimeout(function() { 
-							document.getElementById("correo").value = "";
-							$("#correo").css('background-color', '#FFFFFF');
-						}, 1500);
-						if(document.getElementById("contrasena").value.length == 0) { // Comprobación de introducción del apellidos.
-							$('#contrasena').css('background-color', '#F3DEDE');
-							document.getElementById("contrasena").type = 'text';
-							document.getElementById("contrasena").value = "Obligatorio";
-					    	setTimeout(function() { 
-					    		document.getElementById("contrasena").type = 'password';
-								document.getElementById("contrasena").value = "";
-								$("#contrasena").css('background-color', '#FFFFFF');
-							}, 1500);
-							if(document.getElementById("repetir-contrasena").value.length == 0) { // Comprobación de introducción del apellidos.
-								$('#repetir-contrasena').css('background-color', '#F3DEDE');
-								document.getElementById("repetir-contrasena").type = 'text';
-								document.getElementById("repetir-contrasena").value = "Obligatorio";
-						    	setTimeout(function() { 
-						    		document.getElementById("repetir-contrasena").type = 'password';
-									document.getElementById("repetir-contrasena").value = "";
-									$("#repetir-contrasena").css('background-color', '#FFFFFF');
-								}, 1500);
-								return false;
-							}
-						}
-					}
-				}
-			}
+			return false;
+	    }
+		else if (document.getElementById("apellidos").value.length == 0) { // Comprobación de introducción de los apellidos.
+			$('#apellidos').css('background-color', '#F3DEDE');
+			document.getElementById("apellidos").placeholder = "Obligatorio";
+		    setTimeout(function() { 
+		    	document.getElementById("apellidos").placeholder = "Apellidos";
+				$("#apellidos").css('background-color', '#FFFFFF');
+			}, 1500);
+			return false;
 		}
-		$("#correo").change(function() { // Comprobación de introducción y formato del correo.
-			if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("correo").value))) {
-				$('#correo').css('background-color', '#F3DEDE');
-				document.getElementById("correo").value = "Formato incorrecto";
-		    	setTimeout(function(){ 
-				document.getElementById("correo").value = "";
-					$('#correo').css('background-color', '#FFFFFF');
-				}, 1500);
-		    }
-		});
+		else if (document.getElementById("usuario").value.length == 0) { // Comprobación de introducción del nombre de usuario.
+			$('#usuario').css('background-color', '#F3DEDE');
+			document.getElementById("usuario").placeholder = "Obligatorio";
+			setTimeout(function() { 
+				document.getElementById("usuario").placeholder = "Nombre de usuario";
+				$("#usuario").css('background-color', '#FFFFFF');
+			}, 1500);
+			return false;
+		}
+		else if (document.getElementById("correo").value.length == 0) { // Comprobación de introducción del correo electrónico.
+			$('#correo').css('background-color', '#F3DEDE');
+			document.getElementById("correo").placeholder = "Obligatorio";
+			setTimeout(function() { 
+				document.getElementById("correo").placeholder = "Correo electrónico";
+				$("#correo").css('background-color', '#FFFFFF');
+			}, 1500);
+			return false;
+		}
+		else if (document.getElementById("contrasena").value.length == 0) { // Comprobación de introducción de la contraseña.
+			$('#contrasena').css('background-color', '#F3DEDE');
+			document.getElementById("contrasena").placeholder = "Obligatorio";
+			setTimeout(function() { 
+				document.getElementById("contrasena").placeholder = "Contraseña";
+				$("#contrasena").css('background-color', '#FFFFFF');
+			}, 1500);
+			return false;
+		}
+		else if (document.getElementById("repetir-contrasena").value.length == 0) { // Comprobación de introducción de la repetición de la contraseña.
+			$('#repetir-contrasena').css('background-color', '#F3DEDE');
+			document.getElementById("repetir-contrasena").placeholder = "Obligatorio";
+			setTimeout(function() { 
+				document.getElementById("repetir-contrasena").placeholder = "Repetir contraseña";
+				$("#repetir-contrasena").css('background-color', '#FFFFFF');
+			}, 1500);
+			return false;
+		}
 	});
-	/*else if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("input_email").value))) {
-		alert("Debe rellenar con formato el campo EMAIL");
+	$("#correo").change(function() { // Comprobación de introducción y formato del correo.
+		if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("correo").value))) {
+			$('#correo').css('background-color', '#F3DEDE');
+			document.getElementById("correo").value = "Formato incorrecto";
+		    setTimeout(function() { 
+				document.getElementById("correo").value = "";
+				$('#correo').css('background-color', '#FFFFFF');
+			}, 1500);
+		}
 		return false;
-	}
-	/*if(document.getElementById("name").value.length == 0) {
-		alert("Debe rellenar el campo NOMBRE");
+	});
+	$("#repetir-contrasena").change(function() { // Comprobación de igualdad de contraseñas.
+		var contrasena = document.getElementById("contrasena").value;
+		var repetir_contrasena = document.getElementById("repetir-contrasena").value;
+		if (contrasena != repetir_contrasena) {
+			document.getElementById("repetir-contrasena").value = "";
+			$('#repetir-contrasena').css('background-color', '#F3DEDE');
+			document.getElementById("repetir-contrasena").placeholder = "No coinciden";
+		    setTimeout(function() { 
+				$('#repetir-contrasena').css('background-color', '#FFFFFF');
+				document.getElementById("repetir-contrasena").placeholder = "Repetir contraseña";
+			}, 1500);
+		}
 		return false;
-	}
-	else if(document.getElementById("input_surname").value.length == 0) {
-		alert("Debe rellenar el campo APELLIDOS");
-		return false;
-	}
-	else if(!document.getElementById("radio_male").checked && !document.getElementById("radio_female").checked) {
-		alert("Debe marcar alguna de las opciones del campo SEXO");
-		return false;
-	}
-	else if (!(/^\d{2}\/\d{2}\/\d{4}$/.test(document.getElementById("input_date").value))) {
-		alert("Debe rellenar con formato el campo FECHA DE NACIMIENTO");
-		return false;
-	}
-	else if (!(/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/.test(document.getElementById("input_email").value))) {
-		alert("Debe rellenar con formato el campo EMAIL");
-		return false;
-	}*/
+	});
 	return true;
 }
