@@ -228,14 +228,14 @@ body {
     background-color: transparent;
 }
 
-.contenedor-informacion-registro .contenedor-registro form {
+.contenedor-informacion-registro .contenedor-registro .formulario-registro {
 	width: 100%;
 	height: 100%;
 	display: none;
 	background-color: transparent;
 }
 
-.contenedor-informacion-registro .contenedor-registro form .ocultar-registro {
+.contenedor-informacion-registro .contenedor-registro .formulario-registro .ocultar-registro {
 	width: 100%;
 	height: 12%;
 	background-color: transparent;
@@ -246,7 +246,7 @@ body {
 
 }
 
-.contenedor-registro .fila-registro {
+.contenedor-registro .formulario-registro .fila-registro {
 	width: 100%;
 	height: 29%;
 	display: flex;
@@ -255,15 +255,14 @@ body {
     flex-direction: column;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre,
-.contenedor-registro .fila-registro .inputs-datos-personales,
-.contenedor-registro .fila-registro .inputs-cuenta {
+.contenedor-registro .formulario-registro .fila-registro .inputs-nombre,
+.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta {
 	width: 93%;
 	height: 75%;
 	margin: 0 auto;
 }
 
-.contenedor-registro .fila-registro input {
+.contenedor-registro .formulario-registro .fila-registro input {
 	height: 92%;
 	background-color: #FFFFFF;
 	border-radius: 0.3em;
@@ -274,37 +273,46 @@ body {
 	font-weight: bold;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre #nombre {
+.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #nombre {
 	width: 25%;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre #apellidos {
+.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #apellidos {
 	width: 37%;
 }
 
-.contenedor-registro .fila-registro .inputs-nombre #usuario {
+.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #usuario {
 	width: 30.5%;
 }
 
-.contenedor-registro .fila-registro .inputs-cuenta #correo {
+.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #correo {
 	width: 42%;
 }
 
-.contenedor-registro .fila-registro .inputs-cuenta #contrasena {
+.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #contrasena {
 	width: 25%;
 }
 
-.contenedor-registro .fila-registro .inputs-cuenta #repetir-contrasena {
+.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #repetir-contrasena {
 	width: 25.5%;
 }
 
-.fila-registro .contenedor-boton-registro {
+.contenedor-registro .formulario-registro .fila-registro-boton {
+	width: 100%;
+	height: 29%;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.fila-registro-boton .contenedor-boton-registro {
 	width: 30%;
-	height: 75%;
+	height: 70%;
 	margin: 0 auto;
 }
 
-.contenedor-boton-registro button {
+.contenedor-boton-registro #boton-registro {
 	width: 100%;
 	height: 100%;
 	background-color: transparent;
@@ -313,6 +321,7 @@ body {
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 0.9em;
+	outline: none;
 }
 
 .contenedor-principal .contenedor-derecho {
@@ -406,7 +415,7 @@ body {
 	margin: 0 auto;
 }
 
-.contenedor-inicio-sesion .boton-inicio button {
+.contenedor-inicio-sesion .boton-inicio #boton-iniciar-sesion {
 	width: 100%;
 	height: 70%;
 	background-color: transparent;
@@ -415,9 +424,10 @@ body {
 	color: #FFFFFF;
 	font-weight: bold;
 	font-size: 0.9em;
+	outline: none;
 }
 
-.contenedor-principal button:hover {
+.contenedor-principal #boton-iniciar-sesion:hover {
 	background-color: #F7DB5C;
 	cursor: pointer;
 	color: #000000;

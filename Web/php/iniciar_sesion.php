@@ -1,6 +1,5 @@
-<?php 
-    session_start(); 
-
+<?php
+	session_start();
     require("conectar_basedatos.php");
 
     $usuario    = $_POST['usuario'];
@@ -31,5 +30,5 @@
 
     $_SESSION['usuario'] = $datos[0];
 		    
-	header("Location: http://localhost/GricApp/Web/perfil.php");*/
+	header("Location: http://localhost/GricApp/Web/perfil.php");
 ?> 
