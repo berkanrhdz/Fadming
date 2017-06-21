@@ -7,6 +7,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/index.js"></script>
         <script src="js/registro.js"></script>
+        <script src="js/inicio_sesion.js"></script>
         <title>GricApp</title>
     </head>
 
@@ -61,20 +62,13 @@
                 <div class="contenedor-login">
                     <div class="contenedor-logo"></div>
                     <div class="contenedor-inicio-sesion">
-                        <form method="POST">
-                            <div class="input-usuario-contrasena">
-                                <input id="usuario" name="usuario" type="text" autocomplete="off" placeholder="Usuario">
-                                <input id="contrasena" name="contrasena" type="password" autocomplete="off" placeholder="Contraseña">
-                            </div>
-                            <div class="boton-inicio">
-                            	<input type="submit" name="boton-iniciar-sesion" id="boton-iniciar-sesion" value="Iniciar sesión"></input>
-                            </div>
-                        </form>
-                        <?php
-                            if(isset($_POST['boton-iniciar-sesion'])) {
-                                require("php/iniciar_sesion.php");
-                            }
-                        ?>
+                        <div class="input-usuario-contrasena">
+                            <input id="usuario_inicio" name="usuario_inicio" type="text" autocomplete="off" placeholder="Usuario">
+                            <input id="contrasena_inicio" name="contrasena_inicio" type="password" autocomplete="off" placeholder="Contraseña">
+                        </div>
+                        <div class="boton-inicio">
+                            <input type="submit" name="boton-iniciar-sesion" id="boton-iniciar-sesion" value="Iniciar sesión"></input>
+                        </div>
                     </div>
                 </div>
             </div>

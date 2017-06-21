@@ -390,11 +390,6 @@ body {
     flex-direction: column;
 }
 
-.contenedor-login .contenedor-inicio-sesion form {
-	width: 100%;
-	height: 100%;
-}
-
 .contenedor-inicio-sesion .input-usuario-contrasena input {
 	width: 80%;
 	height: 30%;

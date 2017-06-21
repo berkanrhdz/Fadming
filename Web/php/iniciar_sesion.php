@@ -1,6 +1,19 @@
 <?php
 	session_start();
-    require("conectar_basedatos.php");
+
+    $servername = "localhost";
+	$username = "root";
+	$password = "";
+	$databasename = "GRICAPP_BD";
+
+	// CONEXIÓN SERVIDOR
+	$link = mysql_connect($servername, $username, $password, $databasename);
+	mysql_set_charset("utf8", $link);
+	$conexion = mysql_select_db($databasename, $link);
+
+	if($conexion == false) {
+		die("No se ha podido realizar la conexión. ERROR: " . mysql_error());
+	}
 
     $usuario    = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
@@ -18,17 +31,5 @@
 	$identificador = $datos[0];	
 
 	$_SESSION['identificador'] = $identificador;
-
-	// ----------- Obtención del resto de información -----------
-
-	$consulta_general = "SELECT NOMBRE_USUARIO
-	    			 	 FROM USUARIO
-	    		     	 WHERE ID_USUARIO = '$identificador'";
-
-	$resultado_consulta_general = mysql_query($consulta_general);
-    $datos = mysql_fetch_array($resultado_consulta_general);
-
-    $_SESSION['usuario'] = $datos[0];
-		    
-	header("Location: http://localhost/GricApp/Web/perfil.php");
+	$_SESSION['usuario'] = $usuario;    
 ?> 
