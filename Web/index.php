@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/index.js"></script>
+        <script src="js/registro.js"></script>
         <title>GricApp</title>
     </head>
 
