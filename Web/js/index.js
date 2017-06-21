@@ -133,7 +133,7 @@ function comprobar_datos() { // Función para la validación del formulario de r
 			document.getElementById("correo").placeholder = "Correo electrónico";
 			$('#correo').css('background-color', '#FFFFFF');
 		}, 1500);
-		return false;
+		return fa
 	}
 	else if (document.getElementById("contrasena").value.length == 0) { // Comprobación de introducción de la contraseña.
 		$('#contrasena').css('background-color', '#F3DEDE');
@@ -175,10 +175,20 @@ function registrar_usuario() {
 				document.getElementById("boton-registro").value = "Registrado";
 			}, 2000);
 			setTimeout(function(){ 
+				vaciar_formulario();
 				document.getElementById("boton-registro").value = "Registrarme";
 			}, 3000);
 		}
 	});
+}
+
+function vaciar_formulario() {
+	document.getElementById("nombre").value = "";
+	document.getElementById("apellidos").value = "";
+	document.getElementById("usuario").value = "";
+	document.getElementById("correo").value = "";
+	document.getElementById("contrasena").value = "";
+	document.getElementById("repetir-contrasena").value = "";
 }
 
 function enviar_datos_registrar() { // Función para enviar los datos del registro.
@@ -189,7 +199,7 @@ function enviar_datos_registrar() { // Función para enviar los datos del regist
     var contrasena   = $("#contrasena").val();
     $.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/registrar_usuario.php',
+        url: 'http://localhost/GricApp/Web/php/registrar_usuario.php',
         data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo+"&contrasena="+contrasena,
         dataType: 'json'
     });
