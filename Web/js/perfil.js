@@ -4,6 +4,7 @@ $(document).ready(function() {
 	cambiar_colores_iconos();
 	cambiar_colores_accesos();
 	obtener_datos_usuario();
+	mostrar_nueva_contrasena();
 });
 
 function cambiar_colores_iconos() { // Función para cambiar los colores de los iconos al pasar por encima.
@@ -55,4 +56,13 @@ function obtener_datos_usuario() {
     		document.getElementById("username").value = JSON_datos[0].usuario;
         }
     });
+}
+
+function mostrar_nueva_contrasena() {
+	$("#boton-cambiar-contrasena").click(function() {
+		document.getElementById("boton-cambiar-contrasena").value = "Cambiar contrasena";
+		$("#boton-cambiar-contrasena").css('width', '35%');
+		$("#nueva-contrasena").slideDown(500);
+		$("#nueva-contrasena").animate({'width': '60%'}, "slow");
+	});
 }

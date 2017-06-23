@@ -78,8 +78,23 @@
                             </div>
                         </div>
                         <div class="contenedor-derecho-informacion">
-                            <div class="contenedor-foto-perfil"></div>
-                            <div class="contenedor-cambio-contrasena"></div>
+                            <div class="contenedor-foto-perfil">
+                                <div id="foto-perfil"></div>
+                                <div class="contenedor-boton">
+                                    <div class="contenedor-boton-foto-perfil">
+                                        <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Cambiar foto"></input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contenedor-cambio-contrasena">
+                                <div class="contenedor-label-contrasena">
+                                    <label type="text">Cambiar contraseña</label>
+                                </div>
+                                <div class="contenedor-boton-contrasena">
+                                    <input id="nueva-contrasena" name="nueva-contrasena" type="password"></input>
+                                    <input id="boton-cambiar-contrasena" name="boton-cambiar-contrasena" type="submit" value="Establecer nueva contraseña"></input>
+                                </div>
+                            </div>
                             <div class="contenedor-fecha-rol"></div>
                         </div>
                     </div>

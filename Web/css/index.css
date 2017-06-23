@@ -27,7 +27,14 @@ body {
 .contenedor-principal {
 	width: 100%;
 	height: 95%;
-	background-color: #A3E4D7;
+	background: rgba(179,224,182,1);
+	background: -moz-linear-gradient(top, rgba(179,224,182,1) 0%, rgba(163,228,215,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179,224,182,1)), color-stop(100%, rgba(163,228,215,1)));
+	background: -webkit-linear-gradient(top, rgba(179,224,182,1) 0%, rgba(163,228,215,1) 100%);
+	background: -o-linear-gradient(top, rgba(179,224,182,1) 0%, rgba(163,228,215,1) 100%);
+	background: -ms-linear-gradient(top, rgba(179,224,182,1) 0%, rgba(163,228,215,1) 100%);
+	background: linear-gradient(to bottom, rgba(179,224,182,1) 0%, rgba(163,228,215,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3e0b6', endColorstr='#a3e4d7', GradientType=0 );
 }
 
 .pie-pagina {

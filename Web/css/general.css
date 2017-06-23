@@ -286,19 +286,116 @@ body .contenedor-principal {
 .contenedor-informacion-pagina .contenedor-derecho-informacion .contenedor-foto-perfil {
 	width: 95%;
 	height: 60%;
+	background-color: blue;
+}
+
+.contenedor-foto-perfil #foto-perfil {
+	width: 25%;
+	height: 40%;
+	margin: 0 auto;
+	border-radius: 0.5em;
+	background-image: url("../images/foto_perfil_defecto.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
 	background-color: red;
+}
+
+.contenedor-foto-perfil .contenedor-boton {
+	width: 100%;
+	height: 20%;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: yellow;
+}
+
+.contenedor-foto-perfil .contenedor-boton .contenedor-boton-foto-perfil {
+	width: 45%;
+	height: 65%;
+	margin: 0 auto;
+}
+
+.contenedor-boton .contenedor-boton-foto-perfil input {
+	width: 100%;
+	height: 100%;
+	background-color: #5CA45E;
+	border-radius: 0.5em;
+	border: 1px solid #E5E2E2;
+	font-size: 0.85em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+.contenedor-boton .contenedor-boton-foto-perfil input:hover {
+	background-color: #F7DB5C;
+	cursor: pointer;
+	color: #000000;
 }
 
 .contenedor-informacion-pagina .contenedor-derecho-informacion .contenedor-cambio-contrasena {
 	width: 95%;
 	height: 15%;
-	background-color: blue;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-cambio-contrasena .contenedor-label-contrasena {
+	width: 100%;
+	height: 30%;
+}
+
+.contenedor-cambio-contrasena .contenedor-label-contrasena label {
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.contenedor-cambio-contrasena .contenedor-boton-contrasena {
+	width: 100%;
+	height: 50%;
+	background-color: red;
+}
+
+.contenedor-cambio-contrasena .contenedor-boton-contrasena #boton-cambiar-contrasena {
+	width: 45%;
+	height: 100%;
+	background-color: #5CA45E;
+	border-radius: 0.5em;
+	border: 1px solid #E5E2E2;
+	font-size: 0.85em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	outline: none;
+}
+
+.contenedor-cambio-contrasena .contenedor-boton-contrasena #nueva-contrasena {
+	height: 100%;
+	width: 0%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	border: 1.2px solid #E5E2E2;
+	padding-left: 1.5%;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
+	display: none;
+}
+
+.contenedor-cambio-contrasena .contenedor-boton-contrasena #boton-cambiar-contrasena:hover {
+	background-color: #F7DB5C;
+	cursor: pointer;
+	color: #000000;
 }
 
 .contenedor-informacion-pagina .contenedor-derecho-informacion .contenedor-fecha-rol {
 	width: 95%;
 	height: 20%;
-	background-color: green;
 }
 
 
