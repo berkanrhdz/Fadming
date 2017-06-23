@@ -3,6 +3,7 @@
 $(document).ready(function() {
 	cambiar_colores_iconos();
 	cambiar_colores_accesos();
+	obtener_datos_usuario();
 });
 
 function cambiar_colores_iconos() { // Función para cambiar los colores de los iconos al pasar por encima.
@@ -40,4 +41,16 @@ function cambiar_colores_accesos() { // Función para cambiar los colores de lo
 			$('#icono-' + identificador).css('background-image', 'url("images/iconos/blanco/' + identificador + '.png")');
 	  	}
 	);
+}
+
+function obtener_datos_usuario() {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/GricApp/Web/php/mostrar_datos_usuario.php',
+        success: function(datos) {
+			$(datos).each(function(i, valor) {
+				document.getElementById('input-1').value = valor.nombre.toUpperCase();
+			});
+        }
+    });
 }

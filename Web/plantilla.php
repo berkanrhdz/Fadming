@@ -46,36 +46,7 @@
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-                        <div class="contenedor-label">
-                            <label type="text">Nombre</label>
-                        </div>
-                        <div class="contenedor-input">
-                            <input id="input-1" name="nombre" type="text" autocomplete="off"></input>
-                        </div>
-                        <div class="contenedor-label">
-                            <label type="text">Apellidos</label>
-                        </div>
-                        <div class="contenedor-input">
-                            <input id="input-2" name="apellidos" type="text" autocomplete="off"></input>
-                        </div>
-                        <div class="contenedor-label">
-                            <label type="text">Nombre de usuario</label>
-                        </div>
-                        <div class="contenedor-input">
-                            <input id="input-3" name="usuario" type="text" autocomplete="off"></input>
-                        </div>
-                        <div class="contenedor-label">
-                            <label type="text">Correo electrónico</label>
-                        </div>
-                        <div class="contenedor-input">
-                            <input id="input-4" name="correo" type="text" autocomplete="off"></input>
-                        </div>
-                        <div class="contenedor-label">
-                            <label type="text">Contraseña</label>
-                        </div>
-                        <div class="contenedor-input">
-                            <input id="contrasena" name="contrasena" type="password" autocomplete="off"></input>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
