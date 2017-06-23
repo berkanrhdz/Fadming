@@ -40,7 +40,14 @@
     				<div id="icono-planta"></div><div class="nombre-acceso" id="texto-planta">Plantas</div>
     			</div>
     		</div>
-    		<div class="contenedor-informacion"></div>
+    		<div class="contenedor-informacion">
+                <div class="contenedor-titulo-pagina">
+                    <div id="titulo-pagina">Perfil personal</div>
+                </div>
+                <div class="contenedor-contenido">
+                    <div class="contenedor-informacion-pagina"></div>
+                </div>
+            </div>
     	</div>
     </body>
 </html>
