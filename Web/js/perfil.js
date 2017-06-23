@@ -48,9 +48,11 @@ function obtener_datos_usuario() {
         type: 'POST',
         url: 'http://localhost/GricApp/Web/php/mostrar_datos_usuario.php',
         success: function(datos) {
-			$(datos).each(function(i, valor) {
-				document.getElementById('input-1').value = valor.nombre.toUpperCase();
-			});
+			var JSON_datos = JSON.parse(datos);
+    		document.getElementById("nombre").value = JSON_datos[0].nombre;
+    		document.getElementById("apellidos").value = JSON_datos[0].apellidos;
+    		document.getElementById("correo").value = JSON_datos[0].correo;
+    		document.getElementById("username").value = JSON_datos[0].usuario;
         }
     });
 }
