@@ -285,34 +285,33 @@ body .contenedor-principal {
 
 .contenedor-informacion-pagina .contenedor-derecho-informacion .contenedor-foto-perfil {
 	width: 95%;
-	height: 60%;
-	background-color: blue;
+	height: 45%;
 }
 
 .contenedor-foto-perfil #foto-perfil {
-	width: 25%;
-	height: 40%;
-	margin: 0 auto;
+	width: 47%;
+	height: 95%;
+	float: right;
 	border-radius: 0.5em;
 	background-image: url("../images/foto_perfil_defecto.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
-	background-color: red;
 }
 
 .contenedor-foto-perfil .contenedor-boton {
-	width: 100%;
-	height: 20%;
+	width: 50%;
+	height: 30%;
+	float: left;
 	display: flex;
 	justify-content: center;
     align-content: center;
     flex-direction: column;
-    background-color: yellow;
+    margin-top: 2.5%;
 }
 
 .contenedor-foto-perfil .contenedor-boton .contenedor-boton-foto-perfil {
-	width: 45%;
+	width: 100%;
 	height: 65%;
 	margin: 0 auto;
 }

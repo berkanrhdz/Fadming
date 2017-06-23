@@ -85,6 +85,11 @@
                                         <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Cambiar foto"></input>
                                     </div>
                                 </div>
+                                <div class="contenedor-boton">
+                                    <div class="contenedor-boton-foto-perfil">
+                                        <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Eliminar foto"></input>
+                                    </div>
+                                </div>
                             </div>
                             <div class="contenedor-cambio-contrasena">
                                 <div class="contenedor-label-contrasena">
