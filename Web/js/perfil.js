@@ -6,8 +6,10 @@ $(document).ready(function() {
 	obtener_datos_usuario();
 	mostrar_nueva_contrasena();
 	$("#boton-actualizar").click(function() {
+		document.getElementById("boton-actualizar").value = "Actualizando...";
 		actualizar_datos_usuario();
 	});
+	cargar_foto_perfil();
 });
 
 function cambiar_colores_iconos() { // Función para cambiar los colores de los iconos al pasar por encima.
@@ -66,7 +68,6 @@ function obtener_datos_usuario() {
 function mostrar_nueva_contrasena() {
 	$("#boton-cambiar-contrasena").click(function() {
 		document.getElementById("boton-cambiar-contrasena").value = "Cambiar contrasena";
-		document.getElementById('boton-cambiar-contrasena').id = 'boton-nueva-contrasena';
 		$("#boton-cambiar-contrasena").css('width', '35%');
 		$("#nueva-contrasena").slideDown(500);
 		$("#nueva-contrasena").animate({'width': '60%'}, "slow");
@@ -81,7 +82,24 @@ function actualizar_datos_usuario() {
 	$.ajax({
 	    type: 'POST',
 	    url: 'http://localhost/GricApp/Web/php/actualizar_datos_usuario.php',
+	    success: cambiar_boton_actualizar(),
 	    data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo,
 	    dataType: 'json'
 	});
+}
+
+function cambiar_boton_actualizar() {
+	setTimeout(function(){ 
+		document.getElementById("boton-actualizar").value = "Actualizado";
+	}, 2000);
+	setTimeout(function(){ 
+		document.getElementById("boton-actualizar").value = "Actualizar perfil";
+	}, 3000);
+}
+
+function cargar_foto_perfil() {
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+	} else {
+  		alert('The File APIs are not fully supported in this browser.');
+	}
 }

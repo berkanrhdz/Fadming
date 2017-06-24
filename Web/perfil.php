@@ -115,7 +115,14 @@
                                     <input id="boton-cambiar-contrasena" name="boton-cambiar-contrasena" type="submit" value="Establecer nueva contraseña"></input>
                                 </div>
                             </div>
-                            <div class="contenedor-informacion-propiedades"></div>
+                            <div class="contenedor-borrar-cuenta">
+                                <div class="contenedor-mensaje-advertencia">¡Atención! Se borrarán todos los datos asociados a su cuenta</div>
+                                <div class="contenedor-boton-borrar-cuenta">
+                                    <div id="boton-borrar-cuenta">
+                                        <input id="boton-borrar" name="boton-borrar" type="submit" value="Borrar cuenta"></input>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
