@@ -54,6 +54,8 @@ function obtener_datos_usuario() {
     		document.getElementById("apellidos").value = JSON_datos[0].apellidos;
     		document.getElementById("correo").value = JSON_datos[0].correo;
     		document.getElementById("username").value = JSON_datos[0].usuario;
+    		document.getElementById("fecha-registro").innerHTML = JSON_datos[0].fecha_registro;
+    		document.getElementById("rol-usuario").innerHTML = JSON_datos[0].rol;
         }
     });
 }

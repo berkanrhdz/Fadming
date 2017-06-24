@@ -4,9 +4,9 @@
 
     $identificador = $_SESSION['identificador'];
 
-    $consulta = "SELECT `NOMBRE`, `APELLIDOS`, `CORREO`, `NOMBRE_USUARIO`, `FECHA_REGISTRO`, `ROL` 
-    			 FROM `USUARIO` 
-    			 WHERE `ID_USUARIO` = $identificador;";
+    $consulta = "SELECT `NOMBRE`, `APELLIDOS`, `CORREO`, `NOMBRE_USUARIO`, DATE_FORMAT(`FECHA_REGISTRO`, '%d-%m-%Y') `FECHA`, `TIPO` 
+    			 FROM `USUARIO` USU, `ROL` ROL 
+    			 WHERE (USU.ROL = ROL.VALOR) AND (USU.ID_USUARIO = $identificador)";
 
 	$resultado_consulta = mysql_query($consulta);	
 	$datos = mysql_fetch_array($resultado_consulta);

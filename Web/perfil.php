@@ -78,16 +78,31 @@
                             </div>
                         </div>
                         <div class="contenedor-derecho-informacion">
-                            <div class="contenedor-foto-perfil">
-                                <div id="foto-perfil"></div>
-                                <div class="contenedor-boton">
-                                    <div class="contenedor-boton-foto-perfil">
-                                        <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Cambiar foto"></input>
+                            <div class="contenedor-foto-registro">
+                                <div class="contenedor-fecha-rol">
+                                    <div class="contenedor-fecha">
+                                        <div class="contenedor-titulo-fecha">
+                                            <div id="titulo-fecha">Fecha de registro</div>
+                                        </div>
+                                        <div class="contenedor-fecha-registro">
+                                            <div id="fecha-registro"></div>
+                                        </div>
+                                    </div>
+                                    <div class="contenedor-rol">
+                                        <div class="contenedor-titulo-rol">
+                                            <div id="titulo-rol">Rol de usuario</div>
+                                        </div>
+                                        <div class="contenedor-rol-usuario">
+                                            <div id="rol-usuario"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="contenedor-boton">
-                                    <div class="contenedor-boton-foto-perfil">
-                                        <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Eliminar foto"></input>
+                                <div class="contenedor-foto-perfil">
+                                    <div id="foto-perfil"></div>
+                                    <div class="contenedor-boton">
+                                        <div class="contenedor-boton-foto-perfil">
+                                            <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Cambiar foto"></input>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -100,7 +115,7 @@
                                     <input id="boton-cambiar-contrasena" name="boton-cambiar-contrasena" type="submit" value="Establecer nueva contraseña"></input>
                                 </div>
                             </div>
-                            <div class="contenedor-fecha-rol"></div>
+                            <div class="contenedor-informacion-propiedades"></div>
                         </div>
                     </div>
                 </div>
