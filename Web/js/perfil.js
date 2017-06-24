@@ -5,6 +5,9 @@ $(document).ready(function() {
 	cambiar_colores_accesos();
 	obtener_datos_usuario();
 	mostrar_nueva_contrasena();
+	$("#boton-actualizar").click(function() {
+		actualizar_datos_usuario();
+	});
 });
 
 function cambiar_colores_iconos() { // Función para cambiar los colores de los iconos al pasar por encima.
@@ -63,8 +66,22 @@ function obtener_datos_usuario() {
 function mostrar_nueva_contrasena() {
 	$("#boton-cambiar-contrasena").click(function() {
 		document.getElementById("boton-cambiar-contrasena").value = "Cambiar contrasena";
+		document.getElementById('boton-cambiar-contrasena').id = 'boton-nueva-contrasena';
 		$("#boton-cambiar-contrasena").css('width', '35%');
 		$("#nueva-contrasena").slideDown(500);
 		$("#nueva-contrasena").animate({'width': '60%'}, "slow");
+	});
+}
+
+function actualizar_datos_usuario() {
+	var nombre       = $("#nombre").val(); 
+	var apellidos    = $("#apellidos").val();
+	var usuario      = $("#username").val();
+	var correo       = $("#correo").val();
+	$.ajax({
+	    type: 'POST',
+	    url: 'http://localhost/GricApp/Web/php/actualizar_datos_usuario.php',
+	    data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo,
+	    dataType: 'json'
 	});
 }
