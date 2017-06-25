@@ -1,4 +1,4 @@
-// DOCUMENTO JAVASCRIPT DE perfil.php
+// DOCUMENTO JAVASCRIPT DE ajustes.php
 
 $(document).ready(function() {
 	cambiar_colores_iconos();
@@ -9,7 +9,7 @@ $(document).ready(function() {
 		document.getElementById("boton-actualizar").value = "Actualizando...";
 		actualizar_datos_usuario();
 	});
-	cargar_foto_perfil();
+	mostrar_borrar_cuenta();
 });
 
 function cambiar_colores_iconos() { // Función para cambiar los colores de los iconos al pasar por encima.
@@ -27,6 +27,18 @@ function cambiar_colores_iconos() { // Función para cambiar los colores de los
     		$(this).css('cursor', 'pointer');
   		}, function() {
     		$(this).css('background-image', 'url("images/iconos/blanco/cerrar-sesion.png")');
+  		}
+	);
+	$("#boton-advertencia").hover(
+  		function() {
+  			document.getElementById("boton-advertencia").innerHTML = "Entendido, deseo eliminarla";
+			$(this).css('background-color', '#F7DB5C');
+			$(this).css('color', '#000000');
+    		$(this).css('cursor', 'pointer');
+  		}, function() {
+  			document.getElementById("boton-advertencia").innerHTML = "Eliminar cuenta";
+  			$(this).css('background-color', '#2A2B2A');
+			$(this).css('color', '#FFFFFF');
   		}
 	);
 }
@@ -97,9 +109,16 @@ function cambiar_boton_actualizar() {
 	}, 3000);
 }
 
-function cargar_foto_perfil() {
-	if (window.File && window.FileReader && window.FileList && window.Blob) {
-	} else {
-  		alert('The File APIs are not fully supported in this browser.');
-	}
+function mostrar_borrar_cuenta() {
+	$("#boton-advertencia").click(function() {
+		$(".contenedor-borrar-cuenta").animate({'height': '30%'}, "slow");
+		setTimeout(function() { 
+			$(".contenedor-mensaje-advertencia").css('height', '65%');
+		}, 150);
+		$(".contenedor-boton-borrar-cuenta").fadeIn();
+		document.getElementById("boton-advertencia").id = "titulo-advertencia";
+  		$("#titulo-advertencia").css('background-color', '#2A2B2A');
+		$("#titulo-advertencia").css('color', '#FFFFFF');
+		$("#titulo-advertencia").css('cursor', 'default');
+	});
 }

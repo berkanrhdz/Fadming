@@ -31,7 +31,7 @@ function iniciar_sesion_usuario() {
 		if (comprobar_datos_inicio()) {
 			enviar_datos_iniciar_sesion();
 			vaciar_formulario_inicio();
-			window.location.assign('perfil.php');
+			window.location.assign('ajustes.php');
 		}
 	});
 }

@@ -7,7 +7,7 @@
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/perfil.js"></script>
+        <script src="js/ajustes.js"></script>
     </head>
 
     <body>
@@ -82,7 +82,7 @@
                                 <div class="contenedor-fecha-rol">
                                     <div class="contenedor-fecha">
                                         <div class="contenedor-titulo-fecha">
-                                            <div id="titulo-fecha">Fecha de registro</div>
+                                            <div id="titulo-fecha">En GricApp desde...</div>
                                         </div>
                                         <div class="contenedor-fecha-registro">
                                             <div id="fecha-registro"></div>
@@ -111,21 +111,22 @@
                                     <label type="text">Cambiar contraseña</label>
                                 </div>
                                 <div class="contenedor-boton-contrasena">
-                                    <input id="nueva-contrasena" name="nueva-contrasena" type="password"></input>
+                                    <input id="nueva-contrasena" name="nueva-contrasena" type="password" placeholder="Nueva contraseña"></input>
                                     <input id="boton-cambiar-contrasena" name="boton-cambiar-contrasena" type="submit" value="Establecer nueva contraseña"></input>
                                 </div>
                             </div>
-                            <!--<div class="contenedor-borrar-cuenta">
+                            <div class="contenedor-borrar-cuenta">
                                 <div class="contenedor-mensaje-advertencia">
-                                    <div id="titulo-advertencia">Eliminar cuenta</div>
-                                    <div id="mensaje-advertencia">Tenga en cuenta que se borrarán todos los datos almacenados</div>
+                                    <div id="boton-advertencia">Eliminar cuenta</div>
+                                    <div id="mensaje-advertencia">Tenga en cuenta que se borrarán todos los datos almacenados y los
+                                                                  registros de su empresas y fincas</div>
                                 </div>
                                 <div class="contenedor-boton-borrar-cuenta">
                                     <div id="boton-borrar-cuenta">
                                         <input id="boton-borrar" name="boton-borrar" type="submit" value="Borrar cuenta"></input>
                                     </div>
                                 </div>
-                            </div>-->
+                            </div>
                         </div>
                     </div>
                 </div>
