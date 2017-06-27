@@ -5,10 +5,7 @@ $(document).ready(function() {
 	cambiar_colores_accesos();
 	obtener_datos_usuario();
 	mostrar_nueva_contrasena();
-	$("#boton-actualizar").click(function() {
-		document.getElementById("boton-actualizar").value = "Actualizando...";
-		actualizar_datos_usuario();
-	});
+	actualizar_datos_usuario();
 	mostrar_borrar_cuenta();
 });
 
@@ -83,20 +80,24 @@ function mostrar_nueva_contrasena() {
 		$("#boton-cambiar-contrasena").css('width', '35%');
 		$("#nueva-contrasena").slideDown(500);
 		$("#nueva-contrasena").animate({'width': '60%'}, "slow");
+		document.getElementById("boton-cambiar-contrasena").id = "boton-nueva-contrasena";
 	});
 }
 
 function actualizar_datos_usuario() {
-	var nombre       = $("#nombre").val(); 
-	var apellidos    = $("#apellidos").val();
-	var usuario      = $("#username").val();
-	var correo       = $("#correo").val();
-	$.ajax({
-	    type: 'POST',
-	    url: 'http://localhost/GricApp/Web/php/actualizar_datos_usuario.php',
-	    success: cambiar_boton_actualizar(),
-	    data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo,
-	    dataType: 'json'
+	$("#boton-actualizar").click(function() {
+		document.getElementById("boton-actualizar").value = "Actualizando...";
+		var nombre       = $("#nombre").val(); 
+		var apellidos    = $("#apellidos").val();
+		var usuario      = $("#username").val();
+		var correo       = $("#correo").val();
+		$.ajax({
+		    type: 'POST',
+		    url: 'http://localhost/GricApp/Web/php/actualizar_datos_usuario.php',
+		    success: cambiar_boton_actualizar(),
+		    data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo,
+		    dataType: 'json'
+		});
 	});
 }
 

@@ -8,7 +8,8 @@
     $usuario       = $_POST['usuario'];
     $correo        = $_POST['correo'];
 
-    $consulta = "UPDATE `USUARIO` SET `NOMBRE` = '$nombre', `APELLIDOS` = '$apellidos', `CORREO` = '$correo', `NOMBRE_USUARIO` = '$usuario'
+    $consulta = "UPDATE `USUARIO` 
+                 SET `NOMBRE` = '$nombre', `APELLIDOS` = '$apellidos', `CORREO` = '$correo', `NOMBRE_USUARIO` = '$usuario'
                  WHERE `ID_USUARIO` = '$identificador';";
 
 	mysql_query($consulta);

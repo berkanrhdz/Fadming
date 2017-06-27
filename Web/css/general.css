@@ -475,7 +475,8 @@ body .contenedor-principal {
 	height: 50%;
 }
 
-.contenedor-cambio-contrasena .contenedor-boton-contrasena #boton-cambiar-contrasena {
+.contenedor-cambio-contrasena .contenedor-boton-contrasena #boton-cambiar-contrasena,
+.contenedor-cambio-contrasena .contenedor-boton-contrasena #boton-nueva-contrasena {
 	width: 45%;
 	height: 100%;
 	background-color: #5CA45E;
