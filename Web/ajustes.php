@@ -7,6 +7,7 @@
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/general.js"></script>
         <script src="js/ajustes.js"></script>
     </head>
 
@@ -15,14 +16,14 @@
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
     			<div id="nombre-usuario"><?php echo $_SESSION['usuario'] ?></div>
-    			<div id="icono-ajustes"></div>
+    			<div id="icono-ajustes"><a href="ajustes.php"></a></div>
     			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>
     	</div>
     	<div class="contenedor-principal">
     		<div class="barra-lateral-izquierda">
     			<div class="fila-acceso" id="empresa">
-    				<div id="icono-empresa"></div><div class="nombre-acceso" id="texto-empresa">Empresas</div>
+    				<a href="empresas.php"><div id="icono-empresa"></div><div class="nombre-acceso" id="texto-empresa">Empresas</div></a>
     			</div>
     			<div class="fila-acceso" id="usuario">
     				<div id="icono-usuario"></div><div class="nombre-acceso" id="texto-usuario">Usuarios</div>
