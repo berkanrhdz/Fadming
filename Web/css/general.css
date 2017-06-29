@@ -649,20 +649,118 @@ body .contenedor-principal {
 .contenedor-empresas-estadisticas .contenedor-empresas .empresa {
 	width: 100%;
 	height: 40%;
-	margin-bottom: 2%;
+	margin-top: 1.5%;
 	border: 1.5px solid #2A2B2A;
 }
 
-.contenedor-empresas #empresa-1 #imagen-empresa {
+.contenedor-empresas .empresa #imagen-empresa {
 	width: 35%;
-	height: 96%;
-	padding-top: 1%;
+	height: 91%;
+	margin-top: 1%;
+	float: left;
 	background-image: url("../images/empresa1.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
 	opacity: 0.85;
-	background-color: blue;
+}
+
+.contenedor-empresas .empresa .informacion-empresa {
+	width: 64%;
+	height: 100%;
+	float: right;
+	background-color: #2A2B2A;
+}
+
+.contenedor-empresas .empresa .informacion-empresa #nombre-empresa {
+	width: 100%;
+	height: 25%;
+	background-color: #5CA45E;
+	margin-top: 3%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	text-align: center;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-empresas .empresa .informacion-empresa #lugar-empresa {
+	width: 97.5%;
+	height: 20%;
+	margin-top: 1%;
+	padding-left: 2.5%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.0em;
+	text-align: left;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-empresas .empresa .informacion-empresa #calle-empresa {
+	width: 97.5%;
+	height: 10%;
+	padding-left: 2.5%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	text-align: left;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-empresas .empresa .informacion-empresa .contenedor-telefono {
+	width: 100%;
+	height: 20%;
+	background-color: #FFFFFF;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	text-align: left;
+	color: #FFFFFF;
+	margin-top: 3%;
+}
+
+.informacion-empresa .contenedor-telefono #icono-telefono {
+	width: 15%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/negro/telefono.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 45% 80%;
+}
+
+.informacion-empresa .contenedor-telefono #telefono-empresa {
+	width: 84%;
+	height: 100%;
+	float: right;
+	color: #2A2B2A;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.contenedor-empresas-estadisticas .contenedor-empresas .contenedor-paginas-empresa {
+	width: 100%;
+	height: 10%;
+	background-color: #F7DB5C;
+	margin-top: 1%;
+	border: 1px solid #2A2B2A;
 }
 
 .contenedor-empresas-estadisticas .contenedor-estadisticas {

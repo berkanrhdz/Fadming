@@ -11,8 +11,10 @@ function interaccion_nueva_empresa() {
     		$(this).css('border', '1.5px solid #2A2B2A');
     		$(this).css('cursor', 'pointer');
     		$(this).css('font-size', '1.15em');
+    		$(this).css('height', '11%');
     		$("#boton-nueva-empresa").animate({'width': '62%'}, "1250");
   		}, function() {
+  			$(this).css('height', '12%');
     		setTimeout(function(){ 
 				$("#boton-nueva-empresa").animate({'width': '98.5%'}, "1250");
 			}, 350);

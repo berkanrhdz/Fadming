@@ -55,10 +55,19 @@
                                 <div class="contenedor-empresas">
                                     <div class="empresa" id="empresa-1">
                                         <div id="imagen-empresa"></div>
+                                        <div class="informacion-empresa">
+                                            <div id="nombre-empresa">Cultivos La Candelaria</div>
+                                            <div id="lugar-empresa">Santa Cruz de Tenerife 38009</div>
+                                            <div id="calle-empresa">Robayna Almentara 97</div>
+                                            <div class="contenedor-telefono">
+                                                <div id="icono-telefono"></div><div id="telefono-empresa">902519811</div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="empresa" id="empresa-2">
                                         <div id="imagen-empresa"></div>
                                     </div>
+                                    <div class="contenedor-paginas-empresa"></div>
                                 </div>
                                 <div class="contenedor-estadisticas"></div>
                             </div>
