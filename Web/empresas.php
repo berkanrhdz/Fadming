@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
+        <script src="js/empresas.js"></script>
     </head>
 
     <body>
@@ -46,12 +47,22 @@
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-                        <div class="contenedor-boton-nueva-empresa">
+                        <div class="contenedor-empresas-boton">
                             <div class="contenedor-boton">
-                                <input id="boton-nueva-empresa" name="boton-nueva-empresa" type="submit" value="Añadir nueva empresa"></input>
+                                <div id="boton-nueva-empresa">Añadir una nueva empresa</div>
+                            </div>
+                            <div class="contenedor-empresas-estadisticas">
+                                <div class="contenedor-empresas">
+                                    <div class="empresa" id="empresa-1">
+                                        <div id="imagen-empresa"></div>
+                                    </div>
+                                    <div class="empresa" id="empresa-2">
+                                        <div id="imagen-empresa"></div>
+                                    </div>
+                                </div>
+                                <div class="contenedor-estadisticas"></div>
                             </div>
                         </div>
-                        <div class="contenedor-empresas"></div>
                     </div>
                 </div>
             </div>

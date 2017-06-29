@@ -601,43 +601,75 @@ body .contenedor-principal {
 
 /* ------------------------------------------- EMPRESAS ------------------------------------------- */
 
-.contenedor-informacion-pagina .contenedor-boton-nueva-empresa {
+.contenedor-informacion-pagina .contenedor-empresas-boton {
+	width: 100%;
+	height: 90%;
+	margin: 0 auto;
+	margin-top: 1%;
+}
+
+.contenedor-empresas-boton .contenedor-boton {
 	width: 100%;
 	height: 12%;
+	border: 1.25px solid #2A2B2A;
+	background-repeat: no-repeat;
+	background-position: 2%;
+	background-size: 3% 58%;
+	border-radius: 0.3em;
+}
+
+.contenedor-empresas-boton .contenedor-boton #boton-nueva-empresa {
+	width: 98.5%;
+	height: 100%;
 	margin: 0 auto;
-	background-color: blue;
-	margin-bottom: 2.5%;
+	font-size: 1.0em;
+	text-align: left;
+	font-weight: bold;
+	font-family: sans-serif;
+	color: #2A2B2A;
 	display: flex;
 	justify-content: center;
     align-content: center;
     flex-direction: column;
+    float: right;
 }
 
-.contenedor-boton-nueva-empresa .contenedor-boton {
-	width: 40%;
-	height: 80%;
-	margin: 0 auto;
-	background-color: red;
-}
-
-.contenedor-boton-nueva-empresa .contenedor-boton #boton-nueva-empresa {
+.contenedor-empresas-boton .contenedor-empresas-estadisticas {
 	width: 100%;
+	height: 87%;
+	margin-top: 1%;
+}
+
+.contenedor-empresas-estadisticas .contenedor-empresas {
+	width: 55%;
 	height: 100%;
-	border-radius: 0.5em;
-	background-color: #5CA45E;
-	color: #FFFFFF;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 1.0em;
-	text-align: center;
-	border: 1px solid #E5E2E2;
+	float: left;
 }
 
-.contenedor-informacion-pagina .contenedor-empresas {
+.contenedor-empresas-estadisticas .contenedor-empresas .empresa {
 	width: 100%;
-	height: 78%;
-	margin: 0 auto;
-	background-color: yellow;
+	height: 40%;
+	margin-bottom: 2%;
+	border: 1.5px solid #2A2B2A;
+}
+
+.contenedor-empresas #empresa-1 #imagen-empresa {
+	width: 35%;
+	height: 96%;
+	padding-top: 1%;
+	background-image: url("../images/empresa1.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+	opacity: 0.85;
+	background-color: blue;
+}
+
+.contenedor-empresas-estadisticas .contenedor-estadisticas {
+	width: 42.5%;
+	height: 100%;
+	background-color: red;
+	float: right;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
