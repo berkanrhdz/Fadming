@@ -66,6 +66,14 @@
                                     </div>
                                     <div class="empresa" id="empresa-2">
                                         <div id="imagen-empresa"></div>
+                                        <div class="informacion-empresa">
+                                            <div id="nombre-empresa">Agrupación de Agricultores Ecológicos de Canarias</div>
+                                            <div id="lugar-empresa">Arafo 38550</div>
+                                            <div id="calle-empresa">Pérez Carmona 18</div>
+                                            <div class="contenedor-telefono">
+                                                <div id="icono-telefono"></div><div id="telefono-empresa">922514811</div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="contenedor-paginas-empresa"></div>
                                 </div>
