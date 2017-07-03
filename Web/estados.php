@@ -7,7 +7,8 @@
         <link href="images/favicon.png" rel='shortcut icon' type='image/png'/>
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/perfil.js"></script>
+        <script src="js/general.js"></script>
+        <script src="js/estados.js"></script>
     </head>
 
     <body>
@@ -42,11 +43,17 @@
     		</div>
     		<div class="contenedor-informacion">
                 <div class="contenedor-titulo-pagina">
-                    <div id="titulo-pagina">Perfil personal</div>
+                    <div id="titulo-pagina">Gestión de estados</div>
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-
+                        <div class="contenedor-mensaje-ayuda">Añade nuevos estados para cada una de las plantas de tu
+                                                              cultivo. Puedes almacenarlas por grupos, y luego agregarlos
+                                                              de forma conjunta a aquellas que tengan un tratamiento similar.</div>
+                        <div class="contenedor-gestion-estados">
+                            <div class="contenedor-lista-estados"></div>
+                            <div class="contenedor-nuevo-grupos"></div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@
     				<div id="icono-usuario"></div><div class="nombre-acceso" id="texto-usuario">Usuarios</div>
     			</div>
     			<div class="fila-acceso" id="estado">
-    				<div id="icono-estado"></div><div class="nombre-acceso" id="texto-estado">Estados</div>
+            <a href="estados.php"><div id="icono-estado"></div><div class="nombre-acceso" id="texto-estado">Estados</div></a>
     			</div>
     			<div class="fila-acceso" id="finca">
     				<div id="icono-finca"></div><div class="nombre-acceso" id="texto-finca">Fincas</div>
