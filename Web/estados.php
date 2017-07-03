@@ -51,7 +51,30 @@
                                                               cultivo. Puedes almacenarlas por grupos, y luego agregarlos
                                                               de forma conjunta a aquellas que tengan un tratamiento similar.</div>
                         <div class="contenedor-gestion-estados">
-                            <div class="contenedor-lista-estados"></div>
+                            <div class="contenedor-lista-estados">
+                                <div class="lista-estados">
+                                  <div id="titulo-estados">Lista de estados disponibles</div>
+                                  <div class="cabecera-estados">
+                                      <div id="cabecera-nombre">Nombre</div>
+                                      <div id="cabecera-descripcion">Descripción</div>
+                                  </div>
+                                  <div id="lista">
+                                      <div class="estado" id="estado-1">
+                                        <div class="contenedor-nombre-estado"><div id="nombre-estado">Abono 4B57X</div></div>
+                                        <div class="contenedor-descripcion-estado"><div id="descripcion-estado">Echar el abono en las raices, con un porcentaje del 30% en máquina</div></div>
+                                      </div>
+                                      <div class="estado" id="estado-2">
+                                        <div class="contenedor-nombre-estado"><div id="nombre-estado">Cortar hojas laterales</div></div>
+                                        <div class="contenedor-descripcion-estado"><div id="descripcion-estado">Echar el abono en las raices, con un porcentaje del 30% en máquina</div></div>
+                                      </div>
+                                      <div class="estado" id="estado-3"></div>
+                                      <div class="estado" id="estado-4"></div>
+                                      <div class="estado" id="estado-5"></div>
+                                      <div class="estado" id="estado-6"></div>
+                                      <div class="estado" id="estado-7"></div>
+                                  </div>
+                                </div>
+                            </div>
                             <div class="contenedor-nuevo-grupos"></div>
                         </div>
                     </div>
