@@ -12,13 +12,13 @@ function obtener_datos_usuario() {
         type: 'POST',
         url: 'http://localhost/GricApp/Web/php/mostrar_datos_usuario.php',
         success: function(datos) {
-			var JSON_datos = JSON.parse(datos);
-    		document.getElementById("nombre").value = JSON_datos[0].nombre;
-    		document.getElementById("apellidos").value = JSON_datos[0].apellidos;
-    		document.getElementById("correo").value = JSON_datos[0].correo;
-    		document.getElementById("username").value = JSON_datos[0].usuario;
-    		document.getElementById("fecha-registro").innerHTML = JSON_datos[0].fecha_registro;
-    		document.getElementById("rol-usuario").innerHTML = JSON_datos[0].rol;
+					var JSON_datos = JSON.parse(datos);
+    				document.getElementById("nombre").value = JSON_datos[0].nombre;
+    				document.getElementById("apellidos").value = JSON_datos[0].apellidos;
+    				document.getElementById("correo").value = JSON_datos[0].correo;
+    				document.getElementById("username").value = JSON_datos[0].usuario;
+    				document.getElementById("fecha-registro").innerHTML = JSON_datos[0].fecha_registro;
+    				document.getElementById("rol-usuario").innerHTML = JSON_datos[0].rol;
         }
     });
 }
@@ -36,7 +36,7 @@ function mostrar_nueva_contrasena() {
 function actualizar_datos_usuario() {
 	$("#boton-actualizar").click(function() {
 		document.getElementById("boton-actualizar").value = "Actualizando...";
-		var nombre       = $("#nombre").val(); 
+		var nombre       = $("#nombre").val();
 		var apellidos    = $("#apellidos").val();
 		var usuario      = $("#username").val();
 		var correo       = $("#correo").val();
@@ -51,10 +51,10 @@ function actualizar_datos_usuario() {
 }
 
 function cambiar_boton_actualizar() {
-	setTimeout(function(){ 
+	setTimeout(function(){
 		document.getElementById("boton-actualizar").value = "Actualizado";
 	}, 2000);
-	setTimeout(function(){ 
+	setTimeout(function(){
 		document.getElementById("boton-actualizar").value = "Actualizar perfil";
 	}, 3000);
 }
@@ -62,7 +62,7 @@ function cambiar_boton_actualizar() {
 function mostrar_borrar_cuenta() {
 	$("#boton-advertencia").click(function() {
 		$(".contenedor-borrar-cuenta").animate({'height': '30%'}, "slow");
-		setTimeout(function() { 
+		setTimeout(function() {
 			$(".contenedor-mensaje-advertencia").css('height', '65%');
 		}, 150);
 		$(".contenedor-boton-borrar-cuenta").fadeIn();
