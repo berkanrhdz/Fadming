@@ -58,24 +58,30 @@
                                       <div id="cabecera-nombre">Nombre</div>
                                       <div id="cabecera-descripcion">Descripción</div>
                                   </div>
-                                  <div id="lista">
-                                      <div class="estado" id="estado-1">
-                                        <div class="contenedor-nombre-estado"><div id="nombre-estado">Abono 4B57X</div></div>
-                                        <div class="contenedor-descripcion-estado"><div id="descripcion-estado">Echar el abono en las raices, con un porcentaje del 30% en máquina</div></div>
-                                      </div>
-                                      <div class="estado" id="estado-2">
-                                        <div class="contenedor-nombre-estado"><div id="nombre-estado">Cortar hojas laterales</div></div>
-                                        <div class="contenedor-descripcion-estado"><div id="descripcion-estado">Echar el abono en las raices, con un porcentaje del 30% en máquina</div></div>
-                                      </div>
-                                      <div class="estado" id="estado-3"></div>
-                                      <div class="estado" id="estado-4"></div>
-                                      <div class="estado" id="estado-5"></div>
-                                      <div class="estado" id="estado-6"></div>
-                                      <div class="estado" id="estado-7"></div>
-                                  </div>
+                                  <div id="lista"></div>
                                 </div>
                             </div>
-                            <div class="contenedor-nuevo-grupos"></div>
+                            <div class="contenedor-nuevo-grupos">
+                                <div class="nuevo-grupos">
+                                    <div id="boton-titulo-nuevo">Añadir nuevo estado</div>
+                                    <div class="contenedor-informacion-nuevo">
+                                        <div class="contenedor-input-nombre">
+                                            <div id="label-nombre"><label type="text">Nombre</label></div>
+                                            <div id="input-nombre">
+                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 carácteres"></input>
+                                            </div>
+                                        </div>
+                                        <div class="contenedor-input-descripcion">
+                                            <div id="label-descripcion"><label type="text">Descripción</label></div>
+                                            <div id="input-nombre">
+                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 carácteres"></input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="boton-titulo-grupos">Añadir nuevo grupo</div>
+                                    <div class="contenedor-informacion-grupos">informacion estado</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
