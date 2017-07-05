@@ -28,18 +28,20 @@ function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para 
 
 function interaccion_nuevo_grupos() {
 		$("#boton-titulo-nuevo").click(function() {
-				setTimeout(function(){
-					$(".contenedor-informacion-nuevo").fadeIn();
-				}, 500);
+				$(".contenedor-informacion-nuevo").slideDown(100);
 				$(".contenedor-informacion-nuevo").animate({'height': '75.7%'}, "slow");
-				$(".contenedor-informacion-grupos").css("display", "none");
+				$(".contenedor-informacion-grupos").animate({'height': '0%'}, "slow");
+				setTimeout(function(){
+					 $(".contenedor-informacion-grupos").css("display", "none");
+				}, 500);
 		});
 		$("#boton-titulo-grupos").click(function() {
 				$(".contenedor-informacion-nuevo").animate({'height': '0%'}, "slow");
 				setTimeout(function(){
 					 $(".contenedor-informacion-nuevo").css("display", "none");
+					 $(".contenedor-informacion-nuevo").css("height", "0%");
 				}, 500);
-				$(".contenedor-informacion-grupos").animate({'height': '75.7%'}, "slow");
 				$(".contenedor-informacion-grupos").fadeIn();
+				$(".contenedor-informacion-grupos").animate({"height": "75.7%"}, "slow");
 		});
 }

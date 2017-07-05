@@ -68,18 +68,23 @@
                                         <div class="contenedor-input-nombre">
                                             <div id="label-nombre"><label type="text">Nombre</label></div>
                                             <div id="input-nombre">
-                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 carácteres"></input>
+                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 caracteres"></input>
                                             </div>
                                         </div>
                                         <div class="contenedor-input-descripcion">
                                             <div id="label-descripcion"><label type="text">Descripción</label></div>
-                                            <div id="input-nombre">
-                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 carácteres"></input>
+                                            <div id="input-descripcion">
+                                                <textarea id="descripcion-estado" name="descripcion-estado" type="text" autocomplete="off" placeholder="Máx. 150 caracteres"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="contenedor-boton-estado">
+                                            <div class="contenedor-boton">
+                                                <input id="boton-nuevo-estado" name="boton-nuevo-estado" type="submit" value="Añadir estado"></input>
                                             </div>
                                         </div>
                                     </div>
                                     <div id="boton-titulo-grupos">Añadir nuevo grupo</div>
-                                    <div class="contenedor-informacion-grupos">informacion estado</div>
+                                    <div class="contenedor-informacion-grupos"></div>
                                 </div>
                             </div>
                         </div>
