@@ -68,13 +68,13 @@
                                         <div class="contenedor-input-nombre">
                                             <div id="label-nombre"><label type="text">Nombre</label></div>
                                             <div id="input-nombre">
-                                                <input id="nombre-estado" name="nombre-estado" type="text" autocomplete="off" placeholder="Máx. 35 caracteres"></input>
+                                                <input id="nombre_estado" name="nombre_estado" type="text" autocomplete="off" placeholder="Máx. 35 caracteres"></input>
                                             </div>
                                         </div>
                                         <div class="contenedor-input-descripcion">
                                             <div id="label-descripcion"><label type="text">Descripción</label></div>
                                             <div id="input-descripcion">
-                                                <textarea id="descripcion-estado" name="descripcion-estado" type="text" autocomplete="off" placeholder="Máx. 150 caracteres"></textarea>
+                                                <textarea id="descripcion_estado" name="descripcion_estado" type="text" autocomplete="off" placeholder="Máx. 150 caracteres"></textarea>
                                             </div>
                                         </div>
                                         <div class="contenedor-boton-estado">

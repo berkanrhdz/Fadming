@@ -3,6 +3,7 @@
 $(document).ready(function() {
 	mostrar_lista_estados();
 	interaccion_nuevo_grupos();
+	insertar_nuevo_estado();
 });
 
 function mostrar_lista_estados() {
@@ -44,4 +45,31 @@ function interaccion_nuevo_grupos() {
 				$(".contenedor-informacion-grupos").fadeIn();
 				$(".contenedor-informacion-grupos").animate({"height": "75.7%"}, "slow");
 		});
+}
+
+function insertar_nuevo_estado() {
+		$("#boton-nuevo-estado").click(function() {
+				document.getElementById("boton-nuevo-estado").value = "Añadiendo...";
+				var nombre       = $("#nombre_estado").val();
+				var descripcion  = $("#descripcion_estado").val();
+				$.ajax({
+		    		type: 'POST',
+		    		url: 'http://localhost/GricApp/Web/php/almacenar_estado.php',
+		    		success: cambiar_nuevo_estado(),
+		    		data: "nombre="+nombre+"&descripcion="+descripcion,
+		    		dataType: 'json'
+				});
+		});
+}
+
+function cambiar_nuevo_estado() {
+		setTimeout(function(){
+				document.getElementById("boton-nuevo-estado").value = "Añadido";
+				location.reload();
+		}, 2000);
+		setTimeout(function(){
+				document.getElementById("boton-nuevo-estado").value = "Añadir estado";
+				document.getElementById("nombre_estado").value = "";
+				document.getElementById("descripcion_estado").value = "";
+		}, 3000);
 }
