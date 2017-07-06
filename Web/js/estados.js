@@ -35,6 +35,7 @@ function interaccion_nuevo_grupos() {
 				setTimeout(function(){
 					 $(".contenedor-informacion-grupos").css("display", "none");
 				}, 500);
+				document.getElementById("boton-titulo-nuevo").id = "titulo-nuevo";
 		});
 		$("#boton-titulo-grupos").click(function() {
 				$(".contenedor-informacion-nuevo").animate({'height': '0%'}, "slow");
@@ -44,6 +45,7 @@ function interaccion_nuevo_grupos() {
 				}, 500);
 				$(".contenedor-informacion-grupos").fadeIn();
 				$(".contenedor-informacion-grupos").animate({"height": "75.7%"}, "slow");
+				document.getElementById("boton-titulo-nuevo").id = "boton-titulo-nuevo";
 		});
 }
 
@@ -65,11 +67,11 @@ function insertar_nuevo_estado() {
 function cambiar_nuevo_estado() {
 		setTimeout(function(){
 				document.getElementById("boton-nuevo-estado").value = "Añadido";
-				location.reload();
-		}, 2000);
+		}, 1500);
 		setTimeout(function(){
+				location.reload();
 				document.getElementById("boton-nuevo-estado").value = "Añadir estado";
 				document.getElementById("nombre_estado").value = "";
 				document.getElementById("descripcion_estado").value = "";
-		}, 3000);
+		}, 2500);
 }

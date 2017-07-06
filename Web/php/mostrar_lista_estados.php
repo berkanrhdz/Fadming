@@ -3,10 +3,11 @@
   require("conectar_basedatos.php");
 
 	$numero_fila    = 0;
-  $identificador = 1;//$_SESSION['identificador'];
+  $identificador = $_SESSION['identificador'];
 	$consulta = "SELECT `NOMBRE`, `DESCRIPCION`
 						   FROM `ESTADO`
-							 WHERE `CODIGO_USUARIO` = '$identificador';";
+							 WHERE `CODIGO_USUARIO` = '$identificador'
+							 ORDER BY `NOMBRE` ASC;";
 
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {

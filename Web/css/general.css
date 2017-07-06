@@ -981,7 +981,8 @@ body .contenedor-principal {
   margin: 0 auto;
 }
 
-.nuevo-grupos #boton-titulo-nuevo {
+.nuevo-grupos #boton-titulo-nuevo,
+.nuevo-grupos #titulo-nuevo {
   width: 100%;
   height: 12%;
   background-color: #2A2B2A;

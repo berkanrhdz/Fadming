@@ -7,7 +7,7 @@
  */
 
 /* ------------------------------------------- ESTILO INICIO -------------------------------------------*/
-    
+
 html {
 	width: 100%;
 	height: 100%;
@@ -83,13 +83,13 @@ body {
 	height: 70%;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #FFFFFF;
-    font-size: 1.7em;
-    text-align: center;
+  align-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 1.7em;
+  text-align: center;
 }
 
 .contenedor-informacion-registro .titulo-informacion-registro .contenedor-android {
@@ -117,12 +117,12 @@ body {
 	float: right;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #000000;
-    font-size: 1.0em;
+  align-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 1.0em;
 }
 
 .contenedor-informacion-registro .contenedor-informacion {
@@ -196,16 +196,16 @@ body {
 	background-size: 45% 70%;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    opacity: 0.6;
+  align-content: center;
+  flex-direction: column;
+  opacity: 0.6;
 }
 
 .contenedor-informacion-registro .contenedor-registro {
 	width: 100%;
 	height: 28%;
 	margin-top: 2%;
-    background: rgba(98,125,77,1);
+  background: rgba(98,125,77,1);
 	background: -moz-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
 	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(26,96,14,0.71)));
 	background: -webkit-linear-gradient(top, rgba(98,125,77,1) 0%, rgba(26,96,14,0.71) 100%);
@@ -225,11 +225,77 @@ body {
 	font-size: 1.0em;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    font-family: sans-serif;
-    text-align: center;
-    background-color: transparent;
+  align-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: transparent;
+}
+
+.contenedor-informacion-registro .contenedor-registro .contenedor-codigo-qr {
+	width: 100%;
+	height: 80%;
+}
+
+.contenedor-registro .contenedor-codigo-qr .contenedor-codigo {
+	width: 30%;
+	height: 100%;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.contenedor-registro .contenedor-codigo-qr .contenedor-codigo #codigo-qr {
+	width: 55%;
+	height: 80%;
+  margin: 0 auto;
+  background-image: url("../images/qr_github.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  border-radius: 0.3em;
+  border: 0.5px solid #000000;
+}
+
+.contenedor-registro .contenedor-codigo-qr .contenedor-informacion-codigo {
+	width: 70%;
+	height: 99%;
+  float: right;
+  background-image: url("../images/fondo_transparente.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-titulo-codigo {
+	width: 98%;
+	height: 40%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #FFFFFF;
+  text-align: left;
+  background-color: #1B1C1B;
+  padding-left: 2%;
+  border-bottom-left-radius: 0.8em;
+}
+
+.contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-informacion-qr {
+	width: 96%;
+	height: 50%;
+  font-family: sans-serif;
+  font-size: 0.85em;
+  color: #000000;
+  text-align: justify;
+  line-height: 1.35em;
+  padding: 2%;
+  font-weight: bold;
 }
 
 .contenedor-informacion-registro .contenedor-registro .formulario-registro {
@@ -361,12 +427,12 @@ body {
 	width: 100%;
 	height: 60%;
 	display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
-    background-image: url("../images/logo.png");
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  background-image: url("../images/logo.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 60% 80%;
@@ -389,9 +455,9 @@ body {
 	width: 100%;
 	height: 70%;
 	display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .contenedor-inicio-sesion .input-usuario-contrasena input {

@@ -33,6 +33,17 @@
                     </div>
                     <div class="contenedor-registro">
                         <div class="desplegar-registrar">Regístrate</div>
+                        <div class="contenedor-codigo-qr">
+                            <div class="contenedor-codigo">
+                                <div id="codigo-qr"></div>
+                            </div>
+                            <div class="contenedor-informacion-codigo">
+                                <div class="contenedor-titulo-codigo">Accede al desarrollo de GricApp</div>
+                                <div class="contenedor-informacion-qr">Escanea el siguiente código QR y visita el desarrollo del proyecto.
+                                                                       Puedes dejarnos tus sugerencias y aquellos contenidos que crees
+                                                                       que ayudará a mejorar.</div>
+                            </div>
+                        </div>
                         <div class="formulario-registro">
                             <div class="ocultar-registro"></div>
                             <div class="fila-registro">

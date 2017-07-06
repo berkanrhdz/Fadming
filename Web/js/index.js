@@ -77,10 +77,16 @@ function cambiar_color_registro() { // Función para cambiar el color del div d
 function mostrar_ocultar_registro() {
 	$(".desplegar-registrar").click(function() {
 		$(this).slideUp();
-		$(".formulario-registro").fadeIn(500);
+		$(".contenedor-codigo-qr").slideUp(500);
+		setTimeout(function(){
+			$(".formulario-registro").fadeIn(500);
+		}, 200);
 	});
 	$(".ocultar-registro").click(function() {
 		$(".formulario-registro").fadeOut();
+		setTimeout(function(){
+			$(".contenedor-codigo-qr").slideDown(500);
+		}, 200);
 		$(".desplegar-registrar").slideDown(500);
 	});
 }
