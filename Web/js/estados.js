@@ -4,6 +4,7 @@ $(document).ready(function() {
 	mostrar_lista_estados();
 	interaccion_nuevo_grupos();
 	insertar_nuevo_estado();
+	comprobar_seleccion_estados();
 });
 
 function mostrar_lista_estados() {
@@ -13,18 +14,23 @@ function mostrar_lista_estados() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_estado_formato(i + 1, valor.nombre, valor.descripcion);
+								insertar_estado_formato(valor.codigo, valor.nombre, valor.descripcion);
 						});
         }
     });
 }
 
 function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para dar el formato a los estados.
-		var formato = "<div class='estado' id='estado-" + indice + "'>" +
-	               		"<div class='contenedor-nombre-estado'><div id='nombre-estado'>" + nombre + "</div></div>" +
-	                  "<div class='contenedor-descripcion-estado'><div id='descripcion-estado'>" + descripcion + "</div></div>" +
-	               "</div>";
-		document.getElementById('lista').innerHTML += formato;
+		var formato_lista = "<div class='estado'>" +
+	               		    	"<div class='contenedor-nombre-estado'><div id='nombre-estado'>" + nombre + "</div></div>" +
+	                  			"<div class='contenedor-descripcion-estado'><div id='descripcion-estado'>" + descripcion + "</div></div>" +
+	               				"</div>";
+		var formato_grupo	= "<div class='contenedor-estado-seleccion'>" +
+													"<div id='nombre-estado-seleccion'>" + nombre + "</div>" +
+													"<div id='checkbox'><input id='checkbox-" + indice + "' type='checkbox'></input></div>" +
+												"</div>";
+		document.getElementById('lista').innerHTML += formato_lista;
+		document.getElementById('grupos-seleccion').innerHTML += formato_grupo;
 }
 
 function interaccion_nuevo_grupos() {
@@ -35,7 +41,8 @@ function interaccion_nuevo_grupos() {
 				setTimeout(function(){
 					 $(".contenedor-informacion-grupos").css("display", "none");
 				}, 500);
-				document.getElementById("boton-titulo-nuevo").id = "titulo-nuevo";
+				$("#boton-titulo-grupos").css("border-bottom-left-radius", "0.2em");
+				$("#boton-titulo-grupos").css("border-bottom-right-radius", "0.2em");
 		});
 		$("#boton-titulo-grupos").click(function() {
 				$(".contenedor-informacion-nuevo").animate({'height': '0%'}, "slow");
@@ -43,9 +50,10 @@ function interaccion_nuevo_grupos() {
 					 $(".contenedor-informacion-nuevo").css("display", "none");
 					 $(".contenedor-informacion-nuevo").css("height", "0%");
 				}, 500);
-				$(".contenedor-informacion-grupos").fadeIn();
 				$(".contenedor-informacion-grupos").animate({"height": "75.7%"}, "slow");
-				document.getElementById("boton-titulo-nuevo").id = "boton-titulo-nuevo";
+				$(".contenedor-informacion-grupos").fadeIn();
+				$(this).css("border-bottom-left-radius", "0em");
+				$(this).css("border-bottom-right-radius", "0em");
 		});
 }
 

@@ -84,7 +84,22 @@
                                         </div>
                                     </div>
                                     <div id="boton-titulo-grupos">Añadir nuevo grupo</div>
-                                    <div class="contenedor-informacion-grupos"></div>
+                                    <div class="contenedor-informacion-grupos">
+                                        <div id="mensaje-grupos-seleccion">Seleccione los estados que desea añadir al grupo</div>
+                                        <div class="contenedor-grupos-seleccion" id="grupos-seleccion"></div>
+                                        <div class="contenedor-input-boton-grupo">
+                                          <div class="contenedor-input-nombre-grupo">
+                                            <div id="input-nombre-grupo">
+                                              <input id="nombre_grupo" name="nombre_grupo" type="text" autocomplete="off" placeholder="Nombre del grupo"></input>
+                                            </div>
+                                          </div>
+                                          <div class="contenedor-boton-grupo">
+                                            <div id="boton-anadir-grupo">
+                                              <input id="boton_grupo" name="boton_grupo" type="submit" value="Añadir"></input>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
