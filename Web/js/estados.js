@@ -4,7 +4,7 @@ $(document).ready(function() {
 	mostrar_lista_estados();
 	interaccion_nuevo_grupos();
 	insertar_nuevo_estado();
-	comprobar_seleccion_estados();
+	seleccion_grupo_estados();
 });
 
 function mostrar_lista_estados() {
@@ -27,7 +27,7 @@ function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para 
 	               				"</div>";
 		var formato_grupo	= "<div class='contenedor-estado-seleccion'>" +
 													"<div id='nombre-estado-seleccion'>" + nombre + "</div>" +
-													"<div id='checkbox'><input id='checkbox-" + indice + "' type='checkbox'></input></div>" +
+													"<div id='checkbox'><input id='" + indice + "' type='checkbox'></input></div>" +
 												"</div>";
 		document.getElementById('lista').innerHTML += formato_lista;
 		document.getElementById('grupos-seleccion').innerHTML += formato_grupo;
@@ -35,9 +35,11 @@ function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para 
 
 function interaccion_nuevo_grupos() {
 		$("#boton-titulo-nuevo").click(function() {
-				$(".contenedor-informacion-nuevo").slideDown(100);
-				$(".contenedor-informacion-nuevo").animate({'height': '75.7%'}, "slow");
-				$(".contenedor-informacion-grupos").animate({'height': '0%'}, "slow");
+				$(".contenedor-informacion-grupos").fadeOut();
+				setTimeout(function(){
+					$(".contenedor-informacion-nuevo").slideDown(100);
+					$(".contenedor-informacion-nuevo").animate({'height': '75.7%'}, "slow");
+				}, 300);
 				setTimeout(function(){
 					 $(".contenedor-informacion-grupos").css("display", "none");
 				}, 500);
@@ -51,7 +53,7 @@ function interaccion_nuevo_grupos() {
 					 $(".contenedor-informacion-nuevo").css("height", "0%");
 				}, 500);
 				$(".contenedor-informacion-grupos").animate({"height": "75.7%"}, "slow");
-				$(".contenedor-informacion-grupos").fadeIn();
+				$(".contenedor-informacion-grupos").fadeIn("100");
 				$(this).css("border-bottom-left-radius", "0em");
 				$(this).css("border-bottom-right-radius", "0em");
 		});
@@ -81,5 +83,49 @@ function cambiar_nuevo_estado() {
 				document.getElementById("boton-nuevo-estado").value = "Añadir estado";
 				document.getElementById("nombre_estado").value = "";
 				document.getElementById("descripcion_estado").value = "";
+		}, 2500);
+}
+
+function seleccion_grupo_estados() {
+		var estados_seleccionados = "";
+		$("#boton_grupo").click(function() {
+				document.getElementById("boton_grupo").value = "Añadidendo...";
+				contenedor = document.getElementById('grupos-seleccion');
+				checkboxs = contenedor.getElementsByTagName('input');
+				for (var i = 0; i < checkboxs.length; i++) {
+    			if(checkboxs[i].checked == true) {
+        		estados_seleccionados += $(checkboxs[i]).attr('ID') + " ";
+    			}
+				}
+				estados_seleccionados = estados_seleccionados.slice(0, estados_seleccionados.length - 1);
+				enviar_estados_grupos(estados_seleccionados);
+		});
+}
+
+function enviar_estados_grupos(estados_seleccionados) {
+	var nombre_grupo = $("#nombre_grupo").val();
+	$.ajax({
+			type: 'POST',
+			url: 'http://localhost/GricApp/Web/php/almacenar_grupo_estados.php',
+			success: cambiar_grupo_estados(),
+			data: "nombre="+nombre_grupo+"&estados="+estados_seleccionados,
+			dataType: 'json'
+	});
+}
+
+function cambiar_grupo_estados() {
+		setTimeout(function(){
+				document.getElementById("boton_grupo").value = "Añadido";
+		}, 1500);
+		setTimeout(function(){
+				document.getElementById("boton_grupo").value = "Añadir estado";
+				document.getElementById("nombre_grupo").value = "";
+				contenedor = document.getElementById('grupos-seleccion');
+				checkboxs = contenedor.getElementsByTagName('input');
+				for (var i = 0; i < checkboxs.length; i++) {
+					if(checkboxs[i].checked == true) {
+							checkboxs[i].checked = false;
+					}
+				}
 		}, 2500);
 }

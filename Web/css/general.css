@@ -1276,9 +1276,9 @@ body .contenedor-principal {
 }
 
 .contenedor-boton-grupo #boton-anadir-grupo input:hover {
- background-color: #F7DB5C;
- color: #2A2B2A;
- cursor: pointer;
+ 	background-color: #F7DB5C;
+ 	color: #2A2B2A;
+ 	cursor: pointer;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
