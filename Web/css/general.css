@@ -1273,6 +1273,7 @@ body .contenedor-principal {
 	font-size: 0.85em;
 	color: #FFFFFF;
 	border: 0.75px solid #D3CECD;
+	outline: none;
 }
 
 .contenedor-boton-grupo #boton-anadir-grupo input:hover {
