@@ -1282,6 +1282,46 @@ body .contenedor-principal {
  	cursor: pointer;
 }
 
+/* ------------------------------------------- PLANTAS ------------------------------------------- */
+
+.contenedor-informacion-pagina .contenedor-gestion-plantas {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.contenedor-gestion-plantas .gestion-plantas {
+	width: 98%;
+	height: 100%;
+	border: 1px solid #2A2B2A;
+	border-radius: 0.5em;
+	background-color: #FFFFFF;
+}
+
+.contenedor-gestion-plantas .gestion-plantas .contenedor-titulo-plantas {
+	width: 100%;
+	height: 10%;
+	background-color: #2A2B2A;
+	color: #FFFFFF;
+	border-top-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.contenedor-informacion-pagina .contenedor-gestion-codigos {
+	width: 50%;
+	height: 100%;
+	float: right;
+	background-color: yellow;
+}
+
 /* ------------------------------------------- FONTS ------------------------------------------- */
 
 @font-face {

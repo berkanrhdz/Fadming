@@ -38,7 +38,7 @@
     				<div id="icono-huerto"></div><div class="nombre-acceso" id="texto-huerto">Huertos</div>
     			</div>
     			<div class="fila-acceso" id="planta">
-    				<div id="icono-planta"></div><div class="nombre-acceso" id="texto-planta">Plantas</div>
+            <a href="plantas.php"><div id="icono-planta"></div><div class="nombre-acceso" id="texto-planta">Plantas</div></a>
     			</div>
     		</div>
     		<div class="contenedor-informacion">
