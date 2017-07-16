@@ -56,11 +56,39 @@
                                   <div id="flecha-derecha"></div>
                                 </div>
                                 <div class="contenedor-huerto" id="huerto-identificador-1">Huerto 1</div>
-                                <div class="contenedor-plantas"></div>
+                                <div class="contenedor-plantas" id="plantas-1">
+                                  <div class="planta" id="planta-identificador-1">
+                                    <div class="nombre-planta-identificador">Planta 1</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                  <div class="planta" id="planta-identificador-2">
+                                    <div class="nombre-planta-identificador">Planta 2</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                  <div class="planta" id="planta-identificador-3">
+                                    <div class="nombre-planta-identificador">Planta 3</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                  <div class="planta" id="planta-identificador-4">
+                                    <div class="nombre-planta-identificador">Planta 4</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                  <div class="planta" id="planta-identificador-5">
+                                    <div class="nombre-planta-identificador">Planta 5</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                  <div class="planta" id="planta-identificador-6">
+                                    <div class="nombre-planta-identificador">Planta 6</div>
+                                    <div class="icono-codigo-qr"></div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                         </div>
-                        <div class="contenedor-gestion-codigos"></div>
+                        <div class="contenedor-anadir-codigos">
+                          <div class="contenedor-anadir-nueva-planta"></div>
+                          <div class="contenedor-generar-codigo-qr"></div>
+                        </div>
                     </div>
                 </div>
             </div>
