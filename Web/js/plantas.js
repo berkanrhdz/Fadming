@@ -37,7 +37,7 @@ function cambiar_color_botones() {
 function obtener_fincas_usuario() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/mostrar_lista_estados.php',
+        url: 'http://localhost/GricApp/Web/php/obtener_fincas_usuario.php',
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
