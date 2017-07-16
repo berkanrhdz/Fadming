@@ -1300,7 +1300,7 @@ body .contenedor-principal {
 
 .contenedor-gestion-plantas .gestion-plantas .contenedor-titulo-plantas {
 	width: 100%;
-	height: 10%;
+	height: 8.5%;
 	background-color: #2A2B2A;
 	color: #FFFFFF;
 	border-top-left-radius: 0.3em;
@@ -1313,6 +1313,69 @@ body .contenedor-principal {
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 1.1em;
+}
+
+.contenedor-gestion-plantas .gestion-plantas .contenedor-huertos-plantas {
+	width: 100%;
+	height: 91.5%;
+}
+
+.gestion-plantas .contenedor-huertos-plantas .contenedor-cambiar-finca {
+	width: 100%;
+	height: 8%;
+	background-color: #5CA45E;
+	border-bottom: 0.5px solid #2A2B2A;
+}
+
+.contenedor-cambiar-finca #flecha-izquierda {
+	width: 10%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/blanco/flecha-izquierda.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 60%;
+}
+
+.contenedor-cambiar-finca #nombre-finca-cambiar {
+	width: 80%;
+	height: 100%;
+	float: left;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.contenedor-cambiar-finca #flecha-derecha {
+	width: 10%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/blanco/flecha-derecha.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 60%;
+}
+
+.contenedor-huertos-plantas .contenedor-huerto {
+	width: 100%;
+	height: 8%;
+	background-color: #2A2B2A;
+	border-bottom: 0.5px solid #2A2B2A;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
 }
 
 .contenedor-informacion-pagina .contenedor-gestion-codigos {

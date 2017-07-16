@@ -48,7 +48,16 @@
                     <div class="contenedor-informacion-pagina">
                         <div class="contenedor-gestion-plantas">
                             <div class="gestion-plantas">
-                              <div class="contenedor-titulo-plantas">Plantas en tu cultivo</div>
+                              <div class="contenedor-titulo-plantas">Plantas en cada huerto</div>
+                              <div class="contenedor-huertos-plantas">
+                                <div class="contenedor-cambiar-finca">
+                                  <div id="flecha-izquierda"></div>
+                                  <div id="nombre-finca-cambiar">Los Pelados</div>
+                                  <div id="flecha-derecha"></div>
+                                </div>
+                                <div class="contenedor-huerto" id="huerto-identificador-1">Huerto 1</div>
+                                <div class="contenedor-plantas"></div>
+                              </div>
                             </div>
                         </div>
                         <div class="contenedor-gestion-codigos"></div>
