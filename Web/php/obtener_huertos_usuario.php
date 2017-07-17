@@ -3,12 +3,11 @@
   require("conectar_basedatos.php");
 
 	$numero_fila = 0;
-  $identificador = $_SESSION['identificador'];
-	$consulta = "SELECT FIN.CODIGO, FIN.NOMBRE
-							 FROM FINCA FIN, EMPRESA EMP, USUARIO USU
-							 WHERE ((FIN.CODIGO_EMPRESA = EMP.CODIGO) AND (EMP.CODIGO_USUARIO = USU.ID_USUARIO)
-							 AND (USU.ID_USUARIO = '$identificador'))
-							 ORDER BY FIN.NOMBRE ASC;";
+	$codigo_finca = 1;
+	$consulta = "SELECT CODIGO, NOMBRE
+							 FROM HUERTO
+							 WHERE (CODIGO_FINCA = '$codigo_finca')
+							 ORDER BY NOMBRE ASC;";
 
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {
