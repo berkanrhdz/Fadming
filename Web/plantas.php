@@ -48,39 +48,16 @@
                     <div class="contenedor-informacion-pagina">
                         <div class="contenedor-gestion-plantas">
                             <div class="gestion-plantas">
-                              <div class="contenedor-titulo-plantas">Plantas en cada huerto</div>
-                              <div class="contenedor-huertos-plantas">
-                                <div class="contenedor-cambiar-finca">
-                                  <div id="flecha-izquierda"></div>
-                                  <div id="nombre-finca-cambiar">Los Pelados</div>
-                                  <div id="flecha-derecha"></div>
-                                </div>
-                                <div class="contenedor-huerto" id="huerto-identificador-1">Huerto 1</div>
-                                <div class="contenedor-plantas" id="plantas-1">
-                                  <div class="planta" id="planta-identificador-1">
-                                    <div class="nombre-planta-identificador">Planta 1</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
-                                  <div class="planta" id="planta-identificador-2">
-                                    <div class="nombre-planta-identificador">Planta 2</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
-                                  <div class="planta" id="planta-identificador-3">
-                                    <div class="nombre-planta-identificador">Planta 3</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
-                                  <div class="planta" id="planta-identificador-4">
-                                    <div class="nombre-planta-identificador">Planta 4</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
-                                  <div class="planta" id="planta-identificador-5">
-                                    <div class="nombre-planta-identificador">Planta 5</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
-                                  <div class="planta" id="planta-identificador-6">
-                                    <div class="nombre-planta-identificador">Planta 6</div>
-                                    <div class="icono-codigo-qr"></div>
-                                  </div>
+                              <div class="contenedor-titulo-plantas">Generación de códigos QR</div>
+                              <div class="contenedor-finca-huertos-plantas" id="contenedor-finca-huertos-plantas">
+                                <div class="contenedor-seleccion-finca">
+                                  <select id="selector-finca" required>
+                                    <option value="" disabled selected hidden>Seleccione una finca</option>
+                                    <option value="volvo">Volvo</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="mercedes">Mercedes</option>
+                                    <option value="audi">Audi</option>
+                                  </select>
                                 </div>
                               </div>
                             </div>

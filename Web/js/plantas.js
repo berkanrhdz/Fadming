@@ -1,8 +1,8 @@
 // DOCUMENTO JAVASCRIPT DE plantas.php
 
 $(document).ready(function() {
-	cambiar_color_botones();
 	obtener_fincas_usuario();
+	cambiar_color_botones();
 });
 
 function cambiar_color_botones() {
@@ -41,21 +41,13 @@ function obtener_fincas_usuario() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_estado_formato(valor.codigo, valor.nombre, valor.descripcion);
+							insertar_finca_formato(valor.codigo, valor.nombre);
 						});
         }
     });
 }
 
-function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para dar el formato a los estados.
-		var formato_lista = "<div class='estado'>" +
-	               		    	"<div class='contenedor-nombre-estado'><div id='nombre-estado'>" + nombre + "</div></div>" +
-	                  			"<div class='contenedor-descripcion-estado'><div id='descripcion-estado'>" + descripcion + "</div></div>" +
-	               				"</div>";
-		var formato_grupo	= "<div class='contenedor-estado-seleccion'>" +
-													"<div id='nombre-estado-seleccion'>" + nombre + "</div>" +
-													"<div id='checkbox'><input id='" + indice + "' type='checkbox'></input></div>" +
-												"</div>";
-		document.getElementById('lista').innerHTML += formato_lista;
-		document.getElementById('grupos-seleccion').innerHTML += formato_grupo;
+function insertar_planta_formato(codigo, finca) { // Funcion para dar el formato a la información.
+		var formato_finca = "<option value="audi">Audi</option>";
+		document.getElementById('contenedor-huertos-plantas').innerHTML += formato_finca;
 }
