@@ -3,6 +3,7 @@
 $(document).ready(function() {
 	obtener_fincas_usuario();
 	cambiar_color_botones();
+	validar_selector_finca();
 });
 
 function cambiar_color_botones() {
@@ -47,7 +48,13 @@ function obtener_fincas_usuario() {
     });
 }
 
-function insertar_planta_formato(codigo, finca) { // Funcion para dar el formato a la información.
-		var formato_finca = "<option value="audi">Audi</option>";
-		document.getElementById('contenedor-huertos-plantas').innerHTML += formato_finca;
+function insertar_finca_formato(codigo, nombre) { // Funcion para dar el formato a la información.
+		var formato_finca = "<option value='" + codigo + "'>" + nombre + "</option>";
+		document.getElementById('selector-finca').innerHTML += formato_finca;
+}
+
+function validar_selector_finca() {
+	document.getElementById('selector-finca').onchange = function() {
+		alert("si");
+	};
 }

@@ -52,11 +52,7 @@
                               <div class="contenedor-finca-huertos-plantas" id="contenedor-finca-huertos-plantas">
                                 <div class="contenedor-seleccion-finca">
                                   <select id="selector-finca" required>
-                                    <option value="" disabled selected hidden>Seleccione una finca</option>
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="mercedes">Mercedes</option>
-                                    <option value="audi">Audi</option>
+                                    <option value="" disabled selected hidden>Seleccione una finca...</option>
                                   </select>
                                 </div>
                               </div>
