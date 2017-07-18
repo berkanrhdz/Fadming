@@ -58,12 +58,8 @@
                                 <div class="contenedor-seleccion-huerto">
                                   <select id="selector-huerto" onchange="validar_selector_huertos()" required></select>
                                 </div>
-                                <div class="contenedor-seleccion-plantas" id="seleccion-plantas">
-                                    <div class="planta" id="planta-identificador-1">
-                                      <div class="nombre-planta-identificador">Planta 1</div>
-                                      <div class="icono-codigo-qr"></div>
-                                    </div>
-                                </div>
+                                <div class="contenedor-mensaje-cargando"><div id="texto-cargando">Cargando...</div></div>
+                                <div class="contenedor-seleccion-plantas" id="seleccion-plantas"></div>
                               </div>
                             </div>
                         </div>

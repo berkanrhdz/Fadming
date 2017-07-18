@@ -3,7 +3,7 @@
   require("conectar_basedatos.php");
 
 	$numero_fila = 0;
-	$codigo_huerto = 1;//$_POST['huerto'];
+	$codigo_huerto = $_POST['huerto'];
 	$consulta = "SELECT CODIGO, NOMBRE
 							 FROM PLANTA
 							 WHERE (CODIGO_HUERTO = '$codigo_huerto')

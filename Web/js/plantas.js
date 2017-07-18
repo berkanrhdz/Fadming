@@ -81,9 +81,55 @@ function insertar_huerto_formato(codigo, nombre) {
 }
 
 function validar_selector_huertos() {
-	$(".contenedor-seleccion-plantas").slideDown(800);
-	document.getElementById('selector-huerto').onchange = function() {
+	$('.contenedor-mensaje-cargando').fadeIn();
+	setTimeout(function() {
+		$('.contenedor-mensaje-cargando').fadeOut();
+	}, 1100);
+	setTimeout(function() {
+		$('#seleccion-plantas').fadeIn();
 		document.getElementById('seleccion-plantas').innerHTML = "";
-		$(".contenedor-seleccion-plantas").slideDown();
-	};
+		obtener_plantas_usuario(document.getElementById('selector-huerto').value);
+	}, 1500);
+	setTimeout(function() {
+		seleccion_plantas_accion();
+	}, 2000);
+}
+
+function obtener_plantas_usuario(codigo_huerto) {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/GricApp/Web/php/obtener_plantas_usuario.php',
+				dataType: 'json',
+				data: "huerto="+codigo_huerto,
+				success: function(datos) {
+					$(datos).each(function(i, valor) {
+						insertar_planta_formato(valor.codigo, valor.nombre);
+					});
+        }
+    });
+}
+
+function insertar_planta_formato(codigo, nombre) {
+		var formato_planta = "<div class='planta' id='" + codigo + "'>" +
+		                      	"<div class='nombre-planta-identificador' id='nombre-planta-" + codigo + "'>" + nombre + "</div>" +
+		                        "<div class='icono-codigo-qr' id='icono-qr-" + codigo + "'></div>" +
+		                     "</div>";
+		document.getElementById('seleccion-plantas').innerHTML += formato_planta;
+}
+
+function seleccion_plantas_accion() {
+	$('.planta').hover(
+		function() {
+			identificador = $(this).attr('ID');
+			$('#' + identificador).css('background-color', '#5CA45E');
+			$('#' + identificador).css('cursor', 'pointer');
+			$('#nombre-planta-' + identificador).css('color', '#FFFFFF');
+			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr-seleccionado.png")');
+			}, function() {
+			identificador = $(this).attr('ID');
+			$('#' + identificador).css('background-color', '#FFFFFF');
+			$('#nombre-planta-' + identificador).css('color', '#2A2B2A');
+			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr.png")');
+			}
+	);
 }
