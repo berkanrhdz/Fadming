@@ -1362,10 +1362,41 @@ body .contenedor-principal {
 .contenedor-finca-huertos-plantas .contenedor-seleccion-plantas {
 	width: 100%;
 	height: 82.7%;
-	background-color: red;
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
-	display: none;
+}
+
+.contenedor-finca-huertos-plantas .contenedor-seleccion-plantas .planta {
+	width: 100%;
+	height: 10%;
+	border-bottom: 0.5px solid #2A2B2A;
+}
+
+.contenedor-seleccion-plantas .planta .nombre-planta-identificador {
+	width: 84%;
+	height: 100%;
+	float: left;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	border-radius: 0em;
+	border: none;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-seleccion-plantas .planta .icono-codigo-qr {
+	width: 15.5%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/codigo-qr.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 60% 80%;
 }
 
 .contenedor-informacion-pagina .contenedor-anadir-codigos {

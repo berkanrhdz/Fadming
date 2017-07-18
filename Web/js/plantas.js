@@ -82,8 +82,8 @@ function insertar_huerto_formato(codigo, nombre) {
 
 function validar_selector_huertos() {
 	$(".contenedor-seleccion-plantas").slideDown(800);
-	/*document.getElementById('selector-huerto').onchange = function() {
+	document.getElementById('selector-huerto').onchange = function() {
 		document.getElementById('seleccion-plantas').innerHTML = "";
 		$(".contenedor-seleccion-plantas").slideDown();
-	};*/
+	};
 }
