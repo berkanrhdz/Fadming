@@ -56,11 +56,9 @@
                                   </select>
                                 </div>
                                 <div class="contenedor-seleccion-huerto">
-                                  <select id="selector-huerto" required>
-                                    <option value="" disabled selected hidden>Seleccione un huerto...</option>
-                                  </select>
+                                  <select id="selector-huerto" onchange="validar_selector_huertos()" required></select>
                                 </div>
-                                <div class="contenedor-plantas" id="contenedor-plantas"></div>
+                                <div class="contenedor-seleccion-plantas" id="seleccion-plantas"></div>
                               </div>
                             </div>
                         </div>

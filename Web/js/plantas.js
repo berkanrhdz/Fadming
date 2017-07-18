@@ -54,11 +54,8 @@ function insertar_finca_formato(codigo, nombre) {
 }
 
 function validar_selector_finca() {
-	document.getElementById('selector-finca').onclick = function() {
-		$(".contenedor-seleccion-huerto").slideUp();
-	};
 	document.getElementById('selector-finca').onchange = function() {
-		document.getElementById('selector-huerto').innerHTML = "";
+		document.getElementById('selector-huerto').innerHTML = "<option value='' disabled selected hidden>Seleccione un huerto...</option>";
 		obtener_huertos_usuario(document.getElementById('selector-finca').value);
 		$(".contenedor-seleccion-huerto").slideDown();
 	};
@@ -81,4 +78,12 @@ function obtener_huertos_usuario(codigo_finca) {
 function insertar_huerto_formato(codigo, nombre) {
 		var formato_huerto = "<option value='" + codigo + "'>" + nombre + "</option>";
 		document.getElementById('selector-huerto').innerHTML += formato_huerto;
+}
+
+function validar_selector_huertos() {
+	$(".contenedor-seleccion-plantas").slideDown(800);
+	/*document.getElementById('selector-huerto').onchange = function() {
+		document.getElementById('seleccion-plantas').innerHTML = "";
+		$(".contenedor-seleccion-plantas").slideDown();
+	};*/
 }
