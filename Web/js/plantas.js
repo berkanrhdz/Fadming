@@ -48,13 +48,37 @@ function obtener_fincas_usuario() {
     });
 }
 
-function insertar_finca_formato(codigo, nombre) { // Funcion para dar el formato a la información.
+function insertar_finca_formato(codigo, nombre) {
 		var formato_finca = "<option value='" + codigo + "'>" + nombre + "</option>";
 		document.getElementById('selector-finca').innerHTML += formato_finca;
 }
 
 function validar_selector_finca() {
-	document.getElementById('selector-finca').onchange = function() {
-		alert("si");
+	document.getElementById('selector-finca').onclick = function() {
+		$(".contenedor-seleccion-huerto").slideUp();
 	};
+	document.getElementById('selector-finca').onchange = function() {
+		document.getElementById('selector-huerto').innerHTML = "";
+		obtener_huertos_usuario(document.getElementById('selector-finca').value);
+		$(".contenedor-seleccion-huerto").slideDown();
+	};
+}
+
+function obtener_huertos_usuario(codigo_finca) {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/GricApp/Web/php/obtener_huertos_usuario.php',
+				dataType: 'json',
+				data: "finca="+codigo_finca,
+				success: function(datos) {
+					$(datos).each(function(i, valor) {
+						insertar_huerto_formato(valor.codigo, valor.nombre);
+					});
+        }
+    });
+}
+
+function insertar_huerto_formato(codigo, nombre) {
+		var formato_huerto = "<option value='" + codigo + "'>" + nombre + "</option>";
+		document.getElementById('selector-huerto').innerHTML += formato_huerto;
 }

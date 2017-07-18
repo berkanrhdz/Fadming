@@ -48,13 +48,19 @@
                     <div class="contenedor-informacion-pagina">
                         <div class="contenedor-gestion-plantas">
                             <div class="gestion-plantas">
-                              <div class="contenedor-titulo-plantas">Generación de códigos QR</div>
+                              <div class="contenedor-titulo-plantas">Selección de plantas</div>
                               <div class="contenedor-finca-huertos-plantas" id="contenedor-finca-huertos-plantas">
                                 <div class="contenedor-seleccion-finca">
                                   <select id="selector-finca" required>
                                     <option value="" disabled selected hidden>Seleccione una finca...</option>
                                   </select>
                                 </div>
+                                <div class="contenedor-seleccion-huerto">
+                                  <select id="selector-huerto" required>
+                                    <option value="" disabled selected hidden>Seleccione un huerto...</option>
+                                  </select>
+                                </div>
+                                <div class="contenedor-plantas" id="contenedor-plantas"></div>
                               </div>
                             </div>
                         </div>

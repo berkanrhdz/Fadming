@@ -1330,7 +1330,6 @@ body .contenedor-principal {
 .contenedor-finca-huertos-plantas .contenedor-seleccion-finca #selector-finca {
 	width: 100%;
 	height: 100%;
-	text-align: center;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 0.9em;
@@ -1338,6 +1337,34 @@ body .contenedor-principal {
 	background-color: #5CA45E;
 	border: none;
 	color: #FFFFFF;
+}
+
+.contenedor-finca-huertos-plantas .contenedor-seleccion-huerto {
+	width: 100%;
+	height: 8.5%;
+	background-color: #2A2B2A;
+	border-bottom: 0.5px solid #2A2B2A;
+	display: none;
+}
+
+.contenedor-finca-huertos-plantas .contenedor-seleccion-huerto #selector-huerto {
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	border-radius: 0em;
+	background-color: #2A2B2A;
+	border: none;
+	color: #FFFFFF;
+}
+
+.contenedor-finca-huertos-plantas .contenedor-plantas {
+	width: 100%;
+	height: 82.7%;
+	background-color: red;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
 }
 
 .contenedor-informacion-pagina .contenedor-anadir-codigos {
