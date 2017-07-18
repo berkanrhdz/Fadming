@@ -132,4 +132,8 @@ function seleccion_plantas_accion() {
 			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr.png")');
 			}
 	);
+	$('.planta').click(function() {
+			identificador = $(this).attr('ID');
+			alert(identificador);
+	});
 }

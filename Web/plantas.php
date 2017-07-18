@@ -15,7 +15,7 @@
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
     			<div id="nombre-usuario"><?php echo $_SESSION['usuario'] ?></div>
-    			<div id="icono-ajustes"></div>
+          <div id="icono-ajustes"><a href="ajustes.php"></a></div>
     			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>
     	</div>
@@ -63,8 +63,12 @@
                               </div>
                             </div>
                         </div>
-                        <div class="contenedor-anadir-codigos">
-                          <div class="contenedor-anadir-nueva-planta"></div>
+                        <div class="contenedor-estados-codigos">
+                          <div class="contenedor-anadir-estados-planta">
+                            <div class="titulo-anadir-estados-planta">En primer lugar, añada los estados a sus plantas</div>
+                            <div id="nombre-planta-seleccionada"></div>
+                            <div class="estados-planta-seleccionada" id="#estados-planta-seleccionada"></div>
+                          </div>
                           <div class="contenedor-generar-codigo-qr"></div>
                         </div>
                     </div>

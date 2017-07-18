@@ -1425,23 +1425,67 @@ body .contenedor-principal {
 	background-size: 57.5% 80%;
 }
 
-.contenedor-informacion-pagina .contenedor-anadir-codigos {
-	width: 50%;
+.contenedor-informacion-pagina .contenedor-estados-codigos {
+	width: 49%;
 	height: 100%;
 	float: right;
-	background-color: yellow;
+	border: 0.5px solid #2A2B2A;
+	border-radius: 0.5em;
 }
 
-.contenedor-anadir-codigos .contenedor-anadir-nueva-planta {
+.contenedor-estados-codigos .contenedor-anadir-estados-planta {
 	width: 100%;
-	height: 50%;
-	background-color: red;
+	height: 65%;
+	background-color: #2A2B2A;
+	border-top-left-radius: 0.4em;
+	border-top-right-radius: 0.4em;
 }
 
-.contenedor-anadir-codigos .contenedor-generar-codigo-qr {
+.contenedor-estados-codigos .contenedor-anadir-estados-planta .titulo-anadir-estados-planta {
+	width: 100%;
+	height: 13%;
+	border-top-left-radius: 0.4em;
+	border-top-right-radius: 0.4em;
+	background-color: #2A2B2A;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-anadir-estados-planta #nombre-planta-seleccionada {
+	width: 100%;
+	height: 12%;
+	background-color: #F7DB5C;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	border-bottom: 0.5px solid #2A2B2A;
+}
+
+.contenedor-anadir-estados-planta .estados-planta-seleccionada {
 	width: 100%;
 	height: 50%;
-	background-color: blue;
+	background-color: #FFFFFF;
+}
+
+.contenedor-estados-codigos .contenedor-generar-codigo-qr {
+	width: 100%;
+	height: 35%;
+	background-color: #2A2B2A;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
