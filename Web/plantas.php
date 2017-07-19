@@ -65,9 +65,43 @@
                         </div>
                         <div class="contenedor-estados-codigos">
                           <div class="contenedor-anadir-estados-planta">
-                            <div class="titulo-anadir-estados-planta">En primer lugar, añada los estados a sus plantas</div>
+                            <div class="titulo-anadir-estados-planta">Generación de códigos QR</div>
                             <div id="nombre-planta-seleccionada"></div>
-                            <div class="estados-planta-seleccionada" id="estados-planta-seleccionada"></div>
+                            <div class="seleccion-estados-planta-seleccionada">
+                              <div class="estados-planta-seleccionada" id="estados-planta-seleccionada"></div>
+                              <div class="anadir-estados-seleccionada">
+                                <div class="contenedor-selector">
+                                  <select id="selector-estado" required>
+                                      <option value="" disabled selected hidden>Seleccione un estado o grupo...</option>
+                                      <optgroup label="Swedish Cars">
+                                        <option value="volvo">Volvo</option>
+                                        <option value="saab">Saab</option>
+                                      </optgroup>
+                                      <optgroup label="German Cars">
+                                        <option value="mercedes">Mercedes</option>
+                                        <option value="audi">Audi</option>
+                                      </optgroup>
+                                  </select>
+                                </div>
+                                <div class="contenedor-botones-anadir-borrar-generar">
+                                  <div class="contenedor-boton-anadir">
+                                    <div id="boton-anadir">
+                                      <button id="boton_anadir_estado" name="boton_anadir_estado">Añadir</button>
+                                    </div>
+                                  </div>
+                                  <div class="contenedor-boton-borrar">
+                                    <div id="boton-borrar">
+                                      <button id="boton_borrar_todo" name="boton_borrar_todo">Borrar todo</button>
+                                    </div>
+                                  </div>
+                                  <div class="contenedor-boton-generar">
+                                    <div id="boton-generar">
+                                      <button id="boton_generar_codigo" name="boton_generar_codigo">Generar código QR</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           <div class="contenedor-generar-codigo-qr"></div>
                         </div>

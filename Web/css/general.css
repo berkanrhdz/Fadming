@@ -1445,7 +1445,7 @@ body .contenedor-principal {
 
 .contenedor-estados-codigos .contenedor-anadir-estados-planta .titulo-anadir-estados-planta {
 	width: 100%;
-	height: 13%;
+	height: 13.3%;
 	border-top-left-radius: 0.4em;
 	border-top-right-radius: 0.4em;
 	background-color: #2A2B2A;
@@ -1462,7 +1462,7 @@ body .contenedor-principal {
 
 .contenedor-anadir-estados-planta #nombre-planta-seleccionada {
 	width: 100%;
-	height: 12%;
+	height: 12.3%;
 	background-color: #F7DB5C;
 	font-family: sans-serif;
 	font-weight: bold;
@@ -1476,14 +1476,19 @@ body .contenedor-principal {
 	border-bottom: 0.5px solid #2A2B2A;
 }
 
-.contenedor-anadir-estados-planta .estados-planta-seleccionada {
+.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada {
 	width: 100%;
-	height: 45%;
+	height: 74.4%;
+}
+
+.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada .estados-planta-seleccionada {
+	width: 100%;
+	height: 57.5%;
 	background-color: #FFFFFF;
 	overflow-y: scroll;
 }
 
-.contenedor-anadir-estados-planta .estados-planta-seleccionada .estado-planta {
+.seleccion-estados-planta-seleccionada .estados-planta-seleccionada .estado-planta {
 	width: 97.5%;
 	height: 25%;
 	background-color: #FFFFFF;
@@ -1499,10 +1504,131 @@ body .contenedor-principal {
 	padding-left: 2.5%;
 }
 
+.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada .anadir-estados-seleccionada {
+	width: 100%;
+	height: 42%;
+	background-color: #5CA45E;
+	border-top: 0.5px solid #2A2B2A;
+}
+
+.anadir-estados-seleccionada .contenedor-selector {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-selector #selector-estado {
+	width: 93%;
+	height: 75%;
+	margin: 0 auto;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	border-radius: 0em;
+	background-color: #FFFFFF;
+	border: 0.5px solid #CBC5C4;
+	color: #2A2B2A;
+	outline: none;
+	cursor: pointer;
+}
+
+.seleccion-estados-planta-seleccionada .anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar {
+	width: 100%;
+	height: 50%;
+}
+
+.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir {
+	width: 25%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir {
+	width: 85%;
+	height: 65%;
+	padding-left: 15%;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.3em;
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar {
+	width: 35%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar {
+	width: 92.5%;
+	height: 65%;
+	padding-left: 7.5%;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.3em;
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-generar {
+	width: 40%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar {
+	width: 84%;
+	height: 65%;
+	margin: 0 auto;
+	padding-right: 2%;
+}
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.3em;
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
 .contenedor-estados-codigos .contenedor-generar-codigo-qr {
 	width: 100%;
 	height: 35%;
-	background-color: red;
+	background-color: #2A2B2A;
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
 }
