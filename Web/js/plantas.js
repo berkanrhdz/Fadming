@@ -173,10 +173,21 @@ function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
 		var typeNumber = 4;
 		var errorCorrectionLevel = 'L';
-		var qr = qrcode(typeNumber, errorCorrectionLevel);
+		var codigo_qr = qrcode(typeNumber, errorCorrectionLevel);
 		var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
-		qr.addData(identificador_planta);
-		qr.make();
-		document.getElementById('codigo-qr').innerHTML = qr.createImgTag();
+		var estados_planta = "";
+		contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+		for (i = 0; i < contenedor_estados.length; i++) {
+			identificador = $(contenedor_estados[i]).attr('ID');
+			if (i != (contenedor_estados.length - 1)) {
+				estados_planta += identificador + " ";
+			}
+			else {
+				estados_planta += identificador;
+			}
+		}
+		codigo_qr.addData(identificador_planta + " - " + estados_planta);
+		codigo_qr.make();
+		document.getElementById('codigo-qr').innerHTML = codigo_qr.createImgTag();
 	});
 }
