@@ -1337,6 +1337,7 @@ body .contenedor-principal {
 	background-color: #5CA45E;
 	border: none;
 	color: #FFFFFF;
+	cursor: pointer;
 	outline: none;
 }
 
@@ -1359,6 +1360,7 @@ body .contenedor-principal {
 	border: none;
 	color: #FFFFFF;
 	outline: none;
+	cursor: pointer;
 }
 
 .contenedor-finca-huertos-plantas .contenedor-mensaje-cargando {

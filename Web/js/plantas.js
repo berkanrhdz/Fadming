@@ -134,6 +134,21 @@ function seleccion_plantas_accion() {
 	);
 	$('.planta').click(function() {
 			identificador = $(this).attr('ID');
-			alert(identificador);
+			obtener_planta_estados(identificador);
 	});
+}
+
+function obtener_planta_estados(codigo_planta) {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/GricApp/Web/php/obtener_plantas_estados.php',
+				dataType: 'json',
+				data: "planta="+codigo_planta,
+				success: function(datos) {
+					$(datos).each(function(i, valor) {
+						alert(valor.planta + " " + valor.estados);
+						//insertar_planta_formato(valor.codigo, valor.nombre);
+					});
+        }
+    });
 }
