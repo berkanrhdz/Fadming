@@ -10,6 +10,7 @@
         <script src="js/general.js"></script>
         <script src="js/plantas.js"></script>
         <script type="text/javascript" src="js/qrcode.js"></script>
+        <script type="text/javascript" src="js/kjua-0.1.1.min.js"></script>
     </head>
     <body>
     	<div class="barra-superior">

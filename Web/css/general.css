@@ -1391,7 +1391,6 @@ body .contenedor-principal {
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
 	overflow-y: scroll;
-	display: none;
 }
 
 .contenedor-finca-huertos-plantas .contenedor-seleccion-plantas .planta {
@@ -1671,15 +1670,16 @@ body .contenedor-principal {
 .contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr {
 	width: 62.5%;
 	height: 80%;
-	border-radius: 0.5em;
+	border-radius: 0.2em;
 	border: 0.5px solid #FFFFFF;
+	background-color: #FFFFFF;
 	margin: 0 auto;
 }
 
 .contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr img {
 	width: 100%;
 	height: 100%;
-	border-radius: 0.4em;
+	border-radius: 0.1em;
 }
 
 .contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-botones-imprimir {

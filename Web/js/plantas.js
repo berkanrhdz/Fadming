@@ -171,9 +171,7 @@ function insertar_estados_formato(codigo, nombre) {
 
 function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
-		var typeNumber = 4;
-		var errorCorrectionLevel = 'L';
-		var codigo_qr = qrcode(typeNumber, errorCorrectionLevel);
+		document.getElementById('codigo-qr').innerHTML = "";
 		var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
 		var estados_planta = "";
 		contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
@@ -186,8 +184,15 @@ function generar_codigos_qr() {
 				estados_planta += identificador;
 			}
 		}
-		codigo_qr.addData(identificador_planta + " - " + estados_planta);
-		codigo_qr.make();
-		document.getElementById('codigo-qr').innerHTML = codigo_qr.createImgTag();
+		var texto_codigo = identificador_planta + " - " + estados_planta;
+		var codigo_qr = kjua({text: texto_codigo, size: 200});
+		var codigo_qr_valido = new Image();
+		document.getElementById('codigo-qr').appendChild(codigo_qr);
+		var crossorigin = $('#codigo-qr img').attr('crossorigin');
+		var src         = $('#codigo-qr img').attr('src');
+		codigo_qr_valido.crossorigin = crossorigin;
+		codigo_qr_valido.src         = src;
+		document.getElementById('codigo-qr').innerHTML = "";
+		document.getElementById('codigo-qr').appendChild(codigo_qr_valido);
 	});
 }
