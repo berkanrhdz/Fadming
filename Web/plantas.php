@@ -103,7 +103,12 @@
                               </div>
                             </div>
                           </div>
-                          <div class="contenedor-generar-codigo-qr"></div>
+                          <div class="contenedor-generar-codigo-qr">
+                            <div class="contenedor-codigo-qr">
+                              <div id="codigo-qr"></div>
+                            </div>
+                            <div class="contenedor-botones-imprimir"></div>
+                          </div>
                         </div>
                     </div>
                 </div>

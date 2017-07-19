@@ -1642,6 +1642,37 @@ body .contenedor-principal {
 	border-bottom-right-radius: 0.4em;
 }
 
+.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-codigo-qr {
+	width: 50%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	border-bottom-left-radius: 0.4em;
+}
+
+.contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr {
+	width: 62.5%;
+	height: 80%;
+	border-radius: 0.5em;
+	border: 0.5px solid #FFFFFF;
+	margin: 0 auto;
+	background-image: url("../images/qr_github.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100% 100%;
+}
+
+.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-botones-imprimir {
+	width: 50%;
+	height: 100%;
+	float: right;
+	background-color: red;
+	border-bottom-right-radius: 0.4em;
+}
+
 /* ------------------------------------------- FONTS ------------------------------------------- */
 
 @font-face {
