@@ -9,6 +9,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
         <script src="js/plantas.js"></script>
+        <script type="text/javascript" src="js/qrcode.js"></script>
     </head>
     <body>
     	<div class="barra-superior">
@@ -66,7 +67,9 @@
                         <div class="contenedor-estados-codigos">
                           <div class="contenedor-anadir-estados-planta">
                             <div class="titulo-anadir-estados-planta">Generación de códigos QR</div>
-                            <div id="nombre-planta-seleccionada"></div>
+                            <div class="contenedor-nombre-planta-seleccionada">
+                              <div id="nombre-planta-seleccionada"><div id="nombre-seleccionada"></div></div>
+                            </div>
                             <div class="seleccion-estados-planta-seleccionada">
                               <div class="estados-planta-seleccionada" id="estados-planta-seleccionada"></div>
                               <div class="anadir-estados-seleccionada">

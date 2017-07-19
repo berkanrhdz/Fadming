@@ -4,6 +4,7 @@ $(document).ready(function() {
 	obtener_fincas_usuario();
 	cambiar_color_botones();
 	validar_selector_finca();
+	generar_codigos_qr();
 });
 
 function cambiar_color_botones() {
@@ -121,9 +122,9 @@ function seleccion_plantas_accion() {
 	$('.planta').hover(
 		function() {
 			identificador = $(this).attr('ID');
-			$('#' + identificador).css('background-color', '#5CA45E');
+			$('#' + identificador).css('background-color', '#F7DB5C');
 			$('#' + identificador).css('cursor', 'pointer');
-			$('#nombre-planta-' + identificador).css('color', '#FFFFFF');
+			$('#nombre-planta-' + identificador).css('color', '#2A2B2A');
 			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr-seleccionado.png")');
 			}, function() {
 			identificador = $(this).attr('ID');
@@ -133,10 +134,19 @@ function seleccion_plantas_accion() {
 			}
 	);
 	$('.planta').click(function() {
+			$("#nombre-planta-seleccionada").css('display', 'none');
+			document.getElementById('nombre-seleccionada').innerHTML = "";
+			$("#nombre-planta-seleccionada").css('width', '0%');
 			identificador = $(this).attr('ID');
-			document.getElementById('nombre-planta-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
+			$("#nombre-planta-seleccionada").fadeIn();
+			setTimeout(function() {
+				document.getElementById('nombre-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
+			}, 700);
+			$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow");
 			document.getElementById('estados-planta-seleccionada').innerHTML = "";
-			obtener_planta_estados(identificador);
+			setTimeout(function() {
+				obtener_planta_estados(identificador);
+			}, 1000);
 	});
 }
 
@@ -157,4 +167,16 @@ function obtener_planta_estados(codigo_planta) {
 function insertar_estados_formato(codigo, nombre) {
 		var formato_estado = "<div class='estado-planta' id='" + codigo + "'>" + nombre + "</div>";
 		document.getElementById('estados-planta-seleccionada').innerHTML += formato_estado;
+}
+
+function generar_codigos_qr() {
+	$('#boton_generar_codigo').click(function() {
+		var typeNumber = 4;
+		var errorCorrectionLevel = 'L';
+		var qr = qrcode(typeNumber, errorCorrectionLevel);
+		var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
+		qr.addData(identificador_planta);
+		qr.make();
+		document.getElementById('codigo-qr').innerHTML = qr.createImgTag();
+	});
 }
