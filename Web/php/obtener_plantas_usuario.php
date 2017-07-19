@@ -7,7 +7,7 @@
 	$consulta = "SELECT CODIGO, NOMBRE
 							 FROM PLANTA
 							 WHERE (CODIGO_HUERTO = '$codigo_huerto')
-							 ORDER BY NOMBRE ASC;";
+							 ORDER BY CODIGO ASC;";
 
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {

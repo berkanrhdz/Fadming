@@ -111,7 +111,7 @@ function obtener_plantas_usuario(codigo_huerto) {
 
 function insertar_planta_formato(codigo, nombre) {
 		var formato_planta = "<div class='planta' id='" + codigo + "'>" +
-		                      	"<div class='nombre-planta-identificador' id='nombre-planta-" + codigo + "'>" + nombre + "</div>" +
+		                      	"<div class='nombre-planta-identificador' id='nombre-planta-" + codigo + "'>" + codigo + " " + nombre + "</div>" +
 		                        "<div class='icono-codigo-qr' id='icono-qr-" + codigo + "'></div>" +
 		                     "</div>";
 		document.getElementById('seleccion-plantas').innerHTML += formato_planta;
@@ -135,6 +135,7 @@ function seleccion_plantas_accion() {
 	$('.planta').click(function() {
 			identificador = $(this).attr('ID');
 			document.getElementById('nombre-planta-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
+			document.getElementById('estados-planta-seleccionada').innerHTML = "";
 			obtener_planta_estados(identificador);
 	});
 }

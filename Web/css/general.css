@@ -1625,6 +1625,15 @@ body .contenedor-principal {
 	font-weight: bold;
 }
 
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover,
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button:hover,
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button:hover {
+	background-color: #F7DB5C;
+	color: #2A2B2A;
+	border: 0.5px solid #2A2B2A;
+	cursor: pointer;
+}
+
 .contenedor-estados-codigos .contenedor-generar-codigo-qr {
 	width: 100%;
 	height: 35%;
