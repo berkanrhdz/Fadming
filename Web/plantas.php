@@ -67,7 +67,7 @@
                           <div class="contenedor-anadir-estados-planta">
                             <div class="titulo-anadir-estados-planta">En primer lugar, añada los estados a sus plantas</div>
                             <div id="nombre-planta-seleccionada"></div>
-                            <div class="estados-planta-seleccionada" id="#estados-planta-seleccionada"></div>
+                            <div class="estados-planta-seleccionada" id="estados-planta-seleccionada"></div>
                           </div>
                           <div class="contenedor-generar-codigo-qr"></div>
                         </div>

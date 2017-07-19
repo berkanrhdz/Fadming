@@ -81,18 +81,18 @@ function insertar_huerto_formato(codigo, nombre) {
 }
 
 function validar_selector_huertos() {
+	document.getElementById('seleccion-plantas').innerHTML = "";
 	$('.contenedor-mensaje-cargando').fadeIn();
 	setTimeout(function() {
 		$('.contenedor-mensaje-cargando').fadeOut();
 	}, 1100);
 	setTimeout(function() {
 		$('#seleccion-plantas').fadeIn();
-		document.getElementById('seleccion-plantas').innerHTML = "";
 		obtener_plantas_usuario(document.getElementById('selector-huerto').value);
 	}, 1500);
 	setTimeout(function() {
 		seleccion_plantas_accion();
-	}, 2000);
+	}, 1800);
 }
 
 function obtener_plantas_usuario(codigo_huerto) {
@@ -134,6 +134,7 @@ function seleccion_plantas_accion() {
 	);
 	$('.planta').click(function() {
 			identificador = $(this).attr('ID');
+			document.getElementById('nombre-planta-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
 			obtener_planta_estados(identificador);
 	});
 }
@@ -146,9 +147,13 @@ function obtener_planta_estados(codigo_planta) {
 				data: "planta="+codigo_planta,
 				success: function(datos) {
 					$(datos).each(function(i, valor) {
-						alert(valor.planta + " " + valor.estados);
-						//insertar_planta_formato(valor.codigo, valor.nombre);
+						insertar_estados_formato(valor.codigo, valor.nombre);
 					});
         }
     });
+}
+
+function insertar_estados_formato(codigo, nombre) {
+		var formato_estado = "<div class='estado-planta' id='" + codigo + "'>" + nombre + "</div>";
+		document.getElementById('estados-planta-seleccionada').innerHTML += formato_estado;
 }
