@@ -1460,14 +1460,14 @@ body .contenedor-principal {
 	height: 22%;
 	background-color: #5CA45E;
 	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 0.8em;
+	font-size: 0.85em;
 	color: #FFFFFF;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
+	line-height: 1.3em;
 }
 
 .contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada {

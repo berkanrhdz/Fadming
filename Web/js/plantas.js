@@ -6,6 +6,7 @@ $(document).ready(function() {
 	validar_selector_finca();
 	generar_codigos_qr();
 	obtener_estados_grupos();
+	accion_boton_anadir_estado();
 });
 
 function cambiar_color_botones() {
@@ -193,6 +194,53 @@ function insertar_estados_grupos(estados, grupos) {
 			document.getElementById('grupos-select').innerHTML += formato_option_select;
 		});
 }
+
+function accion_boton_anadir_estado() {
+	$('#boton_anadir_estado').click(function() {
+		document.getElementById("boton_anadir_estado").childNodes[0].nodeValue = "Añadiendo...";
+		var valor_select = document.getElementById('selector-estado').value;
+		if (valor_select != "") {
+			var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
+			var array_identificador_planta = identificador_planta.split(' ');
+ 			var codigo = array_identificador_planta[0];
+			var estados_planta = "";
+			contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+			for (i = 0; i < contenedor_estados.length; i++) {
+				identificador = $(contenedor_estados[i]).attr('ID');
+				if (i != (contenedor_estados.length - 1)) {
+					estados_planta += identificador + " ";
+				}
+				else {
+					estados_planta += identificador;
+				}
+			}
+			estados_planta = estados_planta + " " + valor_select;
+			insertar_estados_plantas(codigo, estados_planta);
+		}
+	});
+}
+
+function insertar_estados_plantas(planta, estados) {
+		$.ajax({
+			type: 'POST',
+		  url: 'http://localhost/GricApp/Web/php/actualizar_estados_planta.php',
+		  success: anadir_nuevo_estado(planta),
+		  data: "planta="+planta+"&estados="+estados,
+		  dataType: 'json'
+		});
+}
+
+function anadir_nuevo_estado(codigo_planta) {
+		setTimeout(function(){
+				document.getElementById("boton_anadir_estado").childNodes[0].nodeValue = "Añadido";
+		}, 1500);
+		setTimeout(function(){
+			  document.getElementById("estados-planta-seleccionada").innerHTML = "";
+				obtener_planta_estados(codigo_planta);
+				document.getElementById("boton_anadir_estado").childNodes[0].nodeValue = "Añadir";
+		}, 2500);
+}
+
 
 function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
