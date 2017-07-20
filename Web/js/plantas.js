@@ -140,13 +140,14 @@ function seleccion_plantas_accion() {
 			$("#nombre-planta-seleccionada").css('width', '0%');
 			identificador = $(this).attr('ID');
 			$("#nombre-planta-seleccionada").fadeIn();
+			$('.contenedor-mensaje-explicacion').slideUp();
 			setTimeout(function() {
 				document.getElementById('nombre-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
-			}, 700);
+			}, 800);
 			$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow");
 			document.getElementById('estados-planta-seleccionada').innerHTML = "";
 			setTimeout(function() {
-				$('.seleccion-estados-planta-seleccionada').fadeIn();
+				$('.seleccion-estados-planta-seleccionada').slideDown();
 				obtener_planta_estados(identificador);
 			}, 1000);
 	});
@@ -195,32 +196,42 @@ function insertar_estados_grupos(estados, grupos) {
 
 function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
-		document.getElementById('codigo-qr').innerHTML = "";
-		var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
-		var estados_planta = "";
-		contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
-		for (i = 0; i < contenedor_estados.length; i++) {
-			identificador = $(contenedor_estados[i]).attr('ID');
-			if (i != (contenedor_estados.length - 1)) {
-				estados_planta += identificador + " ";
+		$('#codigo-qr').css('display', 'none');
+		$('.contenedor-botones-imprimir').css('display', 'none');
+		$('.contenedor-mensaje-cargando-qr').slideDown();
+		setTimeout(function() {
+			$('.contenedor-mensaje-cargando-qr').fadeOut();
+		}, 1500);
+		setTimeout(function() {
+			$('#codigo-qr').fadeIn();
+			$('.contenedor-botones-imprimir').fadeIn();
+			document.getElementById('codigo-qr').innerHTML = "";
+			var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
+			var estados_planta = "";
+			contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+			for (i = 0; i < contenedor_estados.length; i++) {
+				identificador = $(contenedor_estados[i]).attr('ID');
+				if (i != (contenedor_estados.length - 1)) {
+					estados_planta += identificador + " ";
+				}
+				else {
+					estados_planta += identificador;
+				}
 			}
-			else {
-				estados_planta += identificador;
-			}
-		}
-		var texto_codigo = identificador_planta + " - " + estados_planta;
-		var codigo_qr = kjua({text: texto_codigo});
-		var codigo_qr_valido = new Image();
-		document.getElementById('codigo-qr').appendChild(codigo_qr);
-		var crossorigin = $('#codigo-qr img').attr('crossorigin');
-		var src         = $('#codigo-qr img').attr('src');
-		codigo_qr_valido.crossorigin = crossorigin;
-		codigo_qr_valido.src         = src;
-		document.getElementById('codigo-qr').innerHTML = "";
-		document.getElementById('codigo-qr').appendChild(codigo_qr_valido);
-		var nombre_imagen = identificador_planta.replace(" ", "_").toLowerCase();
-		var a = "<a href='" + src + "' download='" + nombre_imagen + "'>Descargar código QR</a>";
-		document.getElementById('boton_descargar_imagen').innerHTML = a;
-		var p = $('#boton_descargar_imagen a').attr('href');
+			var texto_codigo = identificador_planta + " - " + estados_planta;
+			var codigo_qr = kjua({text: texto_codigo});
+			var codigo_qr_valido = new Image();
+			document.getElementById('codigo-qr').appendChild(codigo_qr);
+			var crossorigin = $('#codigo-qr img').attr('crossorigin');
+			var src         = $('#codigo-qr img').attr('src');
+			codigo_qr_valido.crossorigin = crossorigin;
+			codigo_qr_valido.src         = src;
+			document.getElementById('codigo-qr').innerHTML = "";
+			document.getElementById('codigo-qr').appendChild(codigo_qr_valido);
+			var nombre_imagen = identificador_planta.replace(" ", "_").toLowerCase();
+			var a = "<a href='" + src + "' download='" + nombre_imagen + "'>Descargar código QR</a>";
+			document.getElementById('boton_descargar_imagen').innerHTML = a;
+			var p = $('#boton_descargar_imagen a').attr('href');
+		}, 2000);
 	});
 }

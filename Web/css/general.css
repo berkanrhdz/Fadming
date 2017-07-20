@@ -837,7 +837,7 @@ body .contenedor-principal {
 .contenedor-gestion-estados .contenedor-lista-estados .lista-estados {
   width: 97%;
   height: 90%;
-  border: 1px solid #2A2B2A;
+  border: 1px solid #BBB3B1;
   border-radius: 0.3em;
   margin: 0 auto;
 }
@@ -863,7 +863,6 @@ body .contenedor-principal {
   width: 100%;
   height: 10%;
   background-color: #5CA45E;
-  border-bottom: 0.5px solid #544E4C;
 }
 
 .contenedor-lista-estados .lista-estados .cabecera-estados #cabecera-nombre {
@@ -901,7 +900,7 @@ body .contenedor-principal {
 
 .contenedor-lista-estados .lista-estados #lista {
   width: 100%;
-  height: 77.5%;
+  height: 78%;
   border-bottom-left-radius: 0.2em;
   border-bottom-right-radius: 0.2em;
   overflow-y: scroll;
@@ -910,7 +909,7 @@ body .contenedor-principal {
 .contenedor-lista-estados .lista-estados #lista .estado {
   width: 100%;
   height: 18%;
-  border-bottom: 0.3px solid #2A2B2A;
+  border-bottom: 0.3px solid #D8CECB;
 }
 
 .contenedor-lista-estados .lista-estados #lista .estado .contenedor-nombre-estado {
@@ -922,7 +921,7 @@ body .contenedor-principal {
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  border-bottom: 1px solid #D7D4D4;
+  border-bottom: 1px solid #D8CECB;
 }
 
 .estado .contenedor-nombre-estado #nombre-estado {
@@ -976,7 +975,7 @@ body .contenedor-principal {
 .contenedor-gestion-estados .contenedor-nuevo-grupos .nuevo-grupos {
   width: 95%;
   height: 90%;
-  border: 1px solid #2A2B2A;
+  border: 0.5px solid #BBB3B1;
   border-radius: 0.3em;
   margin: 0 auto;
 }
@@ -1151,8 +1150,7 @@ body .contenedor-principal {
 
 .nuevo-grupos .contenedor-informacion-grupos #mensaje-grupos-seleccion {
   width: 100%;
-  height: 10%;
-	border-bottom: 1px solid #2A2B2A;
+  height: 10.3%;
 	font-family: sans-serif;
 	color: #FFFFFF;
 	font-weight: bold;
@@ -1176,7 +1174,7 @@ body .contenedor-principal {
 .contenedor-informacion-grupos .contenedor-grupos-seleccion .contenedor-estado-seleccion{
   width: 100%;
   height: 20%;
-	border-bottom: 1px solid #2A2B2A;
+	border-bottom: 0.5px solid #D8CECB;
 }
 
 .contenedor-estado-seleccion #nombre-estado-seleccion {
@@ -1457,6 +1455,21 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
+.contenedor-anadir-estados-planta .contenedor-mensaje-explicacion {
+	width: 100%;
+	height: 22%;
+	background-color: #5CA45E;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
 .contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada {
 	width: 100%;
 	height: 12%;
@@ -1637,15 +1650,13 @@ body .contenedor-principal {
 	outline: none;
 }
 
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover {
-	background-color: #F7DB5C;
-	color: #2A2B2A;
-	cursor: pointer;
-}
 .contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button:hover {
-	background-color: #B46E5D;
+	background-color: #C24545;
+	border: none;
 	cursor: pointer;
 }
+
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover,
 .contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button:hover {
 	background-color: #FFFFFF;
 	color: #2A2B2A;
@@ -1658,6 +1669,28 @@ body .contenedor-principal {
 	background-color: #2A2B2A;
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
+}
+
+.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-mensaje-cargando-qr {
+	width: 100%;
+	height: 20%;
+	background-color: #F7DB5C;
+	display: none;
+}
+
+.contenedor-mensaje-cargando-qr #mensaje-cargando-qr {
+	width: 100%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	color: #2A2B2A;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	font-weight: bold;
+	text-align: center;
 }
 
 .contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-codigo-qr {
@@ -1678,6 +1711,7 @@ body .contenedor-principal {
 	border: 0.5px solid #FFFFFF;
 	background-color: #FFFFFF;
 	margin: 0 auto;
+	display: none;
 }
 
 .contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr img {
@@ -1691,6 +1725,7 @@ body .contenedor-principal {
 	height: 100%;
 	float: right;
 	border-bottom-right-radius: 0.4em;
+	display: none;
 }
 
 .contenedor-botones-imprimir .contenedor-boton-descargar {
@@ -1730,6 +1765,7 @@ body .contenedor-principal {
 
 .contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button:hover {
 	background-color: #5CA45E;
+	border: none;
 	color: #2A2B2A;
 	cursor: pointer;
 }
