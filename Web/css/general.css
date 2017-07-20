@@ -1293,7 +1293,7 @@ body .contenedor-principal {
 .contenedor-gestion-plantas .gestion-plantas {
 	width: 98%;
 	height: 100%;
-	border: 1px solid #2A2B2A;
+	border: 1px solid #BBB3B1;
 	border-radius: 0.5em;
 	background-color: #FFFFFF;
 }
@@ -1324,7 +1324,6 @@ body .contenedor-principal {
 	width: 100%;
 	height: 8.5%;
 	background-color: #5CA45E;
-	border-bottom: 0.5px solid #2A2B2A;
 }
 
 .contenedor-finca-huertos-plantas .contenedor-seleccion-finca #selector-finca {
@@ -1345,7 +1344,6 @@ body .contenedor-principal {
 	width: 100%;
 	height: 8.5%;
 	background-color: #2A2B2A;
-	border-bottom: 0.5px solid #2A2B2A;
 	display: none;
 }
 
@@ -1396,7 +1394,7 @@ body .contenedor-principal {
 .contenedor-finca-huertos-plantas .contenedor-seleccion-plantas .planta {
 	width: 100%;
 	height: 10%;
-	border-bottom: 0.5px solid #2A2B2A;
+	border-bottom: 0.5px solid #D8CECB;
 }
 
 .contenedor-seleccion-plantas .planta .nombre-planta-identificador {
@@ -1430,7 +1428,7 @@ body .contenedor-principal {
 	width: 49%;
 	height: 100%;
 	float: right;
-	border: 0.5px solid #2A2B2A;
+	border: 0.5px solid #BBB3B1;
 	border-radius: 0.5em;
 }
 
@@ -1461,9 +1459,8 @@ body .contenedor-principal {
 
 .contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada {
 	width: 100%;
-	height: 12.3%;
+	height: 12%;
 	background-color: transparent;
-	border-bottom: 0.5px solid #2A2B2A;
 }
 
 .contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada #nombre-planta-seleccionada {
@@ -1490,6 +1487,7 @@ body .contenedor-principal {
 .contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada {
 	width: 100%;
 	height: 74.4%;
+	display: none;
 }
 
 .contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada .estados-planta-seleccionada {
@@ -1503,7 +1501,7 @@ body .contenedor-principal {
 	width: 97.5%;
 	height: 25%;
 	background-color: #FFFFFF;
-	border-bottom: 0.5px solid #2A2B2A;
+	border-bottom: 0.5px solid #D8CECB;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 0.8em;
@@ -1519,7 +1517,7 @@ body .contenedor-principal {
 	width: 100%;
 	height: 42%;
 	background-color: #5CA45E;
-	border-top: 0.5px solid #2A2B2A;
+	border-top: 0.5px solid #BBB3B1;
 }
 
 .anadir-estados-seleccionada .contenedor-selector {
@@ -1639,12 +1637,18 @@ body .contenedor-principal {
 	outline: none;
 }
 
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover,
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button:hover,
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button:hover {
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover {
 	background-color: #F7DB5C;
 	color: #2A2B2A;
-	border: 0.5px solid #2A2B2A;
+	cursor: pointer;
+}
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button:hover {
+	background-color: #B46E5D;
+	cursor: pointer;
+}
+.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button:hover {
+	background-color: #FFFFFF;
+	color: #2A2B2A;
 	cursor: pointer;
 }
 
@@ -1687,6 +1691,47 @@ body .contenedor-principal {
 	height: 100%;
 	float: right;
 	border-bottom-right-radius: 0.4em;
+}
+
+.contenedor-botones-imprimir .contenedor-boton-descargar {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar {
+	width: 85%;
+	height: 42.5%;
+	margin-left: 0;
+}
+
+.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.3em;
+	background-color: transparent;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-family: sans-serif;
+	font-size: 0.8em;
+	font-weight: bold;
+	outline: none;
+}
+
+.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button a {
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button:hover {
+	background-color: #5CA45E;
+	color: #2A2B2A;
+	cursor: pointer;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */

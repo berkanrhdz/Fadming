@@ -1,5 +1,4 @@
 <?php
-	session_start();
   require("conectar_basedatos.php");
 
 	$numero_fila = 0;

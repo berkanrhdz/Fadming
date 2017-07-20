@@ -5,6 +5,7 @@ $(document).ready(function() {
 	cambiar_color_botones();
 	validar_selector_finca();
 	generar_codigos_qr();
+	obtener_estados_grupos();
 });
 
 function cambiar_color_botones() {
@@ -145,6 +146,7 @@ function seleccion_plantas_accion() {
 			$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow");
 			document.getElementById('estados-planta-seleccionada').innerHTML = "";
 			setTimeout(function() {
+				$('.seleccion-estados-planta-seleccionada').fadeIn();
 				obtener_planta_estados(identificador);
 			}, 1000);
 	});
@@ -169,6 +171,28 @@ function insertar_estados_formato(codigo, nombre) {
 		document.getElementById('estados-planta-seleccionada').innerHTML += formato_estado;
 }
 
+function obtener_estados_grupos() {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/GricApp/Web/php/obtener_estados_grupos.php',
+				dataType: 'json',
+				success: function(datos) {
+					insertar_estados_grupos(datos[0], datos[1]);
+        }
+    });
+}
+
+function insertar_estados_grupos(estados, grupos) {
+		$(estados).each(function(i, valor) {
+			var formato_option_select = "<option value='" + valor.codigo + "'>" + valor.nombre + "</option>";
+			document.getElementById('estados-select').innerHTML += formato_option_select;
+		});
+		$(grupos).each(function(i, valor) {
+			var formato_option_select = "<option value='" + valor.estados + "'>" + valor.nombre + "</option>";
+			document.getElementById('grupos-select').innerHTML += formato_option_select;
+		});
+}
+
 function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
 		document.getElementById('codigo-qr').innerHTML = "";
@@ -185,7 +209,7 @@ function generar_codigos_qr() {
 			}
 		}
 		var texto_codigo = identificador_planta + " - " + estados_planta;
-		var codigo_qr = kjua({text: texto_codigo, size: 200});
+		var codigo_qr = kjua({text: texto_codigo});
 		var codigo_qr_valido = new Image();
 		document.getElementById('codigo-qr').appendChild(codigo_qr);
 		var crossorigin = $('#codigo-qr img').attr('crossorigin');
@@ -194,5 +218,9 @@ function generar_codigos_qr() {
 		codigo_qr_valido.src         = src;
 		document.getElementById('codigo-qr').innerHTML = "";
 		document.getElementById('codigo-qr').appendChild(codigo_qr_valido);
+		var nombre_imagen = identificador_planta.replace(" ", "_").toLowerCase();
+		var a = "<a href='" + src + "' download='" + nombre_imagen + "'>Descargar código QR</a>";
+		document.getElementById('boton_descargar_imagen').innerHTML = a;
+		var p = $('#boton_descargar_imagen a').attr('href');
 	});
 }

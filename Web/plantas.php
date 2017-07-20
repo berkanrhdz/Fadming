@@ -77,14 +77,8 @@
                                 <div class="contenedor-selector">
                                   <select id="selector-estado" required>
                                       <option value="" disabled selected hidden>Seleccione un estado o grupo...</option>
-                                      <optgroup label="Swedish Cars">
-                                        <option value="volvo">Volvo</option>
-                                        <option value="saab">Saab</option>
-                                      </optgroup>
-                                      <optgroup label="German Cars">
-                                        <option value="mercedes">Mercedes</option>
-                                        <option value="audi">Audi</option>
-                                      </optgroup>
+                                      <optgroup label="Estados" id="estados-select"></optgroup>
+                                      <optgroup label="Grupos" id="grupos-select"></optgroup>
                                   </select>
                                 </div>
                                 <div class="contenedor-botones-anadir-borrar-generar">
@@ -111,7 +105,13 @@
                             <div class="contenedor-codigo-qr">
                               <div id="codigo-qr"></div>
                             </div>
-                            <div class="contenedor-botones-imprimir"></div>
+                            <div class="contenedor-botones-imprimir">
+                              <div class="contenedor-boton-descargar">
+                                <div id="boton-descargar">
+                                  <button id="boton_descargar_imagen" name="boton_descargar_imagen"></button>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                     </div>
