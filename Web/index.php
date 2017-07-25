@@ -26,6 +26,7 @@
                         <div class="contenedor-flecha-izquierda">
                             <div id="flecha-izquierda"></div>
                         </div>
+                        <div class="contenedor-imagen"></div>
                         <div class="contenedor-informacion-imagen"></div>
                         <div class="contenedor-flecha-derecha">
                             <div id="flecha-derecha"></div>
