@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Farming</string>
+    <string name="title_activity_camara">Camara</string>
+    <string name="mensaje_escanear">Pulse el botón para escanear un código QR y obtener los estados</string>
+    <string name="boton_siguiente_estado">Siguiente</string>
+    <string name="boton_anterior_estado">Anterior</string>
+    <string name="boton_escanear_codigo">Escanear código QR</string>
+    <string name="input_hint_usuario">Usuario</string>
+    <string name="input_hint_contrasena">Contraseña</string>
+    <string name="boton_iniciar_sesion">Iniciar sesión</string>
+</resources>

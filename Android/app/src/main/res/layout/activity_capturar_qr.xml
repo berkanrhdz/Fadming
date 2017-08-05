@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grisOscuro"
+    android:weightSum="10">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.85"
+        android:weightSum="10"
+        android:orientation="horizontal"
+        android:background="@color/verdeFarming">
+
+        <TextView
+            android:id="@+id/text_usuario"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8.5"
+            android:gravity="center_vertical"
+            android:paddingStart="10dp"
+            android:textColor="@color/blanco"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"/>
+
+        <ImageButton
+            android:id="@+id/boton_cerrar_sesion"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:background="@null"
+            android:src="@drawable/cerrar_sesion_blanco"
+            android:scaleType="fitXY"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingRight="14dp"
+            android:paddingLeft="14dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:orientation="vertical"
+        android:weightSum="10"
+        android:padding="8dp"
+        android:background="@color/grisClaro">
+
+        <RelativeLayout
+            android:id="@+id/layout_mensaje_escanear"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/blanco"
+            android:padding="@dimen/layout_mensaje_padding">
+
+            <TextView
+                android:id="@+id/text_mensaje_escanear"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_centerVertical="true"
+                android:text="@string/mensaje_escanear"
+                android:gravity="center_vertical|center_horizontal"
+                android:textColor="@color/grisClaroTexto"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_mensaje_escanear"
+                android:src="@drawable/flecha_abajo"
+                android:padding="@dimen/flecha_abajo_padding"/>
+
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/lista_estados"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:background="@color/grisOscuro"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.15"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:background="@color/grisOscuro"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/boton_anterior_estado"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.75"
+            android:background="@drawable/boton_anterior_estado"
+            android:text="@string/boton_anterior_estado"
+            android:textColor="@color/blanco"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:fontFamily="sans-serif"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/boton_escanear_codigo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/boton_escanear_codigo"
+            android:src="@drawable/codigo_qr"
+            android:scaleType="fitXY"
+            android:paddingBottom="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="8dp"/>
+
+        <Button
+            android:id="@+id/boton_siguiente_estado"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3.75"
+            android:textAllCaps="false"
+            android:background="@drawable/boton_siguiente_estado"
+            android:text="@string/boton_siguiente_estado"
+            android:textColor="@color/blanco"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+
+</LinearLayout>

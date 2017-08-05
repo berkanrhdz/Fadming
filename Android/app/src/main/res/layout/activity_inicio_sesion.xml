@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="2.25"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_inicio_sesion" >
+
+    <ImageView
+        android:id="@+id/icono_farming"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="30dp"
+        android:src="@drawable/logo"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar_inicio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"/>
+
+    <LinearLayout
+        android:id="@+id/layout_inputs"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:weightSum="3">
+
+        <EditText
+            android:id="@+id/input_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.95"
+            android:hint="@string/input_hint_usuario"
+            android:paddingLeft="13dp"
+            android:textColor="@color/blanco"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:background="@drawable/input_inicio_sesion"/>
+
+        <EditText
+            android:id="@+id/input_contrasena"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.95"
+            android:paddingLeft="13dp"
+            android:textColor="@color/blanco"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:background="@drawable/input_inicio_sesion"
+            android:hint="@string/input_hint_contrasena"
+            android:inputType="textPassword"
+            android:textSize="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/boton_iniciar_sesion"
+            android:background="@drawable/boton_iniciar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:text="@string/boton_iniciar_sesion"
+            android:textSize="15dp"
+            android:textColor="@color/blanco"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" >
+        <shape>
+            <solid
+                android:color="@color/amarilloFarming" />
+            <corners
+                android:radius="30dp" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient
+                android:startColor="@color/verdeMilitar"
+                android:centerColor="@color/verdeFarming"
+                android:endColor="@color/verdeMilitar"/>
+            <stroke
+                android:width="0.25dp"
+                android:color="@color/grisBorde"/>
+            <corners
+                android:radius="30dp" />
+        </shape>
+    </item>
+</selector>

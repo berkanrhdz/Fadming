@@ -1,0 +1,5 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="flecha_abajo_padding">35dp</dimen>
+    <dimen name="layout_mensaje_padding">12dp</dimen>
+</resources>
