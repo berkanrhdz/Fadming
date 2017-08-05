@@ -254,20 +254,10 @@ function generar_codigos_qr() {
 			$('#codigo-qr').fadeIn();
 			$('.contenedor-botones-imprimir').fadeIn();
 			document.getElementById('codigo-qr').innerHTML = "";
-			var identificador_planta = document.getElementById('nombre-seleccionada').innerHTML;
-			var estados_planta = "";
-			contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
-			for (i = 0; i < contenedor_estados.length; i++) {
-				identificador = $(contenedor_estados[i]).attr('ID');
-				if (i != (contenedor_estados.length - 1)) {
-					estados_planta += identificador + " ";
-				}
-				else {
-					estados_planta += identificador;
-				}
-			}
-			var texto_codigo = identificador_planta + " - " + estados_planta;
-			var codigo_qr = kjua({text: texto_codigo});
+			var nombre_identificador = document.getElementById('nombre-seleccionada').innerHTML;
+			var nombre_identificador_espacios = nombre_identificador.split(' ');
+			var identificador_planta = nombre_identificador_espacios[0];
+			var codigo_qr = kjua({text: identificador_planta});
 			var codigo_qr_valido = new Image();
 			document.getElementById('codigo-qr').appendChild(codigo_qr);
 			var crossorigin = $('#codigo-qr img').attr('crossorigin');
