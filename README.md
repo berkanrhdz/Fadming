@@ -1,5 +1,5 @@
 # ESIT ULL Grado de Ingeniería Informática
-## TRABAJO DE FIN DE GRADO. GricApp
+## TRABAJO DE FIN DE GRADO. Fadming
 #### Realizada por Eduardo Escobar Alberto
 
 ##### Introducción
