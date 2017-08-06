@@ -8,7 +8,7 @@
         <script src="js/index.js"></script>
         <script src="js/registro.js"></script>
         <script src="js/inicio_sesion.js"></script>
-        <title>GricApp</title>
+        <title>Fadming</title>
     </head>
 
     <body>
@@ -39,7 +39,7 @@
                                 <div id="codigo-qr"></div>
                             </div>
                             <div class="contenedor-informacion-codigo">
-                                <div class="contenedor-titulo-codigo">Accede al desarrollo de GricApp</div>
+                                <div class="contenedor-titulo-codigo">Accede al desarrollo de Fadming</div>
                                 <div class="contenedor-informacion-qr">Escanea el siguiente código QR y visita el desarrollo del proyecto.
                                                                        Puedes dejarnos tus sugerencias y aquellos contenidos que crees
                                                                        que ayudará a mejorar.</div>
