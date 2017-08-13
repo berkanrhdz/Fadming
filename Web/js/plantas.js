@@ -41,7 +41,7 @@ function cambiar_color_botones() {
 function obtener_fincas_usuario() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/obtener_fincas_usuario.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_fincas_usuario.php',
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
@@ -67,7 +67,7 @@ function validar_selector_finca() {
 function obtener_huertos_usuario(codigo_finca) {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/obtener_huertos_usuario.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_huertos_usuario.php',
 				dataType: 'json',
 				data: "finca="+codigo_finca,
 				success: function(datos) {
@@ -101,7 +101,7 @@ function validar_selector_huertos() {
 function obtener_plantas_usuario(codigo_huerto) {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/obtener_plantas_usuario.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_plantas_usuario.php',
 				dataType: 'json',
 				data: "huerto="+codigo_huerto,
 				success: function(datos) {
@@ -157,7 +157,7 @@ function seleccion_plantas_accion() {
 function obtener_planta_estados(codigo_planta) {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/obtener_plantas_estados.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_plantas_estados.php',
 				dataType: 'json',
 				data: "planta="+codigo_planta,
 				success: function(datos) {
@@ -176,7 +176,7 @@ function insertar_estados_formato(codigo, nombre) {
 function obtener_estados_grupos() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/obtener_estados_grupos.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_estados_grupos.php',
 				dataType: 'json',
 				success: function(datos) {
 					insertar_estados_grupos(datos[0], datos[1]);
@@ -223,7 +223,7 @@ function accion_boton_anadir_estado() {
 function insertar_estados_plantas(planta, estados) {
 		$.ajax({
 			type: 'POST',
-		  url: 'http://localhost/GricApp/Web/php/actualizar_estados_planta.php',
+		  url: 'http://localhost/Fadming/Web/php/actualizar_estados_planta.php',
 		  success: anadir_nuevo_estado(planta),
 		  data: "planta="+planta+"&estados="+estados,
 		  dataType: 'json'

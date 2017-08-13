@@ -10,7 +10,7 @@ $(document).ready(function() {
 function mostrar_lista_estados() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/mostrar_lista_estados.php',
+        url: 'http://localhost/Fadming/Web/php/mostrar_lista_estados.php',
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
@@ -66,7 +66,7 @@ function insertar_nuevo_estado() {
 				var descripcion  = $("#descripcion_estado").val();
 				$.ajax({
 		    		type: 'POST',
-		    		url: 'http://localhost/GricApp/Web/php/almacenar_estado.php',
+		    		url: 'http://localhost/Fadming/Web/php/almacenar_estado.php',
 		    		success: cambiar_nuevo_estado(),
 		    		data: "nombre="+nombre+"&descripcion="+descripcion,
 		    		dataType: 'json'
@@ -106,7 +106,7 @@ function enviar_estados_grupos(estados_seleccionados) {
 	var nombre_grupo = $("#nombre_grupo").val();
 	$.ajax({
 			type: 'POST',
-			url: 'http://localhost/GricApp/Web/php/almacenar_grupo_estados.php',
+			url: 'http://localhost/Fadming/Web/php/almacenar_grupo_estados.php',
 			success: cambiar_grupo_estados(),
 			data: "nombre="+nombre_grupo+"&estados="+estados_seleccionados,
 			dataType: 'json'

@@ -1,12 +1,14 @@
 <?php
 	session_start();
 	require("conectar_basedatos.php");
+	define('ERROR_LOGIN', '-1');
+	define('LOGIN_CORRECTO', '1');
 
   $usuario    = $_POST['usuario'];
   $contrasena = $_POST['contrasena'];
 
   $clave = 'gricapp, una aplicación del futuro';
-  $contrasena_encriptada = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($clave),     $contrasena, MCRYPT_MODE_CBC, md5(md5($clave))));
+  $contrasena_encriptada = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($clave), $contrasena, MCRYPT_MODE_CBC, md5(md5($clave))));
 
   $consulta = "SELECT ID_USUARIO
 	    		     FROM USUARIO
@@ -15,8 +17,13 @@
 
 	$resultado_consulta = mysql_query($consulta);
 	$datos = mysql_fetch_array($resultado_consulta);
-	$identificador = $datos[0];
-
-	$_SESSION['identificador'] = $identificador;
-	$_SESSION['usuario'] = $usuario;
+	if(!is_null($datos[0])) {
+		$informacion[] = array('respuesta'=> LOGIN_CORRECTO);
+		$_SESSION['identificador'] = $datos[0];
+		$_SESSION['usuario'] = $usuario;
+	}
+	else {
+		$informacion[] = array('respuesta'=> ERROR_LOGIN);
+	}
+	echo json_encode($informacion);
 ?>

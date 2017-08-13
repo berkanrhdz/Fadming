@@ -10,7 +10,7 @@ $(document).ready(function() {
 function obtener_datos_usuario() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/mostrar_datos_usuario.php',
+        url: 'http://localhost/Fadming/Web/php/mostrar_datos_usuario.php',
         success: function(datos) {
 					var JSON_datos = JSON.parse(datos);
     				document.getElementById("nombre").value = JSON_datos[0].nombre;
@@ -42,7 +42,7 @@ function actualizar_datos_usuario() {
 		var correo       = $("#correo").val();
 		$.ajax({
 		    type: 'POST',
-		    url: 'http://localhost/GricApp/Web/php/actualizar_datos_usuario.php',
+		    url: 'http://localhost/Fadming/Web/php/actualizar_datos_usuario.php',
 		    success: cambiar_boton_actualizar(),
 		    data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo,
 		    dataType: 'json'

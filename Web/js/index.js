@@ -62,16 +62,6 @@ function cambiar_color_registro() { // Función para cambiar el color del div d
 			$(this).css('background-image', 'url("images/iconos/blanco/flecha-abajo.png")');
 	  	}
 	);
-	$("#boton-registro").hover(
-		function() {
-			$(this).css('background-color', '#F7DB5C');
-			$(this).css('cursor', 'pointer');
-			$(this).css('color', '#000000');
-	  	}, function() {
-			$(this).css('background-color', 'transparent');
-			$(this).css('color', '#FFFFFF');
-	  	}
-	);
 }
 
 function mostrar_ocultar_registro() {

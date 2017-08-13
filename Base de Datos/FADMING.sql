@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 25-07-2017 a las 12:17:37
+-- Tiempo de generación: 06-08-2017 a las 15:37:39
 -- Versión del servidor: 10.1.21-MariaDB
 -- Versión de PHP: 5.6.30
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `GRICAPP_BD`
+-- Base de datos: `FADMING`
 --
 
 -- --------------------------------------------------------
@@ -77,7 +77,11 @@ INSERT INTO `ESTADO` (`CODIGO`, `NOMBRE`, `DESCRIPCION`, `FECHA_REGISTRO`, `CODI
 (8, 'Abono 7483L', 'Echar el abono cerca de las raíces a primera hora de la mañana.', '2017-07-05 17:58:43', 1),
 (9, 'Abono 7439X', 'Rellenar la máquina entera y echar encima de todas las plantas de la finca.', '2017-07-06 14:29:09', 3),
 (10, 'Abono 4955K', 'Abono especial para insectos y roedores.', '2017-07-20 15:03:49', 1),
-(11, 'Eliminar frutos suelo', 'Recoger todos aquellos frutos del suelo y tirarlos a la basura.', '2017-07-20 15:05:38', 1);
+(11, 'Eliminar frutos suelo', 'Recoger todos aquellos frutos del suelo y tirarlos a la basura.', '2017-07-20 15:05:38', 1),
+(12, 'Regar', 'Se echan 30 minutos de agua en las raíces.', '2017-08-03 22:00:20', 10),
+(13, 'Coger el fruto', 'Subirse a la parte alta de la planta.', '2017-08-03 22:00:46', 10),
+(14, 'Cortar ramas', 'Cortar las ramas que sobresalen.', '2017-08-03 22:01:01', 10),
+(16, 'Ir a Candelaria', 'kjfkldjflkjdlkfjlkdfjlkdfjkldjfl', '2017-08-05 14:12:09', 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +129,8 @@ CREATE TABLE `GRUPOS_ESTADOS` (
 INSERT INTO `GRUPOS_ESTADOS` (`CODIGO`, `NOMBRE`, `ESTADOS`, `FECHA_REGISTRO`, `CODIGO_USUARIO`) VALUES
 (1, 'Platanera', '1 3 2 6', '2017-07-06 21:43:14', 1),
 (2, 'Habichuela', '4 7 3 5 6', '2017-07-06 21:44:28', 1),
-(3, 'Aguacatero', '8 4 7', '2017-07-14 00:06:36', 1);
+(3, 'Aguacatero', '8 4 7', '2017-07-14 00:06:36', 1),
+(4, 'Camionero', '1 10 4', '2017-08-04 19:17:09', 1);
 
 -- --------------------------------------------------------
 
@@ -178,10 +183,10 @@ INSERT INTO `PLANTA` (`CODIGO`, `NOMBRE`, `FECHA_REGISTRO`, `ESTADOS`, `CODIGO_H
 (6, 'Manzano', '2017-07-16 12:44:15', '', 2),
 (7, 'Tomatera', '2017-07-16 12:44:37', '', 4),
 (8, 'Platanera', '2017-07-16 12:44:37', '', 4),
-(9, 'Aguacatero', '2017-07-18 16:33:05', '1 2 3 4 6 8 11 12', 1),
+(9, 'Aguacatero', '2017-07-18 16:33:05', '1 2 3 4 6 8 11 12 15', 1),
 (10, 'Tomatera', '2017-07-18 16:33:05', '3 4', 1),
 (11, 'Platanera', '2017-07-18 16:33:05', '', 1),
-(12, 'Calabaza', '2017-07-18 16:33:05', '', 1),
+(12, 'Calabaza', '2017-07-18 16:33:05', ' 16', 1),
 (13, 'Habichuela', '2017-07-18 16:33:05', '', 1),
 (14, 'Platanera', '2017-07-18 16:33:05', '', 1),
 (15, 'Lechuga', '2017-07-18 16:33:05', '', 1),
@@ -238,7 +243,9 @@ INSERT INTO `USUARIO` (`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `CORREO`, `NOMBRE_US
 (4, 'Naday', 'Páez Delgado', 'nadaypaezdelgado95@gmail.com', 'nadaypd95', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-06-24 17:39:32', 1),
 (5, 'Eduardo', 'Martín de los Santos Rodríguez de Vera', 'edumartin95@gmail.com', 'edumartin95', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-06-24 19:59:03', 1),
 (6, 'Claudia', 'Díaz Alberto', 'claudia-diaz-alberto-12@outlook.com', 'claudial1211', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-07-04 20:12:41', 1),
-(9, 'Alejandro', 'Díaz Rosa', 'alexdiazr5@gmail.com', 'alexdiazr5', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-07-22 15:21:36', 1);
+(9, 'Alejandro', 'Díaz Rosa', 'alexdiazr5@gmail.com', 'alexdiazr5', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-07-22 15:21:36', 1),
+(10, 'Montserrat', 'Alberto Bermúdez', 'montsealberto@gmail.com', 'montseab68', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-08-03 21:59:12', 1),
+(11, 'José Eduardo', 'Escobar Gómez', 'joseeduardo@gmail.com', 'joseeeg20', '91FPGppCEhNKNFbHuAdzxhd8Xw2eScC6LGsGcrq7Rcw=', '2017-08-04 18:56:50', 1);
 
 --
 -- Índices para tablas volcadas
@@ -315,7 +322,7 @@ ALTER TABLE `EMPRESA`
 -- AUTO_INCREMENT de la tabla `ESTADO`
 --
 ALTER TABLE `ESTADO`
-  MODIFY `CODIGO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `CODIGO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `FINCA`
 --
@@ -325,7 +332,7 @@ ALTER TABLE `FINCA`
 -- AUTO_INCREMENT de la tabla `GRUPOS_ESTADOS`
 --
 ALTER TABLE `GRUPOS_ESTADOS`
-  MODIFY `CODIGO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `CODIGO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `HUERTO`
 --
@@ -345,7 +352,7 @@ ALTER TABLE `ROL`
 -- AUTO_INCREMENT de la tabla `USUARIO`
 --
 ALTER TABLE `USUARIO`
-  MODIFY `ID_USUARIO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID_USUARIO` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Restricciones para tablas volcadas
 --
@@ -354,43 +361,43 @@ ALTER TABLE `USUARIO`
 -- Filtros para la tabla `EMPRESA`
 --
 ALTER TABLE `EMPRESA`
-  ADD CONSTRAINT `FK_EMP_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `USUARIO` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_EMP_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `usuario` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `ESTADO`
 --
 ALTER TABLE `ESTADO`
-  ADD CONSTRAINT `FK_EST_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `USUARIO` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_EST_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `usuario` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `FINCA`
 --
 ALTER TABLE `FINCA`
-  ADD CONSTRAINT `FK_FINC_EMP` FOREIGN KEY (`CODIGO_EMPRESA`) REFERENCES `EMPRESA` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_FINC_EMP` FOREIGN KEY (`CODIGO_EMPRESA`) REFERENCES `empresa` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `GRUPOS_ESTADOS`
 --
 ALTER TABLE `GRUPOS_ESTADOS`
-  ADD CONSTRAINT `FK_GRUP_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `USUARIO` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FK_GRUP_USU` FOREIGN KEY (`CODIGO_USUARIO`) REFERENCES `usuario` (`ID_USUARIO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `HUERTO`
 --
 ALTER TABLE `HUERTO`
-  ADD CONSTRAINT `FINC_HUER_FK` FOREIGN KEY (`CODIGO_FINCA`) REFERENCES `FINCA` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `FINC_HUER_FK` FOREIGN KEY (`CODIGO_FINCA`) REFERENCES `finca` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `PLANTA`
 --
 ALTER TABLE `PLANTA`
-  ADD CONSTRAINT `HUER_PLANT_FK` FOREIGN KEY (`CODIGO_HUERTO`) REFERENCES `HUERTO` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `HUER_PLANT_FK` FOREIGN KEY (`CODIGO_HUERTO`) REFERENCES `huerto` (`CODIGO`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `USUARIO`
 --
 ALTER TABLE `USUARIO`
-  ADD CONSTRAINT `ROL_USU_FK` FOREIGN KEY (`ROL`) REFERENCES `ROL` (`VALOR`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `ROL_USU_FK` FOREIGN KEY (`ROL`) REFERENCES `rol` (`VALOR`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

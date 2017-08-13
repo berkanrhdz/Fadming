@@ -55,16 +55,16 @@ body {
 	float: left;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  align-content: center;
+  flex-direction: column;
 }
 
 .contenedor-izquierdo .contenedor-informacion-registro {
 	width: 85%;
 	height: 100%;
-    border-left: 0.2px solid #C5C8C5;
-    border-right: 0.2px solid #C5C8C5;
-    background-image: url("../images/fondo_transparente.png");
+  border-left: 0.2px solid #C5C8C5;
+  border-right: 0.2px solid #C5C8C5;
+  background-image: url("../images/fondo_transparente.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 100% 100%;
@@ -75,7 +75,7 @@ body {
 	width: 100%;
 	height: 20%;
 	margin-top: 3%;
-	background-color: #1B1C1B;
+	background-color: #2A2B2A;
 }
 
 .contenedor-informacion-registro .titulo-informacion-registro .contenedor-texto-titulo {
@@ -88,7 +88,7 @@ body {
   font-family: sans-serif;
   font-weight: bold;
   color: #FFFFFF;
-  font-size: 1.7em;
+  font-size: 1.6em;
   text-align: center;
 }
 
@@ -316,23 +316,33 @@ body {
 
 }
 
-.contenedor-registro .formulario-registro .fila-registro {
+.contenedor-informacion-registro .contenedor-registro .formulario-registro .contenedor-registro-personal-empresa {
 	width: 100%;
-	height: 29%;
-	display: flex;
-	justify-content: center;
-    align-content: center;
-    flex-direction: column;
+	height: 58%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-nombre,
-.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta {
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-personales {
+	width: 100%;
+	height: 100%;
+}
+
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-personales .fila-registro {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-personales .fila-registro .inputs-nombre,
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-personales .fila-registro .inputs-cuenta {
 	width: 93%;
 	height: 75%;
 	margin: 0 auto;
 }
 
-.contenedor-registro .formulario-registro .fila-registro input {
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-personales .fila-registro input {
 	height: 92%;
 	background-color: #FFFFFF;
 	border-radius: 0.3em;
@@ -343,28 +353,175 @@ body {
 	font-weight: bold;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #nombre {
+.contenedor-datos-personales .fila-registro .inputs-nombre #nombre {
 	width: 25%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #apellidos {
+.contenedor-datos-personales .fila-registro .inputs-nombre #apellidos {
 	width: 37%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-nombre #usuario {
+.contenedor-datos-personales .fila-registro .inputs-nombre #usuario {
 	width: 30.5%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #correo {
+.contenedor-datos-personales .fila-registro .inputs-cuenta #correo {
 	width: 42%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #contrasena {
+.contenedor-datos-personales .fila-registro .inputs-cuenta #contrasena {
 	width: 25%;
 }
 
-.contenedor-registro .formulario-registro .fila-registro .inputs-cuenta #repetir-contrasena {
+.contenedor-datos-personales .fila-registro .inputs-cuenta #repetir-contrasena {
 	width: 25.5%;
+}
+
+.formulario-registro .contenedor-registro-personal-empresa .contenedor-datos-empresa {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.contenedor-registro-personal-empresa .contenedor-datos-empresa .contenedor-particular-empresa {
+	width: 100%;
+	height: 100%;
+}
+
+.contenedor-datos-empresa .boton-empresa {
+	width: 100%;
+	height: 49.5%;
+	background-color: #2A2B2A;
+	text-align: center;
+	font-family: sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 1.0em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-datos-empresa .boton-empresa:hover {
+	background-color: #F7DB5C;
+	cursor: pointer;
+	color: #2A2B2A;
+}
+
+.contenedor-particular-empresa #boton-cliente-particular,
+.contenedor-nueva-existente #boton-empresa-nueva {
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.contenedor-registro-personal-empresa .contenedor-datos-empresa .contenedor-nueva-existente {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.contenedor-registro-personal-empresa .contenedor-datos-empresa .contenedor-empresa-nueva {
+	width: 100%;
+	height: 100%;
+	display: none;
+}
+
+.contenedor-datos-empresa .contenedor-empresa-nueva .fila-empresa-nueva {
+	width: 100%;
+	height: 49.5%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-nombre-empresa,
+.contenedor-empresa-nueva .fila-empresa-nueva .input-contrasena-empresa {
+	width: 93%;
+	height: 75%;
+	margin: 0 auto;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-nombre-empresa #nombre-empresa {
+	width: 36%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-nombre-empresa #direccion {
+	width: 39%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-nombre-empresa #telefono {
+	width: 18%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-contrasena-empresa #poblacion {
+	width: 32%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-contrasena-empresa #codigo-postal {
+	width: 16.7%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva .input-contrasena-empresa #contrasena-empresa,
+.contenedor-empresa-nueva .fila-empresa-nueva .input-contrasena-empresa #repetir-contrasena-empresa {
+	width: 21%;
+}
+
+.contenedor-empresa-nueva .fila-empresa-nueva input {
+	height: 92%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	border: none;
+	padding-left: 1.5%;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+.contenedor-registro-personal-empresa .contenedor-datos-empresa .contenedor-empresa-existente {
+	width: 100%;
+	height: 100%;
+	background-color: #2A2B2A;
+	display: none;
+}
+
+.contenedor-datos-empresa .contenedor-empresa-existente .fila-empresa-existente {
+	width: 100%;
+	height: 49.5%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.fila-empresa-existente label {
+	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.fila-empresa-existente .input-contrasena-existente {
+	width: 40%;
+	height: 70%;
+	margin: 0 auto;
+}
+
+.fila-empresa-existente .input-contrasena-existente #contrasena-existente {
+	width: 100%;
+	height: 92%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	border: none;
+	text-align: center;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	font-weight: bold;
 }
 
 .contenedor-registro .formulario-registro .fila-registro-boton {
@@ -372,8 +529,8 @@ body {
 	height: 29%;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  align-content: center;
+  flex-direction: column;
 }
 
 .fila-registro-boton .contenedor-boton-registro {
@@ -382,6 +539,7 @@ body {
 	margin: 0 auto;
 }
 
+.contenedor-boton-registro #boton-continuar-registro,
 .contenedor-boton-registro #boton-registro {
 	width: 100%;
 	height: 100%;
@@ -394,14 +552,30 @@ body {
 	outline: none;
 }
 
+.contenedor-boton-registro #boton-continuar-registro:hover,
+.contenedor-boton-registro #boton-registro:hover {
+	background-color: #F7DB5C;
+	cursor: pointer;
+	border: 1px solid #FFFFFF;
+	color: #2A2B2A;
+}
+
+.contenedor-boton-registro #boton-continuar-registro:disabled,
+.contenedor-boton-registro #boton-registro:disabled {
+	background-color: transparent;
+	border: 1px solid #FFFFFF;
+	cursor: default;
+	color: #FFFFFF;
+}
+
 .contenedor-principal .contenedor-derecho {
 	width: 35%;
 	height: 100%;
 	float: right;
 	display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
 .contenedor-derecho .contenedor-login {

@@ -1,10 +1,21 @@
 // DOCUMENTO JAVASCRIPT DE index.php
 
+// DECLARACIÓN DE CONSTANTES.
+const CLIENTE_PARTICULAR = 1;
+const CLIENTE_EMPRESA = 2;
+const ADMINISTRADOR = 1;
+const TRABAJADOR = 2;
+const CONTRASENA_CORRECTA = 1;
+const ERROR_CONTRASENA = -1;
+
+// DECLARACIÓN DE VARIABLES GLOBALES.
+var datos_empresa = [];
+
 $(document).ready(function() {
-	registrar_usuario();
+	marcar_opciones_empresa();
 });
 
-function comprobar_datos() { // Función para la validación del formulario de registro.
+function comprobar_datos_personales() { // Función para la validación del formulario de registro.
 	var contrasena = document.getElementById("contrasena").value;
 	var repetir_contrasena = document.getElementById("repetir-contrasena").value;
 	if (document.getElementById("nombre").value.length == 0) { // Comprobación de introducción del nombre.
@@ -51,7 +62,7 @@ function comprobar_datos() { // Función para la validación del formulario de r
 			document.getElementById("correo").placeholder = "Correo electrónico";
 			$('#correo').css('background-color', '#FFFFFF');
 		}, 1500);
-		return fa
+		return false;
 	}
 	else if (document.getElementById("contrasena").value.length == 0) { // Comprobación de introducción de la contraseña.
 		$('#contrasena').css('background-color', '#FADBD8');
@@ -84,41 +95,244 @@ function comprobar_datos() { // Función para la validación del formulario de r
 	return true;
 }
 
-function registrar_usuario() {
-	$("#boton-registro").click(function() {
-		if (comprobar_datos()) {
-			document.getElementById("boton-registro").value = "Registrando...";
-			enviar_datos_registrar();
-			setTimeout(function(){
-				document.getElementById("boton-registro").value = "Registrado";
-			}, 2000);
-			setTimeout(function(){
-				vaciar_formulario();
-				document.getElementById("boton-registro").value = "Registrarme";
-			}, 3000);
-		}
+function comprobar_datos_empresa() { // Función para validar los datos de creación de empresa.
+	var contrasena = document.getElementById("contrasena-empresa").value;
+	var repetir_contrasena = document.getElementById("repetir-contrasena-empresa").value;
+	if (document.getElementById("nombre-empresa").value.length == 0) { // Comprobación de introducción del nombre de empresa.
+		$('#nombre-empresa').css('background-color', '#FADBD8');
+		document.getElementById("nombre-empresa").placeholder = "Obligatorio";
+			setTimeout(function() {
+				document.getElementById("nombre-empresa").placeholder = "Nombre";
+			$('#nombre-empresa').css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("direccion").value.length == 0) { // Comprobación de introducción de la dirección.
+		$('#direccion').css('background-color', '#FADBD8');
+		document.getElementById("direccion").placeholder = "Obligatorio";
+		setTimeout(function() {
+				document.getElementById("direccion").placeholder = "Dirección";
+			$("#direccion").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("telefono").value.length == 0) { // Comprobación de introducción del teléfono.
+		$('#telefono').css('background-color', '#FADBD8');
+		document.getElementById("telefono").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("telefono").placeholder = "Teléfono";
+			$("#telefono").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("poblacion").value.length == 0) { // Comprobación de introducción de la población.
+		$('#poblacion').css('background-color', '#FADBD8');
+		document.getElementById("poblacion").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("poblacion").placeholder = "Población";
+			$("#poblacion").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("codigo-postal").value.length == 0) { // Comprobación de introducción del codigo postal.
+		$('#codigo-postal').css('background-color', '#FADBD8');
+		document.getElementById("codigo-postal").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("codigo-postal").placeholder = "Código postal";
+			$("#codigo-postal").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("contrasena-empresa").value.length == 0) { // Comprobación de introducción de la contraseña.
+		$('#contrasena-empresa').css('background-color', '#FADBD8');
+		document.getElementById("contrasena-empresa").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("contrasena-empresa").placeholder = "Contraseña";
+			$("#contrasena-empresa").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (document.getElementById("repetir-contrasena-empresa").value.length == 0) { // Comprobación de introducción de la repetición de la contraseña.
+		$('#repetir-contrasena-empresa').css('background-color', '#FADBD8');
+		document.getElementById("repetir-contrasena-empresa").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("repetir-contrasena-empresa").placeholder = "Repetir contraseña";
+			$("#repetir-contrasena-empresa").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (contrasena != repetir_contrasena) {
+		document.getElementById("repetir-contrasena-empresa").value = "";
+		$('#repetir-contrasena-empresa').css('background-color', '#FADBD8');
+		document.getElementById("repetir-contrasena-empresa").placeholder = "No coinciden";
+		setTimeout(function() {
+			$('#repetir-contrasena-empresa').css('background-color', '#FFFFFF');
+			document.getElementById("repetir-contrasena-empresa").placeholder = "Repetir contraseña";
+		}, 1500);
+		return false;
+	}
+	return true;
+}
+
+function comprobar_contrasena_empresa() { // Función para comprobar la contraseña de unión a una empresa existente.
+	var contrasena = document.getElementById('contrasena-existente').value;
+	obtener_id_nombre_empresa(contrasena);
+}
+
+function cambiar_registro_empresa() { // Función para pasar del registro de usuario al de empresa.
+		if (comprobar_datos_personales()) {
+			$(".contenedor-datos-personales").fadeOut();
+			setTimeout(function() {
+				$(".contenedor-datos-empresa").fadeIn(1000);
+			}, 300);
+			$('#boton-continuar-registro').removeAttr('onclick');
+			document.getElementById('boton-continuar-registro').setAttribute("onclick", "registrar_usuario()");
+			document.getElementById('boton-continuar-registro').setAttribute("disabled", "true");
+			$("#boton-continuar-registro").css('opacity', '0.5');
+			document.getElementById('boton-continuar-registro').name = "boton-registro";
+			document.getElementById('boton-continuar-registro').value = "Registrarme";
+			document.getElementById('boton-continuar-registro').id = "boton-registro";
+	 }
+}
+
+function marcar_opciones_empresa() { // Función para ir almacenando las opciones en el registro de empresa.
+	$("#boton-cliente-particular").click(function() {
+		$('#boton-registro').removeAttr('disabled');
+		$("#boton-registro").css('opacity', '1.0');
+		datos_empresa[0] = CLIENTE_PARTICULAR;
+	});
+	$("#boton-cliente-empresa").click(function() {
+		$('.contenedor-particular-empresa').slideUp();
+		$('.contenedor-nueva-existente').slideDown();
+		document.getElementById('boton-registro').setAttribute("disabled", "true");
+		$("#boton-registro").css('opacity', '0.5');
+	});
+	$("#boton-empresa-nueva").click(function() {
+		$('.contenedor-nueva-existente').slideUp();
+		$('.contenedor-empresa-nueva').slideDown();
+		$('#boton-registro').removeAttr('disabled');
+		$("#boton-registro").css('opacity', '1.0');
+		datos_empresa[0] = CLIENTE_EMPRESA; // Tipo de cliente.
+		datos_empresa[1] = ADMINISTRADOR; // Rol
+	});
+	$("#boton-empresa-existente").click(function() {
+		$('.contenedor-nueva-existente').slideUp();
+		$('.contenedor-empresa-existente').slideDown();
+		$('#boton-registro').removeAttr('disabled');
+		$("#boton-registro").css('opacity', '1.0');
+		datos_empresa[0] = CLIENTE_EMPRESA; // Tipo de cliente.
+		datos_empresa[1] = TRABAJADOR; // Rol
 	});
 }
 
-function vaciar_formulario() {
-	document.getElementById("nombre").value = "";
-	document.getElementById("apellidos").value = "";
-	document.getElementById("usuario").value = "";
-	document.getElementById("correo").value = "";
-	document.getElementById("contrasena").value = "";
-	document.getElementById("repetir-contrasena").value = "";
+function registrar_usuario() { // Función que registra al usuario y muestra la interacción.
+	if (datos_empresa.length == 1) { // Si es un usuario PARTICULAR.
+		document.getElementById("boton-registro").value = "Registrando...";
+		enviar_registro_usuario(null); // Pasamos null como código de empresa.
+		setTimeout(function() {
+			document.getElementById("boton-registro").value = "Registrado";
+		}, 2000);
+		setTimeout(function(){
+			location.reload(true);
+		}, 3000);
+	}
+	else if (datos_empresa.length == 2) { // Si es un usuario EMPRESA.
+		if (datos_empresa[1] == ADMINISTRADOR) { // Si es una nueva empresa y administrador.
+			if (comprobar_datos_empresa()) {
+				document.getElementById("boton-registro").value = "Registrando...";
+				enviar_registro_empresa();
+				setTimeout(function(){
+					document.getElementById("boton-registro").value = "Registrado";
+				}, 2000);
+				setTimeout(function(){
+					location.reload(true);
+				}, 3000);
+			}
+		}
+		else if (datos_empresa[1] == TRABAJADOR) { // Si es una empresa existente y trabajador.
+			comprobar_contrasena_empresa();
+		}
+	}
 }
 
-function enviar_datos_registrar() { // Función para enviar los datos del registro.
+function enviar_registro_usuario(codigo_empresa) { // Función para enviar los datos del registro.
     var nombre       = $("#nombre").val();
     var apellidos    = $("#apellidos").val();
     var usuario      = $("#usuario").val();
     var correo       = $("#correo").val();
     var contrasena   = $("#contrasena").val();
+		var tipo         = datos_empresa[0];
+		var empresa      = codigo_empresa;
+		var rol          = datos_empresa[1];
     $.ajax({
         type: 'POST',
-        url: 'http://localhost/GricApp/Web/php/registrar_usuario.php',
-        data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo+"&contrasena="+contrasena,
+        url: 'http://localhost/Fadming/Web/php/registrar_usuario.php',
+        data: "nombre="+nombre+"&apellidos="+apellidos+"&usuario="+usuario+"&correo="+correo+"&contrasena="+contrasena+"&tipo="+tipo+"&empresa="+empresa+"&rol="+rol,
         dataType: 'json'
     });
+}
+
+function enviar_registro_empresa() { // Función para enviar los datos del registro.
+		var codigo;
+    var nombre       = $("#nombre-empresa").val();
+    var direccion    = $("#direccion").val();
+    var poblacion    = $("#poblacion").val();
+    var telefono     = $("#telefono").val();
+    var cp           = $("#codigo-postal").val();
+		var contrasena   = $("#contrasena-empresa").val();
+    $.ajax({
+        type: 'POST',
+        url: 'http://localhost/Fadming/Web/php/registrar_empresa.php',
+        data: "nombre="+nombre+"&direccion="+direccion+"&poblacion="+poblacion+"&cp="+cp+"&telefono="+telefono+"&contrasena="+contrasena,
+        dataType: 'json',
+				success: function(datos) {
+						$(datos).each(function(i, valor) {
+								var codigo = valor.codigo;
+								enviar_registro_usuario(codigo);
+						});
+				}
+    });
+}
+
+function obtener_id_nombre_empresa(contrasena_empresa) { // Función para obtener el id y el nombre de empresa.
+	$.ajax({
+			type: 'POST',
+			url: 'http://localhost/Fadming/Web/php/obtener_id_nombre_empresa.php',
+			data: "contrasena="+contrasena_empresa,
+			dataType: 'json',
+			success: function(datos) {
+					$(datos).each(function(i, valor) {
+						if (valor.respuesta == CONTRASENA_CORRECTA) {
+							realizar_interaccion_contrasena(valor.nombre);
+							enviar_registro_usuario(valor.codigo);
+						}
+						else if (valor.respuesta == ERROR_CONTRASENA) {
+							realizar_interaccion_contrasena(ERROR_CONTRASENA);
+						}
+					});
+			}
+	});
+}
+
+function realizar_interaccion_contrasena(nombre_empresa) { // Función para realizar la interacción de comprobación de empresa.
+	if (nombre_empresa == ERROR_CONTRASENA) {
+		document.getElementById("contrasena-existente").value = "";
+		$('#contrasena-existente').css('background-color', '#FADBD8');
+		document.getElementById("contrasena-existente").placeholder = "Contraseña incorrecta";
+		setTimeout(function() {
+			$('#contrasena-existente').css('background-color', '#FFFFFF');
+			document.getElementById("contrasena-existente").placeholder = "";
+		}, 1500);
+	}
+	else {
+		document.getElementById('label-existente').innerHTML = nombre_empresa;
+		$('#contrasena-existente').css('background-color', '#C0EBB9');
+		document.getElementById("boton-registro").value = "Registrando...";
+		setTimeout(function() {
+			document.getElementById("boton-registro").value = "Registrado";
+		}, 2000);
+		setTimeout(function() {
+			location.reload(true);
+		}, 3000);
+	}
 }

@@ -1,5 +1,5 @@
 <?php
 	@session_start();
 	session_destroy();
-	header("Location: http://localhost/GricApp/Web/index.php");
+	header("Location: http://localhost/Fadming/Web/index.php");
 ?>
