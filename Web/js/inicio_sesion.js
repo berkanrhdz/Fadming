@@ -36,7 +36,7 @@ function iniciar_sesion_usuario() {
 			document.getElementById("boton-iniciar-sesion").value = "Iniciando...";
 			setTimeout(function() {
 				enviar_datos_iniciar_sesion();
-			}, 1500);
+			}, 1000);
 		}
 	});
 }
@@ -70,11 +70,11 @@ function enviar_datos_iniciar_sesion() { // Función para enviar los datos del r
 function realizar_interaccion_error() {
 	setTimeout(function() {
 		document.getElementById("boton-iniciar-sesion").value = "Login incorrecto";
-		$('#boton-iniciar-sesion').css('background-color', '#A24343');
-	}, 1500);
+		$('.contenedor-inicio-sesion').css('background-color', '#A24343');
+	}, 1000);
 	setTimeout(function() {
 		vaciar_formulario_inicio();
 		document.getElementById("boton-iniciar-sesion").value = "Iniciar sesión";
-		$('#boton-iniciar-sesion').css('background-color', 'transparent');
-	}, 2500);
+		$('.contenedor-inicio-sesion').css('background-color', '#5CA45E');
+	}, 2000);
 }
