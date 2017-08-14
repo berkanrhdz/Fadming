@@ -12,15 +12,18 @@ function obtener_informacion_empresa() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_informacion(valor.nombre, valor.imagen);
+								insertar_informacion(valor.nombre, valor.direccion, valor.poblacion, valor.cp, valor.telefono, valor.imagen);
 						});
 				}
 		});
 }
 
-function insertar_informacion(nombre, imagen) {
+function insertar_informacion(nombre, direccion, poblacion, cp, telefono, imagen) {
 	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
+	var formato_direccion = direccion + ", " + poblacion + " " + cp;
 	document.getElementById('nombre-empresa').innerHTML = nombre;
+	document.getElementById('direccion').innerHTML = formato_direccion;
+	document.getElementById('telefono').innerHTML = telefono;
 	document.getElementById('logo-empresa').innerHTML = formato_imagen;
 }
 
@@ -77,7 +80,29 @@ function cambiar_contrasena_acceso() {
 	});
 	$('#boton-nueva-contrasena').click(function() {
 		if (comprobar_cambio_contrasena()) {
-			alert("Si");
+			document.getElementById("boton-nueva-contrasena").value = "Actualizando...";
+			enviar_nueva_contrasena();
+			setTimeout(function() {
+				document.getElementById("boton-nueva-contrasena").value = "Actualizado";
+			}, 1500);
+			setTimeout(function() {
+				vaciar_formulario_contrasena();
+				document.getElementById("boton-nueva-contrasena").value = "Actualizar";
+				$('.contenedor-input-nueva').fadeOut(function() {
+					$('#boton-cambiar-contrasena').fadeIn();
+				});
+			}, 2500);
 		}
 	});
+}
+
+
+function enviar_nueva_contrasena() {
+	var contrasena = document.getElementById('nueva-contrasena').value;
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/cambiar_contrasena_empresa.php',
+				data: 'contrasena='+contrasena,
+				dataType: 'json',
+		});
 }

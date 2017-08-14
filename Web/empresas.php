@@ -43,14 +43,14 @@
                                   <div class="contenedor-informacion-empresa">
                                     <div class="contenedor-direccion">
                                       <div id="icono-direccion"></div>
-                                      <div id="direccion">Calle Ecuador 11, Güímar 38500</div>
+                                      <div id="direccion"></div>
                                     </div>
                                     <div class="contenedor-telefono">
                                       <div id="icono-telefono"></div>
-                                      <div id="telefono">922510012</div>
+                                      <div id="telefono"></div>
                                     </div>
                                     <div class="contenedor-cambiar-contrasena">
-                                      <div id="boton-cambiar-contrasena">Cambiar contraseña acceso</div>
+                                      <div id="boton-cambiar-contrasena">Cambiar contraseña de acceso</div>
                                       <div class="contenedor-input-nueva">
                                         <div class="contenedor-input-cambio">
                                           <div class="contenedor-inputs">
