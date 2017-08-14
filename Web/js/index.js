@@ -1,28 +1,31 @@
 // DOCUMENTO JAVASCRIPT DE index.php
 
+// DECLARACIÓN DE VARIABLES GLOBALES.
+var contadorSlide = 1;
+
 $(document).ready(function() {
 	acciones_slide();
 	cambiar_color_registro();
 	mostrar_ocultar_registro();
+	transiciones_slide(contadorSlide);
 });
 
 function acciones_slide() { // Método para realizar las acciones del slide de imágenes.
-	var contadorSlide = 1;
 	var nombreImagen;
 	$("#flecha-izquierda").hover(
 		function() {
-			$(this).css('background-image', 'url("images/iconos/naranja/flecha-izquierda.png")');
+			$(this).css('opacity', '1.0');
 			$(this).css('cursor', 'pointer');
 	  	}, function() {
-			$(this).css('background-image', 'url("images/iconos/negro/flecha-izquierda.png")');
+				$(this).css('opacity', '0.6');
 	  	}
 	);
 	$("#flecha-derecha").hover(
 		function() {
-			$(this).css('background-image', 'url("images/iconos/naranja/flecha-derecha.png")');
+			$(this).css('opacity', '1.0');
 			$(this).css('cursor', 'pointer');
 	  	}, function() {
-			$(this).css('background-image', 'url("images/iconos/negro/flecha-derecha.png")');
+				$(this).css('opacity', '0.6');
 	  	}
 	);
 	$("#flecha-izquierda").click(function() {
@@ -41,6 +44,18 @@ function acciones_slide() { // Método para realizar las acciones del slide de i
 		nombreImagen = 'url("images/slide/' + contadorSlide + '.png")';
 		$(".contenedor-informacion").css('background-image', nombreImagen);
 	});
+}
+
+function transiciones_slide(imagen) {
+	nombreImagen = 'url("images/slide/' + imagen + '.png")';
+	$(".contenedor-informacion").css('background-image', nombreImagen);
+	contadorSlide++;
+	if (contadorSlide > 4) {
+		contadorSlide = 1;
+	}
+	setTimeout(function() {
+		transiciones_slide(contadorSlide);
+	}, 8000);
 }
 
 function cambiar_color_registro() { // Función para cambiar el color del div de acceso al registro.

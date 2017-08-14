@@ -75,6 +75,6 @@ function realizar_interaccion_error() {
 	setTimeout(function() {
 		vaciar_formulario_inicio();
 		document.getElementById("boton-iniciar-sesion").value = "Iniciar sesión";
-		$('.contenedor-inicio-sesion').css('background-color', '#5CA45E');
+		$('.contenedor-inicio-sesion').css('background-color', '#76A06B');
 	}, 2000);
 }

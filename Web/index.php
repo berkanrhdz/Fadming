@@ -17,7 +17,7 @@
         	<div class="contenedor-izquierdo">
                 <div class="contenedor-informacion-registro">
                     <div class="titulo-informacion-registro">
-                        <div class="contenedor-texto-titulo">Actualiza tu cultivo y disfruta de todas sus ventajas</div>
+                        <div class="contenedor-texto-titulo">Actualiza tu cultivo y disfruta de sus ventajas</div>
                         <div class="contenedor-android">
                             <div id="imagen-android"></div>
                             <div id="texto-android">Aplicación displonible para Android</div>
@@ -28,7 +28,6 @@
                             <div id="flecha-izquierda"></div>
                         </div>
                         <div class="contenedor-imagen"></div>
-                        <div class="contenedor-informacion-imagen"></div>
                         <div class="contenedor-flecha-derecha">
                             <div id="flecha-derecha"></div>
                         </div>
@@ -41,9 +40,7 @@
                             </div>
                             <div class="contenedor-informacion-codigo">
                                 <div class="contenedor-titulo-codigo">Accede al desarrollo de Fadming</div>
-                                <div class="contenedor-informacion-qr">Escanea el siguiente código QR y visita el desarrollo del proyecto.
-                                                                       Puedes dejarnos tus sugerencias y aquellos contenidos que crees
-                                                                       que ayudará a mejorar.</div>
+                                <div class="contenedor-informacion-qr"></div>
                             </div>
                         </div>
                         <div class="formulario-registro">

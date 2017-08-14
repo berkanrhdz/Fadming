@@ -73,7 +73,7 @@ body {
 
 .contenedor-informacion-registro .titulo-informacion-registro {
 	width: 100%;
-	height: 20%;
+	height: 15%;
 	margin-top: 3%;
 	background-color: #2A2B2A;
 }
@@ -85,10 +85,11 @@ body {
 	justify-content: center;
   align-content: center;
   flex-direction: column;
-  font-family: sans-serif;
+  font-family: fuente-mayuscula;
   font-weight: bold;
   color: #FFFFFF;
-  font-size: 1.6em;
+  font-size: 1.5em;
+	letter-spacing: 0.030em;
   text-align: center;
 }
 
@@ -119,19 +120,20 @@ body {
 	justify-content: center;
   align-content: center;
   flex-direction: column;
-  font-family: sans-serif;
+  font-family: fuente-mayuscula;
   font-weight: bold;
   color: #000000;
-  font-size: 1.0em;
+  font-size: 0.9em;
+	text-align: center;
 }
 
 .contenedor-informacion-registro .contenedor-informacion {
 	width: 100%;
-	height: 40%;
+	height: 45%;
 	margin: 0 auto;
 	margin-top: 2%;
-	border-top: 3px solid #575957;
-	border-bottom: 3px solid #575957;
+	border-top: 1px solid #BBB3B1;
+	border-bottom: 1px solid #BBB3B1;
 	background-image: url("../images/slide/1.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -144,8 +146,8 @@ body {
 	float: left;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
+  align-content: center;
+  flex-direction: column;
 }
 
 .contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-izquierda #flecha-izquierda {
@@ -157,24 +159,9 @@ body {
 	background-size: 45% 70%;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    opacity: 0.6;
-}
-
-.contenedor-informacion-registro .contenedor-informacion .contenedor-informacion-imagen {
-	width: 20%;
-	height: 100%;
-	float: left;
-	background-image: url("../images/fondo-transparente-imagenes.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 100% 100%;
-	color: #000000;
-	font-weight: bold;
-	font-size: 0.9em;
-	text-align: justify;
-	font-family: sans-serif;
+  align-content: center;
+  flex-direction: column;
+	opacity: 0.6;
 }
 
 .contenedor-informacion-registro .contenedor-informacion .contenedor-flecha-derecha {
@@ -205,7 +192,7 @@ body {
 	width: 100%;
 	height: 28%;
 	margin-top: 2%;
-  background-color: #5CA45E;
+  background-color: #76A06B;
 }
 
 .contenedor-informacion-registro .contenedor-registro .desplegar-registrar {
@@ -228,11 +215,13 @@ body {
 .contenedor-informacion-registro .contenedor-registro .contenedor-codigo-qr {
 	width: 100%;
 	height: 80%;
+	border-bottom: 0.5px solid #BBB3B1;
 }
 
 .contenedor-registro .contenedor-codigo-qr .contenedor-codigo {
 	width: 30%;
 	height: 100%;
+	background-color: #FCFCFC;
   float: left;
   display: flex;
   justify-content: center;
@@ -241,52 +230,50 @@ body {
 }
 
 .contenedor-registro .contenedor-codigo-qr .contenedor-codigo #codigo-qr {
-	width: 55%;
-	height: 80%;
+	width: 62%;
+	height: 85%;
   margin: 0 auto;
   background-image: url("../images/qr_github.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
   border-radius: 0.3em;
-  border: 0.5px solid #000000;
+	border: 1px solid #D8CECB;
 }
 
 .contenedor-registro .contenedor-codigo-qr .contenedor-informacion-codigo {
 	width: 70%;
-	height: 99%;
+	height: 100%;
   float: right;
-  background-image: url("../images/fondo_transparente.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
+	background-color: #FCFCFC;
 }
 
 .contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-titulo-codigo {
-	width: 98%;
+	width: 97%;
 	height: 40%;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
-  font-family: sans-serif;
+  font-family: fuente-mayuscula;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.2em;
   color: #FFFFFF;
   text-align: left;
-  background-color: #1B1C1B;
-  padding-left: 2%;
+  background-color: #2A2B2A;
+  padding-left: 3%;
+	letter-spacing: 0.045em;
   border-bottom-left-radius: 0.8em;
 }
 
 .contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-informacion-qr {
 	width: 96%;
 	height: 50%;
-  font-family: sans-serif;
-  font-size: 0.85em;
-  color: #000000;
+  font-family: fuente-texto-codigo;
+  font-size: 1.1em;
+  color: #2A2B2A;
   text-align: justify;
-  line-height: 1.35em;
+  line-height: 1.5em;
   padding: 2%;
   font-weight: bold;
 }
@@ -608,7 +595,7 @@ body {
 .contenedor-login .contenedor-inicio-sesion {
 	width: 100%;
 	height: 33%;
-	background-color: #5CA45E;
+	background-color: #76A06B;
 }
 
 .contenedor-inicio-sesion .input-usuario-contrasena {
@@ -668,4 +655,14 @@ body {
 @font-face {
     font-family: fuente-titulo;
     src: url(../fonts/KeepCalm-Medium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: fuente-texto-codigo;
+    src: url(../fonts/Simply-Rounded.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: fuente-mayuscula;
+    src: url(../fonts/Nickname.otf) format("truetype");
 }
