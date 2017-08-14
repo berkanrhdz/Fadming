@@ -2,6 +2,7 @@
 
 // DECLARACIÓN DE CONSTANTES.
 const ERROR_LOGIN = -1;
+const LOGIN_CORRECTO = 1;
 
 $(document).ready(function() {
 	iniciar_sesion_usuario();
@@ -35,7 +36,7 @@ function iniciar_sesion_usuario() {
 			document.getElementById("boton-iniciar-sesion").value = "Iniciando...";
 			setTimeout(function() {
 				enviar_datos_iniciar_sesion();
-			}, 1000);
+			}, 1500);
 		}
 	});
 }
@@ -59,7 +60,7 @@ function enviar_datos_iniciar_sesion() { // Función para enviar los datos del r
 									realizar_interaccion_error();
 								}
 								else if (valor.respuesta == LOGIN_CORRECTO) {
-									window.location.assign("estados.php");
+									window.location.href = "http://localhost/Fadming/Web/plantas.php";
 								}
 						});
 				}
