@@ -10,7 +10,7 @@
   $clave = 'gricapp, una aplicación del futuro';
   $contrasena_encriptada = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_256, md5($clave), $contrasena, MCRYPT_MODE_CBC, md5(md5($clave))));
 
-  $consulta = "SELECT ID_USUARIO, TIPO
+  $consulta = "SELECT ID_USUARIO, TIPO, EMPRESA
 	    		     FROM USUARIO
 	    		     WHERE ((NOMBRE_USUARIO = '$usuario') AND (CONTRASENA = '$contrasena_encriptada'))
 	    		     LIMIT 1;";
@@ -22,6 +22,7 @@
 		$_SESSION['identificador'] = $datos[0];
 		$_SESSION['usuario'] = $usuario;
 		$_SESSION['tipo'] = $datos[1];
+		$_SESSION['empresa'] = $datos[2];
 	}
 	else {
 		$informacion[] = array('respuesta'=> ERROR_LOGIN);

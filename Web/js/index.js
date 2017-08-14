@@ -1,5 +1,8 @@
 // DOCUMENTO JAVASCRIPT DE index.php
 
+// DECLARACIÓN DE CONSTANTES.
+const MAX_SLIDE = 3;
+
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var contadorSlide = 1;
 
@@ -31,14 +34,14 @@ function acciones_slide() { // Método para realizar las acciones del slide de i
 	$("#flecha-izquierda").click(function() {
 		contadorSlide--;
 		if (contadorSlide < 1) {
-			contadorSlide = 4;
+			contadorSlide = MAX_SLIDE;
 		}
 		nombreImagen = 'url("images/slide/' + contadorSlide + '.png")';
 		$(".contenedor-informacion").css('background-image', nombreImagen);
 	});
 	$("#flecha-derecha").click(function() {
 		contadorSlide++;
-		if (contadorSlide > 4) {
+		if (contadorSlide > MAX_SLIDE) {
 			contadorSlide = 1;
 		}
 		nombreImagen = 'url("images/slide/' + contadorSlide + '.png")';
@@ -50,7 +53,7 @@ function transiciones_slide(imagen) {
 	nombreImagen = 'url("images/slide/' + imagen + '.png")';
 	$(".contenedor-informacion").css('background-image', nombreImagen);
 	contadorSlide++;
-	if (contadorSlide > 4) {
+	if (contadorSlide > MAX_SLIDE) {
 		contadorSlide = 1;
 	}
 	setTimeout(function() {

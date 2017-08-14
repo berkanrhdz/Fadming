@@ -26,39 +26,43 @@
     		</div>
     		<div class="contenedor-informacion">
                 <div class="contenedor-titulo-pagina">
-                    <div id="titulo-pagina">Empresas</div>
+                    <div id="titulo-pagina">Empresa</div>
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-                        <div class="contenedor-empresas-boton">
-                            <div class="contenedor-boton">
-                                <div id="boton-nueva-empresa">Añadir una nueva empresa</div>
-                            </div>
+                        <div class="contenedor-empresas-nombre">
+                            <div class="contenedor-nombre" id="nombre-empresa"></div>
                             <div class="contenedor-empresas-estadisticas">
                                 <div class="contenedor-empresas">
-                                    <div class="empresa" id="empresa-1">
-                                        <div id="imagen-empresa"></div>
-                                        <div class="informacion-empresa">
-                                            <div id="nombre-empresa">Cultivos La Candelaria</div>
-                                            <div id="lugar-empresa">Santa Cruz de Tenerife 38009</div>
-                                            <div id="calle-empresa">Robayna Almentara 97</div>
-                                            <div class="contenedor-telefono">
-                                                <div id="icono-telefono"></div><div id="telefono-empresa">902519811</div>
-                                            </div>
-                                        </div>
+                                  <div class="contenedor-logo-mapa">
+                                    <div class="contenedor-logo">
+                                      <div id="logo-empresa"></div>
                                     </div>
-                                    <div class="empresa" id="empresa-2">
-                                        <div id="imagen-empresa"></div>
-                                        <div class="informacion-empresa">
-                                            <div id="nombre-empresa">Agrupación de Agricultores Ecológicos de Canarias</div>
-                                            <div id="lugar-empresa">Arafo 38550</div>
-                                            <div id="calle-empresa">Pérez Carmona 18</div>
-                                            <div class="contenedor-telefono">
-                                                <div id="icono-telefono"></div><div id="telefono-empresa">922514811</div>
-                                            </div>
-                                        </div>
+                                    <div class="contenedor-mapa"></div>
+                                  </div>
+                                  <div class="contenedor-informacion-empresa">
+                                    <div class="contenedor-direccion">
+                                      <div id="icono-direccion"></div>
+                                      <div id="direccion">Calle Ecuador 11, Güímar 38500</div>
                                     </div>
-                                    <div class="contenedor-paginas-empresa"></div>
+                                    <div class="contenedor-telefono">
+                                      <div id="icono-telefono"></div>
+                                      <div id="telefono">922510012</div>
+                                    </div>
+                                    <div class="contenedor-cambiar-contrasena">
+                                      <div id="boton-cambiar-contrasena">Cambiar contraseña acceso</div>
+                                      <div class="contenedor-input-nueva">
+                                        <div class="contenedor-input-cambio">
+                                          <div class="contenedor-inputs">
+                                            <input type="submit" id="boton-atras" value=" "></input>
+                                            <input id="nueva-contrasena" name="nueva-contrasena" type="password" autocomplete="off" placeholder="Nueva contraseña"></input>
+                                            <input id="repetir-nueva-contrasena" name="repetir-nueva-contrasena" type="password" autocomplete="off" placeholder="Repetir contraseña"></input>
+                                            <input type="submit" id="boton-nueva-contrasena" value="Actualizar"></input>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                                 <div class="contenedor-estadisticas"></div>
                             </div>
