@@ -3,7 +3,7 @@
   require("conectar_basedatos.php");
 
   $codigo_empresa = $_SESSION['empresa'];
-	$consulta = "SELECT NOMBRE, DIRECCION, POBLACION, CODIGO_POSTAL, TELEFONO, LOGO
+	$consulta = "SELECT NOMBRE, DIRECCION, POBLACION, CODIGO_POSTAL, TELEFONO, LOGO, DATE_FORMAT(`FECHA_REGISTRO`, '%d %Y') `DIA_ANO`, DATE_FORMAT(`FECHA_REGISTRO`, '%c') `MES`
 							 FROM EMPRESA
 							 WHERE (CODIGO = '$codigo_empresa');";
 
@@ -24,6 +24,8 @@
 												 'cp'=> $datos[3],
 												 'telefono'=> $datos[4],
 												 'administrador'=> $datos_administrador[0],
+												 'dia_ano'=> $datos[6],
+												 'mes'=> $datos[7],
 												 'imagen'=> $imagen_base64);
 	echo json_encode($informacion);
 ?>

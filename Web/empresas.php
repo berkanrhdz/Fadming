@@ -31,10 +31,10 @@
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-                        <div class="contenedor-empresas-nombre">
+                        <div class="contenedor-empresa-nombre">
                             <div class="contenedor-nombre" id="nombre-empresa"></div>
-                            <div class="contenedor-empresas-estadisticas">
-                                <div class="contenedor-empresas">
+                            <div class="contenedor-empresa-datos">
+                                <div class="contenedor-empresa">
                                   <div class="contenedor-logo-telefono">
                                     <div class="contenedor-logo">
                                       <div id="logo-empresa"></div>
@@ -61,10 +61,16 @@
                                       <div id="icono-direccion"></div>
                                       <div id="direccion"></div>
                                     </div>
-                                    <?php require("php/rol_empresa.php"); ?>
+                                    <?php require('php/rol_empresa.php'); ?>
                                   </div>
                                 </div>
-                                <div class="contenedor-estadisticas"></div>
+                                <div class="contenedor-datos">
+                                  <div class="contenedor-titulo-datos">Datos de la empresa</div>
+                                  <div class="contenedor-contenido-datos">
+                                    <div class="contenedor-registros" id="contenedor-registros"></div>
+                                    <div class="contenedor-fecha" id="fecha-registro-empresa"></div>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                     </div>

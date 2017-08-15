@@ -70,7 +70,7 @@ function enviar_datos_iniciar_sesion() { // Función para enviar los datos del r
 function realizar_interaccion_error() {
 	setTimeout(function() {
 		document.getElementById("boton-iniciar-sesion").value = "Login incorrecto";
-		$('.contenedor-inicio-sesion').css('background-color', '#A24343');
+		$('.contenedor-inicio-sesion').css('background-color', '#9E3232');
 	}, 1000);
 	setTimeout(function() {
 		vaciar_formulario_inicio();

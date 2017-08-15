@@ -1,5 +1,11 @@
 // DOCUMENTO JAVASCRIPT DE empresas.php
 
+// DECLARACIÓN DE VARIABLES GLOBALES.
+var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
+// DECLARACIÓN DE CONSTANTES.
+const NUMERO_REGISTROS = 5;
+
 $(document).ready(function() {
 	cambiar_contrasena_acceso();
 });
@@ -11,21 +17,27 @@ function obtener_informacion_empresa() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_informacion(valor.nombre, valor.direccion, valor.poblacion, valor.cp, valor.telefono, valor.administrador, valor.imagen);
+								insertar_informacion(valor.nombre, valor.direccion, valor.poblacion, valor.cp, valor.telefono, valor.administrador, valor.dia_ano, valor.mes, valor.imagen);
 						});
 				}
 		});
 }
 
-function insertar_informacion(nombre, direccion, poblacion, cp, telefono, administrador, imagen) {
+function insertar_informacion(nombre, direccion, poblacion, cp, telefono, administrador, dia_ano, mes, imagen) {
 	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
 	var formato_direccion = direccion + ", " + poblacion + " " + cp;
+	var dia = dia_ano.substr(0, 2);
+	var mes = meses_año[mes - 1];
+	var ano = dia_ano.substr(3, 4);
+	var formato_fecha = "En Fadming desde el <b>" + dia + " de " + mes + " de " + ano + "</b>";
 	document.getElementById('nombre-empresa').innerHTML = nombre;
 	document.getElementById('telefono').innerHTML = telefono;
 	document.getElementById('direccion').innerHTML = formato_direccion;
 	document.getElementById('administrador').innerHTML = administrador;
 	document.getElementById('logo-empresa').innerHTML = formato_imagen;
+	document.getElementById('fecha-registro-empresa').innerHTML = formato_fecha;
 	iniciar_mapa(formato_direccion);
+	obtener_registros_empresa();
 }
 
 function comprobar_cambio_contrasena() {
@@ -129,4 +141,29 @@ function geocodeAddress(geocoder, resultsMap, direccion) {
 			alert('Error al obtener el mapa de su empresa: ' + status);
 		}
 	});
+}
+
+function obtener_registros_empresa() {
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/obtener_registros_empresa.php',
+				dataType: 'json',
+				success: function(datos) {
+						$(datos).each(function(i, valor) {
+								insertar_registros(valor.n_fincas, valor.n_huertos, valor.n_plantas, valor.n_usuarios, valor.planta_comun);
+						});
+				}
+		});
+}
+
+function insertar_registros(n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun) {
+	var nombres_registro = ['Número de fincas', 'Número de huertos', 'Número de plantas', 'Usuarios en la empresa', 'Planta más común'];
+	var datos_registro = [n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun.toUpperCase()];
+	for (var i = 0; i < NUMERO_REGISTROS; i++) {
+		var formato_registro = "<div class='contenedor-registro'>" +
+															"<div id='nombre-registro'>" + nombres_registro[i] + "</div>" +
+															"<div id='dato-registro'>" + datos_registro[i] + "</div>" +
+														"</div>";
+		document.getElementById('contenedor-registros').innerHTML += formato_registro;
+	}
 }
