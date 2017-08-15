@@ -1,7 +1,6 @@
 // DOCUMENTO JAVASCRIPT DE empresas.php
 
 $(document).ready(function() {
-	obtener_informacion_empresa();
 	cambiar_contrasena_acceso();
 });
 
@@ -22,9 +21,10 @@ function insertar_informacion(nombre, direccion, poblacion, cp, telefono, imagen
 	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
 	var formato_direccion = direccion + ", " + poblacion + " " + cp;
 	document.getElementById('nombre-empresa').innerHTML = nombre;
-	document.getElementById('direccion').innerHTML = formato_direccion;
 	document.getElementById('telefono').innerHTML = telefono;
+	document.getElementById('direccion').innerHTML = formato_direccion;
 	document.getElementById('logo-empresa').innerHTML = formato_imagen;
+	iniciar_mapa(formato_direccion);
 }
 
 function comprobar_cambio_contrasena() {
@@ -105,4 +105,27 @@ function enviar_nueva_contrasena() {
 				data: 'contrasena='+contrasena,
 				dataType: 'json',
 		});
+}
+
+function iniciar_mapa(direccion) {
+	var mapa = new google.maps.Map(document.getElementById('mapa'), {
+		zoom: 11,
+		center: {lat: 28.2937135, lng: -16.8028574}
+	});
+	var geocoder = new google.maps.Geocoder();
+	geocodeAddress(geocoder, mapa, direccion);
+}
+
+function geocodeAddress(geocoder, resultsMap, direccion) {
+	geocoder.geocode({'address': direccion}, function(results, status) {
+		if (status === 'OK') {
+			resultsMap.setCenter(results[0].geometry.location);
+			var marker = new google.maps.Marker({
+				map: resultsMap,
+				position: results[0].geometry.location
+			});
+		} else {
+			alert('Error al obtener el mapa de su empresa: ' + status);
+		}
+	});
 }

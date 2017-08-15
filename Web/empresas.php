@@ -9,6 +9,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
         <script src="js/empresas.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYwGv9189KZ_NuUnVwQvmmzQyu39Xwp70&callback=obtener_informacion_empresa"></script>
     </head>
 
     <body>
@@ -34,21 +35,25 @@
                             <div class="contenedor-nombre" id="nombre-empresa"></div>
                             <div class="contenedor-empresas-estadisticas">
                                 <div class="contenedor-empresas">
-                                  <div class="contenedor-logo-mapa">
+                                  <div class="contenedor-logo-telefono">
                                     <div class="contenedor-logo">
                                       <div id="logo-empresa"></div>
                                     </div>
-                                    <div class="contenedor-mapa"></div>
+                                    <div class="contenedor-datos-informacion">
+                                      <div class="contenedor-datos-telefono">
+                                        <div class="contenedor-telefono">
+                                          <div id="icono-telefono"></div>
+                                          <div id="telefono"></div>
+                                        </div>
+                                      </div>
+                                    </div>
                                   </div>
                                   <div class="contenedor-informacion-empresa">
                                     <div class="contenedor-direccion">
                                       <div id="icono-direccion"></div>
                                       <div id="direccion"></div>
                                     </div>
-                                    <div class="contenedor-telefono">
-                                      <div id="icono-telefono"></div>
-                                      <div id="telefono"></div>
-                                    </div>
+                                    <div id="mapa"></div>
                                     <div class="contenedor-cambiar-contrasena">
                                       <div id="boton-cambiar-contrasena">Cambiar contraseña de acceso</div>
                                       <div class="contenedor-input-nueva">

@@ -115,7 +115,7 @@ body .contenedor-principal {
 .barra-lateral-izquierda .fila-acceso {
 	width: 100%;
 	height: 6.5%;
-	border-bottom: 2px solid #363835;
+	border-bottom: 1px solid #635F5F;
 }
 
 .barra-lateral-izquierda .fila-acceso #icono-empresa {
@@ -634,63 +634,107 @@ body .contenedor-principal {
 	border: 1px solid #D8CECB;
 }
 
-.contenedor-empresas .contenedor-logo-mapa {
+.contenedor-empresas .contenedor-logo-telefono {
 	width: 100%;
-	height: 50%;
+	height: 40%;
 	border-top-right-radius: 0.2em;
 	border-top-left-radius: 0.2em;
 	background-color: #5CA45E;
 }
 
-.contenedor-logo-mapa .contenedor-logo {
-	width: 45%;
+.contenedor-logo-telefono .contenedor-logo {
+	width: 40%;
 	height: 100%;
-	float: left;
 	border-top-left-radius: 0.2em;
+	float: left;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
 }
 
-.contenedor-logo-mapa .contenedor-logo #logo-empresa {
+.contenedor-logo-telefono .contenedor-logo #logo-empresa {
 	width: 90%;
 	height: 90%;
+	border-radius: 0.4em;
 	margin: 0 auto;
-	background-color: #FFFFFF;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
-	border-radius: 0.4em;
-	border: 0.5px solid #D8CECB;
 }
 
-.contenedor-logo-mapa .contenedor-logo #logo-empresa img {
-	width: 85%;
-	height: 85%;
+.contenedor-logo-telefono .contenedor-logo #logo-empresa img {
+	width: 100%;
+	height: 100%;
+	border-radius: 0.4em;
 	margin: 0 auto;
 }
 
-.contenedor-logo-mapa .contenedor-mapa {
-	width: 54.7%;
+.contenedor-logo-telefono .contenedor-datos-informacion {
+	width: 60%;
+	height: 100%;
+	border-top-right-radius: 0.2em;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-logo-telefono .contenedor-datos-informacion .contenedor-datos-telefono {
+	width: 95%;
+	height: 90%;
+	margin: 0 auto;
+	border-radius: 0.4em;
+	background-color: #FFFFFF;
+}
+
+.contenedor-datos-informacion .contenedor-datos-telefono .contenedor-telefono {
+	width: 100%;
+	height: 30%;
+	background-color: #2A2B2A;
+	margin-top: 4%;
+}
+
+.contenedor-datos-telefono .contenedor-telefono #icono-telefono {
+	width: 15%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/blanco/telefono.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 53% 65%;
+}
+
+.contenedor-datos-telefono .contenedor-telefono #telefono {
+	width: 83%;
 	height: 100%;
 	float: right;
-	border-top-right-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+	text-align: left;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	letter-spacing: 0.02em;
 }
 
 .contenedor-empresas .contenedor-informacion-empresa {
 	width: 100%;
-	height: 42%;
+	height: 60%;
 	border-bottom-right-radius: 0.2em;
 	border-bottom-left-radius: 0.2em;
 	background-color: #2A2B2A;
-	padding-top: 6%;
 }
 
 .contenedor-informacion-empresa .contenedor-direccion {
 	width: 100%;
-	height: 25%;
+	height: 17%;
 	background-color: #F7DB5C;
 }
 
@@ -720,42 +764,17 @@ body .contenedor-principal {
 	font-size: 0.9em;
 }
 
-.contenedor-informacion-empresa .contenedor-telefono {
+.contenedor-informacion-empresa #mapa {
 	width: 100%;
-	height: 25%;
-	background-color: #F2ECEA;
-}
-
-.contenedor-informacion-empresa .contenedor-telefono #icono-telefono {
-	width: 10%;
-	height: 100%;
-	float: left;
-	background-image: url("../images/iconos/negro/telefono.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 53% 65%;
-}
-
-.contenedor-informacion-empresa .contenedor-telefono #telefono {
-	width: 88%;
-	height: 100%;
-	float: right;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	padding-left: 2%;
-	text-align: left;
-	color: #2A2B2A;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 0.9em;
+	height: 63%;
 }
 
 .contenedor-informacion-empresa .contenedor-cambiar-contrasena {
 	width: 100%;
-	height: 30%;
-	background-color: #B44E4E;
+	height: 20%;
+	background-color: #2A2B2A;
+	border-bottom-right-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
 }
 
 .contenedor-informacion-empresa .contenedor-cambiar-contrasena #boton-cambiar-contrasena {
@@ -770,12 +789,16 @@ body .contenedor-principal {
 	font-weight: bold;
 	font-family: sans-serif;
 	font-size: 0.9em;
+	border-bottom-right-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
 }
 
 .contenedor-informacion-empresa .contenedor-cambiar-contrasena .contenedor-input-nueva {
 	width: 100%;
 	height: 100%;
 	display: none;
+	border-bottom-right-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
 }
 
 .contenedor-cambiar-contrasena .contenedor-input-nueva .contenedor-input-cambio {
@@ -843,7 +866,7 @@ body .contenedor-principal {
 }
 
 .contenedor-input-cambio .contenedor-inputs #boton-atras:hover {
-	background-image: url("../images/iconos/negro/flecha-izquierda.png");
+	background-image: url("../images/iconos/naranja/flecha-izquierda.png");
 	cursor: pointer;
 }
 
@@ -855,8 +878,8 @@ body .contenedor-principal {
 }
 
 .contenedor-informacion-empresa .contenedor-cambiar-contrasena #boton-cambiar-contrasena:hover {
-	background-color: #FFFFFF;
-	color: #2A2B2A;
+	background-color: #B44E4E;
+	color: #FFFFFF;
 	font-size: 1.0em;
 	cursor: pointer;
 }
