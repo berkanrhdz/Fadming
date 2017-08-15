@@ -435,22 +435,9 @@ body .contenedor-principal {
 	margin: 0 auto;
 }
 
-.contenedor-boton .contenedor-boton-foto-perfil input {
+.contenedor-foto-perfil .contenedor-boton .contenedor-boton-foto-perfil form {
 	width: 100%;
 	height: 100%;
-	background-color: #5CA45E;
-	border-radius: 0.5em;
-	border: 1px solid #E5E2E2;
-	font-size: 0.85em;
-	font-family: sans-serif;
-	font-weight: bold;
-	color: #FFFFFF;
-}
-
-.contenedor-boton .contenedor-boton-foto-perfil input:hover {
-	background-color: #F7DB5C;
-	cursor: pointer;
-	color: #000000;
 }
 
 .contenedor-informacion-pagina .contenedor-derecho-informacion .contenedor-cambio-contrasena {
@@ -739,7 +726,7 @@ body .contenedor-principal {
 	background-image: url("../images/iconos/negro/administrador.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 53% 60%;
+	background-size: 58% 60%;
 }
 
 .contenedor-datos-telefono .contenedor-administrador #administrador {
@@ -974,8 +961,9 @@ body .contenedor-principal {
 .contenedor-empresa-datos .contenedor-datos .contenedor-titulo-datos {
 	width: 100%;
 	height: 10%;
-	background-color: #2A2B2A;
-	color: #FFFFFF;
+	border-bottom: 0.5px solid #BBB3B1;
+	background-color: #F7DB5C;
+	color: #2A2B2A;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 0.9em;
@@ -1026,27 +1014,28 @@ body .contenedor-principal {
 }
 
 .contenedor-registros .contenedor-registro #dato-registro {
-	width: 25%;
-	height: 100%;
+	width: 24%;
+	height: 98%;
 	float: right;
 	background-color: #5CA45E;
 	color: #FFFFFF;
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	text-align: center;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
+	padding: 0.1%;
 }
 
 .contenedor-datos .contenedor-contenido-datos .contenedor-fecha {
 	width: 100%;
 	height: 13%;
 	border-top: 0.5px solid #BBB3B1;
-	background-color: #F7DB5C;
-	color: #2A2B2A;
+	background-color: #2A2B2A;
+	color: #FFFFFF;
 	font-family: sans-serif;
 	font-size: 0.9em;
 	text-align: center;

@@ -3,8 +3,8 @@
   require("conectar_basedatos.php");
 
   $identificador = $_SESSION['identificador'];
-	$consulta = "SELECT `NOMBRE`, `APELLIDOS`, `CORREO`, `NOMBRE_USUARIO`, DATE_FORMAT(`FECHA_REGISTRO`, '%d-%m-%Y') `FECHA`, `TIPO`
-    			 		 FROM `USUARIO` USU, `ROL` ROL
+	$consulta = "SELECT NOMBRE, APELLIDOS, CORREO, NOMBRE_USUARIO, DATE_FORMAT(FECHA_REGISTRO, '%d-%m-%Y') FECHA, ROL.TIPO
+    			 		 FROM USUARIO USU, ROL ROL
     			     WHERE (USU.ROL = ROL.VALOR) AND (USU.ID_USUARIO = $identificador)";
 
 	$resultado_consulta = mysql_query($consulta);

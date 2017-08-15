@@ -10,7 +10,7 @@ $(document).ready(function() {
 function obtener_datos_usuario() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/Fadming/Web/php/mostrar_datos_usuario.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_datos_usuario.php',
         success: function(datos) {
 					var JSON_datos = JSON.parse(datos);
     				document.getElementById("nombre").value = JSON_datos[0].nombre;
@@ -62,9 +62,7 @@ function cambiar_boton_actualizar() {
 function mostrar_borrar_cuenta() {
 	$("#boton-advertencia").click(function() {
 		$(".contenedor-borrar-cuenta").animate({'height': '30%'}, "slow");
-		setTimeout(function() {
-			$(".contenedor-mensaje-advertencia").css('height', '65%');
-		}, 150);
+		$(".contenedor-mensaje-advertencia").css('height', '65%');
 		$(".contenedor-boton-borrar-cuenta").fadeIn();
 		document.getElementById("boton-advertencia").id = "titulo-advertencia";
   		$("#titulo-advertencia").css('background-color', '#2A2B2A');

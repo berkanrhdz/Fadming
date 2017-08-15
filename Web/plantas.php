@@ -18,7 +18,7 @@
     	<div class="barra-superior">
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
-    			<div id="nombre-usuario"><?php echo $_SESSION['usuario'] ?></div>
+    			<div id="nombre-usuario"><?php error_reporting(0); echo $_SESSION['usuario']?></div>
           <div id="icono-ajustes"><a href="ajustes.php"></a></div>
     			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>

@@ -15,7 +15,7 @@
     	<div class="barra-superior">
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
-    			<div id="nombre-usuario"><?php echo $_SESSION['usuario'] ?></div>
+    			<div id="nombre-usuario"><?php error_reporting(0); echo $_SESSION['usuario']?></div>
     			<div id="icono-ajustes"><a href="ajustes.php"></a></div>
     			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>
@@ -85,7 +85,12 @@
                                     <div id="foto-perfil"></div>
                                     <div class="contenedor-boton">
                                         <div class="contenedor-boton-foto-perfil">
-                                            <input id="boton-foto-perfil" name="boton-foto-perfil" type="submit" value="Cambiar foto"></input>
+                                          <form method="post" enctype="multipart/form-data">
+                                            <label for="imagen">Subir imagen:</label>
+                                            <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+                                            <input type="file" name="imagen" id="imagen" />
+                                            <input type="submit" name="subirBtn" id="subirBtn" value="Subir imagen" />
+                                          </form>
                                         </div>
                                     </div>
                                 </div>

@@ -4,7 +4,7 @@
 var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
 // DECLARACIÓN DE CONSTANTES.
-const NUMERO_REGISTROS = 5;
+const NUMERO_REGISTROS = 7;
 
 $(document).ready(function() {
 	cambiar_contrasena_acceso();
@@ -150,15 +150,15 @@ function obtener_registros_empresa() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_registros(valor.n_fincas, valor.n_huertos, valor.n_plantas, valor.n_usuarios, valor.planta_comun);
+								insertar_registros(valor.n_fincas, valor.n_huertos, valor.n_plantas, valor.n_usuarios, valor.planta_comun, valor.finca_mayor, valor.huerto_mayor);
 						});
 				}
 		});
 }
 
-function insertar_registros(n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun) {
-	var nombres_registro = ['Número de fincas', 'Número de huertos', 'Número de plantas', 'Usuarios en la empresa', 'Planta más común'];
-	var datos_registro = [n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun.toUpperCase()];
+function insertar_registros(n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun, finca_mayor, huerto_mayor) {
+	var nombres_registro = ['Número de fincas', 'Número de huertos', 'Número de plantas', 'Usuarios en la empresa', 'Planta más común', 'Finca con más plantas', 'Huerto con más plantas'];
+	var datos_registro = [n_fincas, n_huerto, n_plantas, n_usuarios, planta_comun.toUpperCase(), finca_mayor.toUpperCase(), huerto_mayor.toUpperCase()];
 	for (var i = 0; i < NUMERO_REGISTROS; i++) {
 		var formato_registro = "<div class='contenedor-registro'>" +
 															"<div id='nombre-registro'>" + nombres_registro[i] + "</div>" +
