@@ -11,18 +11,19 @@ function obtener_informacion_empresa() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_informacion(valor.nombre, valor.direccion, valor.poblacion, valor.cp, valor.telefono, valor.imagen);
+								insertar_informacion(valor.nombre, valor.direccion, valor.poblacion, valor.cp, valor.telefono, valor.administrador, valor.imagen);
 						});
 				}
 		});
 }
 
-function insertar_informacion(nombre, direccion, poblacion, cp, telefono, imagen) {
+function insertar_informacion(nombre, direccion, poblacion, cp, telefono, administrador, imagen) {
 	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
 	var formato_direccion = direccion + ", " + poblacion + " " + cp;
 	document.getElementById('nombre-empresa').innerHTML = nombre;
 	document.getElementById('telefono').innerHTML = telefono;
 	document.getElementById('direccion').innerHTML = formato_direccion;
+	document.getElementById('administrador').innerHTML = administrador;
 	document.getElementById('logo-empresa').innerHTML = formato_imagen;
 	iniciar_mapa(formato_direccion);
 }

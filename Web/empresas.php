@@ -45,6 +45,14 @@
                                           <div id="icono-telefono"></div>
                                           <div id="telefono"></div>
                                         </div>
+                                        <div class="contenedor-administrador">
+                                          <div id="icono-administrador"></div>
+                                          <div id="administrador"></div>
+                                        </div>
+                                        <div class="contenedor-boton-estadisticas">
+                                          <div id="icono-estadisticas"></div>
+                                          <div id="estadisticas">Consultar estadísticas</div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
@@ -53,20 +61,7 @@
                                       <div id="icono-direccion"></div>
                                       <div id="direccion"></div>
                                     </div>
-                                    <div id="mapa"></div>
-                                    <div class="contenedor-cambiar-contrasena">
-                                      <div id="boton-cambiar-contrasena">Cambiar contraseña de acceso</div>
-                                      <div class="contenedor-input-nueva">
-                                        <div class="contenedor-input-cambio">
-                                          <div class="contenedor-inputs">
-                                            <input type="submit" id="boton-atras" value=" "></input>
-                                            <input id="nueva-contrasena" name="nueva-contrasena" type="password" autocomplete="off" placeholder="Nueva contraseña"></input>
-                                            <input id="repetir-nueva-contrasena" name="repetir-nueva-contrasena" type="password" autocomplete="off" placeholder="Repetir contraseña"></input>
-                                            <input type="submit" id="boton-nueva-contrasena" value="Actualizar"></input>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
+                                    <?php require("php/rol_empresa.php"); ?>
                                   </div>
                                 </div>
                                 <div class="contenedor-estadisticas"></div>

@@ -687,14 +687,14 @@ body .contenedor-principal {
 	height: 90%;
 	margin: 0 auto;
 	border-radius: 0.4em;
-	background-color: #FFFFFF;
 }
 
 .contenedor-datos-informacion .contenedor-datos-telefono .contenedor-telefono {
 	width: 100%;
 	height: 30%;
 	background-color: #2A2B2A;
-	margin-top: 4%;
+	border-top-right-radius: 0.3em;
+	border-top-left-radius: 0.3em;
 }
 
 .contenedor-datos-telefono .contenedor-telefono #icono-telefono {
@@ -704,7 +704,7 @@ body .contenedor-principal {
 	background-image: url("../images/iconos/blanco/telefono.png");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 53% 65%;
+	background-size: 50% 65%;
 }
 
 .contenedor-datos-telefono .contenedor-telefono #telefono {
@@ -722,6 +722,82 @@ body .contenedor-principal {
 	font-family: sans-serif;
 	font-size: 0.9em;
 	letter-spacing: 0.02em;
+}
+
+.contenedor-datos-informacion .contenedor-datos-telefono .contenedor-administrador {
+	width: 100%;
+	height: 30%;
+	background-color: #F7DB5C;
+	border-bottom-right-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+}
+
+.contenedor-datos-telefono .contenedor-administrador #icono-administrador {
+	width: 15%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/negro/administrador.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 53% 60%;
+}
+
+.contenedor-datos-telefono .contenedor-administrador #administrador {
+	width: 83%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+	text-align: left;
+	color: #2A2B2A;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	letter-spacing: 0.02em;
+}
+
+.contenedor-datos-informacion .contenedor-datos-telefono .contenedor-boton-estadisticas {
+	width: 100%;
+	height: 30%;
+	border-radius: 0.4em;
+	background-color: #2A2B2A;
+	margin-top: 4%;
+}
+
+.contenedor-datos-telefono .contenedor-boton-estadisticas:hover {
+	background-color: #B44E4E;
+	color: #FFFFFF;
+	font-size: 0.95em;
+	cursor: pointer;
+}
+
+.contenedor-datos-telefono .contenedor-boton-estadisticas #icono-estadisticas {
+	width: 15%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/blanco/estadisticas.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 50%;
+}
+
+.contenedor-datos-telefono .contenedor-boton-estadisticas #estadisticas {
+	width: 83%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+	text-align: left;
+	color: #FFFFFF;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 0.85em;
 }
 
 .contenedor-empresas .contenedor-informacion-empresa {
@@ -766,7 +842,6 @@ body .contenedor-principal {
 
 .contenedor-informacion-empresa #mapa {
 	width: 100%;
-	height: 63%;
 }
 
 .contenedor-informacion-empresa .contenedor-cambiar-contrasena {
