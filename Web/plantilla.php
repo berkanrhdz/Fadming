@@ -16,6 +16,7 @@
     		<div class="contenedor-logo"></div>
     		<div class="contenedor-informacion-usuario">
           <div id="nombre-usuario"><?php error_reporting(0); echo $_SESSION['usuario']?></div>
+          <div class="contenedor-foto-superior"><div id="foto-perfil-superior"><img src='data:image/png;base64,<?php error_reporting(0); echo $_SESSION['imagen']?>'></div></div>
           <div id="icono-ajustes"><a href="ajustes.php"></a></div>
     			<div id="icono-cerrar-sesion"><a href="php/cerrar_sesion.php"></a></div>
     		</div>

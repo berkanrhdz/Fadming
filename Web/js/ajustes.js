@@ -5,7 +5,6 @@ $(document).ready(function() {
 	mostrar_nueva_contrasena();
 	actualizar_datos_usuario();
 	mostrar_borrar_cuenta();
-	cambiar_foto_perfil();
 });
 
 function obtener_datos_usuario() {
@@ -20,6 +19,7 @@ function obtener_datos_usuario() {
     				document.getElementById("username").value = JSON_datos[0].usuario;
     				document.getElementById("fecha-registro").innerHTML = JSON_datos[0].fecha_registro;
     				document.getElementById("rol-usuario").innerHTML = JSON_datos[0].rol;
+						document.getElementById("foto-perfil").innerHTML = "<img src='data:image/png;base64," + JSON_datos[0].imagen + "'>";
         }
     });
 }
@@ -70,21 +70,4 @@ function mostrar_borrar_cuenta() {
 		$("#titulo-advertencia").css('color', '#FFFFFF');
 		$("#titulo-advertencia").css('cursor', 'default');
 	});
-}
-
-function cambiar_foto_perfil() {
-	$('#subirBtn').click(function() {
-		var imagen = document.getElementById('imagen').value;
-		alert('si');
-		$.ajax({
-					type: 'POST',
-					url: 'http://localhost/Fadming/Web/php/subir_foto.php',
-					data: 'imagen='+imagen,
-					dataType: 'json',
-					success: function(datos) {
-						var JSON_datos = JSON.parse(datos);
-							alert(JSON_datos[0].respuesta);
-					}
-			});
-	})
 }
