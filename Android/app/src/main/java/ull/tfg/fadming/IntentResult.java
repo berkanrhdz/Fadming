@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ull.tfg.farming;
+package ull.tfg.fadming;
 
 /**
  * <p>Encapsulates the result of a barcode scan invoked through {@link IntentIntegrator}.</p>

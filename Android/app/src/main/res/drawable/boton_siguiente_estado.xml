@@ -3,9 +3,9 @@
     <item android:state_pressed="true" >
         <shape>
             <solid
-                android:color="@color/amarilloFarming"/>
+                android:color="@color/amarilloFadming"/>
             <corners
-                android:radius="4dp" />
+                android:radius="@dimen/radius_boton_anterior_siguiente" />
         </shape>
     </item>
     <item>
@@ -13,7 +13,7 @@
             <solid
                 android:color="@color/grisOscuro"/>
             <corners
-                android:radius="4dp" />
+                android:radius="@dimen/radius_boton_anterior_siguiente" />
         </shape>
     </item>
 </selector>

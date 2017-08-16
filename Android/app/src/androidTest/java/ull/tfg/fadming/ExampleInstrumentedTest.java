@@ -1,4 +1,4 @@
-package ull.tfg.farming;
+package ull.tfg.fadming;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("ull.tfg.farming", appContext.getPackageName());
+        assertEquals("ull.tfg.fadming", appContext.getPackageName());
     }
 }

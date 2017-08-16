@@ -12,7 +12,7 @@
         android:layout_weight="0.85"
         android:weightSum="10"
         android:orientation="horizontal"
-        android:background="@color/verdeFarming">
+        android:background="@color/verdeFadming">
 
         <TextView
             android:id="@+id/text_usuario"
@@ -47,8 +47,9 @@
         android:layout_weight="8"
         android:orientation="vertical"
         android:weightSum="10"
-        android:padding="8dp"
-        android:background="@color/grisClaro">
+        android:padding="6.5dp"
+        android:background="@color/blanco"
+        android:gravity="center">
 
         <RelativeLayout
             android:id="@+id/layout_mensaje_escanear"
@@ -74,17 +75,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/text_mensaje_escanear"
-                android:src="@drawable/flecha_abajo"
+                android:src="@drawable/flecha_abajo_mensaje"
                 android:padding="@dimen/flecha_abajo_padding"/>
 
         </RelativeLayout>
 
-        <ListView
+        <ProgressBar
+            android:id="@+id/progress_bar_codigo"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"/>
+
+        <ExpandableListView
             android:id="@+id/lista_estados"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
-            android:background="@color/grisOscuro"
+            android:background="@color/blanco"
+            android:divider="@drawable/linea_divisora_lista"
             android:visibility="gone"/>
 
     </LinearLayout>

@@ -3,14 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="verdeFarming">#5CA45E</color>
+    <color name="verdeFadming">#5CA45E</color>
     <color name="verdeMilitar">#619662</color>
     <color name="grisInput">#637663</color>
     <color name="grisOscuro">#2A2B2A</color>
     <color name="grisBorde">#343434</color>
     <color name="grisClaro">#E6DEDE</color>
+    <color name="grisClaroDescripcion">#F2EBEB</color>
     <color name="grisClaroTexto">#D0D5D9</color>
-    <color name="amarilloFarming">#F7DB5C</color>
+    <color name="amarilloFadming">#F7DB5C</color>
     <color name="blanco">#FFFFFF</color>
-    <color name="rojoBoton">#9B2D2D</color>
+    <color name="rojoGranate">#942C2C</color>
 </resources>

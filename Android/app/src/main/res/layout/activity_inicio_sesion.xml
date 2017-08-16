@@ -7,7 +7,7 @@
     android:background="@drawable/fondo_inicio_sesion" >
 
     <ImageView
-        android:id="@+id/icono_farming"
+        android:id="@+id/icono_fadming"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"

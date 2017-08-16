@@ -1,4 +1,4 @@
-package ull.tfg.farming;
+package ull.tfg.fadming;
 
 import org.junit.Test;
 

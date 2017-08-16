@@ -1,4 +1,13 @@
-package ull.tfg.farming;
+/*
+ * Clase para la implementación de la actividad InicioSesión.
+ * @author: Eduardo Escobar Alberto
+ * @version: 1.0 05/09/2017
+ * Correo electrónico: eduescal13@gmail.com.
+ * Asignatura: Trabajo de Fin de Grado.
+ * Centro: Universidad de La Laguna.
+ */
+
+package ull.tfg.fadming;
 
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +28,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class InicioSesion extends AppCompatActivity implements AsyncResponse {
+public class InicioSesion extends AppCompatActivity implements AsyncResponse, View.OnClickListener {
 
     // DECLARACIÓN DE CONSTANTES.
     final static int ERROR_LOGIN = -1;
@@ -29,6 +38,8 @@ public class InicioSesion extends AppCompatActivity implements AsyncResponse {
     final static String PARAMETRO_CONTRASENA = "contrasena";
     final static String ERROR_INICIO = "Usuario o contraseña incorrectos";
     final static String ERROR_CONEXION = "Revise su conexión a la red";
+    final static String ERROR_USUARIO = "Usuario obligatorio";
+    final static String ERROR_CONTRASENA = "Contraseña obligatoria";
 
     // DECLARACIÓN DE ATRIBUTOS.
     private EditText inputUsuario;
@@ -62,22 +73,33 @@ public class InicioSesion extends AppCompatActivity implements AsyncResponse {
         setProgressBarInicio((ProgressBar) findViewById(R.id.progress_bar_inicio));
     }
 
-    /**
-     * Método para asignar los listener a los eventos de los botones.
-     */
     public void asignarListener() {
-        getBotonIniciarSesion().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String usuario    = getInputUsuario().getText().toString();
-                String contrasena = getInputContrasena().getText().toString();
+        getBotonIniciarSesion().setOnClickListener(InicioSesion.this);
+    }
+
+    /**
+     * Sobreescritura del método onClick para controlar las pulsaciones en los elementos de la actividad
+     * @param view Parámetro view con el elemento que realiza el evento.
+     */
+    @Override
+    public void onClick(View view) {
+        if (view.getId() == R.id.boton_iniciar_sesion) {
+            String usuario    = getInputUsuario().getText().toString();
+            String contrasena = getInputContrasena().getText().toString();
+            if (usuario.isEmpty()) {
+                Toast.makeText(getApplicationContext(), ERROR_USUARIO, Toast.LENGTH_LONG).show();
+            }
+            else if (contrasena.isEmpty()) {
+                Toast.makeText(getApplicationContext(), ERROR_CONTRASENA, Toast.LENGTH_LONG).show();
+            }
+            else {
                 try {
                     obtenerIdentificadorUsuario(usuario, contrasena);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
-        });
+        }
     }
 
     /**
@@ -95,7 +117,7 @@ public class InicioSesion extends AppCompatActivity implements AsyncResponse {
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            new NetworkAsyncTask("http://172.20.10.2/GricApp/Servidor/iniciar_sesion.php", nombresParametros, getProgressBarInicio(), this).execute(parametros);
+            new NetworkAsyncTask("http://192.168.1.39/Fadming/Servidor/iniciar_sesion.php", nombresParametros, getProgressBarInicio(), this).execute(parametros);
         } else {
             Toast.makeText(getApplicationContext(), ERROR_CONEXION, Toast.LENGTH_LONG).show();
         }
@@ -119,7 +141,7 @@ public class InicioSesion extends AppCompatActivity implements AsyncResponse {
     }
 
     @Override
-    public void finalizarProceso(ArrayList<String> salida) {
+    public void finalizarProceso(ArrayList<String> salida, int tipoRespuesta) {
         int identificador = extraerDatosJSON(salida.get(0));
         if (identificador != ERROR_LOGIN) {
             getEditorPreferencias().putInt(PARAMETRO_IDENTIFICADOR, identificador);

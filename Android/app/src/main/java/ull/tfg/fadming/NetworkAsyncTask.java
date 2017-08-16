@@ -1,4 +1,13 @@
-package ull.tfg.farming;
+/*
+ * Clase para la implementación de tareas asíncronas usadas para la conexión con la base de datos.
+ * @author: Eduardo Escobar Alberto
+ * @version: 1.0 05/09/2017
+ * Correo electrónico: eduescal13@gmail.com.
+ * Asignatura: Trabajo de Fin de Grado.
+ * Centro: Universidad de La Laguna.
+ */
+
+package ull.tfg.fadming;
 
 import android.os.AsyncTask;
 
@@ -23,6 +32,9 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
     // DECLARACIÓN DE CONSTANTES.
     final static int READ_TIME_OUT = 10000;
     final static int CONNECT_TIME_OUT = 15000;
+    final static int NO_RESPUESTA = -1;
+    final static int RESPUESTA_ESTADOS = 0;
+    final static int RESPUESTA_ACTUAL = 1;
 
     // DECLARACIÓN DE VARIABLES.
     public AsyncResponse delegate = null;
@@ -31,6 +43,7 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
     private ArrayList<String> nombresParametros;
     private String url;
     private ProgressBar progressBar;
+    private int tipoRespuesta;
 
     /**
      * Constructor.
@@ -40,6 +53,7 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
         this.url = url;
         this.nombresParametros = nombresParametros;
         this.progressBar = progressBar;
+        tipoRespuesta = NO_RESPUESTA;
         this.delegate = delegate;
     }
 
@@ -47,10 +61,23 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
      * Constructor.
      * @param delegate Delegado de la clase AsyncResponse (Interfaz).
      */
-    public NetworkAsyncTask(String url, ArrayList<String> nombresParametros, AsyncResponse delegate) {
+    public NetworkAsyncTask(String url, ArrayList<String> nombresParametros, ProgressBar progressBar, int tipoRespuesta, AsyncResponse delegate) {
+        this.url = url;
+        this.nombresParametros = nombresParametros;
+        this.progressBar = progressBar;
+        this.tipoRespuesta = tipoRespuesta;
+        this.delegate = delegate;
+    }
+
+    /**
+     * Constructor.
+     * @param delegate Delegado de la clase AsyncResponse (Interfaz).
+     */
+    public NetworkAsyncTask(String url, ArrayList<String> nombresParametros, int tipoRespuesta, AsyncResponse delegate) {
         this.url = url;
         progressBar = null;
         this.nombresParametros = nombresParametros;
+        this.tipoRespuesta = tipoRespuesta;
         this.delegate = delegate;
     }
 
@@ -66,24 +93,24 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
         ArrayList<String> resultado = new ArrayList<>();
         try {
             URL url = new URL(getUrl());
-            HttpURLConnection conexion = (HttpURLConnection) url.openConnection();
-            conexion.setReadTimeout(READ_TIME_OUT);
-            conexion.setConnectTimeout(CONNECT_TIME_OUT);
+            HttpURLConnection conexion = (HttpURLConnection) url.openConnection(); // Abrimos la conexión HTTP.
+            conexion.setReadTimeout(READ_TIME_OUT); // Tiempo máximo de espera en la lectura de datos.
+            conexion.setConnectTimeout(CONNECT_TIME_OUT); // Tiempo máximo de conexión.
             conexion.setDoInput(true);
             if (getNombresParametros().size() > 0) { // Si existen parametros.
-                conexion.setRequestMethod("POST");
-                conexion.setDoOutput(true); // Activamos el método POST.
+                conexion.setRequestMethod("POST"); // Indicamos el paso de parámetros mediante el método POST.
+                conexion.setDoOutput(true);
                 Uri.Builder builder = new Uri.Builder();
                 for (int i = 0; i < getNombresParametros().size(); i++) {
                     builder.appendQueryParameter(getNombresParametros().get(i), parametros[0].get(i));
                 }
-                String datos = builder.build().getEncodedQuery();
+                String datos = builder.build().getEncodedQuery(); // Obtenemos los parámetro en el formato correcto.
                 OutputStream outputStream = conexion.getOutputStream();
-                writeStream(datos, outputStream);
+                writeStream(datos, outputStream); // Escribimos el buffer de salido los parámetros con el formato.
             }
             InputStream inputStream = new BufferedInputStream(conexion.getInputStream());
-            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                resultado.add(0, readStream(inputStream));
+            if (conexion.getResponseCode() == HttpURLConnection.HTTP_OK) { // Si se obtiene un respuesta en la conexión.
+                resultado.add(0, readStream(inputStream)); // Almacenamos la respuesta obtenida.
             }
             conexion.connect();
         } catch (Exception e) {
@@ -95,9 +122,14 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
     @Override
     protected void onPostExecute(ArrayList<String> resultado) {
         if (getProgressBar() != null) {
-            getProgressBar().setVisibility(View.INVISIBLE);
+            if (getProgressBar().getId() == R.id.progress_bar_inicio) {
+                getProgressBar().setVisibility(View.INVISIBLE);
+            }
+            else if (getProgressBar().getId() == R.id.progress_bar_codigo) {
+                getProgressBar().setVisibility(View.GONE);
+            }
         }
-        delegate.finalizarProceso(resultado);
+        delegate.finalizarProceso(resultado, getTipoRespuesta());
     }
 
     public void writeStream(String datos, OutputStream outputStream) throws IOException {
@@ -135,5 +167,13 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public int getTipoRespuesta() {
+        return tipoRespuesta;
+    }
+
+    public void setTipoRespuesta(int tipoRespuesta) {
+        this.tipoRespuesta = tipoRespuesta;
     }
 }

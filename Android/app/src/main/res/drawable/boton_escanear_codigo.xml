@@ -3,22 +3,19 @@
     <item android:state_pressed="true" >
         <shape>
             <solid
-                android:color="@color/amarilloFarming" />
+                android:color="@color/amarilloFadming" />
             <corners
-                android:radius="30dp" />
+                android:radius="@dimen/radius_boton_escanear" />
         </shape>
     </item>
     <item>
         <shape>
             <gradient
                 android:startColor="@color/verdeMilitar"
-                android:centerColor="@color/verdeFarming"
+                android:centerColor="@color/verdeFadming"
                 android:endColor="@color/verdeMilitar"/>
-            <stroke
-                android:width="0.25dp"
-                android:color="@color/grisBorde"/>
             <corners
-                android:radius="30dp" />
+                android:radius="@dimen/radius_boton_escanear" />
         </shape>
     </item>
 </selector>

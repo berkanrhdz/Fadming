@@ -2,4 +2,9 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="flecha_abajo_padding">35dp</dimen>
     <dimen name="layout_mensaje_padding">12dp</dimen>
+    <dimen name="radius_boton_anterior_siguiente">4dp</dimen>
+    <dimen name="radius_boton_escanear">30dp</dimen>
+    <dimen name="radius_boton_iniciar_sesion">12.5dp</dimen>
+    <dimen name="radius_input_iniciar_sesion">15dp</dimen>
+    <dimen name="grosor_linea_divisora">1dp</dimen>
 </resources>

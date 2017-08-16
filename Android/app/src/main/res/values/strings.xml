@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Farming</string>
+    <string name="app_name">Fadming</string>
     <string name="title_activity_camara">Camara</string>
     <string name="mensaje_escanear">Pulse el botón para escanear un código QR y obtener los estados</string>
     <string name="boton_siguiente_estado">Siguiente</string>

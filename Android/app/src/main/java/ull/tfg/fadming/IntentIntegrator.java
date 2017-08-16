@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ull.tfg.farming;
+package ull.tfg.fadming;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -113,7 +113,7 @@ public class IntentIntegrator {
     private static final String TAG = IntentIntegrator.class.getSimpleName();
 
     public static final String DEFAULT_TITLE = "Instalar Barcode Scanner";
-    public static final String DEFAULT_MESSAGE = "Farming requiere instalar Barcode Scanner. ¿Quieres instalarlo?";
+    public static final String DEFAULT_MESSAGE = "fadming requiere instalar Barcode Scanner. ¿Quieres instalarlo?";
     public static final String DEFAULT_YES = "Si";
     public static final String DEFAULT_NO = "No";
 

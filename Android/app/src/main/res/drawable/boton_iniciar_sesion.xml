@@ -5,15 +5,15 @@
             <solid
                 android:color="@color/verdeMilitar"/>
             <corners
-                android:radius="12.5dp" />
+                android:radius="@dimen/radius_boton_iniciar_sesion" />
         </shape>
     </item>
     <item>
         <shape>
             <solid
-                android:color="@color/verdeFarming"/>
+                android:color="@color/verdeFadming"/>
             <corners
-                android:radius="12.5dp" />
+                android:radius="@dimen/radius_boton_iniciar_sesion" />
         </shape>
     </item>
 </selector>
