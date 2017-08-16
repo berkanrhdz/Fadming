@@ -5,6 +5,7 @@ $(document).ready(function() {
 	mostrar_nueva_contrasena();
 	actualizar_datos_usuario();
 	mostrar_borrar_cuenta();
+	cambiar_foto_perfil();
 });
 
 function obtener_datos_usuario() {
@@ -69,4 +70,21 @@ function mostrar_borrar_cuenta() {
 		$("#titulo-advertencia").css('color', '#FFFFFF');
 		$("#titulo-advertencia").css('cursor', 'default');
 	});
+}
+
+function cambiar_foto_perfil() {
+	$('#subirBtn').click(function() {
+		var imagen = document.getElementById('imagen').value;
+		alert('si');
+		$.ajax({
+					type: 'POST',
+					url: 'http://localhost/Fadming/Web/php/subir_foto.php',
+					data: 'imagen='+imagen,
+					dataType: 'json',
+					success: function(datos) {
+						var JSON_datos = JSON.parse(datos);
+							alert(JSON_datos[0].respuesta);
+					}
+			});
+	})
 }

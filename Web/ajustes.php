@@ -86,7 +86,6 @@
                                     <div class="contenedor-boton">
                                         <div class="contenedor-boton-foto-perfil">
                                           <form method="post" enctype="multipart/form-data">
-                                            <label for="imagen">Subir imagen:</label>
                                             <input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
                                             <input type="file" name="imagen" id="imagen" />
                                             <input type="submit" name="subirBtn" id="subirBtn" value="Subir imagen" />
