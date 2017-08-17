@@ -66,7 +66,7 @@ function mostrar_borrar_cuenta() {
 		$(".contenedor-mensaje-advertencia").css('height', '65%');
 		$(".contenedor-boton-borrar-cuenta").fadeIn();
 		document.getElementById("boton-advertencia").id = "titulo-advertencia";
-  		$("#titulo-advertencia").css('background-color', '#2A2B2A');
+  	$("#titulo-advertencia").css('background-color', '#2A2B2A');
 		$("#titulo-advertencia").css('color', '#FFFFFF');
 		$("#titulo-advertencia").css('cursor', 'default');
 	});

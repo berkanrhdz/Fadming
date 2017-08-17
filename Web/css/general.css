@@ -37,7 +37,7 @@ body .barra-superior {
 	background-image: url("../images/logo_horizontal.png");
 	background-repeat: no-repeat;
 	background-position: 15%;
-	background-size: 50% 70%;
+	background-size: 40% 70%;
 }
 
 .barra-superior .contenedor-informacion-usuario {
@@ -530,7 +530,7 @@ body .contenedor-principal {
 	height: 18%;
 	margin-top: 4%;
 	border-radius: 0.5em;
-	border: 1px solid #2A2B2A;
+	border: 1px solid #D8CECB;
 }
 
 .contenedor-borrar-cuenta .contenedor-mensaje-advertencia {
@@ -553,7 +553,7 @@ body .contenedor-principal {
   font-weight: bold;
   border-top-left-radius: 0.4em;
   border-top-right-radius: 0.4em;
-  border-bottom: 1.5px solid #2A2B2A;
+  border-bottom: 1px solid #BBB3B1;
 	background-color: #2A2B2A;
 }
 
@@ -562,15 +562,15 @@ body .contenedor-principal {
 	height: 55%;
 	display: flex;
 	justify-content: center;
-    align-content: center;
-    flex-direction: column;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 0.75em;
-    color: #000000;
-    border-top-left-radius: 0.4em;
-    border-top-right-radius: 0.4em;
-    font-weight: bold;
+  align-content: center;
+  flex-direction: column;
+	text-align: center;
+  font-family: sans-serif;
+  font-size: 0.75em;
+  color: #000000;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+  font-weight: bold;
 }
 
 .contenedor-borrar-cuenta .contenedor-boton-borrar-cuenta {
@@ -643,7 +643,7 @@ body .contenedor-principal {
 	width: 55%;
 	height: 98%;
 	margin-top: 0.5%;
-	border-radius: 0.2em;
+	border-radius: 0.3em;
 	float: left;
 	border: 1px solid #D8CECB;
 }
@@ -741,25 +741,32 @@ body .contenedor-principal {
 .contenedor-datos-informacion .contenedor-datos-telefono .contenedor-administrador {
 	width: 100%;
 	height: 30%;
-	background-color: #F7DB5C;
 	border-bottom-right-radius: 0.3em;
 	border-bottom-left-radius: 0.3em;
 }
 
-.contenedor-datos-telefono .contenedor-administrador #icono-administrador {
-	width: 15%;
+.contenedor-datos-telefono .contenedor-administrador #texto-administrador {
+	width: 35%;
 	height: 100%;
 	float: left;
-	background-image: url("../images/iconos/negro/administrador.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 58% 60%;
+	background-color: #F7DB5C;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+	color: #2A2B2A;
+	font-weight: bold;
+	font-family: sans-serif;
+	font-size: 0.7em;
+	border-bottom-left-radius: 0.3em;
 }
 
 .contenedor-datos-telefono .contenedor-administrador #administrador {
-	width: 83%;
+	width: 63%;
 	height: 100%;
 	float: right;
+	background-color: #FFFFFF;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -771,6 +778,7 @@ body .contenedor-principal {
 	font-family: sans-serif;
 	font-size: 0.9em;
 	letter-spacing: 0.02em;
+	border-bottom-right-radius: 0.3em;
 }
 
 .contenedor-datos-informacion .contenedor-datos-telefono .contenedor-boton-estadisticas {
@@ -1067,6 +1075,119 @@ body .contenedor-principal {
 	font-size: 0.9em;
 	text-align: center;
 	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+/* ------------------------------------------- USUARIOS ------------------------------------------- */
+
+.contenedor-informacion-pagina .contenedor-gestion-usuarios {
+		width: 100%;
+		height: 95%;
+		background-color: #FFFFFF;
+		border-radius: 0.3em;
+		border: 0.5px solid #D8CECB;
+}
+
+.contenedor-gestion-usuarios .contenedor-lista-usuarios {
+		width: 60%;
+		height: 100%;
+		float: left;
+		border-top-left-radius: 0.3em;
+		border-bottom-left-radius: 0.3em;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+}
+
+.contenedor-gestion-usuarios .contenedor-lista-usuarios #titulo-lista-usuarios {
+		width: 100%;
+		height: 9%;
+		background-color: #F7DB5C;
+		border-top-left-radius: : 0.2em;
+		border-bottom: 1px solid #BBB3B1;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		text-align: center;
+		font-family: sans-serif;
+		font-weight: bold;
+		color: #2A2B2A;
+		font-size: 0.9em;
+}
+
+.contenedor-gestion-usuarios .contenedor-lista-usuarios #lista-usuarios {
+		width: 100%;
+		height: 90.5%;
+		background-color: #FFFFFF;
+		border-bottom-left-radius: 0.2em;
+		margin: 0 auto;
+}
+
+.contenedor-lista-usuarios #lista-usuarios .contenedor-usuario-lista {
+		width: 100%;
+		height: 11%;
+		background-color: #FFFFFF;
+		border-bottom: 0.5px solid #D8CECB;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #foto-usuario {
+		width: 8%;
+		height: 100%;
+		float: left;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #foto-usuario img {
+		width: 100%;
+		height: 100%;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #nombre-completo-usuario {
+		width: 60%;
+		height: 100%;
+		background-color: #FFFFFF;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		font-family: sans-serif;
+		font-weight: bold;
+		color: #2A2B2A;
+		font-size: 0.9em;
+		padding-left: 2%;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #rol-usuario-empresa {
+		width: 30%;
+		height: 100%;
+		float: right;
+		background-color: #5CA45E;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #rol-usuario-empresa .selector-rol {
+		width: 100%;
+		height: 100%;
+		background-color: #5CA45E;
+		font-family: sans-serif;
+		font-weight: bold;
+		color: #FFFFFF;
+		font-size: 0.8em;
+		outline: none;
+		border: none;
+}
+
+.contenedor-gestion-usuarios .contenedor-informacion-usuario {
+	width: 40%;
+	height: 100%;
+	float: right;
+	background-color: #2A2B2A;
+	border-top-right-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
 	display: flex;
 	justify-content: center;

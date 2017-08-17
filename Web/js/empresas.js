@@ -29,7 +29,7 @@ function insertar_informacion(nombre, direccion, poblacion, cp, telefono, admini
 	var dia = dia_ano.substr(0, 2);
 	var mes = meses_año[mes - 1];
 	var ano = dia_ano.substr(3, 4);
-	var formato_fecha = "En Fadming desde el <b>" + dia + " de " + mes + " de " + ano + "</b>";
+	var formato_fecha = "Registrada el <b>" + dia + " de " + mes + " de " + ano + "</b>";
 	document.getElementById('nombre-empresa').innerHTML = nombre;
 	document.getElementById('telefono').innerHTML = telefono;
 	document.getElementById('direccion').innerHTML = formato_direccion;

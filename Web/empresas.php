@@ -47,7 +47,7 @@
                                           <div id="telefono"></div>
                                         </div>
                                         <div class="contenedor-administrador">
-                                          <div id="icono-administrador"></div>
+                                          <div id="texto-administrador">ADMINISTRADOR</div>
                                           <div id="administrador"></div>
                                         </div>
                                         <div class="contenedor-boton-estadisticas">
