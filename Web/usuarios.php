@@ -58,8 +58,23 @@
                             <div class="contenedor-imagen-perfil">
                               <div id="imagen-perfil"></div>
                             </div>
-                            <div class="contenedor-datos-usuario"></div>
-                            <div class="contenedor-datos-usuario-empresa"></div>
+                            <div class="contenedor-datos-usuario">
+                              <div class="datos-usuario">
+                                <div id="dato-usuario-nombre"></div>
+                                <div class="dato-usuario-correo">
+                                  <div id="icono-correo"></div>
+                                  <div id="usuario-correo"></div>
+                                </div>
+                                <div class="dato-usuario-usuario">
+                                  <div id="icono-usuario"></div>
+                                  <div id="usuario-usuario"></div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="contenedor-datos-usuario-empresa">
+                              <div class="contenedor-union-empresa"></div>
+                              <div class="contenedor-boton-eliminar-usuario"></div>
+                            </div>
                           </div>
                         </div>
                       </div>

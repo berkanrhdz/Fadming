@@ -89,7 +89,23 @@ function acciones_seleccion_tabs() {
 }
 
 function acceder_ficha_usuario(identificador) {
-	alert(identificador);
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/obtener_ficha_usuario.php',
+				dataType: 'json',
+				data: 'identificador='+identificador,
+				success: function(datos) {
+					$(datos).each(function(i, valor) {
+						document.getElementById('dato-usuario-nombre').innerHTML = valor.nombre + " " + valor.apellidos
+						document.getElementById('usuario-correo').innerHTML = valor.correo;
+						document.getElementById('usuario-usuario').innerHTML = valor.usuario;
+						document.getElementById("imagen-perfil").innerHTML = "<img src='data:image/png;base64," + valor.imagen + "'>";
+					});
+				}
+	});
+	$('#mensaje-ayuda-usuarios').fadeOut("fast", function() {
+		$('.contenedor-ficha-usuario').fadeIn("fast");
+	});
 }
 
 function cambiar_rol_usuario(identificador, rol) {

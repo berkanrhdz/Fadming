@@ -2,12 +2,20 @@
 	session_start();
   require("conectar_basedatos.php");
 
-	$codigo_usuario = $_SESSION['identificador'];
   $codigo_empresa = $_SESSION['empresa'];
+
+	$consulta = "SELECT USU.ID_USUARIO
+							 FROM USUARIO USU, EMPRESA EMP
+							 WHERE ((USU.EMPRESA = EMP.CODIGO) AND (EMP.CODIGO = '$codigo_empresa'))
+							 LIMIT 1;";
+
+	$resultado_consulta = mysql_query($consulta);
+	$datos = mysql_fetch_row($resultado_consulta);
+	$administrador = $datos[0];
 
 	$consulta = "SELECT COUNT(*)
 							 FROM FINCA
-							 WHERE (CODIGO_USUARIO = '$codigo_usuario');";
+							 WHERE (CODIGO_USUARIO = '$administrador');";
 
 	$resultado_consulta = mysql_query($consulta);
 	$datos = mysql_fetch_row($resultado_consulta);
@@ -15,7 +23,7 @@
 
 	$consulta = "SELECT COUNT(*)
 							 FROM FINCA FINC, HUERTO HUER
-							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (FINC.CODIGO_USUARIO = $codigo_usuario));";
+							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (FINC.CODIGO_USUARIO = $administrador));";
 
 	$resultado_consulta = mysql_query($consulta);
 	$datos = mysql_fetch_row($resultado_consulta);
@@ -24,7 +32,7 @@
 	$consulta = "SELECT COUNT(*)
 							 FROM FINCA FINC, HUERTO HUER, PLANTA PLAN
 							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO)
-							 AND (FINC.CODIGO_USUARIO = '$codigo_usuario'));";
+							 AND (FINC.CODIGO_USUARIO = '$administrador'));";
 
 	$resultado_consulta = mysql_query($consulta);
 	$datos = mysql_fetch_row($resultado_consulta);
@@ -41,7 +49,7 @@
 	$consulta = "SELECT PLAN.NOMBRE, COUNT(*) AS COUNT
 							 FROM FINCA FINC, HUERTO HUER, PLANTA PLAN
 							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO)
-							 AND (FINC.CODIGO_USUARIO = '$codigo_usuario'))
+							 AND (FINC.CODIGO_USUARIO = '$administrador'))
 							 GROUP BY NOMBRE
 							 ORDER BY COUNT DESC
 							 LIMIT 1;";
@@ -55,7 +63,7 @@
 
 	$consulta = "SELECT FINC.NOMBRE, COUNT(*) AS COUNT
 							 FROM FINCA FINC, HUERTO HUER, PLANTA PLAN
-							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO) AND (FINC.CODIGO_USUARIO = 1))
+							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO) AND (FINC.CODIGO_USUARIO = '$administrador'))
 							 GROUP BY FINC.NOMBRE
 							 ORDER BY COUNT DESC
 							 LIMIT 1;";
@@ -69,7 +77,7 @@
 
 	$consulta = "SELECT HUER.NOMBRE, COUNT(*) AS COUNT
 							 FROM FINCA FINC, HUERTO HUER, PLANTA PLAN
-							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO) AND (FINC.CODIGO_USUARIO = 1))
+							 WHERE ((FINC.CODIGO = HUER.CODIGO_FINCA) AND (HUER.CODIGO = PLAN.CODIGO_HUERTO) AND (FINC.CODIGO_USUARIO = '$administrador'))
 							 GROUP BY HUER.NOMBRE
 							 ORDER BY COUNT DESC
 							 LIMIT 1;";

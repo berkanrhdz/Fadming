@@ -1119,7 +1119,6 @@ body .contenedor-principal {
 		height: 9%;
 		background-color: #5CA45E;
 		border-top-left-radius: : 0.2em;
-		border-bottom: 1px solid #BBB3B1;
 		display: flex;
 		justify-content: center;
 		align-content: center;
@@ -1235,7 +1234,7 @@ body .contenedor-principal {
 		font-family: sans-serif;
 		font-weight: bold;
 		color: #FFFFFF;
-		font-size: 0.9em;
+		font-size: 0.8em;
 }
 
 #lista-roles .contenedor-rol-empresa #eliminar-rol:hover {
@@ -1400,10 +1399,10 @@ body .contenedor-principal {
 	font-weight: bold;
 	color: #FFFFFF;
 	font-size: 0.8em;
-	display: none;/*flex;
+	display: flex;
 	justify-content: center;
 	align-content: center;
-	flex-direction: column;*/
+	flex-direction: column;
 	text-align: center;
 	opacity: 0.8;
 	padding: 5%;
@@ -1412,15 +1411,151 @@ body .contenedor-principal {
 .contenedor-gestion-usuarios .contenedor-informacion-usuario .contenedor-ficha-usuario {
 	width: 95%;
 	height: 95%;
-	background-color: #FAF6F5;
 	margin: 0 auto;
 	display: flex;
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
+	display: none;
+}
+
+.contenedor-informacion-usuario .contenedor-ficha-usuario .contenedor-imagen-perfil {
+	width: 100%;
+	height: 40%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-informacion-usuario .contenedor-ficha-usuario .contenedor-imagen-perfil #imagen-perfil {
+	width: 40%;
+	height: 85%;
+	margin: 0 auto;
+}
+
+.contenedor-ficha-usuario .contenedor-imagen-perfil #imagen-perfil img {
+	width: 93%;
+	height: 93%;
+	border-radius: 5.0em;
+	border: 5px solid #5CA45E;
+}
+
+.contenedor-informacion-usuario .contenedor-ficha-usuario .contenedor-datos-usuario {
+	width: 100%;
+	height: 30%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-ficha-usuario .contenedor-datos-usuario .datos-usuario {
+	width: 98%;
+	height: 98%;
+	background-color: #FAF5F6;
+	margin: 0 auto;
 	border-radius: 0.2em;
 }
 
+.contenedor-ficha-usuario .contenedor-datos-usuario .datos-usuario #dato-usuario-nombre {
+	width: 100%;
+	height: 40%;
+	background-color: #FFFFFF;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #2A2B2A;
+	text-align: center;
+	font-size: 1.0em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-ficha-usuario .contenedor-datos-usuario .datos-usuario .dato-usuario-correo {
+	width: 100%;
+	height: 29.6%;
+	margin: 0 auto;
+	border-top: 0.5px solid #D8CECB;
+}
+
+.contenedor-datos-usuario .datos-usuario .dato-usuario-correo #icono-correo {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-color: #9E3232;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	background-image: url("../images/iconos/blanco/correo.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 35% 60%;
+}
+
+.contenedor-datos-usuario .datos-usuario .dato-usuario-correo #usuario-correo {
+	width: 77%;
+	height: 100%;
+	float: right;
+	font-family: sans-serif;
+	color: #2A2B2A;
+	text-align: left;
+	font-size: 0.9em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-weight: bold;
+	padding-left: 3%;
+}
+
+.contenedor-ficha-usuario .contenedor-datos-usuario .datos-usuario .dato-usuario-usuario {
+	width: 100%;
+	height: 29.6%;
+	margin: 0 auto;
+	border-top: 0.5px solid #D8CECB;
+}
+
+.contenedor-datos-usuario .datos-usuario .dato-usuario-usuario #icono-usuario {
+	width: 20%;
+	height: 100%;
+	float: left;
+	background-color: #9E3232;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	background-image: url("../images/iconos/blanco/usuario.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 30% 60%;
+}
+
+.contenedor-datos-usuario .datos-usuario .dato-usuario-usuario #usuario-usuario {
+	width: 77%;
+	height: 100%;
+	float: right;
+	font-family: sans-serif;
+	color: #2A2B2A;
+	text-align: left;
+	font-size: 0.9em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-weight: bold;
+	padding-left: 3%;
+}
+
+.contenedor-informacion-usuario .contenedor-ficha-usuario .contenedor-datos-usuario-empresa {
+	width: 100%;
+	height: 30%;
+	background-color: green;
+}
 
 /* ------------------------------------------- ESTADOS ------------------------------------------- */
 
