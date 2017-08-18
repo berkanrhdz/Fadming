@@ -1,6 +1,7 @@
 // DOCUMENTO JAVASCRIPT DE estados.php
 
 $(document).ready(function() {
+	$("#estado #icono-seleccion").fadeIn("fast");
 	mostrar_lista_estados();
 	interaccion_nuevo_grupos();
 	insertar_nuevo_estado();

@@ -34,9 +34,34 @@
                       <div class="contenedor-gestion-usuarios">
                         <div class="contenedor-lista-usuarios">
                           <div id="titulo-lista-usuarios">Usuarios en Cultivos Platanera</div>
+                          <div class="contenedor-seleccion-tabs">
+                            <div id="seleccion-tab-usuarios">Gestión de roles</div>
+                            <div id="seleccion-tab-roles">Creación de roles</div>
+                          </div>
                           <div id="lista-usuarios"></div>
+                          <div class="contenedor-gestion-roles">
+                            <div id="lista-roles"></div>
+                            <div class="contenedor-anadir-nuevo-rol">
+                              <div id="titulo-anadir-rol">Añadir un nuevo rol a la empresa</div>
+                              <div class="contenedor-inputs-rol">
+                                <div class="contenedor-inputs">
+                                  <input id="nombre_rol" name="nombre_rol" type="text" autocomplete="off" placeholder="Nombre del nuevo rol"></input>
+                                  <input id="boton_rol" name="boton_rol" type="submit" value="Añadir rol" onclick="anadir_nuevo_rol()"></input>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="contenedor-informacion-usuario"></div>
+                        <div class="contenedor-informacion-usuario">
+                          <div id="mensaje-ayuda-usuarios">Pulse sobre el nombre de un usuario para acceder a su ficha y consultar su actividad en la empresa</div>
+                          <div class="contenedor-ficha-usuario">
+                            <div class="contenedor-imagen-perfil">
+                              <div id="imagen-perfil"></div>
+                            </div>
+                            <div class="contenedor-datos-usuario"></div>
+                            <div class="contenedor-datos-usuario-empresa"></div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                 </div>

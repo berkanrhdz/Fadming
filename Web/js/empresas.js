@@ -7,6 +7,7 @@ var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio'
 const NUMERO_REGISTROS = 7;
 
 $(document).ready(function() {
+	$("#empresa #icono-seleccion").fadeIn("fast");
 	cambiar_contrasena_acceso();
 });
 

@@ -1,6 +1,7 @@
 // DOCUMENTO JAVASCRIPT DE plantas.php
 
 $(document).ready(function() {
+	$("#planta #icono-seleccion").fadeIn("fast");
 	obtener_fincas_usuario();
 	cambiar_color_botones();
 	validar_selector_finca();

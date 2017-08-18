@@ -55,7 +55,7 @@
                           <div class="contenedor-anadir-estados-planta">
                             <div class="titulo-anadir-estados-planta">Generación de códigos QR</div>
                             <div class="contenedor-mensaje-explicacion">En primer lugar, seleccione una planta y gestione los estados.
-                                                                        </br><b>Finalmente genere su código QR y descárgelo.</b></div>
+                                                                        </br><b>Finalmente genere su código QR y descárguelo.</b></div>
                             <div class="contenedor-nombre-planta-seleccionada">
                               <div id="nombre-planta-seleccionada"><div id="nombre-seleccionada"></div></div>
                             </div>
