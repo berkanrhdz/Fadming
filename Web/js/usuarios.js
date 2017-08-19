@@ -6,6 +6,19 @@ const ROLES_USUARIOS = 3;
 const ROLES = 1;
 const USUARIOS = 2;
 
+// DECLARACIÓN DE VARIABLES GLOBALES.
+var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var select_identificadores = [];
+var select_rol = [];
+
+window.onbeforeunload = function() {
+	for (var i = 0; i < select_rol.length; i++) {
+		var identificador = select_identificadores[i];
+		var rol = select_rol[i];
+		enviar_cambio_rol(identificador, rol);
+	}
+};
+
 $(document).ready(function() {
 	$("#usuario #icono-seleccion").fadeIn("fast");
 	obtener_usuarios_empresa(ROLES_USUARIOS);
@@ -96,10 +109,7 @@ function acceder_ficha_usuario(identificador) {
 				data: 'identificador='+identificador,
 				success: function(datos) {
 					$(datos).each(function(i, valor) {
-						document.getElementById('dato-usuario-nombre').innerHTML = valor.nombre + " " + valor.apellidos
-						document.getElementById('usuario-correo').innerHTML = valor.correo;
-						document.getElementById('usuario-usuario').innerHTML = valor.usuario;
-						document.getElementById("imagen-perfil").innerHTML = "<img src='data:image/png;base64," + valor.imagen + "'>";
+						insertar_ficha_usuario(identificador, valor.nombre, valor.apellidos, valor.correo, valor.usuario, valor.imagen, valor.dia_anio, valor.mes, valor.dias);
 					});
 				}
 	});
@@ -108,12 +118,42 @@ function acceder_ficha_usuario(identificador) {
 	});
 }
 
+function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, dia_ano, mes, dias) {
+	var formato_dias;
+	var dia = dia_ano.substr(0, 2);
+	var mes = meses_año[mes - 1];
+	var ano = dia_ano.substr(3, 4);
+	var formato_fecha = "Registrado el <b>" + dia + " de " + mes + " de " + ano + "</b>";
+	if (dias == 1) {
+		formato_dias = "Hace <b>" + dias + " día</b>";
+	}
+	else if (dias == 0) {
+		formato_dias = "Creado <b>HOY</b>";
+	}
+	else {
+		formato_dias = "Hace <b>" + dias + " días</b>";
+	}
+	var formato_boton = "<input id='boton-eliminar-usuario' name='boton-eliminar-usuario' type='submit' value='Eliminar usuario' onclick='eliminar_usuario(" + id + ")'></input>";
+	document.getElementById('dato-usuario-nombre').innerHTML = nombre + " " + apellidos
+	document.getElementById('usuario-correo').innerHTML = correo;
+	document.getElementById('usuario-usuario').innerHTML = usuario;
+	document.getElementById("imagen-perfil").innerHTML = "<img src='data:image/png;base64," + imagen + "'>";
+	document.getElementById('union-empresa').innerHTML = formato_fecha;
+	document.getElementById('dias-union').innerHTML = formato_dias;
+	document.getElementById('contenedor-input-eliminar').innerHTML = formato_boton;
+}
+
 function cambiar_rol_usuario(identificador, rol) {
+	select_identificadores.push(identificador);
+	select_rol.push(rol);
+}
+
+function enviar_cambio_rol(identificador, rol) {
 	$.ajax({
 		type: 'POST',
 		url: 'http://localhost/Fadming/Web/php/actualizar_rol_usuario.php',
-		data: "identificador="+identificador+"&rol="+rol,
-		dataType: 'json'
+		dataType: 'json',
+		data: "identificador="+identificador+"&rol="+rol
 	});
 }
 
@@ -148,5 +188,25 @@ function interaccion_anadir_rol() {
 			obtener_usuarios_empresa(ROLES);
 			document.getElementById("boton_rol").value = "Añadir rol";
 			document.getElementById("nombre_rol").value = "";
+	}, 2500);
+}
+
+function eliminar_usuario(identificador) {
+	$.ajax({
+		type: 'POST',
+		url: 'http://localhost/Fadming/Web/php/eliminar_usuario_empresa.php',
+		data: "identificador="+identificador,
+		dataType: 'json',
+		success: interaccion_eliminar_usuario()
+	});
+}
+
+function interaccion_eliminar_usuario() {
+	document.getElementById("boton-eliminar-usuario").value = "Eliminando...";
+	setTimeout(function(){
+			document.getElementById("boton-eliminar-usuario").value = "Eliminado";
+	}, 1500);
+	setTimeout(function() {
+			location.reload();
 	}, 2500);
 }

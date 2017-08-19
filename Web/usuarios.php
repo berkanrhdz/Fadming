@@ -53,7 +53,7 @@
                           </div>
                         </div>
                         <div class="contenedor-informacion-usuario">
-                          <div id="mensaje-ayuda-usuarios">Pulse sobre el nombre de un usuario para acceder a su ficha y consultar su actividad en la empresa</div>
+                          <div id="mensaje-ayuda-usuarios">Pulse sobre el nombre de un usuario para acceder a su ficha y consultar sus datos en la empresa</div>
                           <div class="contenedor-ficha-usuario">
                             <div class="contenedor-imagen-perfil">
                               <div id="imagen-perfil"></div>
@@ -72,8 +72,13 @@
                               </div>
                             </div>
                             <div class="contenedor-datos-usuario-empresa">
-                              <div class="contenedor-union-empresa"></div>
-                              <div class="contenedor-boton-eliminar-usuario"></div>
+                              <div class="contenedor-union-empresa">
+                                <div id="union-empresa"></div>
+                                <div id="dias-union"></div>
+                              </div>
+                              <div class="contenedor-boton-eliminar-usuario">
+                                <div id="contenedor-input-eliminar"></div>
+                              </div>
                             </div>
                           </div>
                         </div>
