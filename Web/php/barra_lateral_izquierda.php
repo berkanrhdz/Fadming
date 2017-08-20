@@ -20,7 +20,7 @@
 					 		"<a href='estados.php'><div id='icono-estado'></div><div class='nombre-acceso' id='texto-estado'>Estados</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='finca'>" .
-					 	  "<div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div>" .
+					 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='huerto'>" .
 					 		"<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .
@@ -37,7 +37,7 @@
 							"<a href='estados.php'><div id='icono-estado'></div><div class='nombre-acceso' id='texto-estado'>Estados</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='finca'>" .
-							"<div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div>" .
+					 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='huerto'>" .
 							"<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .
@@ -52,7 +52,7 @@
 					  "<a href='estados.php'><div id='icono-estado'></div><div class='nombre-acceso' id='texto-estado'>Estados</div><div id='icono-seleccion'></div></a>" .
 				 "</div>" .
 				 "<div class='fila-acceso' id='finca'>" .
-					  "<div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div>" .
+				 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 				 "</div>" .
 				 "<div class='fila-acceso' id='huerto'>" .
 					  "<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .

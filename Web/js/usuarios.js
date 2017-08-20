@@ -8,16 +8,16 @@ const USUARIOS = 2;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-var select_identificadores = [];
-var select_rol = [];
+/*var select_identificadores = [];
+var select_rol = [];*/
 
-window.onbeforeunload = function() {
+/*window.onbeforeunload = function() {
 	for (var i = 0; i < select_rol.length; i++) {
 		var identificador = select_identificadores[i];
 		var rol = select_rol[i];
 		enviar_cambio_rol(identificador, rol);
 	}
-};
+};*/
 
 $(document).ready(function() {
 	$("#usuario #icono-seleccion").fadeIn("fast");
@@ -54,23 +54,33 @@ function insertar_usuarios_roles(roles, usuarios, tipo) {
 	if ((tipo == ROLES_USUARIOS) || (tipo == USUARIOS)) {
 		$(usuarios).each(function(i, valor) {
 			var rol = valor.rol;
-			formato_usuario_1 = "<div class='contenedor-usuario-lista'>" +
-																"<div id='foto-usuario'><img src='data:image/png;base64," + valor.imagen + "'></div>" +
-																"<div id='nombre-completo-usuario' onclick='acceder_ficha_usuario(" + valor.codigo + ")'>" + valor.nombre + " " + valor.apellidos + "</div>" +
-																"<div id='rol-usuario-empresa'>" +
-																		"<select class='selector-rol' onchange='cambiar_rol_usuario(this.value, " + valor.codigo + ")' required>";
-			$(roles).each(function(i, valor) {
-				var nombre = valor.nombre;
-				var codigo = valor.codigo;
-				if (rol == codigo) {
-					formato_usuario_1 += "<option value='" + codigo + "' selected>" + nombre.toUpperCase() + "</option>";
-				}
-				else {
-					formato_usuario_1 += "<option value='" + codigo + "'>" + nombre.toUpperCase() + "</option>";
-				}
-			});
-			formato_usuario_2 = "</select></div></div>";
-			formato_usuario = formato_usuario_1 + formato_usuario_2;
+			var usuario = valor.usuario;
+			if (usuario) {
+				formato_usuario = "<div class='contenedor-usuario-lista'>" +
+															"<div id='foto-usuario'><img src='data:image/png;base64," + valor.imagen + "'></div>" +
+															"<div id='nombre-completo-usuario-actual'>" + valor.nombre + " " + valor.apellidos + "</div>" +
+															"<div id='rol-usuario-empresa-actual'>" + valor.rol + "</div>" +
+													"</div>";
+			}
+			else {
+				formato_usuario_1 = "<div class='contenedor-usuario-lista'>" +
+																	"<div id='foto-usuario'><img src='data:image/png;base64," + valor.imagen + "'></div>" +
+																	"<div id='nombre-completo-usuario' onclick='acceder_ficha_usuario(" + valor.codigo + ")'>" + valor.nombre + " " + valor.apellidos + "</div>" +
+																	"<div id='rol-usuario-empresa'>" +
+																			"<select class='selector-rol' onchange='cambiar_rol_usuario(this.value, " + valor.codigo + ")' required>";
+				$(roles).each(function(i, valor) {
+					var nombre = valor.nombre;
+					var codigo = valor.codigo;
+					if (rol == codigo) {
+						formato_usuario_1 += "<option value='" + codigo + "' selected>" + nombre.toUpperCase() + "</option>";
+					}
+					else {
+						formato_usuario_1 += "<option value='" + codigo + "'>" + nombre.toUpperCase() + "</option>";
+					}
+				});
+				formato_usuario_2 = "</select></div></div>";
+				formato_usuario = formato_usuario_1 + formato_usuario_2;
+			}
 			document.getElementById('lista-usuarios').innerHTML += formato_usuario;
 		});
 	}
@@ -144,8 +154,9 @@ function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, 
 }
 
 function cambiar_rol_usuario(identificador, rol) {
-	select_identificadores.push(identificador);
-	select_rol.push(rol);
+	alert(identificador + " " + rol);
+	/*select_identificadores.push(identificador);
+	select_rol.push(rol);*/
 }
 
 function enviar_cambio_rol(identificador, rol) {

@@ -1353,6 +1353,22 @@ body .contenedor-principal {
 		padding-left: 2%;
 }
 
+.contenedor-lista-usuarios #lista-usuarios #nombre-completo-usuario-actual {
+		width: 60%;
+		height: 100%;
+		background-color: #F7DB5C;
+		float: left;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		font-family: sans-serif;
+		font-weight: bold;
+		color: #2A2B2A;
+		font-size: 0.9em;
+		padding-left: 2%;
+}
+
 .contenedor-lista-usuarios #lista-usuarios #nombre-completo-usuario:hover {
 		font-size: 0.95em;
 		cursor: pointer;
@@ -1364,6 +1380,23 @@ body .contenedor-principal {
 		height: 100%;
 		float: right;
 		background-color: #5CA45E;
+}
+
+.contenedor-lista-usuarios #lista-usuarios #rol-usuario-empresa-actual {
+		width: 28.5%;
+		height: 100%;
+		float: right;
+		background-color: #F7DB5C;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		flex-direction: column;
+		font-family: sans-serif;
+		font-weight: bold;
+		color: #2A2B2A;
+		font-size: 0.8em;
+		text-align: left;
+		padding-left: 1.5%;
 }
 
 .contenedor-lista-usuarios #lista-usuarios #rol-usuario-empresa .selector-rol {
@@ -1631,13 +1664,13 @@ body .contenedor-principal {
 	text-align: center;
 	font-family: sans-serif;
 	color: #FFFFFF;
-	font-size: 0.9em;
+	font-size: 0.8em;
 	font-weight: bold;
 	outline: none;
 }
 
 .contenedor-boton-eliminar-usuario #contenedor-input-eliminar #boton-eliminar-usuario:hover {
-	font-size: 1.0em;
+	font-size: 0.9em;
 	cursor: pointer;
 }
 
