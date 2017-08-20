@@ -31,7 +31,20 @@
                 </div>
                 <div class="contenedor-contenido">
                     <div class="contenedor-informacion-pagina">
-
+                      <div class="contenedor-slide-anadir-finca">
+                        <div class="contenedor-slide-fincas">
+                          <div id="slide-fincas">
+                            <div id="flecha-izquierda"></div>
+                            <div id="flecha-derecha"></div>
+                          </div>
+                        </div>
+                        <div class="contenedor-anadir-finca">
+                          <div class="contenedor-titulo">
+                            <div id="titulo-anadir-finca">Gestíon de la finca</div>
+                          </div>
+                          <div class="anadir-finca"></div>
+                        </div>
+                      </div>
                     </div>
                 </div>
             </div>

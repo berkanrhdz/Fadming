@@ -2156,6 +2156,265 @@ body .contenedor-principal {
  	cursor: pointer;
 }
 
+/* ------------------------------------------- FINCAS ------------------------------------------- */
+
+.contenedor-informacion-pagina .contenedor-slide-anadir-finca {
+	width: 100%;
+	height: 95%;
+}
+
+.contenedor-informacion-pagina .contenedor-slide-anadir-finca .contenedor-slide-fincas {
+	width: 60%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-slide-anadir-finca .contenedor-slide-fincas #slide-fincas {
+	width: 95%;
+	height: 95%;
+	background-color: #5CA45E;
+	margin: 0 auto;
+	border-radius: 0.3em;
+}
+
+.contenedor-slide-fincas #slide-fincas #flecha-izquierda {
+	width: 8.5%;
+	height: 100%;
+	float: left;
+	border-top-left-radius: 0.3em;
+	border-bottom-left-radius: 0.3em;
+	background-image: url("../images/iconos/blanco/flecha-izquierda.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 62.5% 6.5%;
+	opacity: 0.6;
+}
+
+.contenedor-slide-fincas #slide-fincas .informacion-finca {
+	width: 83%;
+	height: 97%;
+	float: left;
+	padding-top: 1.5%;
+	padding-bottom: 1.5%;
+}
+
+#slide-fincas .informacion-finca .contenedor-nombre-finca {
+ 	width: 100%;
+ 	height: 19%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-huertos {
+ 	width: 100%;
+ 	height: 27%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-plantas {
+ 	width: 100%;
+ 	height: 27%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-usuarios {
+ 	width: 100%;
+ 	height: 27%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#slide-fincas .informacion-finca .contenedor-nombre-finca #nombre-finca {
+ 	width: 95%;
+ 	height: 93%;
+	margin: 0 auto;
+ 	background-color: #2A2B2A;
+	border-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-huertos .numero-huertos {
+	width: 95%;
+	height: 93%;
+	margin: 0 auto;
+ 	background-color: #FFFFFF;
+	border-radius: 0.2em;
+}
+
+.contenedor-numero-huertos .numero-huertos .contenedor-icono-huertos,
+.contenedor-numero-plantas .numero-plantas .contenedor-icono-plantas,
+.contenedor-numero-usuarios .numero-usuarios .contenedor-icono-usuarios {
+	width: 55%;
+	height: 100%;
+	float: left;
+ 	background-color: #F7DB5C;
+	border-top-left-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
+}
+
+.contenedor-numero-huertos .numero-huertos .contenedor-icono-huertos #icono-huertos,
+.contenedor-numero-plantas .numero-plantas .contenedor-icono-plantas #icono-plantas,
+.contenedor-numero-usuarios .numero-usuarios .contenedor-icono-usuarios #icono-usuarios {
+	width: 40%;
+	height: 100%;
+	float: left;
+	border-top-left-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
+}
+
+.contenedor-numero-huertos .numero-huertos .contenedor-icono-huertos #icono-huertos {
+	background-image: url("../images/iconos/negro/huertos.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70% 70%;
+}
+
+.contenedor-numero-plantas .numero-plantas .contenedor-icono-plantas #icono-plantas {
+	background-image: url("../images/iconos/negro/plantas.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70% 70%;
+}
+
+.contenedor-numero-usuarios .numero-usuarios .contenedor-icono-usuarios #icono-usuarios {
+	background-image: url("../images/iconos/negro/usuarios.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 70% 70%;
+}
+
+.contenedor-numero-huertos .numero-huertos .contenedor-icono-huertos #titulo-huertos,
+.contenedor-numero-plantas .numero-plantas .contenedor-icono-plantas #titulo-plantas,
+.contenedor-numero-usuarios .numero-usuarios .contenedor-icono-usuarios #titulo-usuarios {
+	width: 60%;
+	height: 100%;
+	float: right;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 1.2em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-numero-huertos .numero-huertos #cantidad-numero-huertos,
+.contenedor-numero-plantas .numero-plantas #cantidad-numero-plantas,
+.contenedor-numero-usuarios .numero-usuarios #cantidad-numero-usuarios {
+	width: 45%;
+	height: 100%;
+	float: right;
+	border-top-right-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 2.0em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	letter-spacing: 0.2em;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-plantas .numero-plantas {
+	width: 95%;
+  height: 93%;
+	margin: 0 auto;
+ 	background-color: #FFFFFF;
+	border-radius: 0.2em;
+}
+
+#slide-fincas .informacion-finca .contenedor-numero-usuarios .numero-usuarios {
+	width: 95%;
+  height: 93%;
+	margin: 0 auto;
+ 	background-color: #FFFFFF;
+	border-radius: 0.2em;
+}
+
+.contenedor-slide-fincas #slide-fincas #flecha-derecha {
+	width: 8.5%;
+	height: 100%;
+	float: right;
+	border-top-right-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	background-image: url("../images/iconos/blanco/flecha-derecha.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 62.5% 6.5%;
+	opacity: 0.6;
+}
+
+.contenedor-slide-fincas #slide-fincas #flecha-izquierda:hover,
+.contenedor-slide-fincas #slide-fincas #flecha-derecha:hover {
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+
+.contenedor-informacion-pagina .contenedor-slide-anadir-finca .contenedor-anadir-finca {
+	width: 40%;
+	height: 100%;
+	float: right;
+}
+
+.contenedor-slide-anadir-finca .contenedor-anadir-finca .contenedor-titulo {
+	width: 100%;
+	height: 11%;
+}
+
+.contenedor-anadir-finca .contenedor-titulo #titulo-anadir-finca {
+	width: 99.6%;
+	height: 92%;
+	background-color: #F7DB5C;
+	border-top-left-radius: 0.3em;
+	border-top-right-radius: 0.3em;
+	border: 0.5px solid #D8CECB;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.95em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-slide-anadir-finca .contenedor-anadir-finca .anadir-finca {
+	width: 100%;
+	height: 89%;
+	background-color: #2A2B2A;
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+}
+
 /* ------------------------------------------- PLANTAS ------------------------------------------- */
 
 .contenedor-informacion-pagina .contenedor-gestion-plantas {
