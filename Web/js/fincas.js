@@ -21,8 +21,13 @@ function obtener_datos_fincas() {
 }
 
 function insertar_finca_formato(indice, nombre, numero_huertos, imagen) {
-	var formato_finca1, formato_finca2, formato_finca;
-	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
+	var formato_finca1, formato_finca2, formato_finca, formato_imagen;
+	if (imagen != null) {
+		formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
+	}
+	else {
+		formato_imagen = "<img src='images/finca_defecto.png'>";
+	}
 	if (indice == 0) {
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "'>";
 	}
@@ -76,4 +81,26 @@ function iniciar_slide(maxSlide) {
 			$('#finca-' + contadorSlideActual).slideDown();
 		});
 	});
+}
+
+function almacenar_finca() {
+	var nombre = document.getElementById('nombre_finca').value;
+	document.getElementById("boton-anadir-finca").value = "Añadiendo...";
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/almacenar_finca.php',
+				dataType: 'json',
+				data: "nombre="+nombre,
+				success: interaccion_anadir_finca()
+		});
+}
+
+function interaccion_anadir_finca() {
+	setTimeout(function(){
+			document.getElementById("boton-anadir_finca").value = "Añadida";
+	}, 1000);
+	setTimeout(function() {
+			document.getElementById('slide-fincas').innerHTML = "";
+			obtener_datos_fincas();
+	}, 2000);
 }

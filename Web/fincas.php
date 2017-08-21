@@ -41,7 +41,23 @@
                         <div class="contenedor-anadir-tipos-finca">
                           <div class="contenedor-anadir-finca">
                             <div id="titulo-anadir-finca">Añadir nueva finca</div>
-                            <div class="anadir-finca"></div>
+                            <div class="anadir-finca">
+                              <div class="fila-input">
+                                <div id="input-nombre-finca">
+                                  <input id="nombre_finca" name="nombre_finca" type="text" autocomplete="off" placeholder="Nombre de la finca"></input>
+                                </div>
+                              </div>
+                              <div class="fila-input">
+                                <div id="input-seleccionar-imagen">
+                                  <input id="boton-seleccionar-imagen" name="seleccionar-imagen-finca" type="submit" value="Seleccionar imagen"></input>
+                                </div>
+                              </div>
+                              <div class="fila-input">
+                                <div id="input-boton-anadir">
+                                  <input id="boton-anadir-finca" name="boton-anadir-finca" type="submit" value="Añadir finca" onclick='almacenar_finca()'></input>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                           <div class="contenedor-tipos-plantas">
                             <div id="titulo-tipos-plantas">Tipos de plantas en Los Pelados</div>
