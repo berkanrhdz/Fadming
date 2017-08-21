@@ -38,11 +38,15 @@
                             <div id="flecha-derecha"></div>
                           </div>
                         </div>
-                        <div class="contenedor-anadir-finca">
-                          <div class="contenedor-titulo">
-                            <div id="titulo-anadir-finca">Gestíon de la finca</div>
+                        <div class="contenedor-anadir-tipos-finca">
+                          <div class="contenedor-anadir-finca">
+                            <div id="titulo-anadir-finca">Añadir nueva finca</div>
+                            <div class="anadir-finca"></div>
                           </div>
-                          <div class="anadir-finca"></div>
+                          <div class="contenedor-tipos-plantas">
+                            <div id="titulo-tipos-plantas">Tipos de plantas en Los Pelados</div>
+                            <div class="tipos-plantas"></div>
+                          </div>
                         </div>
                       </div>
                     </div>

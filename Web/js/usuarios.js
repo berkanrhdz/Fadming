@@ -174,7 +174,13 @@ function eliminar_rol(codigo) {
 		url: 'http://localhost/Fadming/Web/php/eliminar_rol.php',
 		data: "rol="+codigo,
 		dataType: 'json',
-		success: $('#lista-roles #' + codigo).fadeOut("fast")
+		success: interaccion_eliminar_rol(codigo)
+	});
+}
+
+function interaccion_eliminar_rol(codigo) {
+	$('#lista-roles #' + codigo).fadeOut("fast", function() {
+		location.reload();
 	});
 }
 

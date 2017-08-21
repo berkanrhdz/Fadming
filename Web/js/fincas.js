@@ -12,7 +12,7 @@ function obtener_datos_fincas() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_finca_formato(i, valor.nombre, valor.numero_huertos);
+								insertar_finca_formato(i, valor.nombre, valor.numero_huertos, valor.imagen);
 						});
 						var maxSlide = $('#slide-fincas .informacion-finca').length;
 						iniciar_slide(maxSlide);
@@ -20,8 +20,9 @@ function obtener_datos_fincas() {
     });
 }
 
-function insertar_finca_formato(indice, nombre, numero_huertos) {
+function insertar_finca_formato(indice, nombre, numero_huertos, imagen) {
 	var formato_finca1, formato_finca2, formato_finca;
+	var formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
 	if (indice == 0) {
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "'>";
 	}
@@ -29,36 +30,23 @@ function insertar_finca_formato(indice, nombre, numero_huertos) {
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "' style='display: none;'>";
 	}
 	var formato_finca2 = "<div class='contenedor-nombre-finca'>" +
-	                          "<div id='nombre-finca'>" + nombre.toUpperCase() + "</div>" +
+	                        "<div id='nombre-finca'>" + nombre.toUpperCase() + "</div>" +
+	                     "</div>" +
+	                     "<div class='contenedor-imagen-finca'>" +
+	                        "<div id='imagen-finca'>" + formato_imagen + "</div>" +
+	                     "</div>" +
+	                     "<div class='contenedor-datos-finca'>" +
+	                         "<div class='contenedor-numero-huertos'>" +
+	                        		 "<div id='numero-huertos'><b>NÚMERO DE HUERTOS</b> " + numero_huertos + "</div>" +
+	                         "</div>" +
+	                         "<div class='contenedor-numero-plantas'>" +
+	                             "<div id='numero-plantas'><b>NÚMERO DE PLANTAS</b></div>" +
+	                         "</div>" +
+	                         "<div class='contenedor-numero-usuarios'>" +
+	                             "<div id='numero-usuarios'><b>NÚMERO DE USUARIOS</b></div>" +
+	                         "</div>" +
 	                      "</div>" +
-	                        "<div class='contenedor-numero-huertos'>" +
-	                         		"<div class='numero-huertos'>" +
-	                               "<div class='contenedor-icono-huertos'>" +
-	                                   "<div id='icono-huertos'></div>" +
-	                                   "<div id='titulo-huertos'>NÚMERO DE HUERTOS</div>" +
-	                               "</div>" +
-	                               "<div id='cantidad-numero-huertos'>" + numero_huertos + "</div>" +
-	                            "</div>" +
-	                        "</div>" +
-	                        "<div class='contenedor-numero-plantas'>" +
-	                         		"<div class='numero-plantas'>" +
-	                                "<div class='contenedor-icono-plantas'>" +
-	                                    "<div id='icono-plantas'></div>" +
-	                                    "<div id='titulo-plantas'>NÚMERO DE PLANTAS</div>" +
-	                                "</div>" +
-	                                "<div id='cantidad-numero-plantas'></div>" +
-	                            "</div>" +
-	                        "</div>" +
-	                        "<div class='contenedor-numero-usuarios'>" +
-	                            "<div class='numero-usuarios'>" +
-	                             		"<div class='contenedor-icono-usuarios'>" +
-	                                    "<div id='icono-usuarios'></div>" +
-	                                    "<div id='titulo-usuarios'>NÚMERO DE USUARIOS</div>" +
-	                                "</div>" +
-	                                "<div id='cantidad-numero-usuarios'></div>" +
-	                            "</div>" +
-	                        "</div>" +
-	                    "</div>";
+	                   "</div>";
 	formato_finca = formato_finca1 + formato_finca2;
 	document.getElementById('slide-fincas').innerHTML += formato_finca;
 }
