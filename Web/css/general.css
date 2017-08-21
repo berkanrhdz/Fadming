@@ -2194,7 +2194,7 @@ body .contenedor-principal {
 	opacity: 0.6;
 }
 
-.contenedor-slide-fincas #slide-fincas .informacion-finca {
+.contenedor-slide-fincas #slide-fincas #fichas-finca {
 	width: 83%;
 	height: 96%;
 	float: left;
@@ -2202,7 +2202,12 @@ body .contenedor-principal {
 	padding-bottom: 1.5%;
 }
 
-#slide-fincas .informacion-finca .contenedor-nombre-finca {
+.contenedor-slide-fincas #slide-fincas #fichas-finca .informacion-finca {
+	width: 100%;
+	height: 100%;
+}
+
+#fichas-finca .informacion-finca .contenedor-nombre-finca {
  	width: 100%;
  	height: 19%;
 	display: flex;
@@ -2211,7 +2216,7 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#slide-fincas .informacion-finca .contenedor-nombre-finca #nombre-finca {
+#fichas-finca .informacion-finca .contenedor-nombre-finca #nombre-finca {
  	width: 98%;
  	height: 93%;
 	margin: 0 auto;
@@ -2228,7 +2233,7 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#slide-fincas .informacion-finca .contenedor-imagen-finca {
+#fichas-finca .informacion-finca .contenedor-imagen-finca {
  	width: 100%;
  	height: 45%;
 	display: flex;
@@ -2237,7 +2242,7 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#slide-fincas .informacion-finca .contenedor-imagen-finca #imagen-finca {
+#fichas-finca .informacion-finca .contenedor-imagen-finca #imagen-finca {
  	width: 98%;
  	height: 95%;
 	margin: 0 auto;
@@ -2245,13 +2250,13 @@ body .contenedor-principal {
 	border: 0.5px solid #BBB3B1;
 }
 
-#slide-fincas .informacion-finca .contenedor-imagen-finca #imagen-finca img {
+#fichas-finca .informacion-finca .contenedor-imagen-finca #imagen-finca img {
  	width: 100%;
  	height: 100%;
 	border-radius: 0.2em;
 }
 
-#slide-fincas .informacion-finca .contenedor-datos-finca {
+#fichas-finca .informacion-finca .contenedor-datos-finca {
  	width: 100%;
  	height: 36%;
 	display: flex;
@@ -2260,9 +2265,9 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#slide-fincas .informacion-finca .contenedor-datos-finca .contenedor-numero-huertos,
-#slide-fincas .informacion-finca .contenedor-datos-finca .contenedor-numero-plantas,
-#slide-fincas .informacion-finca .contenedor-datos-finca .contenedor-numero-usuarios {
+#fichas-finca .informacion-finca .contenedor-datos-finca .contenedor-numero-huertos,
+#fichas-finca .informacion-finca .contenedor-datos-finca .contenedor-numero-plantas,
+#fichas-finca .informacion-finca .contenedor-datos-finca .contenedor-numero-usuarios {
  	width: 100%;
  	height: 33%;
 	display: flex;

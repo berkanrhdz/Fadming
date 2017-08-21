@@ -12,7 +12,7 @@ function obtener_datos_fincas() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_finca_formato(i, valor.nombre, valor.numero_huertos, valor.imagen);
+								insertar_finca_formato(i, valor.nombre, valor.numero_huertos, valor.numero_plantas, valor.imagen);
 						});
 						var maxSlide = $('#slide-fincas .informacion-finca').length;
 						iniciar_slide(maxSlide);
@@ -20,7 +20,7 @@ function obtener_datos_fincas() {
     });
 }
 
-function insertar_finca_formato(indice, nombre, numero_huertos, imagen) {
+function insertar_finca_formato(indice, nombre, numero_huertos, numero_plantas, imagen) {
 	var formato_finca1, formato_finca2, formato_finca, formato_imagen;
 	if (imagen != null) {
 		formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
@@ -45,7 +45,7 @@ function insertar_finca_formato(indice, nombre, numero_huertos, imagen) {
 	                        		 "<div id='numero-huertos'><b>NÚMERO DE HUERTOS</b> " + numero_huertos + "</div>" +
 	                         "</div>" +
 	                         "<div class='contenedor-numero-plantas'>" +
-	                             "<div id='numero-plantas'><b>NÚMERO DE PLANTAS</b></div>" +
+	                             "<div id='numero-plantas'><b>NÚMERO DE PLANTAS</b>" + numero_plantas + "</div>" +
 	                         "</div>" +
 	                         "<div class='contenedor-numero-usuarios'>" +
 	                             "<div id='numero-usuarios'><b>NÚMERO DE USUARIOS</b></div>" +
@@ -53,7 +53,7 @@ function insertar_finca_formato(indice, nombre, numero_huertos, imagen) {
 	                      "</div>" +
 	                   "</div>";
 	formato_finca = formato_finca1 + formato_finca2;
-	document.getElementById('slide-fincas').innerHTML += formato_finca;
+	document.getElementById('fichas-finca').innerHTML += formato_finca;
 }
 
 function iniciar_slide(maxSlide) {
@@ -97,10 +97,11 @@ function almacenar_finca() {
 
 function interaccion_anadir_finca() {
 	setTimeout(function(){
-			document.getElementById("boton-anadir_finca").value = "Añadida";
-	}, 1000);
+			document.getElementById("boton-anadir-finca").value = "Añadida";
+	}, 1500);
 	setTimeout(function() {
-			document.getElementById('slide-fincas').innerHTML = "";
+			document.getElementById("boton-anadir-finca").value = "Añadir finca";
+			document.getElementById('fichas-finca').innerHTML = "";
 			obtener_datos_fincas();
-	}, 2000);
+	}, 2500);
 }

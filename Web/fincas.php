@@ -35,6 +35,7 @@
                         <div class="contenedor-slide-fincas">
                           <div id="slide-fincas">
                             <div id="flecha-izquierda"></div>
+                            <div id="fichas-finca"></div>
                             <div id="flecha-derecha"></div>
                           </div>
                         </div>
