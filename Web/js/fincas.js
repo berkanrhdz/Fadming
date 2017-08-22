@@ -12,7 +12,7 @@ function obtener_datos_fincas() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_finca_formato(i, valor.nombre, valor.numero_huertos, valor.numero_plantas, valor.imagen);
+								insertar_finca_formato(i, valor.codigo, valor.nombre, valor.numero_huertos, valor.numero_plantas, valor.imagen);
 						});
 						var maxSlide = $('#slide-fincas .informacion-finca').length;
 						iniciar_slide(maxSlide);
@@ -20,7 +20,7 @@ function obtener_datos_fincas() {
     });
 }
 
-function insertar_finca_formato(indice, nombre, numero_huertos, numero_plantas, imagen) {
+function insertar_finca_formato(indice, codigo, nombre, numero_huertos, numero_plantas, imagen) {
 	var formato_finca1, formato_finca2, formato_finca, formato_imagen;
 	if (imagen != null) {
 		formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
@@ -29,13 +29,15 @@ function insertar_finca_formato(indice, nombre, numero_huertos, numero_plantas, 
 		formato_imagen = "<img src='images/finca_defecto.png'>";
 	}
 	if (indice == 0) {
+		document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombre;
+		obtener_tipos_plantas(codigo);
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "'>";
 	}
 	else {
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "' style='display: none;'>";
 	}
 	var formato_finca2 = "<div class='contenedor-nombre-finca'>" +
-	                        "<div id='nombre-finca'>" + nombre.toUpperCase() + "</div>" +
+	                        "<div class='nombre-finca' id='" + codigo + "'>" + nombre.toUpperCase() + "</div>" +
 	                     "</div>" +
 	                     "<div class='contenedor-imagen-finca'>" +
 	                        "<div id='imagen-finca'>" + formato_imagen + "</div>" +
@@ -58,7 +60,7 @@ function insertar_finca_formato(indice, nombre, numero_huertos, numero_plantas, 
 
 function iniciar_slide(maxSlide) {
 	var contadorSlideActual = 1;
-	var contadorSlideAnterior;
+	var contadorSlideAnterior, codigoFinca, nombreFinca;
 	$("#flecha-izquierda").click(function() {
 		contadorSlideAnterior = contadorSlideActual
 		contadorSlideActual--;
@@ -68,6 +70,11 @@ function iniciar_slide(maxSlide) {
 		}
 		$('#finca-' + contadorSlideAnterior).slideUp(function() {
 			$('#finca-' + contadorSlideActual).slideDown();
+			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
+			nombreFinca = $('#' + codigoFinca).text();
+			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
+			document.getElementById('tipos-plantas').innerHTML = "";
+			obtener_tipos_plantas(codigoFinca);
 		});
 	});
 	$("#flecha-derecha").click(function() {
@@ -79,6 +86,11 @@ function iniciar_slide(maxSlide) {
 		}
 		$('#finca-' + contadorSlideAnterior).slideUp(function() {
 			$('#finca-' + contadorSlideActual).slideDown();
+			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
+			nombreFinca = $('#' + codigoFinca).text();
+			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
+			document.getElementById('tipos-plantas').innerHTML = "";
+			obtener_tipos_plantas(codigoFinca);
 		});
 	});
 }
@@ -105,3 +117,26 @@ function interaccion_anadir_finca() {
 			obtener_datos_fincas();
 	}, 2500);
 }
+
+function obtener_tipos_plantas(codigoFinca) {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/Fadming/Web/php/obtener_tipos_plantas_finca.php',
+				dataType: 'json',
+				data: 'finca='+codigoFinca,
+				success: function(datos) {
+						$(datos).each(function(i, valor) {
+								insertar_tipos_formato(valor.nombre);
+						});
+        }
+    });
+}
+
+function insertar_tipos_formato(nombre) {
+	var formato_tipo = "<div class='tipo-planta'>" + nombre.toUpperCase() + "</div>";
+	document.getElementById('tipos-plantas').innerHTML += formato_tipo;
+}
+
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};

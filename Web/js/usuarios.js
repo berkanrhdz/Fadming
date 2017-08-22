@@ -185,7 +185,7 @@ function interaccion_eliminar_rol(codigo) {
 }
 
 function anadir_nuevo_rol() {
-	var nombre_rol = document.getElementById('nombre_rol').value.toUpperCase();
+	var nombre_rol = document.getElementById('nombre_rol').value.toProperCase();
 	$.ajax({
 		type: 'POST',
 		url: 'http://localhost/Fadming/Web/php/almacenar_rol_empresa.php',
@@ -227,3 +227,7 @@ function interaccion_eliminar_usuario() {
 			location.reload();
 	}, 2500);
 }
+
+String.prototype.toProperCase = function () {
+    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+};

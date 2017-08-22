@@ -61,8 +61,16 @@
                             </div>
                           </div>
                           <div class="contenedor-tipos-plantas">
-                            <div id="titulo-tipos-plantas">Tipos de plantas en Los Pelados</div>
-                            <div class="tipos-plantas"></div>
+                            <div id="titulo-tipos-plantas"></div>
+                            <div class="tipos-anadir-plantas">
+                              <div id="tipos-plantas"></div>
+                              <div class="contenedor-anadir-tipos">
+                                <div class="fila-input-tipos">
+                                  <input id="nombre_tipo" name="nombre_tipo" type="text" autocomplete="off" placeholder="Nombre del tipo"></input>
+                                  <input id="boton-anadir-tipo" name="boton-anadir-tipo" type="submit" value="Añadir tipo"></input>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>

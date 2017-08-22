@@ -2216,7 +2216,7 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#fichas-finca .informacion-finca .contenedor-nombre-finca #nombre-finca {
+#fichas-finca .informacion-finca .contenedor-nombre-finca .nombre-finca {
  	width: 98%;
  	height: 93%;
 	margin: 0 auto;
@@ -2439,14 +2439,87 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenedor-anadir-tipos-finca .contenedor-tipos-plantas .tipos-plantas {
+.contenedor-anadir-tipos-finca .contenedor-tipos-plantas .tipos-anadir-plantas {
 	width: 99.5%;
 	height: 83.3%;
 	margin-top: 1.2%;
-	background-color: #FAF5F6;
 	border-bottom-left-radius: 0.3em;
 	border-bottom-right-radius: 0.3em;
 	border: 0.5px solid #D8CECB;
+}
+
+.contenedor-tipos-plantas .tipos-anadir-plantas #tipos-plantas {
+	width: 100%;
+	height: 78%;
+	background-color: #FAF5F6;
+	overflow-y: scroll; 
+}
+
+.contenedor-tipos-plantas .tipos-anadir-plantas #tipos-plantas .tipo-planta {
+	width: 98%;
+	height: 20%;
+	background-color: #FFFFFF;
+	color: #2A2B2A;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+	border-bottom: 0.5px solid #D8CECB;
+}
+
+.contenedor-tipos-plantas .tipos-anadir-plantas .contenedor-anadir-tipos {
+	width: 100%;
+	height: 22%;
+	background-color: #2A2B2A;
+	border-bottom-left-radius: 0.3em;
+	border-bottom-right-radius: 0.3em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.tipos-anadir-plantas .contenedor-anadir-tipos .fila-input-tipos {
+	width: 100%;
+	height: 70%;
+}
+
+.tipos-anadir-plantas .contenedor-anadir-tipos .fila-input-tipos #nombre_tipo {
+	width: 55%;
+	height: 90%;
+	margin-left: 5%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #2A2B2A;
+	border: #FFFFFF;
+	padding-left: 2%;
+	font-size: 0.80em;
+}
+
+.tipos-anadir-plantas .contenedor-anadir-tipos .fila-input-tipos #boton-anadir-tipo {
+	width: 32%;
+	height: 90%;
+	background-color: transparent;
+	border-radius: 0.3em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-size: 0.75em;
+	outline: none;
+}
+
+.tipos-anadir-plantas .contenedor-anadir-tipos .fila-input-tipos #boton-anadir-tipo:hover {
+	background-color: #9E3232;
+	border: 0.5px solid #9E3232;
+	cursor: pointer;
 }
 
 /* ------------------------------------------- PLANTAS ------------------------------------------- */

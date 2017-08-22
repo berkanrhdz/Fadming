@@ -2,7 +2,7 @@
 	session_start();
   require("conectar_basedatos.php");
 
-  $identificador = 1;//$_SESSION['identificador'];
+  $identificador = $_SESSION['identificador'];
 	$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, FINC.IMAGEN
 							 FROM FINCA FINC
                WHERE (CODIGO_USUARIO = '$identificador')
@@ -35,7 +35,8 @@
 		else {
 			$numero_plantas = 0;
 		}
-		$informacion[] = array('nombre' => $fila[1],
+		$informacion[] = array('codigo' => $codigo_finca,
+													 'nombre' => $fila[1],
 	                         'numero_huertos' => $numero_huertos,
 													 'numero_plantas' => $numero_plantas,
 												   'imagen' => $imagen);
