@@ -2176,9 +2176,9 @@ body .contenedor-principal {
 .contenedor-slide-anadir-finca .contenedor-slide-fincas #slide-fincas {
 	width: 95%;
 	height: 95%;
-	background-color: #5CA45E;
 	margin: 0 auto;
 	border-radius: 0.3em;
+	border: 0.5px solid #D8CECB;
 }
 
 .contenedor-slide-fincas #slide-fincas #flecha-izquierda {
@@ -2191,7 +2191,8 @@ body .contenedor-principal {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 62.5% 6.5%;
-	opacity: 0.6;
+	opacity: 0.7;
+	background-color: #5CA45E;
 }
 
 .contenedor-slide-fincas #slide-fincas #fichas-finca {
@@ -2200,6 +2201,7 @@ body .contenedor-principal {
 	float: left;
 	padding-top: 1.5%;
 	padding-bottom: 1.5%;
+	background-color: #FFFFFF;
 }
 
 .contenedor-slide-fincas #slide-fincas #fichas-finca .informacion-finca {
@@ -2223,7 +2225,6 @@ body .contenedor-principal {
  	background-color: #F7DB5C;
 	border-radius: 0.2em;
 	font-family: sans-serif;
-	font-weight: bold;
 	font-size: 1.1em;
 	color: #2A2B2A;
 	text-align: center;
@@ -2231,6 +2232,10 @@ body .contenedor-principal {
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
+}
+
+#fichas-finca .informacion-finca .contenedor-nombre-finca .nombre-finca text {
+	font-size: 0.8em;
 }
 
 #fichas-finca .informacion-finca .contenedor-imagen-finca {
@@ -2304,7 +2309,8 @@ body .contenedor-principal {
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 62.5% 6.5%;
-	opacity: 0.6;
+	opacity: 0.7;
+	background-color: #5CA45E;
 }
 
 .contenedor-slide-fincas #slide-fincas #flecha-izquierda:hover,

@@ -1,5 +1,8 @@
 // DOCUMENTO JAVASCRIPT DE fincas.php
 
+// DECLARACIÓN DE VARIABLES GLOBALES.
+var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+
 $(document).ready(function() {
 	$("#finca #icono-seleccion").fadeIn("fast");
 	obtener_datos_fincas();
@@ -12,7 +15,7 @@ function obtener_datos_fincas() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_finca_formato(i, valor.codigo, valor.nombre, valor.numero_huertos, valor.numero_plantas, valor.imagen);
+								insertar_finca_formato(i, valor.codigo, valor.nombre, valor.dia_anio, valor.mes, valor.numero_huertos, valor.numero_plantas, valor.imagen);
 						});
 						var maxSlide = $('#slide-fincas .informacion-finca').length;
 						iniciar_slide(maxSlide);
@@ -20,8 +23,12 @@ function obtener_datos_fincas() {
     });
 }
 
-function insertar_finca_formato(indice, codigo, nombre, numero_huertos, numero_plantas, imagen) {
+function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_huertos, numero_plantas, imagen) {
 	var formato_finca1, formato_finca2, formato_finca, formato_imagen;
+	var dia = dia_anio.substr(0, 2);
+	var mes = meses_año[mes - 1];
+	var anio = dia_anio.substr(3, 4);
+	var formato_fecha = "Registrada el " + dia + " de " + mes + " de " + anio;
 	if (imagen != null) {
 		formato_imagen = "<img src='data:image/png;base64," + imagen + "'>";
 	}
@@ -37,7 +44,7 @@ function insertar_finca_formato(indice, codigo, nombre, numero_huertos, numero_p
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "' style='display: none;'>";
 	}
 	var formato_finca2 = "<div class='contenedor-nombre-finca'>" +
-	                        "<div class='nombre-finca' id='" + codigo + "'>" + nombre.toUpperCase() + "</div>" +
+	                        "<div class='nombre-finca' id='" + codigo + "'><b>" + nombre.toUpperCase() + "</b><text>" + formato_fecha + "</text></div>" +
 	                     "</div>" +
 	                     "<div class='contenedor-imagen-finca'>" +
 	                        "<div id='imagen-finca'>" + formato_imagen + "</div>" +
@@ -87,7 +94,7 @@ function iniciar_slide(maxSlide) {
 		$('#finca-' + contadorSlideAnterior).slideUp(function() {
 			$('#finca-' + contadorSlideActual).slideDown();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
-			nombreFinca = $('#' + codigoFinca).text();
+			nombreFinca = $('#' + codigoFinca + ' b').text();
 			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigoFinca);

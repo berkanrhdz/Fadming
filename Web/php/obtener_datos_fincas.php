@@ -3,14 +3,14 @@
   require("conectar_basedatos.php");
 
   $identificador = $_SESSION['identificador'];
-	$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, FINC.IMAGEN
+	$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, DATE_FORMAT(FINC.FECHA_REGISTRO, '%d %Y') DIA_ANIO, DATE_FORMAT(FINC.FECHA_REGISTRO, '%c') MES, FINC.IMAGEN
 							 FROM FINCA FINC
                WHERE (CODIGO_USUARIO = '$identificador')
                ORDER BY NOMBRE ASC";
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {
-		if (!is_null($fila[2])) {
-			$imagen = base64_encode($fila[2]); // Codificación de la imagen a base64.
+		if (!is_null($fila[4])) {
+			$imagen = base64_encode($fila[4]); // Codificación de la imagen a base64.
 		}
 		else {
 			$imagen = null;
@@ -37,6 +37,8 @@
 		}
 		$informacion[] = array('codigo' => $codigo_finca,
 													 'nombre' => $fila[1],
+													 'dia_anio' => $fila[2],
+													 'mes' => $fila[3],
 	                         'numero_huertos' => $numero_huertos,
 													 'numero_plantas' => $numero_plantas,
 												   'imagen' => $imagen);
