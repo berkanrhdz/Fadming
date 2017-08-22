@@ -2452,11 +2452,11 @@ body .contenedor-principal {
 	width: 100%;
 	height: 78%;
 	background-color: #FAF5F6;
-	overflow-y: scroll; 
+	overflow-y: scroll;
 }
 
 .contenedor-tipos-plantas .tipos-anadir-plantas #tipos-plantas .tipo-planta {
-	width: 98%;
+	width: 97%;
 	height: 20%;
 	background-color: #FFFFFF;
 	color: #2A2B2A;
@@ -2468,7 +2468,7 @@ body .contenedor-principal {
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
-	padding-left: 2%;
+	padding-left: 3%;
 	border-bottom: 0.5px solid #D8CECB;
 }
 

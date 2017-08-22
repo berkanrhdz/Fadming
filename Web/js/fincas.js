@@ -137,6 +137,31 @@ function insertar_tipos_formato(nombre) {
 	document.getElementById('tipos-plantas').innerHTML += formato_tipo;
 }
 
+function almacenar_tipo_planta() {
+	var nombre = document.getElementById('nombre_tipo').value.toProperCase();
+	var codigo = $('#fichas-finca .nombre-finca').attr('ID');
+	document.getElementById("boton-anadir-tipo").value = "Añadiendo...";
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/almacenar_tipo_planta.php',
+				dataType: 'json',
+				data: "nombre="+nombre+'&finca='+codigo,
+				success: interaccion_anadir_tipo(codigo)
+		});
+}
+
+function interaccion_anadir_tipo(codigo) {
+	setTimeout(function(){
+			document.getElementById("boton-anadir-tipo").value = "Añadido";
+	}, 1500);
+	setTimeout(function() {
+			document.getElementById("boton-anadir-tipo").value = "Añadir tipo";
+			document.getElementById('nombre_tipo').value = "";
+			document.getElementById('tipos-plantas').innerHTML = "";
+			obtener_tipos_plantas(codigo);
+	}, 2500);
+}
+
 String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 };

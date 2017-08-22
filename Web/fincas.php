@@ -67,7 +67,7 @@
                               <div class="contenedor-anadir-tipos">
                                 <div class="fila-input-tipos">
                                   <input id="nombre_tipo" name="nombre_tipo" type="text" autocomplete="off" placeholder="Nombre del tipo"></input>
-                                  <input id="boton-anadir-tipo" name="boton-anadir-tipo" type="submit" value="Añadir tipo"></input>
+                                  <input id="boton-anadir-tipo" name="boton-anadir-tipo" type="submit" value="Añadir tipo" onclick='almacenar_tipo_planta()'></input>
                                 </div>
                               </div>
                             </div>
