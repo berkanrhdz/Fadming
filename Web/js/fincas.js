@@ -137,14 +137,17 @@ function obtener_tipos_plantas(codigoFinca) {
 				data: 'finca='+codigoFinca,
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_tipos_formato(valor.nombre);
+								insertar_tipos_formato(valor.codigo, valor.nombre);
 						});
         }
     });
 }
 
-function insertar_tipos_formato(nombre) {
-	var formato_tipo = "<div class='tipo-planta'>" + nombre.toUpperCase() + "</div>";
+function insertar_tipos_formato(codigo, nombre) {
+	var formato_tipo = "<div id='" + codigo + "' class='tipo-planta'>" +
+	 										 "<div id='nombre-tipo'>" + nombre.toUpperCase() + "</div>" +
+											 "<div id='boton-eliminar-tipo' onclick='eliminar_tipo_planta(" + codigo + ")'>ELIMINAR</div>" +
+										 "</div>";
 	document.getElementById('tipos-plantas').innerHTML += formato_tipo;
 }
 
@@ -171,6 +174,20 @@ function interaccion_anadir_tipo(codigo) {
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigo);
 	}, 2500);
+}
+
+function eliminar_tipo_planta(codigo) {
+	$.ajax({
+		type: 'POST',
+		url: 'http://localhost/Fadming/Web/php/eliminar_tipo_planta.php',
+		data: "tipo="+codigo,
+		dataType: 'json',
+		success: interaccion_eliminar_tipo(codigo)
+	});
+}
+
+function interaccion_eliminar_tipo(codigo) {
+	$('#tipos-plantas #' + codigo).fadeOut("fast");
 }
 
 function eliminar_finca(codigo) {
