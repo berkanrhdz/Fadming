@@ -36,7 +36,8 @@ function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_hu
 		formato_imagen = "<img src='images/finca_defecto.png'>";
 	}
 	if (indice == 0) {
-		document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombre;
+		var formato_nombre_tipo = "<div id='" + codigo + "' class='tipo-planta-nombre'>Tipos de plantas en " + nombre.toProperCase() + "</div>";
+		document.getElementById('titulo-tipos-plantas').innerHTML = formato_nombre_tipo
 		obtener_tipos_plantas(codigo);
 		formato_finca1 = "<div class='informacion-finca' id='finca-" + (indice + 1) + "'>";
 	}
@@ -51,15 +52,18 @@ function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_hu
 	                     "</div>" +
 	                     "<div class='contenedor-datos-finca'>" +
 	                         "<div class='contenedor-numero-huertos'>" +
-	                        		 "<div id='numero-huertos'><b>NÚMERO DE HUERTOS</b> " + numero_huertos + "</div>" +
+	                        		 "<div id='numero-huertos'>HUERTOS EN LA FINCA: " + numero_huertos + "</div>" +
 	                         "</div>" +
 	                         "<div class='contenedor-numero-plantas'>" +
-	                             "<div id='numero-plantas'><b>NÚMERO DE PLANTAS</b>" + numero_plantas + "</div>" +
+	                             "<div id='numero-plantas'>NÚMERO TOTAL DE PLANTAS: " + numero_plantas + "</div>" +
 	                         "</div>" +
 	                         "<div class='contenedor-numero-usuarios'>" +
 	                             "<div id='numero-usuarios'><b>NÚMERO DE USUARIOS</b></div>" +
 	                         "</div>" +
 	                      "</div>" +
+												"<div class='contenedor-eliminar-finca'>" +
+													"<div id='boton-eliminar-finca' onclick='eliminar_finca(" + codigo + ")'>Eliminar finca</div>" +
+												"</div>" +
 	                   "</div>";
 	formato_finca = formato_finca1 + formato_finca2;
 	document.getElementById('fichas-finca').innerHTML += formato_finca;
@@ -79,7 +83,8 @@ function iniciar_slide(maxSlide) {
 			$('#finca-' + contadorSlideActual).slideDown();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
 			nombreFinca = $('#' + codigoFinca + ' b').text();
-			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
+			var formato_nombre_tipo = "<div id='" + codigoFinca + "' class='tipo-planta-nombre'>Tipos de plantas en " + nombreFinca.toProperCase() + "</div>";
+			document.getElementById('titulo-tipos-plantas').innerHTML = formato_nombre_tipo
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigoFinca);
 		});
@@ -95,7 +100,8 @@ function iniciar_slide(maxSlide) {
 			$('#finca-' + contadorSlideActual).slideDown();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
 			nombreFinca = $('#' + codigoFinca + ' b').text();
-			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
+			var formato_nombre_tipo = "<div id='" + codigoFinca + "' class='tipo-planta-nombre'>Tipos de plantas en " + nombreFinca.toProperCase() + "</div>";
+			document.getElementById('titulo-tipos-plantas').innerHTML = formato_nombre_tipo
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigoFinca);
 		});
@@ -119,10 +125,8 @@ function interaccion_anadir_finca() {
 			document.getElementById("boton-anadir-finca").value = "Añadida";
 	}, 1500);
 	setTimeout(function() {
-			document.getElementById("boton-anadir-finca").value = "Añadir finca";
-			document.getElementById('fichas-finca').innerHTML = "";
-			obtener_datos_fincas();
-	}, 2500);
+			location.reload();
+	}, 2000);
 }
 
 function obtener_tipos_plantas(codigoFinca) {
@@ -146,7 +150,7 @@ function insertar_tipos_formato(nombre) {
 
 function almacenar_tipo_planta() {
 	var nombre = document.getElementById('nombre_tipo').value.toProperCase();
-	var codigo = $('#fichas-finca .nombre-finca').attr('ID');
+	var codigo = $('.tipo-planta-nombre').attr('ID');
 	document.getElementById("boton-anadir-tipo").value = "Añadiendo...";
 	$.ajax({
 				type: 'POST',
@@ -167,6 +171,26 @@ function interaccion_anadir_tipo(codigo) {
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigo);
 	}, 2500);
+}
+
+function eliminar_finca(codigo) {
+	document.getElementById("boton-eliminar-finca").innerHTML = "Eliminando...";
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/eliminar_finca.php',
+				dataType: 'json',
+				data: "finca="+codigo,
+				success: interaccion_eliminar_finca()
+		});
+}
+
+function interaccion_eliminar_finca() {
+	setTimeout(function(){
+			document.getElementById("boton-eliminar-finca").innerHTML = "Eliminada";
+	}, 1500);
+	setTimeout(function() {
+			location.reload();
+	}, 2000);
 }
 
 String.prototype.toProperCase = function () {

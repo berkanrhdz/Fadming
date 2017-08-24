@@ -2211,7 +2211,7 @@ body .contenedor-principal {
 
 #fichas-finca .informacion-finca .contenedor-nombre-finca {
  	width: 100%;
- 	height: 19%;
+ 	height: 15%;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -2263,7 +2263,7 @@ body .contenedor-principal {
 
 #fichas-finca .informacion-finca .contenedor-datos-finca {
  	width: 100%;
- 	height: 36%;
+ 	height: 30%;
 	display: flex;
 	justify-content: center;
 	align-content: center;
@@ -2297,6 +2297,38 @@ body .contenedor-principal {
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
+	font-weight: bold;
+}
+
+#fichas-finca .informacion-finca .contenedor-eliminar-finca {
+ 	width: 100%;
+ 	height: 10%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+#fichas-finca .informacion-finca .contenedor-eliminar-finca #boton-eliminar-finca {
+ 	width: 98%;
+ 	height: 90%;
+	background-color: #9E3232;
+	margin: 0 auto;
+	border-radius: 0.2em;
+	font-family: sans-serif;
+	font-size: 0.85em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	font-weight: bold;
+}
+
+#fichas-finca .informacion-finca .contenedor-eliminar-finca #boton-eliminar-finca:hover {
+	font-size: 0.9em;
+	cursor: pointer;
 }
 
 .contenedor-slide-fincas #slide-fincas #flecha-derecha {
@@ -2433,6 +2465,12 @@ body .contenedor-principal {
 .contenedor-anadir-tipos-finca .contenedor-tipos-plantas #titulo-tipos-plantas {
 	width: 100%;
 	height: 15%;
+	background-color: #5CA45E;
+}
+
+.contenedor-anadir-tipos-finca .contenedor-tipos-plantas #titulo-tipos-plantas .tipo-planta-nombre {
+	width: 100%;
+	height: 100%;
 	background-color: #5CA45E;
 	font-family: sans-serif;
 	font-weight: bold;

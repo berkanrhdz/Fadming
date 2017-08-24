@@ -112,7 +112,7 @@ function insertar_huerto_formato(codigo, nombre) {
 
 function insertar_mensaje_huertos() {
 	var formato_mensaje = "<div id='mensaje-no-huertos'>" +
-														"<div id='contenedor-mensaje-huertos'><b>No ha añadido ningún huerto a esta finca</b>Agréguelos usando el cuarto de la parte inferior</div>" +
+														"<div id='contenedor-mensaje-huertos'><b>No ha añadido ningún huerto a esta finca</b>Agréguelos usando el cuadro de la parte inferior</div>" +
 												"</div>";
 	document.getElementById('lista-huertos').innerHTML = formato_mensaje;
 }
@@ -169,6 +169,13 @@ function eliminar_huerto(codigo) {
 
 function interaccion_eliminar_huerto(codigo) {
 	$('#lista-huertos #' + codigo).fadeOut("fast");
+	var codigo_huerto_actual = $('.nombre-huerto-actual').attr('ID');
+	if (codigo == codigo_huerto_actual) {
+		$('#usuarios-permisos').fadeOut("fast", function() {
+			$('#mensaje-ayuda-permisos').fadeIn("fast");
+			document.getElementById('nombre-huerto-permisos').innerHTML = "";
+		});
+	}
 }
 
 function acceder_permisos_huerto(codigo) {
