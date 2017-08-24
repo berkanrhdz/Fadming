@@ -31,9 +31,19 @@
 			$resultado_consulta_plantas = mysql_query($consulta_plantas);
 			$datos_plantas = mysql_fetch_row($resultado_consulta_plantas);
 			$numero_plantas = $datos_plantas[0];
+			$consulta_usuarios = "SELECT COUNT(DISTINCT CODIGO_USUARIO)
+													  FROM HUERTO_PERMISO
+													  WHERE (CODIGO_HUERTO IN (SELECT CODIGO
+                         													   FROM HUERTO
+                         												     WHERE (CODIGO_FINCA = '$codigo_finca')))
+													  LIMIT 1;";
+			$resultado_consulta_usuarios = mysql_query($consulta_usuarios);
+			$datos_usuarios = mysql_fetch_row($resultado_consulta_usuarios);
+			$numero_usuarios = $datos_usuarios[0];
 		}
 		else {
 			$numero_plantas = 0;
+			$numero_usuarios = 0;
 		}
 		$informacion[] = array('codigo' => $codigo_finca,
 													 'nombre' => $fila[1],
@@ -41,6 +51,7 @@
 													 'mes' => $fila[3],
 	                         'numero_huertos' => $numero_huertos,
 													 'numero_plantas' => $numero_plantas,
+													 'numero_usuarios' => $numero_usuarios,
 												   'imagen' => $imagen);
 	}
 	echo json_encode($informacion);

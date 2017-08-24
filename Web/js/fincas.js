@@ -1,7 +1,7 @@
 // DOCUMENTO JAVASCRIPT DE fincas.php
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
-var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var meses_año = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
 $(document).ready(function() {
 	$("#finca #icono-seleccion").fadeIn("fast");
@@ -15,7 +15,7 @@ function obtener_datos_fincas() {
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
-								insertar_finca_formato(i, valor.codigo, valor.nombre, valor.dia_anio, valor.mes, valor.numero_huertos, valor.numero_plantas, valor.imagen);
+								insertar_finca_formato(i, valor.codigo, valor.nombre, valor.dia_anio, valor.mes, valor.numero_huertos, valor.numero_plantas, valor.numero_usuarios, valor.imagen);
 						});
 						var maxSlide = $('#slide-fincas .informacion-finca').length;
 						iniciar_slide(maxSlide);
@@ -23,7 +23,7 @@ function obtener_datos_fincas() {
     });
 }
 
-function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_huertos, numero_plantas, imagen) {
+function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_huertos, numero_plantas, numero_usuarios, imagen) {
 	var formato_finca1, formato_finca2, formato_finca, formato_imagen;
 	var dia = dia_anio.substr(0, 2);
 	var mes = meses_año[mes - 1];
@@ -58,7 +58,7 @@ function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_hu
 	                             "<div id='numero-plantas'>NÚMERO TOTAL DE PLANTAS: " + numero_plantas + "</div>" +
 	                         "</div>" +
 	                         "<div class='contenedor-numero-usuarios'>" +
-	                             "<div id='numero-usuarios'><b>NÚMERO DE USUARIOS</b></div>" +
+	                             "<div id='numero-usuarios'>USUARIOS CON PERMISOS EN LA FINCA: " + numero_usuarios + "</div>" +
 	                         "</div>" +
 	                      "</div>" +
 												"<div class='contenedor-eliminar-finca'>" +

@@ -1,7 +1,7 @@
 // DOCUMENTO JAVASCRIPT DE empresas.php
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
-var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var meses_año = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 
 // DECLARACIÓN DE CONSTANTES.
 const NUMERO_REGISTROS = 7;

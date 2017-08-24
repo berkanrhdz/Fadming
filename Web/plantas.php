@@ -36,7 +36,7 @@
                     <div class="contenedor-informacion-pagina">
                         <div class="contenedor-gestion-plantas">
                             <div class="gestion-plantas">
-                              <div class="contenedor-titulo-plantas">Selección de plantas</div>
+                              <div class="contenedor-titulo-plantas">Gestión de plantas</div>
                               <div class="contenedor-finca-huertos-plantas" id="contenedor-finca-huertos-plantas">
                                 <div class="contenedor-seleccion-finca">
                                   <select id="selector-finca" required>
@@ -47,7 +47,21 @@
                                   <select id="selector-huerto" onchange="validar_selector_huertos()" required></select>
                                 </div>
                                 <div class="contenedor-mensaje-cargando"><div id="texto-cargando">Cargando...</div></div>
-                                <div class="contenedor-seleccion-plantas" id="seleccion-plantas"></div>
+                                <div class="contenedor-anadir-seleccion">
+                                  <div id="seleccion-plantas"></div>
+                                  <div class="contenedor-anadir-plantas">
+                                    <div id="titulo-anadir-planta"></div>
+                                    <div class="contenido-anadir-planta">
+                                      <div class="fila-input">
+                                        <select id="select-planta" name="select-planta">
+                                          <option value="" disabled selected hidden>Tipo de planta</option>
+                                        </select>
+                                        <input id="cantidad-planta" name="cantidad-planta" type="number" placeholder="Cantidad" min="1" max="1000"></input>
+                                        <input id="boton-anadir-planta" name="boton-anadir-planta" type="submit" value="Añadir"></input>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                         </div>

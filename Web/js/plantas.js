@@ -59,6 +59,8 @@ function insertar_finca_formato(codigo, nombre) {
 
 function validar_selector_finca() {
 	document.getElementById('selector-finca').onchange = function() {
+		document.getElementById('seleccion-plantas').innerHTML = "";
+		$('.contenedor-anadir-plantas').fadeOut();
 		document.getElementById('selector-huerto').innerHTML = "<option value='' disabled selected hidden>Seleccione un huerto...</option>";
 		obtener_huertos_usuario(document.getElementById('selector-finca').value);
 		$(".contenedor-seleccion-huerto").slideDown();
@@ -86,14 +88,21 @@ function insertar_huerto_formato(codigo, nombre) {
 
 function validar_selector_huertos() {
 	document.getElementById('seleccion-plantas').innerHTML = "";
-	$('.contenedor-mensaje-cargando').fadeIn();
+	$('.contenedor-anadir-plantas').fadeOut(function() {
+		$('.contenedor-mensaje-cargando').fadeIn();
+	});
 	setTimeout(function() {
-		$('.contenedor-mensaje-cargando').fadeOut();
+		$('.contenedor-mensaje-cargando').fadeOut(function() {
+			obtener_plantas_usuario(document.getElementById('selector-huerto').value);
+			$('#seleccion-plantas').fadeIn();
+			var posicion = document.getElementById('selector-huerto').selectedIndex;
+			var nombre = document.getElementById('selector-huerto')[posicion].innerHTML;
+			document.getElementById('titulo-anadir-planta').innerHTML = "Añadir plantas a " + nombre;
+			document.getElementById('select-planta').innerHTML = "<option value='' disabled selected hidden>Tipo de planta</option>";
+			obtener_tipos_plantas(document.getElementById('selector-finca').value);
+			$('.contenedor-anadir-plantas').fadeIn();
+		});
 	}, 1100);
-	setTimeout(function() {
-		$('#seleccion-plantas').fadeIn();
-		obtener_plantas_usuario(document.getElementById('selector-huerto').value);
-	}, 1500);
 	setTimeout(function() {
 		seleccion_plantas_accion();
 	}, 1800);
@@ -114,45 +123,59 @@ function obtener_plantas_usuario(codigo_huerto) {
 }
 
 function insertar_planta_formato(codigo, nombre) {
-		var formato_planta = "<div class='planta' id='" + codigo + "'>" +
+		var formato_planta = "<div class='planta' id='" + codigo + "' onclick='gestionar_estados_planta(" + codigo + ")'>" +
 		                      	"<div class='nombre-planta-identificador' id='nombre-planta-" + codigo + "'>" + codigo + " " + nombre + "</div>" +
 		                        "<div class='icono-codigo-qr' id='icono-qr-" + codigo + "'></div>" +
 		                     "</div>";
 		document.getElementById('seleccion-plantas').innerHTML += formato_planta;
 }
 
+function obtener_tipos_plantas(codigo_finca) {
+	$.ajax({
+        type: 'POST',
+        url: 'http://localhost/Fadming/Web/php/obtener_tipos_plantas_finca.php',
+				dataType: 'json',
+				data: "finca="+codigo_finca,
+				success: function(datos) {
+					$(datos).each(function(i, valor) {
+						insertar_tipo_formato(valor.nombre);
+					});
+        }
+    });
+}
+
+function insertar_tipo_formato(nombre) {
+	var formato_tipo = "<option value='" + nombre + "'>" + nombre + "</option>";
+	document.getElementById('select-planta').innerHTML += formato_tipo;
+}
+
 function seleccion_plantas_accion() {
 	$('.planta').hover(
 		function() {
 			identificador = $(this).attr('ID');
-			$('#' + identificador).css('background-color', '#F7DB5C');
-			$('#' + identificador).css('cursor', 'pointer');
-			$('#nombre-planta-' + identificador).css('color', '#2A2B2A');
 			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr-seleccionado.png")');
-			}, function() {
+		}, function() {
 			identificador = $(this).attr('ID');
-			$('#' + identificador).css('background-color', '#FFFFFF');
-			$('#nombre-planta-' + identificador).css('color', '#2A2B2A');
 			$('#icono-qr-' + identificador).css('background-image', 'url("images/iconos/codigo-qr.png")');
-			}
+		}
 	);
-	$('.planta').click(function() {
-			$("#nombre-planta-seleccionada").css('display', 'none');
-			document.getElementById('nombre-seleccionada').innerHTML = "";
-			$("#nombre-planta-seleccionada").css('width', '0%');
-			identificador = $(this).attr('ID');
-			$("#nombre-planta-seleccionada").fadeIn();
-			$('.contenedor-mensaje-explicacion').slideUp();
-			setTimeout(function() {
-				document.getElementById('nombre-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
-			}, 800);
-			$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow");
-			document.getElementById('estados-planta-seleccionada').innerHTML = "";
-			setTimeout(function() {
-				$('.seleccion-estados-planta-seleccionada').slideDown();
-				obtener_planta_estados(identificador);
-			}, 1000);
-	});
+}
+
+function gestionar_estados_planta(codigo) {
+	$("#nombre-planta-seleccionada").css('display', 'none');
+	document.getElementById('nombre-seleccionada').innerHTML = "";
+	$("#nombre-planta-seleccionada").css('width', '0%');
+	$("#nombre-planta-seleccionada").fadeIn();
+	$('.contenedor-mensaje-explicacion').slideUp();
+	setTimeout(function() {
+		document.getElementById('nombre-seleccionada').innerHTML = document.getElementById('nombre-planta-' + identificador).innerHTML;
+	}, 800);
+	$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow");
+	document.getElementById('estados-planta-seleccionada').innerHTML = "";
+	setTimeout(function() {
+		$('.seleccion-estados-planta-seleccionada').slideDown();
+		obtener_planta_estados(codigo);
+	}, 1000);
 }
 
 function obtener_planta_estados(codigo_planta) {

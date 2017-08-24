@@ -7,7 +7,7 @@ const ROLES = 1;
 const USUARIOS = 2;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
-var meses_año = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+var meses_año = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
 /*var select_identificadores = [];
 var select_rol = [];*/
 
