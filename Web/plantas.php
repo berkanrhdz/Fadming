@@ -49,7 +49,15 @@
                                 <div class="contenedor-mensaje-cargando"><div id="texto-cargando">Cargando...</div></div>
                                 <div class="contenedor-anadir-seleccion">
                                   <div id="seleccion-plantas"></div>
-                                  <div class="contenedor-anadir-plantas">
+                                  <div class="contenedor-anadir-gestionar">
+                                    <div class="contenedor-gestionar-botones">
+                                      <div class="fila-input-gestionar">
+                                        <input id="boton-marcar-todo" name="boton-marca-todo" type="submit" value="Marcar todo" onclick="marcar_todos_checkbox()"></input>
+                                        <input id="boton-desmarcar-todo" name="boton-anadir-planta" type="submit" value="Desmarcar todo"></input>
+                                        <input id="boton-eliminar-planta" name="boton-eliminar-planta" type="submit" value="Borrar"></input>
+                                        <input id="boton-gestionar-planta" name="boton-gestionar-planta" type="submit" value="Gestionar estados"></input>
+                                      </div>
+                                    </div>
                                     <div id="titulo-anadir-planta"></div>
                                     <div class="contenido-anadir-planta">
                                       <div class="fila-input">
@@ -57,7 +65,7 @@
                                           <option value="" disabled selected hidden>Tipo de planta</option>
                                         </select>
                                         <input id="cantidad-planta" name="cantidad-planta" type="number" placeholder="Cantidad" min="1" max="1000"></input>
-                                        <input id="boton-anadir-planta" name="boton-anadir-planta" type="submit" value="Añadir"></input>
+                                        <input id="boton-anadir-planta" name="boton-anadir-planta" type="submit" value="Añadir" onclick="anadir_planta()"></input>
                                       </div>
                                     </div>
                                   </div>
@@ -68,7 +76,7 @@
                         <div class="contenedor-estados-codigos">
                           <div class="contenedor-anadir-estados-planta">
                             <div class="titulo-anadir-estados-planta">Generación de códigos QR</div>
-                            <div class="contenedor-mensaje-explicacion">En primer lugar, seleccione una planta y gestione los estados.
+                            <div class="contenedor-mensaje-explicacion">En primer lugar, seleccione las plantas y gestione los estados.
                                                                         </br><b>Finalmente genere su código QR y descárguelo.</b></div>
                             <div class="contenedor-nombre-planta-seleccionada">
                               <div id="nombre-planta-seleccionada"><div id="nombre-seleccionada"></div></div>

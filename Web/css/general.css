@@ -3076,22 +3076,110 @@ body .contenedor-principal {
 
 .contenedor-finca-huertos-plantas .contenedor-anadir-seleccion #seleccion-plantas {
 	width: 100%;
-	height: 77.5%;
+	height: 67%;
 	overflow-y: scroll;
 }
 
-.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-anadir-plantas {
+.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-anadir-gestionar {
 	width: 100%;
-	height: 23%;
+	height: 34%;
 	background-color: #5CA45E;
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
 	display: none;
 }
 
-.contenedor-anadir-seleccion .contenedor-anadir-plantas #titulo-anadir-planta {
+.contenedor-anadir-seleccion .contenedor-anadir-gestionar .contenedor-gestionar-botones {
+	width: 100%;
+	height: 33%;
+	background-color: #5CA45E;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-anadir-gestionar .contenedor-gestionar-botones .fila-input-gestionar {
+	width: 98%;
+	height: 75%;
+	padding-left: 2%;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-marcar-todo {
+	width: 25%;
+	height: 100%;
+	background-color: transparent;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+	outline: none;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-desmarcar-todo {
+	width: 25%;
+	height: 100%;
+	background-color: transparent;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+	outline: none;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-marcar-todo:hover,
+.contenedor-gestionar-botones .fila-input-gestionar #boton-desmarcar-todo:hover {
+	color: #2A2B2A;
+	background-color: #F7DB5C;
+	border: 0.5px solid #F7DB5C;
+	cursor: pointer;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-eliminar-planta {
+	width: 17%;
+	height: 100%;
+	background-color: transparent;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+	outline: none;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-eliminar-planta:hover {
+	background-color: #9E3232;
+	border: 0.5px solid #9E3232;
+	cursor: pointer;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-gestionar-planta {
+	width: 28%;
+	height: 100%;
+	background-color: transparent;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+	outline: none;
+}
+
+.contenedor-gestionar-botones .fila-input-gestionar #boton-gestionar-planta:hover {
+	color: #2A2B2A;
+	background-color: #FFFFFF;
+	cursor: pointer;
+}
+
+.contenedor-anadir-seleccion .contenedor-anadir-gestionar #titulo-anadir-planta {
 	width: 97%;
-	height: 45%;
+	height: 30%;
 	background-color: #2A2B2A;
 	font-family: sans-serif;
 	font-weight: bold;
@@ -3105,9 +3193,9 @@ body .contenedor-principal {
 	padding-left: 3%;
 }
 
-.contenedor-anadir-seleccion .contenedor-anadir-plantas .contenido-anadir-planta {
+.contenedor-anadir-seleccion .contenedor-anadir-gestionar .contenido-anadir-planta {
 	width: 100%;
-	height: 55%;
+	height: 37%;
 	border-bottom-left-radius: 0.4em;
 	border-bottom-right-radius: 0.4em;
 	display: flex;
@@ -3116,13 +3204,13 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenedor-anadir-plantas .contenido-anadir-planta .fila-input {
+.contenedor-anadir-gestionar .contenido-anadir-planta .fila-input {
 	width: 97%;
 	height: 75%;
 	padding-left: 3%;
 }
 
-.contenedor-anadir-plantas .contenido-anadir-planta .fila-input #select-planta {
+.contenedor-anadir-gestionar .contenido-anadir-planta .fila-input #select-planta {
 	width: 45%;
 	height: 100%;
 	font-family: sans-serif;
@@ -3132,7 +3220,7 @@ body .contenedor-principal {
 	outline: none;
 }
 
-.contenedor-anadir-plantas .contenido-anadir-planta .fila-input #cantidad-planta {
+.contenedor-anadir-gestionar .contenido-anadir-planta .fila-input #cantidad-planta {
 	width: 23%;
 	height: 85%;
 	font-family: sans-serif;
@@ -3145,7 +3233,7 @@ body .contenedor-principal {
 	padding-left: 2%;
 }
 
-.contenedor-anadir-plantas .contenido-anadir-planta .fila-input #boton-anadir-planta {
+.contenedor-anadir-gestionar .contenido-anadir-planta .fila-input #boton-anadir-planta {
 	width: 24.5%;
 	height: 85%;
 	background-color: transparent;
@@ -3158,34 +3246,43 @@ body .contenedor-principal {
 	border: 0.5px solid #FFFFFF;
 }
 
-.contenedor-anadir-plantas .contenido-anadir-planta .fila-input #boton-anadir-planta:hover {
+.contenedor-anadir-gestionar .contenido-anadir-planta .fila-input #boton-anadir-planta:hover {
 	background-color: #F7DB5C;
 	border: 0.5px solid #F7DB5C;
 	cursor: pointer;
 	color: #2A2B2A;
 }
 
-.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .planta {
+.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion #seleccion-plantas .planta {
 	width: 100%;
-	height: 13%;
+	height: 15%;
 	border-bottom: 0.5px solid #D8CECB;
 }
 
-.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .planta:hover {
-	background-color: #F7DB5C;
-	color: #2A2B2A;
-	cursor: pointer;
-}
-
-.contenedor-anadir-seleccion .planta .nombre-planta-identificador {
-	width: 84%;
+.contenedor-anadir-seleccion #seleccion-plantas .planta #codigo-planta {
+	width: 27.7%;
 	height: 100%;
 	float: left;
+	background-color: #F7DB5C;
+	font-family: sans-serif;
+	font-size: 0.8em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	border-right: 0.5px solid #D8CECB;
+}
+
+.contenedor-anadir-seleccion #seleccion-plantas .planta #nombre-planta {
+	width: 62%;
+	height: 100%;
+	float: left;
+	background-color: #FFFFFF;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: 0.9em;
-	border-radius: 0em;
-	border: none;
 	color: #2A2B2A;
 	text-align: center;
 	display: flex;
@@ -3194,14 +3291,16 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenedor-anadir-seleccion .planta .icono-codigo-qr {
-	width: 15.5%;
+.contenedor-anadir-seleccion #seleccion-plantas .planta .contenedor-checkbox {
+	width: 7%;
 	height: 100%;
 	float: right;
-	background-image: url("../images/iconos/codigo-qr.png");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 57.5% 80%;
+	background-color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 3%;
 }
 
 .contenedor-informacion-pagina .contenedor-estados-codigos {
@@ -3240,10 +3339,10 @@ body .contenedor-principal {
 .contenedor-anadir-estados-planta .contenedor-mensaje-explicacion {
 	width: 100%;
 	height: 22%;
-	background-color: #5CA45E;
+	background-color: #F7DB5C;
 	font-family: sans-serif;
 	font-size: 0.85em;
-	color: #FFFFFF;
+	color: #2A2B2A;
 	text-align: center;
 	display: flex;
 	justify-content: center;
