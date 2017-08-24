@@ -43,7 +43,7 @@ function insertar_usuarios_roles(roles, usuarios, tipo) {
 			var nombre = valor.nombre;
 			var codigo = valor.codigo;
 			var formato_rol = "<div class='contenedor-rol-empresa' id='" + codigo + "'>" +
-														"<div id='nombre-rol'>" + nombre + "</div>" +
+														"<div id='nombre-rol'>" + nombre.toUpperCase() + "</div>" +
 														"<div id='eliminar-rol' onclick='eliminar_rol(" + codigo + ")'>Eliminar</div>" +
 												"</div>";
 			if (codigo > ROLES_FADMING) {
@@ -59,7 +59,7 @@ function insertar_usuarios_roles(roles, usuarios, tipo) {
 				formato_usuario = "<div class='contenedor-usuario-lista'>" +
 															"<div id='foto-usuario'><img src='data:image/png;base64," + valor.imagen + "'></div>" +
 															"<div id='nombre-completo-usuario-actual'>" + valor.nombre + " " + valor.apellidos + "</div>" +
-															"<div id='rol-usuario-empresa-actual'>" + valor.rol + "</div>" +
+															"<div id='rol-usuario-empresa-actual'>" + valor.rol.toUpperCase() + "</div>" +
 													"</div>";
 			}
 			else {
@@ -165,22 +165,6 @@ function enviar_cambio_rol(identificador, rol) {
 		url: 'http://localhost/Fadming/Web/php/actualizar_rol_usuario.php',
 		dataType: 'json',
 		data: "identificador="+identificador+"&rol="+rol
-	});
-}
-
-function eliminar_rol(codigo) {
-	$.ajax({
-		type: 'POST',
-		url: 'http://localhost/Fadming/Web/php/eliminar_rol.php',
-		data: "rol="+codigo,
-		dataType: 'json',
-		success: interaccion_eliminar_rol(codigo)
-	});
-}
-
-function interaccion_eliminar_rol(codigo) {
-	$('#lista-roles #' + codigo).fadeOut("fast", function() {
-		location.reload();
 	});
 }
 

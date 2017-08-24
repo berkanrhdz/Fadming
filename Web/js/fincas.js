@@ -78,7 +78,7 @@ function iniciar_slide(maxSlide) {
 		$('#finca-' + contadorSlideAnterior).slideUp(function() {
 			$('#finca-' + contadorSlideActual).slideDown();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
-			nombreFinca = $('#' + codigoFinca).text();
+			nombreFinca = $('#' + codigoFinca + ' b').text();
 			document.getElementById('titulo-tipos-plantas').innerHTML = "Tipos de plantas en " + nombreFinca.toProperCase();
 			document.getElementById('tipos-plantas').innerHTML = "";
 			obtener_tipos_plantas(codigoFinca);

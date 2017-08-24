@@ -23,7 +23,7 @@
 					 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='huerto'>" .
-					 		"<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .
+					 		"<a href='huertos.php'><div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='planta'>" .
 					 		"<a href='plantas.php'><div id='icono-planta'></div><div class='nombre-acceso' id='texto-planta'>Plantas</div><div id='icono-seleccion'></div></a>" .
@@ -40,7 +40,7 @@
 					 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='huerto'>" .
-							"<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .
+					 		"<a href='huertos.php'><div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div><div id='icono-seleccion'></div></a>" .
 					 "</div>" .
 					 "<div class='fila-acceso' id='planta'>" .
 							"<a href='plantas.php'><div id='icono-planta'></div><div class='nombre-acceso' id='texto-planta'>Plantas</div><div id='icono-seleccion'></div></a>" .
@@ -55,7 +55,7 @@
 				 		"<a href='fincas.php'><div id='icono-finca'></div><div class='nombre-acceso' id='texto-finca'>Fincas</div><div id='icono-seleccion'></div></a>" .
 				 "</div>" .
 				 "<div class='fila-acceso' id='huerto'>" .
-					  "<div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div>" .
+				 		"<a href='huertos.php'><div id='icono-huerto'></div><div class='nombre-acceso' id='texto-huerto'>Huertos</div><div id='icono-seleccion'></div></a>" .
 				 "</div>" .
 				 "<div class='fila-acceso' id='planta'>" .
 					  "<a href='plantas.php'><div id='icono-planta'></div><div class='nombre-acceso' id='texto-planta'>Plantas</div><div id='icono-seleccion'></div></a>" .

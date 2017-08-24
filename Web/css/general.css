@@ -2528,6 +2528,379 @@ body .contenedor-principal {
 	cursor: pointer;
 }
 
+/* ------------------------------------------- HUERTOS ------------------------------------------- */
+
+.contenedor-informacion-pagina .contenedor-huertos-usuarios {
+	width: 100%;
+	height: 95%;
+}
+
+.contenedor-informacion-pagina .contenedor-huertos-usuarios .contenedor-usuarios {
+	width: 40%;
+	height: 100%;
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos-usuarios .contenedor-usuarios .gestion-usuarios-huerto {
+	width: 98%;
+	height: 95%;
+	background-color: #2A2B2A;
+	margin: 0 auto;
+	border-radius: 0.2em;
+}
+
+.contenedor-usuarios .gestion-usuarios-huerto #titulo-usuarios-huerto {
+	width: 100%;
+	height: 10%;
+	background-color: #9E3232;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-usuarios .gestion-usuarios-huerto #lista-usuarios-huerto {
+	width: 100%;
+	height: 90%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-usuarios .gestion-usuarios-huerto #lista-usuarios-huerto #nombre-huerto-permisos {
+	width: 100%;
+	height: 10%;
+	background-color: #5CA45E;
+}
+
+.contenedor-usuarios .gestion-usuarios-huerto #lista-usuarios-huerto #nombre-huerto-permisos .nombre-huerto-actual {
+	width: 100%;
+	height: 100%;
+	background-color: #5CA45E;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.gestion-usuarios-huerto #lista-usuarios-huerto .contenedor-usuarios-permisos {
+	width: 100%;
+	height: 90%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.gestion-usuarios-huerto #lista-usuarios-huerto .contenedor-usuarios-permisos #mensaje-ayuda-permisos {
+	width: 94%;
+	height: 18%;
+	color: #FFFFFF;
+	text-align: center;
+	font-family: sans-serif;
+	padding: 3%;
+	font-size: 0.85em;
+	line-height: 1.3em;
+}
+
+.gestion-usuarios-huerto #lista-usuarios-huerto .contenedor-usuarios-permisos #usuarios-permisos {
+	width: 95%;
+	height: 95%;
+	margin: 0 auto;
+	background-color: #FAF4F5;
+	overflow-y: scroll;
+	display: none;
+}
+
+.contenedor-usuarios-permisos #usuarios-permisos .usuario-empresa {
+	width: 100%;
+	height: 13%;
+	background-color: #FFFFFF;
+	border-bottom: 0.5px solid #D8CECB;
+}
+
+.contenedor-usuarios-permisos #usuarios-permisos .usuario-empresa #imagen-usuario {
+	width: 13.6%;
+	height: 100%;
+	float: left;
+	border-right: 0.5px solid #D8CECB;
+}
+
+.contenedor-usuarios-permisos #usuarios-permisos .usuario-empresa #imagen-usuario img {
+	width: 100%;
+	height: 100%;
+}
+
+.contenedor-usuarios-permisos #usuarios-permisos .usuario-empresa #nombre-usuario {
+	width: 68%;
+	height: 100%;
+	float: left;
+	font-family: sans-serif;
+	font-size: 0.725em;
+	color: #2A2B2B;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+	padding-right: 2%;
+	line-height: 1.5em;
+}
+
+.contenedor-usuarios-permisos #usuarios-permisos .usuario-empresa #checkbox-usuario {
+	width: 9%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 5%;
+}
+
+.contenedor-informacion-pagina .contenedor-huertos-usuarios .contenedor-huertos {
+	width: 60%;
+	height: 100%;
+	float: right;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos-usuarios .contenedor-huertos .gestion-huertos {
+	width: 100%;
+	height: 95%;
+	margin: 0 auto;
+	border-radius: 0.2em;
+	border: 0.5px solid #D8CECB;
+}
+
+.contenedor-huertos-usuarios .contenedor-huertos .gestion-huertos .titulo-finca {
+	width: 100%;
+	height: 10%;
+	background-color: #2A2B2A;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	border-bottom: 0.5px solid #D8CECB;
+}
+
+.contenedor-huertos .gestion-huertos .titulo-finca #flecha-izquierda {
+	width: 10%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/blanco/flecha-izquierda.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 37.5% 45%;
+	opacity: 0.7;
+}
+
+.contenedor-huertos .gestion-huertos .titulo-finca .nombre-finca {
+	width: 80%;
+	height: 100%;
+	float: left;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos .gestion-huertos .titulo-finca #flecha-derecha {
+	width: 10%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/blanco/flecha-derecha.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 37.5% 45%;
+	opacity: 0.7;
+}
+
+.contenedor-huertos .gestion-huertos .titulo-finca #flecha-izquierda:hover,
+.contenedor-huertos .gestion-huertos .titulo-finca #flecha-derecha:hover {
+	opacity: 1.0;
+	cursor: pointer;
+}
+
+.contenedor-huertos-usuarios .contenedor-huertos .gestion-huertos #lista-huertos {
+	width: 100%;
+	height: 71.6%;
+	background-color: #FAF5F6;
+	overflow-y: scroll;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos #mensaje-no-huertos {
+	width: 100%;
+	height: 20%;
+	background-color: #5CA45E;
+	display: none;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos #mensaje-no-huertos #contenedor-mensaje-huertos {
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos .huerto {
+	width: 100%;
+	height: 12%;
+	background-color: #FFFFFF;
+	border-bottom: 0.5px solid #D8CECB;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos .huerto .nombre-huerto {
+	width: 80%;
+	height: 100%;
+	background-color: #FFFFFF;
+	float: left;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.85em;
+	color: #2A2B2A;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos .huerto .nombre-huerto:hover {
+	cursor: pointer;
+	background-color: #FAF5F6;
+	font-size: 0.875em;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos .huerto #eliminar-huerto {
+	width: 20%;
+	height: 100%;
+	background-color: #9E3232;
+	float: right;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.75em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-huertos .gestion-huertos #lista-huertos .huerto #eliminar-huerto:hover {
+	font-size: 0.85em;
+	cursor: pointer;
+}
+
+
+.contenedor-huertos-usuarios .contenedor-huertos .gestion-huertos .contenedor-anadir-huerto {
+	width: 100%;
+	height: 18%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	background-color: #5CA45E;
+}
+
+.contenedor-huertos .gestion-huertos .contenedor-anadir-huerto #titulo-anadir-huerto {
+	width: 98%;
+	height: 45%;
+	background-color: #2A2B2A;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	text-align: left;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	padding-left: 2%;
+}
+
+.contenedor-huertos .gestion-huertos .contenedor-anadir-huerto .contenido-anadir-huerto {
+	width: 100%;
+	height: 55%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.gestion-huertos .contenedor-anadir-huerto .contenido-anadir-huerto .fila-input {
+	width: 95%;
+	height: 75%;
+	padding-left: 5%;
+}
+
+.contenedor-anadir-huerto .contenido-anadir-huerto .fila-input #nombre_huerto {
+	width: 57.5%;
+	height: 90%;
+	background-color: #FFFFFF;
+	border-radius: 0.3em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #2A2B2A;
+	border: #FFFFFF;
+	padding-left: 2%;
+	font-size: 0.80em;
+}
+
+.contenedor-anadir-huerto .contenido-anadir-huerto .fila-input #boton_anadir_huerto {
+	width: 30%;
+	height: 100%;
+	margin-left: 3%;
+	background-color: transparent;
+	border-radius: 0.3em;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	border: 0.5px solid #FFFFFF;
+	font-size: 0.85em;
+	outline: none;
+}
+
+.contenedor-anadir-huerto .contenido-anadir-huerto .fila-input #boton_anadir_huerto:hover {
+	background-color: #F7DB5C;
+	border: 0.5px solid #F7DB5C;
+	color: #2A2B2A;
+	cursor: pointer;
+}
+
 /* ------------------------------------------- PLANTAS ------------------------------------------- */
 
 .contenedor-informacion-pagina .contenedor-gestion-plantas {
