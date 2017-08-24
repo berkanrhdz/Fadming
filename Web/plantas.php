@@ -52,9 +52,9 @@
                                   <div class="contenedor-anadir-gestionar">
                                     <div class="contenedor-gestionar-botones">
                                       <div class="fila-input-gestionar">
-                                        <input id="boton-marcar-todo" name="boton-marca-todo" type="submit" value="Marcar todo" onclick="marcar_todos_checkbox()"></input>
-                                        <input id="boton-desmarcar-todo" name="boton-anadir-planta" type="submit" value="Desmarcar todo"></input>
-                                        <input id="boton-eliminar-planta" name="boton-eliminar-planta" type="submit" value="Borrar"></input>
+                                        <input id="boton-marcar-todo" name="boton-marca-todo" type="submit" value="Marcar todo" onclick="opciones_checkbox(1)"></input>
+                                        <input id="boton-desmarcar-todo" name="boton-anadir-planta" type="submit" value="Desmarcar todo" onclick="opciones_checkbox(0)"></input>
+                                        <input id="boton-eliminar-planta" name="boton-eliminar-planta" type="submit" value="Borrar" onclick="borrar_planta()"></input>
                                         <input id="boton-gestionar-planta" name="boton-gestionar-planta" type="submit" value="Gestionar estados"></input>
                                       </div>
                                     </div>

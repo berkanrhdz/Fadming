@@ -90,7 +90,7 @@ function obtener_plantas_usuario(codigo_huerto) {
 }
 
 function insertar_planta_formato(codigo, nombre) {
-		var formato_planta = "<div class='planta'>" +
+		var formato_planta = "<div class='planta' id='planta-" + codigo + "'>" +
 														"<div id='codigo-planta'>CÓDIGO: " + codigo + "</div>" +
 														"<div id='nombre-planta'>" + nombre + "</div>" +
 														"<div class='contenedor-checkbox'>" +
@@ -100,12 +100,27 @@ function insertar_planta_formato(codigo, nombre) {
 		document.getElementById('seleccion-plantas').innerHTML += formato_planta;
 }
 
-function marcar_todos_checkbox() {
+function opciones_checkbox(opcion) {
 	$("#seleccion-plantas .contenedor-checkbox .checkbox-planta").each(function(){
 		if (this.type == 'checkbox') {
-			this.checked = 1;
+			this.checked = opcion;
 		}
   });
+}
+
+function borrar_planta() {
+	$("#seleccion-plantas .contenedor-checkbox .checkbox-planta").each(function() {
+		if (this.checked) {
+			var codigo_planta = this.id;
+			$.ajax({
+						type: 'POST',
+						url: 'http://localhost/Fadming/Web/php/eliminar_planta.php',
+						dataType: 'json',
+						data: "planta="+codigo_planta,
+						success: $('#planta-' + codigo_planta).fadeOut("fast")
+				});
+		}
+	});
 }
 
 function obtener_tipos_plantas(codigo_finca) {
