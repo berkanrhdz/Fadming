@@ -3275,7 +3275,7 @@ body .contenedor-principal {
 	border-right: 0.5px solid #D8CECB;
 }
 
-.contenedor-anadir-seleccion #seleccion-plantas .planta #nombre-planta {
+.contenedor-anadir-seleccion #seleccion-plantas .planta .nombre-planta {
 	width: 62%;
 	height: 100%;
 	float: left;
@@ -3311,17 +3311,9 @@ body .contenedor-principal {
 	border-radius: 0.5em;
 }
 
-.contenedor-estados-codigos .contenedor-anadir-estados-planta {
+.contenedor-estados-codigos .titulo-anadir-estados-planta {
 	width: 100%;
-	height: 65%;
-	background-color: #2A2B2A;
-	border-top-left-radius: 0.4em;
-	border-top-right-radius: 0.4em;
-}
-
-.contenedor-estados-codigos .contenedor-anadir-estados-planta .titulo-anadir-estados-planta {
-	width: 100%;
-	height: 13.3%;
+	height: 8.5%;
 	border-top-left-radius: 0.4em;
 	border-top-right-radius: 0.4em;
 	background-color: #2A2B2A;
@@ -3336,7 +3328,15 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenedor-anadir-estados-planta .contenedor-mensaje-explicacion {
+.contenedor-estados-codigos .contenedor-contenido-estados {
+	width: 100%;
+	height: 91.5%;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+	background-color: #2A2B2A;
+}
+
+.contenedor-estados-codigos .contenedor-contenido-estados .contenedor-mensaje-explicacion {
 	width: 100%;
 	height: 22%;
 	background-color: #F7DB5C;
@@ -3351,19 +3351,14 @@ body .contenedor-principal {
 	line-height: 1.3em;
 }
 
-.contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada {
-	width: 100%;
-	height: 12%;
-	background-color: transparent;
-}
-
-.contenedor-anadir-estados-planta .contenedor-nombre-planta-seleccionada #nombre-planta-seleccionada {
+.contenedor-estados-codigos .contenedor-contenido-estados .nombre-planta-seleccionada {
 	width: 0%;
-	height: 100%;
+	height: 9%;
+	background-color: #F7DB5C;
 	display: none;
 }
 
-.contenedor-nombre-planta-seleccionada #nombre-planta-seleccionada #nombre-seleccionada {
+.contenedor-estados-codigos .contenedor-contenido-estados .nombre-planta-seleccionada #nombre-seleccionada {
 	width: 100%;
 	height: 100%;
 	background-color: #F7DB5C;
@@ -3378,277 +3373,172 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada {
+.contenedor-estados-codigos .contenedor-contenido-estados .estados-botones-seleccionada {
 	width: 100%;
-	height: 74.4%;
+	height: 74%;
 	display: none;
 }
 
-.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada .estados-planta-seleccionada {
+.contenedor-contenido-estados .estados-botones-seleccionada #estados-planta-seleccionada {
 	width: 100%;
-	height: 57.5%;
-	background-color: #FFFFFF;
-	overflow-y: scroll;
+	height: 70%;
+	background-color: #FAF5F6;
+	overflow-y: hidden;
 }
 
-.seleccion-estados-planta-seleccionada .estados-planta-seleccionada .estado-planta {
-	width: 97.5%;
-	height: 25%;
-	background-color: #FFFFFF;
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta {
+	width: 100%;
+	height: 16%;
 	border-bottom: 0.5px solid #D8CECB;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 0.8em;
-	color: #2A2B2A;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	padding-left: 2.5%;
 }
 
-.contenedor-anadir-estados-planta .seleccion-estados-planta-seleccionada .anadir-estados-seleccionada {
-	width: 100%;
-	height: 42%;
-	background-color: #5CA45E;
-	border-top: 0.5px solid #BBB3B1;
-}
-
-.anadir-estados-seleccionada .contenedor-selector {
-	width: 100%;
-	height: 50%;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.contenedor-selector #selector-estado {
-	width: 93%;
-	height: 75%;
-	margin: 0 auto;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 0.8em;
-	border-radius: 0em;
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #nombre-estado {
+	width: 80%;
+	height: 100%;
+	float: left;
 	background-color: #FFFFFF;
-	border: 0.5px solid #CBC5C4;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.85em;
 	color: #2A2B2A;
-	outline: none;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #eliminar-estado {
+	width: 20%;
+	height: 100%;
+	float: right;
+	background-color: #2A2B2A;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.70em;
+	color: #FFFFFF;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #eliminar-estado:hover {
+	background-color: #9E3232;
 	cursor: pointer;
 }
 
-.seleccion-estados-planta-seleccionada .anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar {
+/*.estados-botones-seleccionada #estados-planta-seleccionada .contenedor-mensaje-confirmacion {
+	width: 85%;
+	height: 75%;
+	background-color: #9E3232;
+	border-radius: 0.2em;
+	margin-left: 7.5%;
+}*/
+
+.contenedor-contenido-estados .estados-botones-seleccionada .contenedor-botones-gestionar {
 	width: 100%;
-	height: 50%;
+	height: 30%;
+	background-color: #5CA45E;
 }
 
-.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir {
+.estados-botones-seleccionada .contenedor-botones-gestionar .contenedor-select-grupos {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.estados-botones-seleccionada .contenedor-botones-gestionar .contenedor-botones {
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.estados-botones-seleccionada .contenedor-botones-gestionar .contenedor-select-grupos .fila-input-estados,
+.estados-botones-seleccionada .contenedor-botones-gestionar .contenedor-botones .fila-input-estados {
+	width: 100%;
+	height: 70%;
+}
+
+.contenedor-botones-gestionar .contenedor-select-grupos .fila-input-estados #select-estado {
+	width: 90%;
+	height: 100%;
+	background-color: #FFFFFF;
+	margin-left: 5%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #2A2B2A;
+	outline: none;
+}
+
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-anadir-estado {
 	width: 25%;
 	height: 100%;
-	float: left;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir {
-	width: 85%;
-	height: 65%;
-	padding-left: 15%;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button {
-	width: 100%;
-	height: 100%;
-	border-radius: 0.3em;
 	background-color: transparent;
-	color: #FFFFFF;
-	border: 0.5px solid #FFFFFF;
-	font-family: sans-serif;
-	font-size: 0.8em;
-	font-weight: bold;
 	outline: none;
-}
-
-.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar {
-	width: 35%;
-	height: 100%;
-	float: left;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar {
-	width: 92.5%;
-	height: 65%;
-	padding-left: 7.5%;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button {
-	width: 100%;
-	height: 100%;
-	border-radius: 0.3em;
-	background-color: transparent;
-	color: #FFFFFF;
-	border: 0.5px solid #FFFFFF;
+	margin-left: 4%;
 	font-family: sans-serif;
+	font-weight: bold;
 	font-size: 0.8em;
-	font-weight: bold;
-	outline: none;
-}
-
-.anadir-estados-seleccionada .contenedor-botones-anadir-borrar-generar .contenedor-boton-generar {
-	width: 40%;
-	height: 100%;
-	float: right;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar {
-	width: 84%;
-	height: 65%;
-	margin: 0 auto;
-	padding-right: 2%;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button {
-	width: 100%;
-	height: 100%;
-	border-radius: 0.3em;
-	background-color: transparent;
 	color: #FFFFFF;
-	border: 0.5px solid #FFFFFF;
-	font-family: sans-serif;
-	font-size: 0.8em;
-	font-weight: bold;
-	outline: none;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-borrar #boton-borrar button:hover {
-	background-color: #C24545;
-	border: none;
-	cursor: pointer;
-}
-
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-anadir #boton-anadir button:hover,
-.contenedor-botones-anadir-borrar-generar .contenedor-boton-generar #boton-generar button:hover {
-	background-color: #FFFFFF;
-	color: #2A2B2A;
-	cursor: pointer;
-}
-
-.contenedor-estados-codigos .contenedor-generar-codigo-qr {
-	width: 100%;
-	height: 35%;
-	background-color: #2A2B2A;
-	border-bottom-left-radius: 0.4em;
-	border-bottom-right-radius: 0.4em;
-}
-
-.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-mensaje-cargando-qr {
-	width: 100%;
-	height: 20%;
-	background-color: #F7DB5C;
-	display: none;
-}
-
-.contenedor-mensaje-cargando-qr #mensaje-cargando-qr {
-	width: 100%;
-	height: 100%;
-	float: left;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	color: #2A2B2A;
-	font-family: sans-serif;
-	font-size: 0.9em;
-	font-weight: bold;
-	text-align: center;
-}
-
-.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-codigo-qr {
-	width: 50%;
-	height: 100%;
-	float: left;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-	border-bottom-left-radius: 0.4em;
-}
-
-.contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr {
-	width: 62.5%;
-	height: 80%;
 	border-radius: 0.2em;
 	border: 0.5px solid #FFFFFF;
-	background-color: #FFFFFF;
-	margin: 0 auto;
-	display: none;
 }
 
-.contenedor-generar-codigo-qr .contenedor-codigo-qr #codigo-qr img {
-	width: 100%;
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-eliminar-todo {
+	width: 30%;
 	height: 100%;
-	border-radius: 0.1em;
-}
-
-.contenedor-estados-codigos .contenedor-generar-codigo-qr .contenedor-botones-imprimir {
-	width: 50%;
-	height: 100%;
-	float: right;
-	border-bottom-right-radius: 0.4em;
-	display: none;
-}
-
-.contenedor-botones-imprimir .contenedor-boton-descargar {
-	width: 100%;
-	height: 50%;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	flex-direction: column;
-}
-
-.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar {
-	width: 85%;
-	height: 42.5%;
-	margin-left: 0;
-}
-
-.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button {
-	width: 100%;
-	height: 100%;
-	border-radius: 0.3em;
 	background-color: transparent;
-	color: #FFFFFF;
-	border: 0.5px solid #FFFFFF;
-	font-family: sans-serif;
-	font-size: 0.8em;
-	font-weight: bold;
 	outline: none;
-}
-
-.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button a {
-	width: 100%;
-	height: 100%;
-	text-decoration: none;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
 	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
 }
 
-.contenedor-botones-imprimir .contenedor-boton-descargar #boton-descargar button:hover {
-	background-color: #5CA45E;
-	border: none;
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-generar-codigo {
+	width: 35%;
+	height: 100%;
+	background-color: transparent;
+	outline: none;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.8em;
+	color: #FFFFFF;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+}
+
+.contenedor-estados-codigos .contenedor-contenido-estados .generacion-codigos-qr {
+	width: 100%;
+	height: 17%;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+	background-color: #2A2A2B;
+	display: none;
+}
+
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-generar-codigo:hover,
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-anadir-estado:hover {
+	background-color: #FFFFFF;
 	color: #2A2B2A;
 	cursor: pointer;
+}
+
+.contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-eliminar-todo:hover {
+	background-color: #9E3232;
+	cursor: pointer;
+	border: 0.5px solid #9E3232;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */
