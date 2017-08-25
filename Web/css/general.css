@@ -3079,7 +3079,6 @@ body .contenedor-principal {
 	width: 100%;
 	height: 67%;
 	overflow-y: scroll;
-	background-color: #FAF5F6;
 }
 
 .contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-anadir-gestionar {
@@ -3388,15 +3387,50 @@ body .contenedor-principal {
 	overflow-y: hidden;
 }
 
-.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta,
-.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta-actual {
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta {
 	width: 100%;
 	height: 16%;
 	border-bottom: 0.5px solid #D8CECB;
 }
 
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta .flechas-orden {
+	width: 8%;
+	height: 100%;
+	float: left;
+}
+
+#estados-planta-seleccionada .estado-planta .flechas-orden #flecha-arriba {
+	width: 100%;
+	height: 50%;
+	background-color: #2A2B2A;
+	background-image: url("../images/iconos/blanco/flecha-arriba-2.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40% 80%;
+}
+
+#estados-planta-seleccionada .estado-planta .flechas-orden #flecha-arriba:hover {
+	background-image: url("../images/iconos/naranja/flecha-arriba-2.png");
+	cursor: pointer;
+}
+
+#estados-planta-seleccionada .estado-planta .flechas-orden #flecha-abajo {
+	width: 100%;
+	height: 50%;
+	background-color: #2A2B2A;
+	background-image: url("../images/iconos/blanco/flecha-abajo-2.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40% 80%;
+}
+
+#estados-planta-seleccionada .estado-planta .flechas-orden #flecha-abajo:hover {
+	background-image: url("../images/iconos/naranja/flecha-abajo-2.png");
+	cursor: pointer;
+}
+
 .estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #nombre-estado {
-	width: 76%;
+	width: 68%;
 	height: 100%;
 	float: left;
 	font-family: sans-serif;
@@ -3434,8 +3468,8 @@ body .contenedor-principal {
 	cursor: pointer;
 }
 
-.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta-actual #nombre-estado {
-	width: 91%;
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #nombre-estado-actual {
+	width: 83%;
 	height: 100%;
 	float: left;
 	font-family: sans-serif;
@@ -3463,7 +3497,7 @@ body .contenedor-principal {
 	border-left: 0.2% solid #D8CECB;
 }
 
-.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta-actual #eliminar-estado {
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #eliminar-estado-actual {
 	width: 7%;
 	height: 100%;
 	float: right;
@@ -3476,7 +3510,7 @@ body .contenedor-principal {
 }
 
 .estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #eliminar-estado:hover,
-.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta-actual #eliminar-estado:hover {
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #eliminar-estado-actual:hover {
 	background-size: 45% 40%;
 	cursor: pointer;
 }

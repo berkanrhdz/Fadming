@@ -2,7 +2,7 @@
 
 // DECLARACIÓN DE CONSTANTES.
 const SIN_ESTADO_ACTUAL = -1;
-const CLASE_ACTUAL = "estado-planta-actual";
+const ID_ACTUAL = "nombre-estado-actual";
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var plantas_seleccionadas = [];
@@ -11,7 +11,6 @@ $(document).ready(function() {
 	$("#planta #icono-seleccion").fadeIn("fast");
 	obtener_fincas_usuario();
 	validar_selector_finca();
-	generar_codigos_qr();
 	obtener_estados_grupos();
 });
 
@@ -276,14 +275,22 @@ function obtener_planta_estados(codigo_planta) {
 function insertar_estados_formato(codigo, nombre, actual) {
 	var formato_estado;
 	if (actual) {
-		formato_estado = "<div class='estado-planta-actual' id='estado-" + codigo + "'>" +
-												"<div id='nombre-estado'>" + nombre.toUpperCase() + "</div>" +
-												"<div id='eliminar-estado' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
+		formato_estado = "<div class='estado-planta' id='estado-" + codigo + "'>" +
+												"<div class='flechas-orden'>" +
+													"<div id='flecha-arriba' onclick='mover_arriba_estado(" + codigo + ")'></div>" +
+													"<div id='flecha-abajo' onclick='mover_abajo_estado(" + codigo + ")'></div>" +
+												"</div>" +
+												"<div class='nombre-estado' id='nombre-estado-actual'>" + nombre.toUpperCase() + "</div>" +
+												"<div id='eliminar-estado-actual' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
 										 "</div>";
 	}
 	else {
 		formato_estado = "<div class='estado-planta' id='estado-" + codigo + "'>" +
-												"<div id='nombre-estado'>" + nombre + "</div>" +
+												"<div class='flechas-orden'>" +
+													"<div id='flecha-arriba' onclick='mover_arriba_estado(" + codigo + ")'></div>" +
+													"<div id='flecha-abajo' onclick='mover_abajo_estado(" + codigo + ")'></div>" +
+												"</div>" +
+												"<div class='nombre-estado' id='nombre-estado'>" + nombre + "</div>" +
 												"<div id='marcar-actual' onclick='marcar_estado_actual(" + codigo + ")'>ACTUAL</div>" +
 												"<div id='eliminar-estado' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
 										 "</div>";
@@ -316,7 +323,75 @@ function insertar_estados_grupos(estados, grupos) {
 function marcar_estado_actual(nuevo_estado) {
 	actualizar_estado_actual(nuevo_estado);
 	document.getElementById('estados-planta-seleccionada').innerHTML = "";
-	obtener_planta_estados(plantas_seleccionadas[0]);
+	setTimeout(function() {
+		obtener_planta_estados(plantas_seleccionadas[0]);
+	}, 10);
+}
+
+function mover_arriba_estado(codigo_estado) {
+	var estados_planta = [];
+	var nuevo_estados_planta = "";
+	var estado, posicion_estado, estado_anterior;
+	contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+	for (i = 0; i < contenedor_estados.length; i++) {
+		var identificador_completo = $(contenedor_estados[i]).attr('ID');
+		var codigo = identificador_completo.substr(7, identificador_completo.length);
+		estados_planta[i] = codigo;
+		if (codigo == codigo_estado) {
+			posicion_estado = i;
+		}
+	}
+	if (posicion_estado != 0) {
+		estado_anterior = estados_planta[posicion_estado - 1];
+		estados_planta[posicion_estado - 1] = estados_planta[posicion_estado];
+		estados_planta[posicion_estado] = estado_anterior;
+		for (i = 0; i < estados_planta.length; i++) {
+			if (i == (estados_planta.length - 1)) {
+				nuevo_estados_planta += estados_planta[i];
+			}
+			else {
+				nuevo_estados_planta += estados_planta[i] + " ";
+			}
+		}
+		actualizar_estados_plantas(nuevo_estados_planta);
+		document.getElementById('estados-planta-seleccionada').innerHTML = "";
+		setTimeout(function() {
+			obtener_planta_estados(plantas_seleccionadas[0]);
+		}, 10);
+	}
+}
+
+function mover_abajo_estado(codigo_estado) {
+	var estados_planta = [];
+	var nuevo_estados_planta = "";
+	var estado, posicion_estado, estado_anterior;
+	contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+	for (i = 0; i < contenedor_estados.length; i++) {
+		var identificador_completo = $(contenedor_estados[i]).attr('ID');
+		var codigo = identificador_completo.substr(7, identificador_completo.length);
+		estados_planta[i] = codigo;
+		if (codigo == codigo_estado) {
+			posicion_estado = i;
+		}
+	}
+	if (posicion_estado != (estados_planta.length - 1)) {
+		estado_anterior = estados_planta[posicion_estado + 1];
+		estados_planta[posicion_estado + 1] = estados_planta[posicion_estado];
+		estados_planta[posicion_estado] = estado_anterior;
+		for (i = 0; i < estados_planta.length; i++) {
+			if (i == (estados_planta.length - 1)) {
+				nuevo_estados_planta += estados_planta[i];
+			}
+			else {
+				nuevo_estados_planta += estados_planta[i] + " ";
+			}
+		}
+		actualizar_estados_plantas(nuevo_estados_planta);
+		document.getElementById('estados-planta-seleccionada').innerHTML = "";
+		setTimeout(function() {
+			obtener_planta_estados(plantas_seleccionadas[0]);
+		}, 10);
+	}
 }
 
 function accion_boton_anadir_estado() {
@@ -400,19 +475,22 @@ function eliminar_individual_estado(codigo_borrar) {
 		}
 	}
 	if (estados_planta != "") {
-		var clase_estado = $('#estado-' + codigo_borrar).attr('class');
-		if (clase_estado == CLASE_ACTUAL) {
+		var id_estado = $('#estado-' + codigo_borrar + ' .nombre-estado').attr('id');
+		if (id_estado == ID_ACTUAL) {
 			var codigos = estados_planta.split(" ");
 			actualizar_estado_actual(codigos[0]);
 		}
 		actualizar_estados_plantas(estados_planta);
+		document.getElementById('estados-planta-seleccionada').innerHTML = "";
+		setTimeout(function() {
+			obtener_planta_estados(plantas_seleccionadas[0]);
+		}, 10);
 	}
 	else {
+		actualizar_estados_plantas(estados_planta);
 		actualizar_estado_actual(SIN_ESTADO_ACTUAL);
+		document.getElementById('estados-planta-seleccionada').innerHTML = "";
 	}
-	actualizar_estados_plantas(estados_planta);
-	document.getElementById('estados-planta-seleccionada').innerHTML = "";
-	obtener_planta_estados(plantas_seleccionadas[0]);
 }
 
 function eliminar_todo_estados() {
@@ -427,8 +505,6 @@ function borrar_todo_estado(codigo_planta) {
 				document.getElementById('boton-eliminar-todo').value = "Borrado";
 		}, 1000);
 		setTimeout(function(){
-			  document.getElementById("estados-planta-seleccionada").innerHTML = "";
-				obtener_planta_estados(codigo_planta);
 				document.getElementById('boton-eliminar-todo').value = "Borrar todo";
 		}, 2000);
 }

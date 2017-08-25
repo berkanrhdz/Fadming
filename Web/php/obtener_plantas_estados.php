@@ -11,26 +11,25 @@
 	$resultado_consulta = mysql_query($consulta);
 	$fila = mysql_fetch_row($resultado_consulta);
   $estado_actual = $fila[1];
-	$codigos_estados = explode(" ", $fila[0]);
-	$where_consulta = " WHERE (CODIGO = '$codigos_estados[0]')";
-	for ($i = 1; $i < count($codigos_estados); $i++) {
-		$where_consulta = $where_consulta . " OR (CODIGO = '$codigos_estados[$i]')";
-	}
-	$consulta_estados = "SELECT CODIGO, NOMBRE
-							 				 FROM ESTADO";
-  $consulta_estados = $consulta_estados . $where_consulta . ";";
-	$resultado_consulta_estados = mysql_query($consulta_estados);
-	while ($fila = mysql_fetch_row($resultado_consulta_estados)) {
-    if ($fila[0] == $estado_actual) {
+  $estados_plantas_formato = trim($fila[0]);
+	$codigos_estados = explode(" ", $estados_plantas_formato);
+	for ($i = 0; $i < count($codigos_estados); $i++) {
+    $codigo = $codigos_estados[$i];
+    $consulta_estados = "SELECT CODIGO, NOMBRE
+  							 				 FROM ESTADO
+                         WHERE (CODIGO = '$codigo')";
+    $resultado_consulta_estados = mysql_query($consulta_estados);
+    $datos = mysql_fetch_row($resultado_consulta_estados);
+    if ($datos[0] == $estado_actual) {
       $actual = true;
     }
     else {
       $actual = false;
     }
-		$informacion[$numero_fila] = array('codigo' => $fila[0],
-																       'nombre' => $fila[1],
+    $informacion[$numero_fila] = array('codigo' => $datos[0],
+                                       'nombre' => $datos[1],
                                        'actual' => $actual);
-	  $numero_fila = $numero_fila + 1;
+    $numero_fila = $numero_fila + 1;
 	}
 	echo json_encode($informacion);
 ?>
