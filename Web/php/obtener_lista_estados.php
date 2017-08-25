@@ -7,7 +7,7 @@
 	$consulta = "SELECT `CODIGO`, `NOMBRE`, `DESCRIPCION`
 						   FROM `ESTADO`
 							 WHERE `CODIGO_USUARIO` = '$identificador'
-							 ORDER BY `NOMBRE` ASC;";
+							 ORDER BY CODIGO ASC;";
 
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {

@@ -1,5 +1,9 @@
 // DOCUMENTO JAVASCRIPT DE plantas.php
 
+// DECLARACIÓN DE CONSTANTES.
+const SIN_ESTADO_ACTUAL = -1;
+const CLASE_ACTUAL = "estado-planta-actual";
+
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var plantas_seleccionadas = [];
 
@@ -139,14 +143,16 @@ function borrar_planta() {
 
 function gestionar_estados_planta() {
 	plantas_seleccionadas = [];
-	document.getElementById('estados-planta-seleccionada').innerHTML = "";
 	$("#seleccion-plantas .contenedor-checkbox .checkbox-planta").each(function() {
 		if (this.checked) {
 			var codigo_planta = this.id;
 			plantas_seleccionadas.push(codigo_planta);
 		}
 	});
-	animacion_gestionar_estados();
+	if (plantas_seleccionadas.length != 0) {
+		document.getElementById('estados-planta-seleccionada').innerHTML = "";
+		animacion_gestionar_estados();
+	}
 }
 
 function animacion_gestionar_estados() {
@@ -156,7 +162,7 @@ function animacion_gestionar_estados() {
 		$("#nombre-planta-seleccionada").show(function() {
 			$("#nombre-planta-seleccionada").animate({'width': '100%'}, "slow", function() {
 				if (plantas_seleccionadas.length == 1) {
-					document.getElementById('nombre-seleccionada').innerHTML = "CÓDIGO: " + plantas_seleccionadas[0] + " - " + document.getElementById('nombre-planta-' + plantas_seleccionadas[0]).innerHTML;
+					document.getElementById('nombre-seleccionada').innerHTML = "CÓDIGO " + plantas_seleccionadas[0] + " | " + document.getElementById('nombre-planta-' + plantas_seleccionadas[0]).innerHTML;
 					obtener_planta_estados(plantas_seleccionadas[0]);
 				}
 				else if (plantas_seleccionadas.length > 1) {
@@ -261,17 +267,27 @@ function obtener_planta_estados(codigo_planta) {
 				data: "planta="+codigo_planta,
 				success: function(datos) {
 					$(datos).each(function(i, valor) {
-						insertar_estados_formato(valor.codigo, valor.nombre);
+						insertar_estados_formato(valor.codigo, valor.nombre, valor.actual);
 					});
         }
     });
 }
 
-function insertar_estados_formato(codigo, nombre) {
-		var formato_estado = "<div class='estado-planta' id='estado-" + codigo + "'>" +
-														"<div id='nombre-estado'>" + nombre + "</div>" +
-														"<div id='eliminar-estado'>ELIMINAR</div>" +
-												 "</div>";
+function insertar_estados_formato(codigo, nombre, actual) {
+	var formato_estado;
+	if (actual) {
+		formato_estado = "<div class='estado-planta-actual' id='estado-" + codigo + "'>" +
+												"<div id='nombre-estado'>" + nombre.toUpperCase() + "</div>" +
+												"<div id='eliminar-estado' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
+										 "</div>";
+	}
+	else {
+		formato_estado = "<div class='estado-planta' id='estado-" + codigo + "'>" +
+												"<div id='nombre-estado'>" + nombre + "</div>" +
+												"<div id='marcar-actual' onclick='marcar_estado_actual(" + codigo + ")'>ACTUAL</div>" +
+												"<div id='eliminar-estado' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
+										 "</div>";
+	}
 		document.getElementById('estados-planta-seleccionada').innerHTML += formato_estado;
 }
 
@@ -297,6 +313,12 @@ function insertar_estados_grupos(estados, grupos) {
 		});
 }
 
+function marcar_estado_actual(nuevo_estado) {
+	actualizar_estado_actual(nuevo_estado);
+	document.getElementById('estados-planta-seleccionada').innerHTML = "";
+	obtener_planta_estados(plantas_seleccionadas[0]);
+}
+
 function accion_boton_anadir_estado() {
 	var valor_select = document.getElementById('select-estado').value;
 	if (valor_select != "") {
@@ -312,6 +334,10 @@ function accion_boton_anadir_estado() {
 			else {
 				estados_planta += codigo;
 			}
+		}
+		if ((plantas_seleccionadas.length > 1) || ((plantas_seleccionadas.length == 1) && (estados_planta.length == 0))) {
+			var codigos = valor_select.split(" ");
+			actualizar_estado_actual(codigos[0]);
 		}
 		estados_planta = estados_planta + " " + valor_select;
 		actualizar_estados_plantas(estados_planta);
@@ -336,6 +362,17 @@ function actualizar_estados_plantas(estados) {
 	}
 }
 
+function actualizar_estado_actual(estado_actual) {
+	for (i = 0; i < plantas_seleccionadas.length; i++) {
+		$.ajax({
+			type: 'POST',
+		  url: 'http://localhost/Fadming/Web/php/actualizar_estado_actual.php',
+		  data: "planta="+plantas_seleccionadas[i]+"&actual="+estado_actual,
+		  dataType: 'json',
+		});
+	}
+}
+
 function anadir_nuevo_estado(codigo_planta) {
 		setTimeout(function(){
 				document.getElementById('boton-anadir-estado').value = "Añadido";
@@ -347,15 +384,47 @@ function anadir_nuevo_estado(codigo_planta) {
 		}, 2000);
 }
 
+function eliminar_individual_estado(codigo_borrar) {
+	var estados_planta = "";
+	contenedor_estados = document.getElementById('estados-planta-seleccionada').getElementsByClassName('estado-planta');
+	for (i = 0; i < contenedor_estados.length; i++) {
+		var identificador_completo = $(contenedor_estados[i]).attr('ID');
+		var codigo = identificador_completo.substr(7, identificador_completo.length);
+		if (codigo != codigo_borrar) {
+			if (i != (contenedor_estados.length - 1)) {
+				estados_planta += codigo + " ";
+			}
+			else {
+				estados_planta += codigo;
+			}
+		}
+	}
+	if (estados_planta != "") {
+		var clase_estado = $('#estado-' + codigo_borrar).attr('class');
+		if (clase_estado == CLASE_ACTUAL) {
+			var codigos = estados_planta.split(" ");
+			actualizar_estado_actual(codigos[0]);
+		}
+		actualizar_estados_plantas(estados_planta);
+	}
+	else {
+		actualizar_estado_actual(SIN_ESTADO_ACTUAL);
+	}
+	actualizar_estados_plantas(estados_planta);
+	document.getElementById('estados-planta-seleccionada').innerHTML = "";
+	obtener_planta_estados(plantas_seleccionadas[0]);
+}
+
 function eliminar_todo_estados() {
 	document.getElementById('boton-eliminar-todo').value = "Borrando...";
 	actualizar_estados_plantas("");
+	actualizar_estado_actual(SIN_ESTADO_ACTUAL);
 	borrar_todo_estado(plantas_seleccionadas[0]);
 }
 
 function borrar_todo_estado(codigo_planta) {
 		setTimeout(function(){
-				document.getElementById('boton-eliminar-todo').value = "Borrados";
+				document.getElementById('boton-eliminar-todo').value = "Borrado";
 		}, 1000);
 		setTimeout(function(){
 			  document.getElementById("estados-planta-seleccionada").innerHTML = "";

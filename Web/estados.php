@@ -79,7 +79,7 @@
                                           </div>
                                           <div class="contenedor-boton-grupo">
                                             <div id="boton-anadir-grupo">
-                                              <input id="boton_grupo" name="boton_grupo" type="submit" value="Añadir"></input>
+                                              <input id="boton_grupo" name="boton_grupo" type="submit" value="Añadir" onclick="seleccion_grupo_estados()"></input>
                                             </div>
                                           </div>
                                         </div>

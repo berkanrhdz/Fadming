@@ -5,13 +5,12 @@ $(document).ready(function() {
 	mostrar_lista_estados();
 	interaccion_nuevo_grupos();
 	insertar_nuevo_estado();
-	seleccion_grupo_estados();
 });
 
 function mostrar_lista_estados() {
 	$.ajax({
         type: 'POST',
-        url: 'http://localhost/Fadming/Web/php/mostrar_lista_estados.php',
+        url: 'http://localhost/Fadming/Web/php/obtener_lista_estados.php',
 				dataType: 'json',
 				success: function(datos) {
 						$(datos).each(function(i, valor) {
@@ -89,18 +88,16 @@ function cambiar_nuevo_estado() {
 
 function seleccion_grupo_estados() {
 		var estados_seleccionados = "";
-		$("#boton_grupo").click(function() {
-				document.getElementById("boton_grupo").value = "Añadidendo...";
-				contenedor = document.getElementById('grupos-seleccion');
-				checkboxs = contenedor.getElementsByTagName('input');
-				for (var i = 0; i < checkboxs.length; i++) {
-    			if(checkboxs[i].checked == true) {
-        		estados_seleccionados += $(checkboxs[i]).attr('ID') + " ";
-    			}
-				}
-				estados_seleccionados = estados_seleccionados.slice(0, estados_seleccionados.length - 1);
-				enviar_estados_grupos(estados_seleccionados);
-		});
+	  document.getElementById("boton_grupo").value = "Añadidendo...";
+		contenedor = document.getElementById('grupos-seleccion');
+		checkboxs = contenedor.getElementsByTagName('input');
+		for (var i = 0; i < checkboxs.length; i++) {
+    	if(checkboxs[i].checked == true) {
+        estados_seleccionados += $(checkboxs[i]).attr('ID') + " ";
+    	}
+		}
+		estados_seleccionados = estados_seleccionados.slice(0, estados_seleccionados.length - 1);
+		enviar_estados_grupos(estados_seleccionados);
 }
 
 function enviar_estados_grupos(estados_seleccionados) {
@@ -119,7 +116,7 @@ function cambiar_grupo_estados() {
 				document.getElementById("boton_grupo").value = "Añadido";
 		}, 1500);
 		setTimeout(function(){
-				document.getElementById("boton_grupo").value = "Añadir estado";
+				document.getElementById("boton_grupo").value = "Añadir";
 				document.getElementById("nombre_grupo").value = "";
 				contenedor = document.getElementById('grupos-seleccion');
 				checkboxs = contenedor.getElementsByTagName('input');
