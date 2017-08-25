@@ -315,6 +315,7 @@ function accion_boton_anadir_estado() {
 		}
 		estados_planta = estados_planta + " " + valor_select;
 		actualizar_estados_plantas(estados_planta);
+		anadir_nuevo_estado(plantas_seleccionadas[0]);
 	}
 	else {
 		$('#select-estado').css('background-color', '#FADBD8');
@@ -333,7 +334,6 @@ function actualizar_estados_plantas(estados) {
 		  dataType: 'json',
 		});
 	}
-	anadir_nuevo_estado(plantas_seleccionadas[0]);
 }
 
 function anadir_nuevo_estado(codigo_planta) {
@@ -347,6 +347,22 @@ function anadir_nuevo_estado(codigo_planta) {
 		}, 2000);
 }
 
+function eliminar_todo_estados() {
+	document.getElementById('boton-eliminar-todo').value = "Borrando...";
+	actualizar_estados_plantas("");
+	borrar_todo_estado(plantas_seleccionadas[0]);
+}
+
+function borrar_todo_estado(codigo_planta) {
+		setTimeout(function(){
+				document.getElementById('boton-eliminar-todo').value = "Borrados";
+		}, 1000);
+		setTimeout(function(){
+			  document.getElementById("estados-planta-seleccionada").innerHTML = "";
+				obtener_planta_estados(codigo_planta);
+				document.getElementById('boton-eliminar-todo').value = "Borrar todo";
+		}, 2000);
+}
 
 function generar_codigos_qr() {
 	$('#boton_generar_codigo').click(function() {
