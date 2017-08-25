@@ -1801,18 +1801,20 @@ body .contenedor-principal {
 }
 
 .estado .contenedor-nombre-estado #nombre-estado {
-  width: 96%;
+  width: 94%;
   height: 98%;
   margin: 0 auto;
   font-family: sans-serif;
   font-size: 0.8em;
   font-weight: bold;
-  text-align: justify;
+  text-align: left;
   display: flex;
   justify-content: center;
   align-content: center;
   flex-direction: column;
   color: #FFFFFF;
+	padding-left: 3%;
+	padding-right: 3%;
 }
 
 .contenedor-lista-estados .lista-estados #lista .estado .contenedor-descripcion-estado {
@@ -2042,7 +2044,7 @@ body .contenedor-principal {
 
 .nuevo-grupos .contenedor-informacion-grupos .contenedor-grupos-seleccion {
   width: 100%;
-  height: 70%;
+  height: 70.5%;
 	overflow-y: scroll;
 	overflow-x: hidden;
 }
@@ -2075,9 +2077,8 @@ body .contenedor-principal {
 	justify-content: center;
 	align-content: center;
 	flex-direction: column;
-	background-color: #2A2B2A;
+	background-color: #FFFFFF;
 	padding-left: 3%;
-	border-bottom: 1px solid #D7D4D4;
 }
 
 .contenedor-estado-seleccion #checkbox input {
