@@ -111,7 +111,7 @@
                                 <div id="mensaje-qr">Generando códigos QR...</div>
                               </div>
                               <div class="contenedor-boton-descargar">
-                                <div id="boton-descargar-pdf" onclick="generar_codigos_qr()">
+                                <div id="boton-descargar-pdf" onclick="descargarPDF()">
                                   <div id="icono-descargar"></div>
                                   <div id="texto-descargar">Descargar códigos QR</div>
                                 </div>

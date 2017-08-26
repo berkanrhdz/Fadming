@@ -9,6 +9,7 @@ const TAMANO_LETRA = 12;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var plantas_seleccionadas = [];
+var documentoPDF;
 
 $(document).ready(function() {
 	$("#planta #icono-seleccion").fadeIn("fast");
@@ -519,6 +520,7 @@ function borrar_todo_estado(codigo_planta) {
 function accion_generar_qr() {
 	$('.contenedor-boton-descargar').fadeOut(function() {
 		$('.contenedor-mensaje-qr').fadeIn();
+		 generarCodigosQR();
 	});
 	setTimeout(function() {
 		$('.contenedor-mensaje-qr').fadeOut(function() {
@@ -527,11 +529,8 @@ function accion_generar_qr() {
 	}, 1300);
 }
 
-function generar_codigos_qr() {
-	var posicion = document.getElementById('selector-huerto').selectedIndex;
-	var nombreHuerto = document.getElementById('selector-huerto')[posicion].innerHTML;
-	nombrePDF = nombreHuerto.replace(/\s/g,""); // Obtenemos el nombre del huerto como nombre del archivo PDF.
-	var documentoPDF = new jsPDF();
+function generarCodigosQR() {
+	documentoPDF = new jsPDF();
 	documentoPDF.setFontSize(TAMANO_LETRA);
 	var margen_izquierdo = MARGEN_IZQUIERDO_INICIAL;
 	var margen_superior = MARGEN_SUPERIOR_INICIAL;
@@ -557,5 +556,11 @@ function generar_codigos_qr() {
 		margen_izquierdo = margen_izquierdo + 55;
 		margen_superior = margen_superior - 5;
 	}
+}
+
+function descargarPDF() {
+	var posicion = document.getElementById('selector-huerto').selectedIndex;
+	var nombreHuerto = document.getElementById('selector-huerto')[posicion].innerHTML;
+	var nombrePDF = nombreHuerto.replace(/\s/g,""); // Obtenemos el nombre del huerto como nombre del archivo PDF.
 	documentoPDF.save(nombrePDF + '.pdf'); // Generamos un fichero PDF.
 }
