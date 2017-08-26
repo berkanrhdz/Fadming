@@ -62,7 +62,7 @@ function insertar_finca_formato(indice, codigo, nombre, dia_anio, mes, numero_hu
 	                         "</div>" +
 	                      "</div>" +
 												"<div class='contenedor-eliminar-finca'>" +
-													"<div id='boton-eliminar-finca' onclick='eliminar_finca(" + codigo + ")'>Eliminar finca</div>" +
+													"<div class='boton-eliminar-finca' id='boton-eliminar-finca-" + codigo + "' onclick='eliminar_finca(" + codigo + ")'>Eliminar finca</div>" +
 												"</div>" +
 	                   "</div>";
 	formato_finca = formato_finca1 + formato_finca2;
@@ -191,7 +191,7 @@ function interaccion_eliminar_tipo(codigo) {
 }
 
 function eliminar_finca(codigo) {
-	document.getElementById("boton-eliminar-finca").innerHTML = "Eliminando...";
+	$('#boton-eliminar-finca-' + codigo).text("Eliminando...");
 	$.ajax({
 				type: 'POST',
 				url: 'http://localhost/Fadming/Web/php/eliminar_finca.php',
@@ -203,11 +203,8 @@ function eliminar_finca(codigo) {
 
 function interaccion_eliminar_finca() {
 	setTimeout(function(){
-			document.getElementById("boton-eliminar-finca").innerHTML = "Eliminada";
+		location.reload();
 	}, 1500);
-	setTimeout(function() {
-			location.reload();
-	}, 2000);
 }
 
 String.prototype.toProperCase = function () {

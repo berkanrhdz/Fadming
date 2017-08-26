@@ -1,12 +1,26 @@
 <?php
 	session_start();
   require("conectar_basedatos.php");
+	define('CLIENTE_PARTICULAR', '1');
+	define('CLIENTE_EMPRESA', '2');
 
   $identificador = $_SESSION['identificador'];
-	$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, DATE_FORMAT(FINC.FECHA_REGISTRO, '%d %Y') DIA_ANIO, DATE_FORMAT(FINC.FECHA_REGISTRO, '%c') MES, FINC.IMAGEN
-							 FROM FINCA FINC
-               WHERE (CODIGO_USUARIO = '$identificador')
-               ORDER BY NOMBRE ASC";
+	$tipo_usuario = $_SESSION['tipo'];
+	$empresa = $_SESSION['empresa'];
+
+	if ($tipo_usuario == CLIENTE_EMPRESA) {
+		$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, DATE_FORMAT(FINC.FECHA_REGISTRO, '%d %Y') DIA_ANIO, DATE_FORMAT(FINC.FECHA_REGISTRO, '%c') MES, FINC.IMAGEN
+								 FROM FINCA FINC
+								 WHERE (CODIGO_USUARIO IN (SELECT ID_USUARIO
+																					 FROM USUARIO
+																					 WHERE (EMPRESA = '$empresa')));";
+	}
+	else if ($tipo_usuario == CLIENTE_PARTICULAR) {
+		$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE, DATE_FORMAT(FINC.FECHA_REGISTRO, '%d %Y') DIA_ANIO, DATE_FORMAT(FINC.FECHA_REGISTRO, '%c') MES, FINC.IMAGEN
+								 FROM FINCA FINC
+	               WHERE (CODIGO_USUARIO = '$identificador')
+	               ORDER BY NOMBRE ASC";
+	}
 	$resultado_consulta = mysql_query($consulta);
 	while($fila = mysql_fetch_row($resultado_consulta)) {
 		if (!is_null($fila[4])) {

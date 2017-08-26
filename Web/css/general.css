@@ -2315,7 +2315,7 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-#fichas-finca .informacion-finca .contenedor-eliminar-finca #boton-eliminar-finca {
+#fichas-finca .informacion-finca .contenedor-eliminar-finca .boton-eliminar-finca {
  	width: 98%;
  	height: 90%;
 	background-color: #9E3232;
@@ -2332,7 +2332,7 @@ body .contenedor-principal {
 	font-weight: bold;
 }
 
-#fichas-finca .informacion-finca .contenedor-eliminar-finca #boton-eliminar-finca:hover {
+#fichas-finca .informacion-finca .contenedor-eliminar-finca .boton-eliminar-finca:hover {
 	font-size: 0.9em;
 	cursor: pointer;
 }

@@ -11,10 +11,16 @@ $(document).ready(function() {
 function obtener_estadistica(tipo) {
 	if (tipo == INDIVIDUAL) {
 		var opcion = document.getElementById('select-individual').value;
-		switch (opcion) {
-			case '1':
-				
-			break;
-		}
+		$.ajax({
+					type: 'POST',
+					url: 'http://localhost/Fadming/Web/php/obtener_estadisticas_simple.php',
+					dataType: 'json',
+					data: 'opcion='+opcion,
+					success: function(datos) {
+							$(datos).each(function(i, valor) {
+								document.getElementById('respuesta-select-individual').innerHTML = valor.respuesta;
+							});
+					}
+			});
 	}
 }

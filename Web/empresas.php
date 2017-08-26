@@ -51,8 +51,10 @@
                                           <div id="administrador"></div>
                                         </div>
                                         <div class="contenedor-boton-estadisticas">
-                                          <div id="icono-estadisticas"></div>
-                                          <div id="estadisticas">Consultar estadísticas</div>
+                                          <a href="estadisticas.php">
+                                            <div id="icono-estadisticas"></div>
+                                            <div id="estadisticas">Consultar estadísticas</div>
+                                          </a>
                                         </div>
                                       </div>
                                     </div>
