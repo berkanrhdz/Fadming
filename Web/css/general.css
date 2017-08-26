@@ -166,12 +166,17 @@ body .contenedor-principal {
 	background-image: url("../images/iconos/blanco/planta.png");
 }
 
+.barra-lateral-izquierda .fila-acceso #icono-estadistica {
+	background-image: url("../images/iconos/blanco/estadistica.png");
+}
+
 .barra-lateral-izquierda .fila-acceso #icono-empresa,
 .barra-lateral-izquierda .fila-acceso #icono-usuario,
 .barra-lateral-izquierda .fila-acceso #icono-estado,
 .barra-lateral-izquierda .fila-acceso #icono-finca,
 .barra-lateral-izquierda .fila-acceso #icono-huerto,
-.barra-lateral-izquierda .fila-acceso #icono-planta {
+.barra-lateral-izquierda .fila-acceso #icono-planta,
+.barra-lateral-izquierda .fila-acceso #icono-estadistica {
 	width: 30%;
 	height: 100%;
 	float: left;
@@ -3700,6 +3705,139 @@ body .contenedor-principal {
 	cursor: pointer;
 	background-color: #9E3232;
 	border: 0.5px solid #9E3232;
+}
+
+/* ------------------------------------------- ESTADISTICAS ------------------------------------------- */
+
+.contenedor-informacion-pagina .contenedor-estadisticas-general {
+	width: 100%;
+	height: 95%;
+}
+
+.contenedor-estadisticas-general .contenedor-estadisticas-concretas {
+	width: 50%;
+	height: 100%;
+	float: left;
+}
+
+.contenedor-estadisticas-concretas .contenedor-estadistiscas-individual {
+	width: 100%;
+	height: 30%;
+}
+
+.contenedor-estadisticas-concretas .contenedor-estadistiscas-individual #estadisticas-individual {
+	width: 99%;
+	height: 94%;
+	background-color: #2A2B2A;
+	border-radius: 0.2em;
+}
+
+.contenedor-estadistiscas-individual #estadisticas-individual #titulo-estadisticas-individual {
+	width: 100%;
+	height: 35%;
+	background-color: #5CA45E;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.contenedor-estadistiscas-individual #estadisticas-individual .contenido-estadisticas-individual {
+	width: 100%;
+	height: 65%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+}
+
+#estadisticas-individual .contenido-estadisticas-individual .contenedor-select-individual {
+	width: 100%;
+	height: 50%;
+	background-color: #9E3232;
+}
+
+.contenedor-estadisticas-concretas .contenedor-estadistiscas-grupal {
+	width: 100%;
+	height: 70%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-estadisticas-concretas .contenedor-estadistiscas-grupal #estadisticas-grupal {
+	width: 99%;
+	height: 100%;
+	background-color: #2A2B2A;
+	border-radius: 0.2em;
+}
+
+.contenedor-estadistiscas-grupal #estadisticas-grupal #titulo-estadisticas-grupal {
+	width: 100%;
+	height: 14%;
+	background-color: #5CA45E;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.contenedor-estadistiscas-grupal #estadisticas-grupal .contenido-estadisticas-grupal {
+	width: 100%;
+	height: 86%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+}
+
+.contenedor-estadisticas-general .contenedor-estadisticas-graficas {
+	width: 50%;
+	height: 100%;
+	float: right;
+}
+
+.contenedor-estadisticas-general .contenedor-estadisticas-graficas #estadisticas-graficas {
+	width: 99%;
+	height: 100%;
+	background-color: #2A2B2A;
+	float: right;
+	border-radius: 0.2em;
+}
+
+.contenedor-estadisticas-graficas #estadisticas-graficas #titulo-estadisticas-graficas {
+	width: 100%;
+	height: 10%;
+	background-color: #5CA45E;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.contenedor-estadisticas-graficas #estadisticas-graficas .contenido-estadisticas-graficas {
+	width: 100%;
+	height: 90%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */

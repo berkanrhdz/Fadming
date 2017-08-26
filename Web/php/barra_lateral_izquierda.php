@@ -27,6 +27,9 @@
 					 "</div>" .
 					 "<div class='fila-acceso' id='planta'>" .
 					 		"<a href='plantas.php'><div id='icono-planta'></div><div class='nombre-acceso' id='texto-planta'>Plantas</div><div id='icono-seleccion'></div></a>" .
+					 "</div>" .
+					 "<div class='fila-acceso' id='estadistica'>" .
+							"<a href='estadisticas.php'><div id='icono-estadistica'></div><div class='nombre-acceso' id='texto-estadistica'>Estadísticas</div><div id='icono-seleccion'></div></a>" .
 					 "</div>";
 		}
 		else {
