@@ -520,7 +520,14 @@ function accion_generar_qr() {
 }
 
 function generar_codigos_qr() {
-	$('#boton_generar_codigo').click(function() {
+	var posicion = document.getElementById('selector-huerto').selectedIndex;
+	var nombre = document.getElementById('selector-huerto')[posicion].innerHTML;
+	nombrePDF = nombre.replace(/\s/g,"");
+	var doc = new jsPDF();
+	doc.setFontSize(40);
+	doc.text(40, 20, "Octocat loves jsPDF");
+	doc.save(nombrePDF + '.pdf');
+	/*$('#boton_generar_codigo').click(function() {
 		$('#codigo-qr').css('display', 'none');
 		$('.contenedor-botones-imprimir').css('display', 'none');
 		$('.contenedor-mensaje-cargando-qr').slideDown();
@@ -548,5 +555,5 @@ function generar_codigos_qr() {
 			document.getElementById('boton_descargar_imagen').innerHTML = a;
 			var p = $('#boton_descargar_imagen a').attr('href');
 		}, 2000);
-	});
+	});*/
 }

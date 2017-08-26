@@ -8,8 +8,10 @@
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
-        <script src="js/plantas.js"></script>
         <script type="text/javascript" src="js/kjua-0.1.1.min.js"></script>
+        <script type="text/javascript" src="js/jspdf.js"></script>
+        <script type="text/javascript" src="js/FileSaver.min.js"></script>
+        <script src="js/plantas.js"></script>
         <script>
           $('#empresa').css('display', 'none');
         </script>
@@ -107,7 +109,7 @@
                                 <div id="mensaje-qr">Generando códigos QR...</div>
                               </div>
                               <div class="contenedor-boton-descargar">
-                                <div id="boton-descargar-pdf">
+                                <div id="boton-descargar-pdf" onclick="generar_codigos_qr()">
                                   <div id="icono-descargar"></div>
                                   <div id="texto-descargar">Descargar códigos QR</div>
                                 </div>
