@@ -97,12 +97,22 @@
                                   <div class="fila-input-estados">
                                     <input id="boton-anadir-estado" name="boton-anadir-estado" type="submit" value="Añadir" onclick="accion_boton_anadir_estado()"></input>
                                     <input id="boton-eliminar-todo" name="boton-eliminar-todo" type="submit" value="Borrar todo" onclick="eliminar_todo_estados()"></input>
-                                    <input id="boton-generar-codigo" name="boton-generar-codigo" type="submit" value="Generar código QR"></input>
+                                    <input id="boton-generar-codigo" name="boton-generar-codigo" type="submit" value="Generar código QR" onclick="accion_generar_qr()"></input>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="generacion-codigos-qr"></div>
+                            <div class="generacion-codigos-qr">
+                              <div class="contenedor-mensaje-qr">
+                                <div id="mensaje-qr">Generando códigos QR...</div>
+                              </div>
+                              <div class="contenedor-boton-descargar">
+                                <div id="boton-descargar-pdf">
+                                  <div id="icono-descargar"></div>
+                                  <div id="texto-descargar">Descargar códigos QR</div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                     </div>

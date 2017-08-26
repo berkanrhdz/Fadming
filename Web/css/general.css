@@ -2980,7 +2980,7 @@ body .contenedor-principal {
 	height: 100%;
 	border: 1px solid #BBB3B1;
 	border-radius: 0.5em;
-	background-color: #FFFFFF;
+	background-color: #FAF5F6;
 }
 
 .contenedor-gestion-plantas .gestion-plantas .contenedor-titulo-plantas {
@@ -3079,6 +3079,7 @@ body .contenedor-principal {
 	width: 100%;
 	height: 67%;
 	overflow-y: scroll;
+	background-color: #FAF5F6;
 }
 
 .contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-anadir-gestionar {
@@ -3501,7 +3502,6 @@ body .contenedor-principal {
 	width: 7%;
 	height: 100%;
 	float: right;
-	background-color: #2A2B2A;
 	background-image: url("../images/iconos/blanco/cruz.png");
 	background-repeat: no-repeat;
 	background-position: center;
@@ -3567,7 +3567,7 @@ body .contenedor-principal {
 
 .contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-anadir-estado {
 	width: 25%;
-	height: 100%;
+	height: 90%;
 	background-color: transparent;
 	outline: none;
 	margin-left: 4%;
@@ -3581,7 +3581,7 @@ body .contenedor-principal {
 
 .contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-eliminar-todo {
 	width: 30%;
-	height: 100%;
+	height: 90%;
 	background-color: transparent;
 	outline: none;
 	font-family: sans-serif;
@@ -3594,7 +3594,7 @@ body .contenedor-principal {
 
 .contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-generar-codigo {
 	width: 35%;
-	height: 100%;
+	height: 90%;
 	background-color: transparent;
 	outline: none;
 	font-family: sans-serif;
@@ -3603,15 +3603,6 @@ body .contenedor-principal {
 	color: #FFFFFF;
 	border-radius: 0.2em;
 	border: 0.5px solid #FFFFFF;
-}
-
-.contenedor-estados-codigos .contenedor-contenido-estados .generacion-codigos-qr {
-	width: 100%;
-	height: 17%;
-	border-bottom-left-radius: 0.4em;
-	border-bottom-right-radius: 0.4em;
-	background-color: #2A2A2B;
-	display: none;
 }
 
 .contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-generar-codigo:hover,
@@ -3624,6 +3615,90 @@ body .contenedor-principal {
 .contenedor-botones-gestionar .contenedor-botones .fila-input-estados #boton-eliminar-todo:hover {
 	background-color: #9E3232;
 	cursor: pointer;
+	border: 0.5px solid #9E3232;
+}
+
+.contenedor-estados-codigos .contenedor-contenido-estados .generacion-codigos-qr {
+	width: 100%;
+	height: 17%;
+	border-bottom-left-radius: 0.4em;
+	border-bottom-right-radius: 0.4em;
+	background-color: #2A2A2B;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-contenido-estados .generacion-codigos-qr .contenedor-mensaje-qr {
+	width: 100%;
+	height: 55%;
+	background-color: #F7DB5C;
+	display: none;
+}
+
+.contenedor-contenido-estados .generacion-codigos-qr .contenedor-mensaje-qr #mensaje-qr {
+	width: 100%;
+	height: 100%;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #2A2B2A;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.contenedor-contenido-estados .generacion-codigos-qr .contenedor-boton-descargar {
+	width: 100%;
+	height: 50%;
+	display: none;
+}
+
+.generacion-codigos-qr .contenedor-boton-descargar #boton-descargar-pdf {
+	width: 60%;
+	height: 100%;
+	background-color: transparent;
+	margin: 0 auto;
+	border-radius: 0.2em;
+	border: 0.5px solid #FFFFFF;
+}
+
+.generacion-codigos-qr .contenedor-boton-descargar #boton-descargar-pdf #icono-descargar {
+	width: 20%;
+	height: 100%;
+	float: left;
+	border-top-left-radius: 0.2em;
+	border-bottom-left-radius: 0.2em;
+	background-image: url("../images/iconos/blanco/descargar.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 40% 65%;
+}
+
+.generacion-codigos-qr .contenedor-boton-descargar #boton-descargar-pdf #texto-descargar {
+	width: 70%;
+	height: 100%;
+	float: right;
+	border-top-right-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: left;
+	padding-left: 10%;
+}
+
+.generacion-codigos-qr .contenedor-boton-descargar #boton-descargar-pdf:hover {
+	cursor: pointer;
+	background-color: #9E3232;
 	border: 0.5px solid #9E3232;
 }
 

@@ -503,10 +503,20 @@ function eliminar_todo_estados() {
 function borrar_todo_estado(codigo_planta) {
 		setTimeout(function(){
 				document.getElementById('boton-eliminar-todo').value = "Borrado";
+				document.getElementById('estados-planta-seleccionada').innerHTML = "";
 		}, 1000);
 		setTimeout(function(){
 				document.getElementById('boton-eliminar-todo').value = "Borrar todo";
 		}, 2000);
+}
+
+function accion_generar_qr() {
+	$('.contenedor-mensaje-qr').fadeIn();
+	setTimeout(function() {
+		$('.contenedor-mensaje-qr').fadeOut(function() {
+			$('.contenedor-boton-descargar').fadeIn();
+		});
+	}, 1300);
 }
 
 function generar_codigos_qr() {
