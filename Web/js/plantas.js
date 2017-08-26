@@ -3,6 +3,9 @@
 // DECLARACIÓN DE CONSTANTES.
 const SIN_ESTADO_ACTUAL = -1;
 const ID_ACTUAL = "nombre-estado-actual";
+const MARGEN_IZQUIERDO_INICIAL = 15;
+const MARGEN_SUPERIOR_INICIAL = 25;
+const TAMANO_LETRA = 12;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var plantas_seleccionadas = [];
@@ -35,6 +38,7 @@ function insertar_finca_formato(codigo, nombre) {
 function validar_selector_finca() {
 	document.getElementById('selector-finca').onchange = function() {
 		document.getElementById('nombre-seleccionada').innerHTML = "";
+		$('.contenedor-boton-descargar').hide();
 		$(".estados-botones-seleccionada").fadeOut(function() {
 			$("#nombre-planta-seleccionada").fadeOut();
 			$("#nombre-planta-seleccionada").css('width', '0%');
@@ -69,6 +73,7 @@ function insertar_huerto_formato(codigo, nombre) {
 
 function validar_selector_huertos() {
 	document.getElementById('nombre-seleccionada').innerHTML = "";
+	$('.contenedor-boton-descargar').hide();
 	$(".estados-botones-seleccionada").fadeOut(function() {
 		$("#nombre-planta-seleccionada").fadeOut();
 		$("#nombre-planta-seleccionada").css('width', '0%');
@@ -150,6 +155,7 @@ function gestionar_estados_planta() {
 	});
 	if (plantas_seleccionadas.length != 0) {
 		document.getElementById('estados-planta-seleccionada').innerHTML = "";
+		$('.contenedor-boton-descargar').hide();
 		animacion_gestionar_estados();
 	}
 }
@@ -511,7 +517,9 @@ function borrar_todo_estado(codigo_planta) {
 }
 
 function accion_generar_qr() {
-	$('.contenedor-mensaje-qr').fadeIn();
+	$('.contenedor-boton-descargar').fadeOut(function() {
+		$('.contenedor-mensaje-qr').fadeIn();
+	});
 	setTimeout(function() {
 		$('.contenedor-mensaje-qr').fadeOut(function() {
 			$('.contenedor-boton-descargar').fadeIn();
@@ -521,39 +529,34 @@ function accion_generar_qr() {
 
 function generar_codigos_qr() {
 	var posicion = document.getElementById('selector-huerto').selectedIndex;
-	var nombre = document.getElementById('selector-huerto')[posicion].innerHTML;
-	nombrePDF = nombre.replace(/\s/g,"");
-	var doc = new jsPDF();
-	doc.setFontSize(40);
-	doc.text(40, 20, "Octocat loves jsPDF");
-	doc.save(nombrePDF + '.pdf');
-	/*$('#boton_generar_codigo').click(function() {
-		$('#codigo-qr').css('display', 'none');
-		$('.contenedor-botones-imprimir').css('display', 'none');
-		$('.contenedor-mensaje-cargando-qr').slideDown();
-		setTimeout(function() {
-			$('.contenedor-mensaje-cargando-qr').fadeOut();
-		}, 1500);
-		setTimeout(function() {
-			$('#codigo-qr').fadeIn();
-			$('.contenedor-botones-imprimir').fadeIn();
-			document.getElementById('codigo-qr').innerHTML = "";
-			var nombre_identificador = document.getElementById('nombre-seleccionada').innerHTML;
-			var nombre_identificador_espacios = nombre_identificador.split(' ');
-			var identificador_planta = nombre_identificador_espacios[0];
-			var codigo_qr = kjua({text: identificador_planta});
-			var codigo_qr_valido = new Image();
-			document.getElementById('codigo-qr').appendChild(codigo_qr);
-			var crossorigin = $('#codigo-qr img').attr('crossorigin');
-			var src         = $('#codigo-qr img').attr('src');
-			codigo_qr_valido.crossorigin = crossorigin;
-			codigo_qr_valido.src         = src;
-			document.getElementById('codigo-qr').innerHTML = "";
-			document.getElementById('codigo-qr').appendChild(codigo_qr_valido);
-			var nombre_imagen = identificador_planta.replace(" ", "_").toLowerCase();
-			var a = "<a href='" + src + "' download='" + nombre_imagen + "'>Descargar código QR</a>";
-			document.getElementById('boton_descargar_imagen').innerHTML = a;
-			var p = $('#boton_descargar_imagen a').attr('href');
-		}, 2000);
-	});*/
+	var nombreHuerto = document.getElementById('selector-huerto')[posicion].innerHTML;
+	nombrePDF = nombreHuerto.replace(/\s/g,""); // Obtenemos el nombre del huerto como nombre del archivo PDF.
+	var documentoPDF = new jsPDF();
+	documentoPDF.setFontSize(TAMANO_LETRA);
+	var margen_izquierdo = MARGEN_IZQUIERDO_INICIAL;
+	var margen_superior = MARGEN_SUPERIOR_INICIAL;
+	for (i = 0; i < plantas_seleccionadas.length; i++) {
+		var codigoQR = kjua({text: plantas_seleccionadas[i]});
+		if (((i % 3) == 0) && (i != 0)) {
+			documentoPDF.rect(margen_izquierdo, margen_superior, 60, 70);
+			margen_izquierdo = margen_izquierdo + 5;
+			margen_superior = margen_superior + 5;
+			documentoPDF.addImage(codigoQR.src, 'PNG', margen_izquierdo, margen_superior, 50, 50, null, 'FAST');
+			var formato_codigo = document.getElementById('nombre-planta-' + plantas_seleccionadas[i]).innerHTML.toUpperCase() + ' ' + plantas_seleccionadas[i];
+			documentoPDF.text(margen_izquierdo + (22 - formato_codigo.length), margen_superior + 58, formato_codigo);
+			margen_izquierdo = margen_izquierdo + 55;
+			margen_superior = MARGEN_SUPERIOR_INICIAL;
+		}
+		else {
+			documentoPDF.rect(margen_izquierdo, margen_superior, 60, 70);
+			margen_izquierdo = margen_izquierdo + 5;
+			margen_superior = margen_superior + 5;
+			documentoPDF.addImage(codigoQR.src, 'PNG', margen_izquierdo, margen_superior, 50, 50, null, 'FAST');
+			var formato_codigo = document.getElementById('nombre-planta-' + plantas_seleccionadas[i]).innerHTML.toUpperCase() + ' ' + plantas_seleccionadas[i];
+			documentoPDF.text(margen_izquierdo + (22 - formato_codigo.length), margen_superior + 58, formato_codigo);
+			margen_izquierdo = margen_izquierdo + 55;
+			margen_superior = MARGEN_SUPERIOR_INICIAL;
+		}
+	}
+	documentoPDF.save(nombrePDF + '.pdf'); // Generamos un fichero PDF.
 }

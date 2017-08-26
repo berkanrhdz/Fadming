@@ -9,8 +9,10 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
         <script type="text/javascript" src="js/kjua-0.1.1.min.js"></script>
-        <script type="text/javascript" src="js/jspdf.js"></script>
         <script type="text/javascript" src="js/FileSaver.min.js"></script>
+        <script type="text/javascript" src="js/zlib.js"></script>
+        <script type="text/javascript" src="js/png.js"></script>
+        <script type="text/javascript" src="js/jspdf.debug.js"></script>
         <script src="js/plantas.js"></script>
         <script>
           $('#empresa').css('display', 'none');
