@@ -3734,7 +3734,7 @@ body .contenedor-principal {
 
 .contenedor-estadistiscas-individual #estadisticas-individual #titulo-estadisticas-individual {
 	width: 100%;
-	height: 35%;
+	height: 30%;
 	background-color: #5CA45E;
 	border-top-left-radius: 0.2em;
 	border-top-right-radius: 0.2em;
@@ -3751,15 +3751,43 @@ body .contenedor-principal {
 
 .contenedor-estadistiscas-individual #estadisticas-individual .contenido-estadisticas-individual {
 	width: 100%;
-	height: 65%;
+	height: 70%;
 	border-bottom-left-radius: 0.2em;
 	border-bottom-right-radius: 0.2em;
 }
 
 #estadisticas-individual .contenido-estadisticas-individual .contenedor-select-individual {
 	width: 100%;
-	height: 50%;
+	height: 45%;
 	background-color: #9E3232;
+}
+
+.contenido-estadisticas-individual .contenedor-select-individual #select-individual {
+	width: 100%;
+	height: 100%;
+	background-color: #9E3232;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	border: none;
+	outline: none;
+}
+
+#estadisticas-individual .contenido-estadisticas-individual #respuesta-select-individual {
+	width: 100%;
+	height: 55%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.9em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
 }
 
 .contenedor-estadisticas-concretas .contenedor-estadistiscas-grupal {
@@ -3780,7 +3808,7 @@ body .contenedor-principal {
 
 .contenedor-estadistiscas-grupal #estadisticas-grupal #titulo-estadisticas-grupal {
 	width: 100%;
-	height: 14%;
+	height: 12%;
 	background-color: #5CA45E;
 	border-top-left-radius: 0.2em;
 	border-top-right-radius: 0.2em;
@@ -3797,7 +3825,7 @@ body .contenedor-principal {
 
 .contenedor-estadistiscas-grupal #estadisticas-grupal .contenido-estadisticas-grupal {
 	width: 100%;
-	height: 86%;
+	height: 88%;
 	border-bottom-left-radius: 0.2em;
 	border-bottom-right-radius: 0.2em;
 }
@@ -3818,7 +3846,7 @@ body .contenedor-principal {
 
 .contenedor-estadisticas-graficas #estadisticas-graficas #titulo-estadisticas-graficas {
 	width: 100%;
-	height: 10%;
+	height: 8.5%;
 	background-color: #5CA45E;
 	border-top-left-radius: 0.2em;
 	border-top-right-radius: 0.2em;
@@ -3835,7 +3863,7 @@ body .contenedor-principal {
 
 .contenedor-estadisticas-graficas #estadisticas-graficas .contenido-estadisticas-graficas {
 	width: 100%;
-	height: 90%;
+	height: 91.5%;
 	border-bottom-left-radius: 0.2em;
 	border-bottom-right-radius: 0.2em;
 }

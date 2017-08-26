@@ -501,6 +501,13 @@ function eliminar_individual_estado(codigo_borrar) {
 }
 
 function eliminar_todo_estados() {
+	document.getElementById('nombre-seleccionada').innerHTML = "";
+	$('.contenedor-boton-descargar').hide();
+	$(".estados-botones-seleccionada").fadeOut(function() {
+		$("#nombre-planta-seleccionada").fadeOut();
+		$("#nombre-planta-seleccionada").css('width', '0%');
+		$('.contenedor-mensaje-explicacion').slideDown();
+	});
 	document.getElementById('boton-eliminar-todo').value = "Borrando...";
 	actualizar_estados_plantas("");
 	actualizar_estado_actual(SIN_ESTADO_ACTUAL);
@@ -520,8 +527,8 @@ function borrar_todo_estado(codigo_planta) {
 function accion_generar_qr() {
 	$('.contenedor-boton-descargar').fadeOut(function() {
 		$('.contenedor-mensaje-qr').fadeIn();
-		 generarCodigosQR();
 	});
+	generarCodigosQR();
 	setTimeout(function() {
 		$('.contenedor-mensaje-qr').fadeOut(function() {
 			$('.contenedor-boton-descargar').fadeIn();

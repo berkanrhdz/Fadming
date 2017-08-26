@@ -38,10 +38,12 @@
                               <div id="titulo-estadisticas-individual">ESTADÍSTICAS SIMPLES</div>
                               <div class="contenido-estadisticas-individual">
                                 <div class="contenedor-select-individual">
-                                  <select id="select-individual" required>
+                                  <select id="select-individual" required onchange="obtener_estadistica(this.id)">
                                     <option value="" disabled selected hidden>Seleccione una opción...</option>
+                                    <?php require("php/opciones_select_simple.php"); ?>
                                   </select>
                                 </div>
+                                <div id="respuesta-select-individual"></div>
                               </div>
                             </div>
                           </div>
