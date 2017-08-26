@@ -171,7 +171,7 @@ function animacion_gestionar_estados() {
 					obtener_planta_estados(plantas_seleccionadas[0]);
 				}
 				else if (plantas_seleccionadas.length > 1) {
-					document.getElementById('nombre-seleccionada').innerHTML = "SELECCIÓN MÚLTIPLE";
+					document.getElementById('nombre-seleccionada').innerHTML = "SELECCIÓN MÚLTIPLE | " + plantas_seleccionadas.length + " plantas";
 				}
 			});
 			$(".estados-botones-seleccionada").slideDown();
@@ -259,7 +259,7 @@ function interaccion_anadir_planta(codigo_huerto, cantidad) {
 			document.getElementById('seleccion-plantas').innerHTML = "";
 			obtener_plantas_usuario(codigo_huerto);
 			document.getElementById("boton-anadir-planta").value = "Añadir planta";
-			document.getElementById('select-planta').innerHTML = "<option value='' disabled selected hidden>Tipo de planta</option>";
+			document.getElementById('select-planta').value = "";
 			document.getElementById('cantidad-planta').value = "";
 	}, 1500);
 }
@@ -537,26 +537,25 @@ function generar_codigos_qr() {
 	var margen_superior = MARGEN_SUPERIOR_INICIAL;
 	for (i = 0; i < plantas_seleccionadas.length; i++) {
 		var codigoQR = kjua({text: plantas_seleccionadas[i]});
-		if (((i % 3) == 0) && (i != 0)) {
-			documentoPDF.rect(margen_izquierdo, margen_superior, 60, 70);
-			margen_izquierdo = margen_izquierdo + 5;
-			margen_superior = margen_superior + 5;
-			documentoPDF.addImage(codigoQR.src, 'PNG', margen_izquierdo, margen_superior, 50, 50, null, 'FAST');
-			var formato_codigo = document.getElementById('nombre-planta-' + plantas_seleccionadas[i]).innerHTML.toUpperCase() + ' ' + plantas_seleccionadas[i];
-			documentoPDF.text(margen_izquierdo + (22 - formato_codigo.length), margen_superior + 58, formato_codigo);
-			margen_izquierdo = margen_izquierdo + 55;
-			margen_superior = MARGEN_SUPERIOR_INICIAL;
+		if (((i % 3) == 0) && (i != 0)) { // Cambio de fila dentro del PDF. 3 códigos por fila.
+			if ((i % 9) == 0) { // Cambio de página dentro del PDF. 9 códigos por página.
+				documentoPDF.addPage();
+				margen_superior = MARGEN_SUPERIOR_INICIAL;
+				margen_izquierdo = MARGEN_IZQUIERDO_INICIAL;
+			}
+			else {
+				margen_superior = margen_superior + 70;
+				margen_izquierdo = MARGEN_IZQUIERDO_INICIAL;
+			}
 		}
-		else {
-			documentoPDF.rect(margen_izquierdo, margen_superior, 60, 70);
-			margen_izquierdo = margen_izquierdo + 5;
-			margen_superior = margen_superior + 5;
-			documentoPDF.addImage(codigoQR.src, 'PNG', margen_izquierdo, margen_superior, 50, 50, null, 'FAST');
-			var formato_codigo = document.getElementById('nombre-planta-' + plantas_seleccionadas[i]).innerHTML.toUpperCase() + ' ' + plantas_seleccionadas[i];
-			documentoPDF.text(margen_izquierdo + (22 - formato_codigo.length), margen_superior + 58, formato_codigo);
-			margen_izquierdo = margen_izquierdo + 55;
-			margen_superior = MARGEN_SUPERIOR_INICIAL;
-		}
+		documentoPDF.rect(margen_izquierdo, margen_superior, 60, 70);
+		margen_izquierdo = margen_izquierdo + 5;
+		margen_superior = margen_superior + 5;
+		documentoPDF.addImage(codigoQR.src, 'PNG', margen_izquierdo, margen_superior, 50, 50, null, 'FAST');
+		formato_codigo = document.getElementById('nombre-planta-' + plantas_seleccionadas[i]).innerHTML.toUpperCase() + ' ' + plantas_seleccionadas[i];
+		documentoPDF.text(margen_izquierdo + (21 - formato_codigo.length), margen_superior + 58, formato_codigo);
+		margen_izquierdo = margen_izquierdo + 55;
+		margen_superior = margen_superior - 5;
 	}
 	documentoPDF.save(nombrePDF + '.pdf'); // Generamos un fichero PDF.
 }
