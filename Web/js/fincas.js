@@ -79,8 +79,8 @@ function iniciar_slide(maxSlide) {
 			contadorSlideActual = maxSlide;
 			contadorSlideAnterior = 1;
 		}
-		$('#finca-' + contadorSlideAnterior).slideUp(function() {
-			$('#finca-' + contadorSlideActual).slideDown();
+		$('#finca-' + contadorSlideAnterior).fadeOut(function() {
+			$('#finca-' + contadorSlideActual).fadeIn();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
 			nombreFinca = $('#' + codigoFinca + ' b').text();
 			var formato_nombre_tipo = "<div id='" + codigoFinca + "' class='tipo-planta-nombre'>Tipos de plantas en " + nombreFinca.toProperCase() + "</div>";
@@ -96,8 +96,8 @@ function iniciar_slide(maxSlide) {
 			contadorSlideActual = 1;
 			contadorSlideAnterior = maxSlide;
 		}
-		$('#finca-' + contadorSlideAnterior).slideUp(function() {
-			$('#finca-' + contadorSlideActual).slideDown();
+		$('#finca-' + contadorSlideAnterior).fadeOut(function() {
+			$('#finca-' + contadorSlideActual).fadeIn();
 			codigoFinca = $('#finca-' + contadorSlideActual + ' .nombre-finca').attr('ID');
 			nombreFinca = $('#' + codigoFinca + ' b').text();
 			var formato_nombre_tipo = "<div id='" + codigoFinca + "' class='tipo-planta-nombre'>Tipos de plantas en " + nombreFinca.toProperCase() + "</div>";

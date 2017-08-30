@@ -85,7 +85,7 @@
                                 <div class="contenedor-foto-perfil">
                                     <div id="foto-perfil"></div>
                                     <div class="contenedor-boton">
-                                        <div class="contenedor-boton-foto-perfil">
+                                        <div class="contenedor-boton-foto-perfil">Cambiar foto
                                           <!--<form method="post" enctype="multipart/form-data"></form>-->
                                         </div>
                                     </div>
