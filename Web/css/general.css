@@ -3470,8 +3470,7 @@ body .contenedor-principal {
 	height: 100%;
 	float: left;
 	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 0.75em;
+	font-size: 0.6em;
 	color: #FFFFFF;
 	text-align: center;
 	display: flex;
@@ -3479,6 +3478,10 @@ body .contenedor-principal {
 	align-content: center;
 	flex-direction: column;
 	background-color: #2A2B2A;
+}
+
+.estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #marcar-actual b {
+	font-size: 1.1em;
 }
 
 .estados-botones-seleccionada #estados-planta-seleccionada .estado-planta #marcar-actual:hover {
@@ -3959,6 +3962,84 @@ body .contenedor-principal {
 	height: 91.5%;
 	border-bottom-left-radius: 0.2em;
 	border-bottom-right-radius: 0.2em;
+}
+
+#estadisticas-graficas .contenido-estadisticas-graficas .contenedor-nombre-grafica {
+	width: 100%;
+	height: 9.75%;
+	background-color: #9E3232;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica #flecha-izquierda {
+	width: 10%;
+	height: 100%;
+	float: left;
+	background-image: url("../images/iconos/blanco/flecha-izquierda.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 45% 50%;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica #flecha-izquierda:hover {
+	background-size: 48% 53%;
+	cursor: pointer;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica .nombre-grafica {
+	width: 80%;
+	height: 100%;
+	float: left;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica .nombre-grafica .nombre {
+	width: 100%;
+	height: 100%;
+	float: left;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.85em;
+	color: #FFFFFF;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica #flecha-derecha {
+	width: 10%;
+	height: 100%;
+	float: right;
+	background-image: url("../images/iconos/blanco/flecha-derecha.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 45% 50%;
+}
+
+.contenido-estadisticas-graficas .contenedor-nombre-grafica #flecha-derecha:hover {
+	background-size: 48% 53%;
+	cursor: pointer;
+}
+
+#estadisticas-graficas .contenido-estadisticas-graficas .contenedor-grafica {
+	width: 100%;
+	height: 90.25%;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenido-estadisticas-graficas .contenedor-grafica .graficas {
+	width: 100%;
+	height: 70%;
+}
+
+.contenido-estadisticas-graficas .contenedor-grafica .graficas .grafica {
+	width: 100%;
+	height: 100%;
 }
 
 /* ------------------------------------------- FONTS ------------------------------------------- */

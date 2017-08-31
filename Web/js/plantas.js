@@ -298,7 +298,7 @@ function insertar_estados_formato(codigo, nombre, actual) {
 													"<div id='flecha-abajo' onclick='mover_abajo_estado(" + codigo + ")'></div>" +
 												"</div>" +
 												"<div class='nombre-estado' id='nombre-estado'>" + nombre + "</div>" +
-												"<div id='marcar-actual' onclick='marcar_estado_actual(" + codigo + ")'>ACTUAL</div>" +
+												"<div id='marcar-actual' onclick='marcar_estado_actual(" + codigo + ")'>Marcar como<b>ACTUAL</b></div>" +
 												"<div id='eliminar-estado' onclick='eliminar_individual_estado(" + codigo + ")'></div>" +
 										 "</div>";
 	}

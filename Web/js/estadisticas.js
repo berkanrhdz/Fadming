@@ -3,9 +3,11 @@
 // DECLARACIÓN DE CONSTANTES.
 const INDIVIDUAL = "select-individual";
 const GRUPAL = "select-grupal";
+const MAX_SLIDE = 5;
 
 $(document).ready(function() {
 	$("#estadistica #icono-seleccion").fadeIn("fast");
+	acciones_slide();
 });
 
 function obtener_estadistica(tipo) {
@@ -45,4 +47,35 @@ function insertar_cantidad_formato(nombre, cantidad) {
 													  "<div id='cantidad-indicador'>" + cantidad + "</div>" +
 												 "</div>";
 	document.getElementById('contenedor-cantidades').innerHTML += formato_cantidad;
+}
+
+function acciones_slide() {
+	var contador_slide = 1;
+	var contador_slide_anterior;
+	$("#flecha-izquierda").click(function() {
+		contador_slide_anterior = contador_slide;
+		contador_slide--;
+		if (contador_slide < 1) {
+			contador_slide = MAX_SLIDE;
+		}
+		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
+			$('#grafica-' + contador_slide_anterior).fadeOut("fast", function() {
+				$('#grafica-' + contador_slide).fadeIn("fast");
+			});
+			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
+		});
+	});
+	$("#flecha-derecha").click(function() {
+		contador_slide_anterior = contador_slide;
+		contador_slide++;
+		if (contador_slide > MAX_SLIDE) {
+			contador_slide = 1;
+		}
+		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
+			$('#grafica-' + contador_slide_anterior).fadeOut("fast", function() {
+				$('#grafica-' + contador_slide).fadeIn("fast");
+			});
+			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
+		});
+	});
 }

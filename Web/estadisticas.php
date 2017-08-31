@@ -67,7 +67,28 @@
                         <div class="contenedor-estadisticas-graficas">
                           <div id="estadisticas-graficas">
                             <div id="titulo-estadisticas-graficas">GRÁFICAS</div>
-                            <div class="contenido-estadisticas-graficas"></div>
+                            <div class="contenido-estadisticas-graficas">
+                              <div class="contenedor-nombre-grafica">
+                                <div id="flecha-izquierda"></div>
+                                <div class="nombre-grafica">
+                                  <div class="nombre" id="nombre-grafica-1">Porcentaje de plantas completadas por finca</div>
+                                  <div class="nombre" id="nombre-grafica-2" style="display: none">Plantas añadidas por meses</div>
+                                  <div class="nombre" id="nombre-grafica-3" style="display: none">Gráfica 3</div>
+                                  <div class="nombre" id="nombre-grafica-4" style="display: none">Gráfica 4</div>
+                                  <div class="nombre" id="nombre-grafica-5" style="display: none">Gráfica 5</div>
+                                </div>
+                                <div id="flecha-derecha"></div>
+                              </div>
+                              <div class="contenedor-grafica">
+                                <div class="graficas">
+                                  <div class="grafica" id="grafica-1"></div>
+                                  <div class="grafica" id="grafica-2" style="display: none"></div>
+                                  <div class="grafica" id="grafica-3" style="display: none"></div>
+                                  <div class="grafica" id="grafica-4" style="display: none"></div>
+                                  <div class="grafica" id="grafica-5" style="display: none"></div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
