@@ -7,7 +7,7 @@
   $tipo = $_SESSION['tipo'];
 
 	if ($tipo == CLIENTE_EMPRESA) {
-		echo "<option value='1'>Cantidad de plantas no completadas por huerto</option>";
+		echo "<option value='1'>Cantidad de plantas no finalizadas por huerto</option>";
 	}
 	else if ($tipo == CLIENTE_PARTICULAR) {
 

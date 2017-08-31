@@ -8,6 +8,7 @@
         <link rel="stylesheet" type="text/css" href="css/general.css">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/general.js"></script>
+        <script src="js/highcharts.js"></script>
         <script src="js/estadisticas.js"></script>
     </head>
 
@@ -71,7 +72,7 @@
                               <div class="contenedor-nombre-grafica">
                                 <div id="flecha-izquierda"></div>
                                 <div class="nombre-grafica">
-                                  <div class="nombre" id="nombre-grafica-1">Porcentaje de plantas completadas por finca</div>
+                                  <div class="nombre" id="nombre-grafica-1">Porcentaje de plantas finalizadas por finca</div>
                                   <div class="nombre" id="nombre-grafica-2" style="display: none">Plantas añadidas por meses</div>
                                   <div class="nombre" id="nombre-grafica-3" style="display: none">Gráfica 3</div>
                                   <div class="nombre" id="nombre-grafica-4" style="display: none">Gráfica 4</div>

@@ -47,7 +47,7 @@
 				}
 			}
 			$contador_plantas_no_finalizadas;
-			$informacion[$indice] = array('nombre' => $nombre_huerto . " | Finca " . $nombre_finca,
+			$informacion[$indice] = array('nombre' => "<b>" . $nombre_huerto . "</b>Finca " . $nombre_finca,
 		                                'cantidad' => $contador_plantas_no_finalizadas);
 			$indice++;
 		}

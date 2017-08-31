@@ -8,6 +8,7 @@ const MAX_SLIDE = 5;
 $(document).ready(function() {
 	$("#estadistica #icono-seleccion").fadeIn("fast");
 	acciones_slide();
+	cargar_graficas(1);
 });
 
 function obtener_estadistica(tipo) {
@@ -78,4 +79,35 @@ function acciones_slide() {
 			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
 		});
 	});
+}
+
+function cargar_graficas(opcion) {
+	switch (opcion) {
+		case 1:
+			var chart = { backgroundColor: '#FFFFFF', type: 'column' };
+			var title = { text: '-', style: { "color": "#FFFFFF" } };
+			var xAxis = { categories: ['Los Pelados', 'Morro Blanco', 'La Tejita'] };
+			var yAxis = {
+				 title: { text: 'Porcentaje (%)' },
+				 plotLines: [{ value: 0, width: 1, color: '#2A2B2A' }]
+			};
+			var plotOptions = { column: { color: '#F7DB5C', borderColor: '#D8CECB' }};
+			var credits = { enabled: false };
+			var series = [
+			 {
+					name: 'Plantas',
+					data: [71.0, 43.0, 78.0]
+			 },
+			];
+		break;
+	}
+	var JSON = {};
+	JSON.chart = chart;
+	JSON.title = title;
+	JSON.xAxis = xAxis;
+	JSON.yAxis = yAxis;
+	JSON.plotOptions = plotOptions;
+	JSON.credits = credits;
+	JSON.series = series;
+	$('#grafica-' + opcion).highcharts(JSON);
 }
