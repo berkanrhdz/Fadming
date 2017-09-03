@@ -13,12 +13,21 @@
 		echo "<option value='4'>Huerto con más plantas finalizadas</option>";
 		echo "<option value='5'>Finca con más plantas sin finalizar</option>";
 		echo "<option value='6'>Huerto con más plantas sin finalizar</option>";
-		echo "<option value='7'>Usuario con acceso a más plantas</option>";
-		echo "<option value='8'>Usuario con acceso a menos plantas</option>";
-		echo "<option value='9'>Finca con mas plantas en...</option>";
-		echo "<option value='10'>Huerto con mas plantas en...</option>";
+		echo "<option value='7'>Huerto con más usuarios con permiso</option>";
+		echo "<option value='8'>Huerto con menos usuarios con permiso</option>";
+		echo "<option value='9'>Usuario con acceso a más plantas</option>";
+		echo "<option value='10'>Usuario con acceso a menos plantas</option>";
+		echo "<option value='11'>Finca con mas plantas en...</option>";
+		echo "<option value='12'>Huerto con mas plantas en...</option>";
 	}
 	else if ($tipo == CLIENTE_PARTICULAR) {
-
+		echo "<option value='1'>Finca con más plantas</option>";
+		echo "<option value='2'>Huerto con más plantas</option>";
+		echo "<option value='3'>Finca con más plantas finalizadas</option>";
+		echo "<option value='4'>Huerto con más plantas finalizadas</option>";
+		echo "<option value='5'>Finca con más plantas sin finalizar</option>";
+		echo "<option value='6'>Huerto con más plantas sin finalizar</option>";
+		echo "<option value='11'>Finca con mas plantas en...</option>";
+		echo "<option value='12'>Huerto con mas plantas en...</option>";
 	}
 ?>

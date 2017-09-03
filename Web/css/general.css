@@ -1807,7 +1807,7 @@ body .contenedor-principal {
 }
 
 .contenedor-lista-estados .lista-estados #lista .estado .contenedor-nombre-estado {
-  width: 43.5%;
+  width: 38.5%;
   height: 100%;
   float: left;
   background-color: #2A2B2A;
@@ -1838,7 +1838,7 @@ body .contenedor-principal {
 .contenedor-lista-estados .lista-estados #lista .estado .contenedor-descripcion-estado {
   width: 56%;
   height: 100%;
-  float: right;
+  float: left;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -1856,6 +1856,22 @@ body .contenedor-principal {
   justify-content: center;
   align-content: center;
   flex-direction: column;
+}
+
+.contenedor-lista-estados .lista-estados #lista .estado #eliminar-estado {
+  width: 5%;
+  height: 100%;
+  float: right;
+	background-color: #2A2B2A;
+	background-image: url("../images/iconos/blanco/cruz.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 23%;
+}
+
+.contenedor-lista-estados .lista-estados #lista .estado #eliminar-estado:hover {
+	background-color: #9E3232;
+	cursor: pointer;
 }
 
 .contenedor-gestion-estados .contenedor-nuevo-grupos {
@@ -3775,10 +3791,16 @@ body .contenedor-principal {
 #estadisticas-individual .contenido-estadisticas-individual .contenedor-select-individual {
 	width: 100%;
 	height: 45%;
+}
+
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado {
+	width: 100%;
+	height: 100%;
+	float: left;
 	background-color: #9E3232;
 }
 
-.contenido-estadisticas-individual .contenedor-select-individual #select-individual {
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado #select-individual {
 	width: 100%;
 	height: 100%;
 	background-color: #9E3232;
@@ -3790,13 +3812,32 @@ body .contenedor-principal {
 	outline: none;
 }
 
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado {
+	width: 50%;
+	height: 100%;
+	float: right;
+	background-color: #FAF5F6;
+	display: none;
+}
+
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado #select-estado-individual {
+	width: 100%;
+	height: 100%;
+	background-color: #FAF5F6;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 0.7em;
+	color: #2A2B2A;
+	border: none;
+	outline: none;
+}
+
 #estadisticas-individual .contenido-estadisticas-individual #respuesta-select-individual {
 	width: 100%;
 	height: 55%;
 	border-bottom-left-radius: 0.2em;
 	border-bottom-right-radius: 0.2em;
 	font-family: sans-serif;
-	font-weight: bold;
 	font-size: 0.9em;
 	color: #FFFFFF;
 	display: flex;

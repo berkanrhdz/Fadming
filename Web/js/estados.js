@@ -21,16 +21,27 @@ function mostrar_lista_estados() {
 }
 
 function insertar_estado_formato(indice, nombre, descripcion) { // Funcion para dar el formato a los estados.
-		var formato_lista = "<div class='estado'>" +
+		var formato_lista = "<div class='estado' id='estado-" + indice + "'>" +
 	               		    	"<div class='contenedor-nombre-estado'><div id='nombre-estado'>" + nombre + "</div></div>" +
 	                  			"<div class='contenedor-descripcion-estado'><div id='descripcion-estado'>" + descripcion + "</div></div>" +
-	               				"</div>";
+													"<div id='eliminar-estado' onclick='borrar_estado(" + indice + ")'></div>" +
+												"</div>";
 		var formato_grupo	= "<div class='contenedor-estado-seleccion'>" +
 													"<div id='nombre-estado-seleccion'>" + nombre + "</div>" +
 													"<div id='checkbox'><input id='" + indice + "' type='checkbox'></input></div>" +
 												"</div>";
 		document.getElementById('lista').innerHTML += formato_lista;
 		document.getElementById('grupos-seleccion').innerHTML += formato_grupo;
+}
+
+function borrar_estado(codigo) {
+	$.ajax({
+				type: 'POST',
+				url: 'http://localhost/Fadming/Web/php/eliminar_estado.php',
+				dataType: 'json',
+				data: 'estado='+codigo,
+				success: location.reload()
+		});
 }
 
 function interaccion_nuevo_grupos() {

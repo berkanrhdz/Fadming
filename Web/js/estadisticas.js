@@ -4,27 +4,49 @@
 const INDIVIDUAL = "select-individual";
 const GRUPAL = "select-grupal";
 const MAX_SLIDE = 5;
+const OPCIONES_SIN_ESTADO = 10;
 
 $(document).ready(function() {
 	$("#estadistica #icono-seleccion").fadeIn("fast");
 	acciones_slide();
 	cargar_graficas(1);
+	obtener_estados_usuario();
 });
+
+function obtener_estados_usuario() {
+	$.ajax({
+		type: 'POST',
+	  url: 'http://localhost/Fadming/Web/php/obtener_lista_estados.php',
+	  dataType: 'json',
+		success: function(datos) {
+			$(datos).each(function(i, valor) {
+				insertar_estado_formato(valor.codigo, valor.nombre);
+			});
+	  }
+	});
+}
+
+function insertar_estado_formato(codigo, nombre) {
+	var formato_estado = "<option value='" + codigo + "'>" + nombre.toUpperCase() + "</option>";
+	document.getElementById('select-estado-individual').innerHTML += formato_estado;
+}
 
 function obtener_estadistica(tipo) {
 	if (tipo == INDIVIDUAL) {
 		var opcion = document.getElementById('select-individual').value;
-		$.ajax({
-				type: 'POST',
-				url: 'http://localhost/Fadming/Web/php/obtener_estadisticas_simple.php',
-				dataType: 'json',
-				data: 'opcion='+opcion,
-				success: function(datos) {
-					$(datos).each(function(i, valor) {
-						document.getElementById('respuesta-select-individual').innerHTML = valor.respuesta;
-					});
-				}
-		});
+		if (opcion <= OPCIONES_SIN_ESTADO) {
+			$('.contenedor-select-individual .contenedor-select-estado').fadeOut("fast", function() {
+				$('.contenedor-select-individual .contenedor-select-no-estado').animate({'width': '100%'}, "fast");
+			});
+			enviar_opcion_estadistica_simple(opcion);
+		}
+		else {
+			$('.contenedor-select-individual .contenedor-select-no-estado').animate({'width': '50%'}, "slow", function() {
+				$('.contenedor-select-individual .contenedor-select-estado').fadeIn();
+				document.getElementById('respuesta-select-individual').innerHTML = "";
+				document.getElementById('select-estado-individual').value = "";
+			});
+		}
 	}
 	else if (tipo == GRUPAL) {
 		var opcion = document.getElementById('select-grupal').value;
@@ -40,6 +62,24 @@ function obtener_estadistica(tipo) {
 				}
 		});
 	}
+}
+
+function enviar_opcion_estadistica_simple(opcion) {
+	if (opcion == null) {
+		var opcion = document.getElementById('select-individual').value;
+		var estado = document.getElementById('select-estado-individual').value;
+	}
+	$.ajax({
+			type: 'POST',
+			url: 'http://localhost/Fadming/Web/php/obtener_estadisticas_simple.php',
+			dataType: 'json',
+			data: 'opcion='+opcion+'&estado='+estado,
+			success: function(datos) {
+				$(datos).each(function(i, valor) {
+					document.getElementById('respuesta-select-individual').innerHTML = valor.respuesta;
+				});
+			}
+	});
 }
 
 function insertar_cantidad_formato(nombre, cantidad) {

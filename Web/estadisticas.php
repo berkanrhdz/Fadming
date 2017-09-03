@@ -39,10 +39,17 @@
                               <div id="titulo-estadisticas-individual">ESTADÍSTICAS SIMPLES</div>
                               <div class="contenido-estadisticas-individual">
                                 <div class="contenedor-select-individual">
-                                  <select id="select-individual" required onchange="obtener_estadistica(this.id)">
-                                    <option value="" disabled selected hidden>Seleccione una opción...</option>
-                                    <?php require("php/opciones_select_simple.php"); ?>
-                                  </select>
+                                  <div class="contenedor-select-no-estado">
+                                    <select id="select-individual" required onchange="obtener_estadistica(this.id)">
+                                      <option value="" disabled selected hidden>Seleccione una opción...</option>
+                                      <?php require("php/opciones_select_simple.php"); ?>
+                                    </select>
+                                  </div>
+                                  <div class="contenedor-select-estado">
+                                    <select id="select-estado-individual" required onchange="enviar_opcion_estadistica_simple(null)">
+                                      <option value="" disabled selected hidden>SELECCIONE UN ESTADO...</option>
+                                    </select>
+                                  </div>
                                 </div>
                                 <div id="respuesta-select-individual"></div>
                               </div>

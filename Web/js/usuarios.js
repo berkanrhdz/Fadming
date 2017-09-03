@@ -8,16 +8,6 @@ const USUARIOS = 2;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var meses_año = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-/*var select_identificadores = [];
-var select_rol = [];*/
-
-/*window.onbeforeunload = function() {
-	for (var i = 0; i < select_rol.length; i++) {
-		var identificador = select_identificadores[i];
-		var rol = select_rol[i];
-		enviar_cambio_rol(identificador, rol);
-	}
-};*/
 
 $(document).ready(function() {
 	$("#usuario #icono-seleccion").fadeIn("fast");
@@ -154,17 +144,11 @@ function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, 
 }
 
 function cambiar_rol_usuario(identificador, rol) {
-	alert(identificador + " " + rol);
-	/*select_identificadores.push(identificador);
-	select_rol.push(rol);*/
-}
-
-function enviar_cambio_rol(identificador, rol) {
 	$.ajax({
 		type: 'POST',
 		url: 'http://localhost/Fadming/Web/php/actualizar_rol_usuario.php',
 		dataType: 'json',
-		data: "identificador="+identificador+"&rol="+rol
+		data: 'identificador='+identificador+'&rol='+rol
 	});
 }
 
