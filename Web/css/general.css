@@ -3793,26 +3793,29 @@ body .contenedor-principal {
 	height: 45%;
 }
 
-.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado {
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado,
+.contenido-estadisticas-grupal .contenedor-select-grupal .contenedor-select-no-estado {
 	width: 100%;
 	height: 100%;
 	float: left;
 	background-color: #9E3232;
 }
 
-.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado #select-individual {
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-no-estado #select-individual,
+.contenido-estadisticas-grupal .contenedor-select-grupal .contenedor-select-no-estado #select-grupal {
 	width: 100%;
 	height: 100%;
 	background-color: #9E3232;
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 0.9em;
+	font-size: 0.85em;
 	color: #FFFFFF;
 	border: none;
 	outline: none;
 }
 
-.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado {
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado,
+.contenido-estadisticas-grupal .contenedor-select-grupal .contenedor-select-estado {
 	width: 50%;
 	height: 100%;
 	float: right;
@@ -3820,7 +3823,8 @@ body .contenedor-principal {
 	display: none;
 }
 
-.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado #select-estado-individual {
+.contenido-estadisticas-individual .contenedor-select-individual .contenedor-select-estado #select-estado-individual,
+.contenido-estadisticas-grupal .contenedor-select-grupal .contenedor-select-estado #select-estado-grupal {
 	width: 100%;
 	height: 100%;
 	background-color: #FAF5F6;
@@ -3890,19 +3894,6 @@ body .contenedor-principal {
 #estadisticas-grupal .contenido-estadisticas-grupal .contenedor-select-grupal {
 	width: 100%;
 	height: 15%;
-	background-color: #9E3232;
-}
-
-.contenido-estadisticas-grupal .contenedor-select-grupal #select-grupal {
-	width: 100%;
-	height: 100%;
-	background-color: #9E3232;
-	font-family: sans-serif;
-	font-weight: bold;
-	font-size: 0.9em;
-	color: #FFFFFF;
-	border: none;
-	outline: none;
 }
 
 #estadisticas-grupal .contenido-estadisticas-grupal #respuesta-select-grupal {
@@ -3961,7 +3952,7 @@ body .contenedor-principal {
 	background-color: #F7DB5C;
 	font-family: sans-serif;
 	font-weight: bold;
-	font-size: 1.1em;
+	font-size: 0.8em;
 	color: #2A2B2A;
 	text-align: center;
 	display: flex;

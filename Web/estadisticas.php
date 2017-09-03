@@ -60,10 +60,17 @@
                               <div id="titulo-estadisticas-grupal">ESTADÍSTICAS DETALLADAS</div>
                               <div class="contenido-estadisticas-grupal">
                                 <div class="contenedor-select-grupal">
-                                  <select id="select-grupal" required onchange="obtener_estadistica(this.id)">
-                                    <option value="" disabled selected hidden>Seleccione una opción...</option>
-                                    <?php require("php/opciones_select_detalle.php"); ?>
-                                  </select>
+                                  <div class="contenedor-select-no-estado">
+                                    <select id="select-grupal" required onchange="obtener_estadistica(this.id)">
+                                      <option value="" disabled selected hidden>Seleccione una opción...</option>
+                                      <?php require("php/opciones_select_detalle.php"); ?>
+                                    </select>
+                                  </div>
+                                  <div class="contenedor-select-estado">
+                                    <select id="select-estado-grupal" required onchange="enviar_opcion_estadistica_detalle(null)">
+                                      <option value="" disabled selected hidden>SELECCIONE UN ESTADO...</option>
+                                    </select>
+                                  </div>
                                 </div>
                                 <div id="respuesta-select-grupal">
                                   <div class="contenedor-cantidades" id="contenedor-cantidades"></div>
