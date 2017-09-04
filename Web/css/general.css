@@ -4076,14 +4076,14 @@ body .contenedor-principal {
 	flex-direction: column;
 }
 
-.contenido-estadisticas-graficas .contenedor-grafica .graficas .grafica {
+.contenido-estadisticas-graficas .contenedor-grafica .graficas #grafica {
 	width: 95%;
 	height: 95%;
 	margin: 0 auto;
 	border-radius: 0.2em;
 }
 
-.contenido-estadisticas-graficas .contenedor-grafica .graficas .grafica .highcharts-container {
+.contenido-estadisticas-graficas .contenedor-grafica .graficas #grafica .highcharts-container {
 	border-radius: 0.2em;
 }
 

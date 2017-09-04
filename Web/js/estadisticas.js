@@ -3,15 +3,15 @@
 // DECLARACIÓN DE CONSTANTES.
 const INDIVIDUAL = "select-individual";
 const GRUPAL = "select-grupal";
-const MAX_SLIDE = 5;
 const OPCIONES_SIN_ESTADO_INDIVIDUAL = 10;
 const OPCIONES_SIN_ESTADO_GRUPAL = 3;
-
+const CANTIDAD_GRAFICAS = 4;
+const GRAFICA_INICIAL = 1;
 
 $(document).ready(function() {
 	$("#estadistica #icono-seleccion").fadeIn("fast");
 	acciones_slide();
-	cargar_graficas(1);
+	mostrar_grafica(GRAFICA_INICIAL);
 	obtener_estados_usuario();
 });
 
@@ -121,57 +121,78 @@ function acciones_slide() {
 		contador_slide_anterior = contador_slide;
 		contador_slide--;
 		if (contador_slide < 1) {
-			contador_slide = MAX_SLIDE;
+			contador_slide = CANTIDAD_GRAFICAS;
 		}
 		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
-			$('#grafica-' + contador_slide_anterior).fadeOut("fast", function() {
-				$('#grafica-' + contador_slide).fadeIn("fast");
-			});
 			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
+			document.getElementById('grafica').innerHTML = "";
+			mostrar_grafica(contador_slide);
 		});
 	});
 	$("#flecha-derecha").click(function() {
 		contador_slide_anterior = contador_slide;
 		contador_slide++;
-		if (contador_slide > MAX_SLIDE) {
+		if (contador_slide > CANTIDAD_GRAFICAS) {
 			contador_slide = 1;
 		}
 		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
-			$('#grafica-' + contador_slide_anterior).fadeOut("fast", function() {
-				$('#grafica-' + contador_slide).fadeIn("fast");
-			});
 			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
+			document.getElementById('grafica').innerHTML = "";
+			mostrar_grafica(contador_slide);
 		});
 	});
 }
 
-function cargar_graficas(opcion) {
+function mostrar_grafica(opcion) {
+	$.ajax({
+			type: 'POST',
+			url: 'http://localhost/Fadming/Web/php/obtener_estadisticas_grafica.php',
+			dataType: 'json',
+			data: 'opcion='+opcion,
+			success: function(datos) {
+				$(datos).each(function(i, valor) {
+					cargar_grafica(opcion, valor.categorias, valor.datos);
+				});
+			}
+	});
+}
+
+function cargar_grafica(opcion, categorias, datos) {
+	var JSON = {};
 	switch (opcion) {
 		case 1:
-			var chart = { backgroundColor: '#FFFFFF', type: 'column' };
-			var title = { text: '-', style: { "color": "#FFFFFF" } };
-			var xAxis = { categories: ['Los Pelados', 'Morro Blanco', 'La Tejita'] };
-			var yAxis = {
-				 title: { text: 'Porcentaje (%)' },
-				 plotLines: [{ value: 0, width: 1, color: '#2A2B2A' }]
-			};
-			var plotOptions = { column: { color: '#F7DB5C', borderColor: '#D8CECB' }};
-			var credits = { enabled: false };
-			var series = [
-			 {
-					name: 'Plantas',
-					data: [71.0, 43.0, 78.0]
-			 },
-			];
+			JSON.chart = { backgroundColor: '#FFFFFF', type: 'column' };
+			JSON.title = { text: '-', style: { "color": "#FFFFFF" } };
+			JSON.xAxis = { categories: categorias };
+			JSON.yAxis = { title: { text: 'Porcentaje (%)' }, max: 100, min: 0, plotLines: [{ value: 0, width: 1, color: '#2A2B2A' }] };
+			JSON.plotOptions = { column: { color: '#F7DB5C', borderColor: '#D8CECB' }};
+			JSON.credits = { enabled: false };
+			JSON.series = [ { name: 'Plantas', data: datos } ];
+		break;
+		case 2:
+			JSON.chart = { backgroundColor: '#FFFFFF', type: 'column' };
+			JSON.title = { text: '-', style: { "color": "#FFFFFF" } };
+			JSON.xAxis = { categories: categorias };
+			JSON.yAxis = { title: { text: 'Porcentaje (%)' }, max: 100, min: 0, plotLines: [{ value: 0, width: 1, color: '#2A2B2A' }] };
+			JSON.plotOptions = { column: { color: '#F7DB5C', borderColor: '#D8CECB' }};
+			JSON.credits = { enabled: false };
+			JSON.series = [ { name: 'Plantas', data: datos } ];
+		break;
+		case 3:
+			JSON.chart = { backgroundColor: '#FFFFFF', type: 'area' };
+			JSON.title = { text: '-', style: { "color": "#FFFFFF" } };
+			JSON.xAxis = { categories: categorias };
+			JSON.yAxis = { title: { text: 'Número de Plantas' }, max: 100, min: 0, plotLines: [{ value: 0, width: 1, color: '#2A2B2A' }] };
+			JSON.plotOptions = { area: { color: '#F7DB5C', dataLabels: { enabled: true }, enableMouseTracking: true } };
+			JSON.credits = { enabled: false };
+			JSON.series = [ { name: 'Cantidad', data: datos } ];
+		break;
+		case 4:
+			JSON.chart = { backgroundColor: '#FFFFFF', type: 'pie' };
+			JSON.title = { text: 'Número total de plantas: ' + categorias, style: { "color": "#2A2B2A" } };
+			JSON.credits = { enabled: false };
+			JSON.series = [ { name: 'Cantidad', data: datos } ];
 		break;
 	}
-	var JSON = {};
-	JSON.chart = chart;
-	JSON.title = title;
-	JSON.xAxis = xAxis;
-	JSON.yAxis = yAxis;
-	JSON.plotOptions = plotOptions;
-	JSON.credits = credits;
-	JSON.series = series;
-	$('#grafica-' + opcion).highcharts(JSON);
+	$('#grafica').highcharts(JSON);
 }
