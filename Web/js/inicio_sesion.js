@@ -60,7 +60,7 @@ function enviar_datos_iniciar_sesion() { // Función para enviar los datos del r
 									realizar_interaccion_error();
 								}
 								else if (valor.respuesta == LOGIN_CORRECTO) {
-									window.location.href = "http://localhost/Fadming/Web/plantas.php";
+									window.location.href = "http://localhost/Fadming/Web/estadisticas.php";
 								}
 						});
 				}

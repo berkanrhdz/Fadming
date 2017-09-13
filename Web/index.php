@@ -90,11 +90,13 @@
                                 </div>
                                 <div class="contenedor-empresa-existente">
                                   <div class="fila-empresa-existente">
-                                    <label id="label-existente">Ingrese la contraseña de la empresa</label>
+                                    <div class="input-nombre-existente">
+                                      <input id="nombre-existente" name="nombre-existente" type="text" autocomplete="off" placeholder="Nombre de la empresa"></input>
+                                    </div>
                                   </div>
                                   <div class="fila-empresa-existente">
                                     <div class="input-contrasena-existente">
-                                      <input id="contrasena-existente" name="contrasena-existente" type="password" autocomplete="off"></input>
+                                      <input id="contrasena-existente" name="contrasena-existente" type="password" autocomplete="off" placeholder="Contraseña de acceso"></input>
                                     </div>
                                   </div>
                                 </div>

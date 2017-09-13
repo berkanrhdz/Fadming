@@ -5,8 +5,8 @@ const CLIENTE_PARTICULAR = 1;
 const CLIENTE_EMPRESA = 2;
 const ADMINISTRADOR = 1;
 const TRABAJADOR = 2;
-const CONTRASENA_CORRECTA = 1;
-const ERROR_CONTRASENA = -1;
+const DATOS_CORRECTO = 1;
+const DATOS_ERROR = -1;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var datos_empresa = [];
@@ -174,9 +174,34 @@ function comprobar_datos_empresa() { // Función para validar los datos de creac
 	return true;
 }
 
+function comprobar_datos_empresa_existente(nombre, contrasena) {
+	if (nombre.length == 0) { // Comprobación de introducción del nombre de la empresa existente.
+		$('#nombre-existente').css('background-color', '#FADBD8');
+		document.getElementById("nombre-existente").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("nombre-existente").placeholder = "Nombre de la empresa";
+			$("#nombre-existente").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	else if (contrasena.length == 0) { // Comprobación de introducción del contraseña de la empresa existente.
+		$('#contrasena-existente').css('background-color', '#FADBD8');
+		document.getElementById("contrasena-existente").placeholder = "Obligatorio";
+		setTimeout(function() {
+			document.getElementById("contrasena-existente").placeholder = "Contraseña de acceso";
+			$("#contrasena-existente").css('background-color', '#FFFFFF');
+		}, 1500);
+		return false;
+	}
+	return true;
+}
+
 function comprobar_contrasena_empresa() { // Función para comprobar la contraseña de unión a una empresa existente.
+	var nombre = document.getElementById('nombre-existente').value;
 	var contrasena = document.getElementById('contrasena-existente').value;
-	obtener_id_nombre_empresa(contrasena);
+	if (comprobar_datos_empresa_existente(nombre, contrasena)) {
+		obtener_id_nombre_empresa(nombre, contrasena);
+	}
 }
 
 function cambiar_registro_empresa() { // Función para pasar del registro de usuario al de empresa.
@@ -294,45 +319,36 @@ function enviar_registro_empresa() { // Función para enviar los datos del regis
     });
 }
 
-function obtener_id_nombre_empresa(contrasena_empresa) { // Función para obtener el id y el nombre de empresa.
+function obtener_id_nombre_empresa(nombre_empresa, contrasena_empresa) { // Función para obtener el id y el nombre de empresa.
 	$.ajax({
 			type: 'POST',
 			url: 'http://localhost/Fadming/Web/php/obtener_id_nombre_empresa.php',
-			data: "contrasena="+contrasena_empresa,
+			data: "nombre="+nombre_empresa+"&contrasena="+contrasena_empresa,
 			dataType: 'json',
 			success: function(datos) {
 					$(datos).each(function(i, valor) {
-						if (valor.respuesta == CONTRASENA_CORRECTA) {
-							realizar_interaccion_contrasena(valor.nombre);
-							enviar_registro_usuario(valor.codigo);
-						}
-						else if (valor.respuesta == ERROR_CONTRASENA) {
-							realizar_interaccion_contrasena(ERROR_CONTRASENA);
-						}
+						realizar_interaccion_contrasena(valor.respuesta, valor.codigo);
 					});
 			}
 	});
 }
 
-function realizar_interaccion_contrasena(nombre_empresa) { // Función para realizar la interacción de comprobación de empresa.
-	if (nombre_empresa == ERROR_CONTRASENA) {
-		document.getElementById("contrasena-existente").value = "";
-		$('#contrasena-existente').css('background-color', '#FADBD8');
-		document.getElementById("contrasena-existente").placeholder = "Contraseña incorrecta";
+function realizar_interaccion_contrasena(respuesta, codigo_empresa) { // Función para realizar la interacción de comprobación de empresa.
+	if (respuesta == DATOS_ERROR) {
+		$('.contenedor-empresa-existente').css('background-color', '#9E3232');
+		document.getElementById("boton-registro").value = "Datos incorrectos";
 		setTimeout(function() {
-			$('#contrasena-existente').css('background-color', '#FFFFFF');
-			document.getElementById("contrasena-existente").placeholder = "";
+			document.getElementById("nombre-existente").value = "";
+			document.getElementById("contrasena-existente").value = "";
+			$('.contenedor-empresa-existente').css('background-color', '#2A2B2A');
+			document.getElementById("boton-registro").value = "Registrarme";
 		}, 1500);
 	}
-	else {
-		document.getElementById('label-existente').innerHTML = nombre_empresa;
-		$('#contrasena-existente').css('background-color', '#C0EBB9');
+	else if (respuesta == DATOS_CORRECTO) {
 		document.getElementById("boton-registro").value = "Registrando...";
+		enviar_registro_usuario(codigo_empresa);
 		setTimeout(function() {
-			document.getElementById("boton-registro").value = "Registrado";
-		}, 2000);
-		setTimeout(function() {
-			location.reload(true);
-		}, 3000);
+			location.reload();
+		}, 1000);
 	}
 }
