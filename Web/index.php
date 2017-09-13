@@ -40,7 +40,15 @@
                             </div>
                             <div class="contenedor-informacion-codigo">
                                 <div class="contenedor-titulo-codigo">Accede al desarrollo de Fadming</div>
-                                <div class="contenedor-informacion-qr"></div>
+                                <div class="contenedor-redes-sociales">
+                                  <div class="fila-redes-sociales">
+                                    <a class="red-social" id="twitter" href="https://twitter.com/eduescobar95"></a>
+                                    <a class="red-social" id="github" href="https://github.com/eduescobar13"></a>
+                                    <a class="red-social" id="infojobs" href="https://www.infojobs.net/candidate/cv/view/index.xhtml?dgv=8937720076927708688"></a>
+                                    <a class="red-social" id="instagram" href="https://www.instagram.com/eduescobar95/"><div id="icono-instagram"></div></a>
+                                    <a class="red-social" id="facebook" href="https://www.facebook.com/eduardo.escobaralberto.12"></a>
+                                  </div>
+                                </div>
                             </div>
                         </div>
                         <div class="formulario-registro">

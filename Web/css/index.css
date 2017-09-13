@@ -266,16 +266,87 @@ body {
   border-bottom-left-radius: 0.8em;
 }
 
-.contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-informacion-qr {
+.contenedor-codigo-qr .contenedor-informacion-codigo .contenedor-redes-sociales {
+	width: 100%;
+	height: 58%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-informacion-codigo .contenedor-redes-sociales .fila-redes-sociales {
 	width: 96%;
-	height: 50%;
-  font-family: fuente-texto-codigo;
-  font-size: 1.1em;
-  color: #2A2B2A;
-  text-align: justify;
-  line-height: 1.5em;
-  padding: 2%;
-  font-weight: bold;
+	height: 60%;
+	padding-right: 4%;
+}
+
+.contenedor-redes-sociales .fila-redes-sociales .red-social {
+	width: 11%;
+	height: 100%;
+	background-color: #2A2B2A;
+	border-radius: 0.2em;
+	float: right;
+	margin-right: 2%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 50%;
+}
+
+.fila-redes-sociales #facebook {
+	background-image: url("../images/iconos/blanco/facebook.png");
+}
+
+.fila-redes-sociales #facebook:hover {
+	background-size: 55% 55%;
+	background-color: #3B5998;
+}
+
+.fila-redes-sociales #twitter {
+	background-image: url("../images/iconos/blanco/twitter.png");
+}
+
+.fila-redes-sociales #twitter:hover {
+	background-size: 55% 55%;
+	background-color: #00ACED;
+}
+
+.fila-redes-sociales #instagram #icono-instagram {
+	width: 100%;
+	height: 100%;
+	border-radius: 2%;
+	background-image: url("../images/iconos/blanco/instagram.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 50% 50%;
+}
+
+.fila-redes-sociales #instagram #icono-instagram:hover {
+	background-size: 55% 55%;
+}
+
+.fila-redes-sociales #instagram:hover {
+	background.color: #D6249F;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.fila-redes-sociales #infojobs {
+	background-image: url("../images/iconos/blanco/infojobs.png");
+}
+
+.fila-redes-sociales #infojobs:hover {
+	background-size: 55% 55%;
+	background-color: #DCB63E;
+}
+
+
+.fila-redes-sociales #github {
+	background-image: url("../images/iconos/blanco/github.png");
+}
+
+.fila-redes-sociales #github:hover {
+	background-size: 55% 55%;
+	background-color: #8647A0;
 }
 
 .contenedor-informacion-registro .contenedor-registro .formulario-registro {
