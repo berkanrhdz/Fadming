@@ -1,7 +1,7 @@
 // DOCUMENTO JAVASCRIPT DE index.php
 
 // DECLARACIÓN DE CONSTANTES.
-const MAX_SLIDE = 3;
+const MAX_SLIDE = 5;
 
 // DECLARACIÓN DE VARIABLES GLOBALES.
 var contadorSlide = 1;

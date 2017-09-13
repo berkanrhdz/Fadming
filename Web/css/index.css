@@ -289,7 +289,7 @@ body {
 	float: right;
 	margin-right: 2%;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 50% 50%;
 	background-size: 50% 50%;
 }
 
@@ -298,8 +298,9 @@ body {
 }
 
 .fila-redes-sociales #facebook:hover {
-	background-size: 55% 55%;
+	background-size: 60% 60%;
 	background-color: #3B5998;
+	background-position: 50% 40%;
 }
 
 .fila-redes-sociales #twitter {
@@ -307,7 +308,8 @@ body {
 }
 
 .fila-redes-sociales #twitter:hover {
-	background-size: 55% 55%;
+	background-size: 60% 60%;
+	background-position: 50% 40%;
 	background-color: #00ACED;
 }
 
@@ -317,12 +319,13 @@ body {
 	border-radius: 2%;
 	background-image: url("../images/iconos/blanco/instagram.png");
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 50% 50%;
 	background-size: 50% 50%;
 }
 
 .fila-redes-sociales #instagram #icono-instagram:hover {
-	background-size: 55% 55%;
+	background-size: 60% 60%;
+	background-position: 50% 40%;
 }
 
 .fila-redes-sociales #instagram:hover {
@@ -335,17 +338,18 @@ body {
 }
 
 .fila-redes-sociales #infojobs:hover {
-	background-size: 55% 55%;
+	background-size: 60% 60%;
+	background-position: 50% 40%;
 	background-color: #DCB63E;
 }
-
 
 .fila-redes-sociales #github {
 	background-image: url("../images/iconos/blanco/github.png");
 }
 
 .fila-redes-sociales #github:hover {
-	background-size: 55% 55%;
+	background-size: 60% 60%;
+	background-position: 50% 40%;
 	background-color: #8647A0;
 }
 
