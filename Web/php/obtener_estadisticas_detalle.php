@@ -117,6 +117,21 @@
 			}
 		break;
 		case 4:
+		$consulta = "SELECT USU.NOMBRE_USUARIO, USU.NOMBRE, USU.APELLIDOS, ESTUSU.ESTADOS_REALIZADO NUM_ESTADOS
+								 FROM ESTADO_USUARIO ESTUSU, USUARIO USU
+								 WHERE ((USU.ID_USUARIO = ESTUSU.CODIGO_USUARIO)
+								 AND (ESTUSU.CODIGO_USUARIO IN (SELECT ID_USUARIO
+																								FROM USUARIO
+																								WHERE ((EMPRESA = '$empresa') AND (ROL != 1)))))
+								 ORDER BY USU.APELLIDOS ASC;";
+			$resultado_consulta = mysql_query($consulta);
+			while ($fila = mysql_fetch_row($resultado_consulta)) {
+				$usuario_formato = "<b>" . $fila[1] . " " . $fila[2] . "</b>" . $fila[0];
+				$informacion[] = array('nombre' => $usuario_formato,
+															 'cantidad' => $fila[3]);
+			}
+		break;
+		case 5:
 			$indice = 0;
 			if ($tipo_usuario == CLIENTE_EMPRESA) {
 				$consulta = "SELECT FINC.CODIGO, FINC.NOMBRE
@@ -161,7 +176,7 @@
 				$indice++;
 			}
 		break;
-		case 5:
+		case 6:
 		  $indice = 0;
 			if ($tipo_usuario == CLIENTE_EMPRESA) {
 				$consulta = "SELECT FINC.NOMBRE, HUER.CODIGO, HUER.NOMBRE

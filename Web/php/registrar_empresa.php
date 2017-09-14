@@ -16,7 +16,10 @@
 
 	mysql_query($consulta);
 
-  $consulta_codigo = "SELECT LAST_INSERT_ID() FROM EMPRESA";
+  $consulta_codigo = "SELECT CODIGO
+                      FROM EMPRESA
+                      ORDER BY CODIGO DESC
+                      LIMIT 1;";
   $resultado_consulta = mysql_query($consulta_codigo);
   $datos = mysql_fetch_array($resultado_consulta);
 

@@ -293,6 +293,32 @@
 			$respuesta = "<b>" . $datos[1] . " " . $datos[2] . "</b>" . $datos[0];
 		break;
 		case 11:
+			$consulta = "SELECT USU.NOMBRE_USUARIO, USU.NOMBRE, USU.APELLIDOS, ESTUSU.ESTADOS_REALIZADO NUM_ESTADOS
+									 FROM ESTADO_USUARIO ESTUSU, USUARIO USU
+									 WHERE ((USU.ID_USUARIO = ESTUSU.CODIGO_USUARIO)
+									 AND (ESTUSU.CODIGO_USUARIO IN (SELECT ID_USUARIO
+							   																  FROM USUARIO
+							   																  WHERE ((EMPRESA = '$empresa') AND (ROL != 1)))))
+									 ORDER BY NUM_ESTADOS DESC
+									 LIMIT 1;";
+			$resultado_consulta = mysql_query($consulta);
+			$datos = mysql_fetch_row($resultado_consulta);
+			$respuesta = "<b>" . $datos[1] . " " . $datos[2] . "</b>" . $datos[0];
+		break;
+		case 12:
+		$consulta = "SELECT USU.NOMBRE_USUARIO, USU.NOMBRE, USU.APELLIDOS, ESTUSU.ESTADOS_REALIZADO NUM_ESTADOS
+								 FROM ESTADO_USUARIO ESTUSU, USUARIO USU
+								 WHERE ((USU.ID_USUARIO = ESTUSU.CODIGO_USUARIO)
+								 AND (ESTUSU.CODIGO_USUARIO IN (SELECT ID_USUARIO
+																								FROM USUARIO
+																								WHERE ((EMPRESA = '$empresa') AND (ROL != 1)))))
+								 ORDER BY NUM_ESTADOS ASC
+								 LIMIT 1;";
+			$resultado_consulta = mysql_query($consulta);
+			$datos = mysql_fetch_row($resultado_consulta);
+			$respuesta = "<b>" . $datos[1] . " " . $datos[2] . "</b>" . $datos[0];
+		break;
+		case 13:
 			$nombre_mayor = "";
 			$cantidad_mayor = INT_MIN;
 			if ($tipo_usuario == CLIENTE_EMPRESA) {
@@ -338,7 +364,7 @@
 				$respuesta = "<b>" . $nombre_mayor;
 			}
 		break;
-		case 12:
+		case 14:
 			$nombre_mayor = "";
 			$cantidad_mayor = INT_MIN;
 			if ($tipo_usuario == CLIENTE_EMPRESA) {

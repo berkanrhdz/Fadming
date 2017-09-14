@@ -3,14 +3,15 @@
 // DECLARACIÓN DE CONSTANTES.
 const INDIVIDUAL = "select-individual";
 const GRUPAL = "select-grupal";
-const OPCIONES_SIN_ESTADO_INDIVIDUAL = 10;
-const OPCIONES_SIN_ESTADO_GRUPAL = 3;
-const CANTIDAD_GRAFICAS = 4;
+const OPCIONES_SIN_ESTADO_INDIVIDUAL = 12;
+const OPCIONES_SIN_ESTADO_GRUPAL = 4;
 const GRAFICA_INICIAL = 1;
 
 $(document).ready(function() {
 	$("#estadistica #icono-seleccion").fadeIn("fast");
-	acciones_slide();
+	var contenedor_graficas = document.getElementById('nombre-grafica');
+	var graficas = contenedor_graficas.getElementsByClassName('nombre');
+	acciones_slide(graficas.length);
 	mostrar_grafica(GRAFICA_INICIAL);
 	obtener_estados_usuario();
 });
@@ -114,14 +115,14 @@ function insertar_cantidad_formato(nombre, cantidad) {
 	document.getElementById('contenedor-cantidades').innerHTML += formato_cantidad;
 }
 
-function acciones_slide() {
+function acciones_slide(numero_graficas) {
 	var contador_slide = 1;
 	var contador_slide_anterior;
 	$("#flecha-izquierda").click(function() {
 		contador_slide_anterior = contador_slide;
 		contador_slide--;
 		if (contador_slide < 1) {
-			contador_slide = CANTIDAD_GRAFICAS;
+			contador_slide = numero_graficas;
 		}
 		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
 			$('#nombre-grafica-' + contador_slide).fadeIn("fast");
@@ -132,7 +133,7 @@ function acciones_slide() {
 	$("#flecha-derecha").click(function() {
 		contador_slide_anterior = contador_slide;
 		contador_slide++;
-		if (contador_slide > CANTIDAD_GRAFICAS) {
+		if (contador_slide > numero_graficas) {
 			contador_slide = 1;
 		}
 		$('#nombre-grafica-' + contador_slide_anterior).fadeOut("fast", function() {
@@ -189,7 +190,13 @@ function cargar_grafica(opcion, categorias, datos) {
 		break;
 		case 4:
 			JSON.chart = { backgroundColor: '#FFFFFF', type: 'pie' };
-			JSON.title = { text: 'Número total de plantas: ' + categorias, style: { "color": "#2A2B2A" } };
+			JSON.title = { text: '<b>Número total plantas: </b>' + categorias, style: { "color": "#2A2B2A" } };
+			JSON.credits = { enabled: false };
+			JSON.series = [ { name: 'Cantidad', data: datos } ];
+		break;
+		case 5:
+			JSON.chart = { backgroundColor: '#FFFFFF', type: 'pie' };
+			JSON.title = { text: '<b>Número total estados realizados: </b>' + categorias, style: { "color": "#2A2B2A" } };
 			JSON.credits = { enabled: false };
 			JSON.series = [ { name: 'Cantidad', data: datos } ];
 		break;

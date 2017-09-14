@@ -155,6 +155,23 @@
 				$indice++;
 			}
 		break;
+		case 5:
+		  $indice = 0;
+		  $categorias = 0;
+			$consulta = "SELECT USU.NOMBRE_USUARIO, ESTUSU.ESTADOS_REALIZADO NUM_ESTADOS
+								 	 FROM ESTADO_USUARIO ESTUSU, USUARIO USU
+								   WHERE ((USU.ID_USUARIO = ESTUSU.CODIGO_USUARIO)
+								   AND (ESTUSU.CODIGO_USUARIO IN (SELECT ID_USUARIO
+																									FROM USUARIO
+																									WHERE ((EMPRESA = '$empresa') AND (ROL != 1)))))
+								   ORDER BY USU.APELLIDOS ASC;";
+			$resultado_consulta = mysql_query($consulta);
+			while ($fila = mysql_fetch_row($resultado_consulta)) {
+				$categorias += $fila[1];
+				$datos[$indice] = array('name' => $fila[0], 'y' => round($fila[1], 2));
+				$indice++;
+			}
+		break;
 	}
 	$informacion = array('categorias' => $categorias,
 											 'datos' => $datos);

@@ -17,8 +17,10 @@
 		echo "<option value='8'>Huerto con menos usuarios con permiso</option>";
 		echo "<option value='9'>Usuario con acceso a más plantas</option>";
 		echo "<option value='10'>Usuario con acceso a menos plantas</option>";
-		echo "<option value='11'>Finca con mas plantas en...</option>";
-		echo "<option value='12'>Huerto con mas plantas en...</option>";
+		echo "<option value='11'>Usuario con más estados realizados</option>";
+		echo "<option value='12'>Usuario con menos estados realizados</option>";
+		echo "<option value='13'>Finca con mas plantas en...</option>";
+		echo "<option value='14'>Huerto con mas plantas en...</option>";
 	}
 	else if ($tipo == CLIENTE_PARTICULAR) {
 		echo "<option value='1'>Finca con más plantas</option>";

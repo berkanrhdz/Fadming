@@ -85,12 +85,8 @@
                             <div class="contenido-estadisticas-graficas">
                               <div class="contenedor-nombre-grafica">
                                 <div id="flecha-izquierda"></div>
-                                <div class="nombre-grafica">
-                                  <div class="nombre" id="nombre-grafica-1">Porcentaje de plantas finalizadas por finca</div>
-                                  <div class="nombre" id="nombre-grafica-2" style="display: none">Porcentaje de plantas finalizadas por huerto</div>
-                                  <div class="nombre" id="nombre-grafica-3" style="display: none">Plantas añadidas por meses</div>
-                                  <div class="nombre" id="nombre-grafica-4" style="display: none">Plantas por finca respecto al total</div>
-                                  <div class="nombre" id="nombre-grafica-5" style="display: none">Gráfica 5</div>
+                                <div class="nombre-grafica" id="nombre-grafica">
+                                  <?php require("php/opciones_graficas.php"); ?>
                                 </div>
                                 <div id="flecha-derecha"></div>
                               </div>
