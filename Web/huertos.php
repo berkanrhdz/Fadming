@@ -35,7 +35,7 @@
                           <?php if($_SESSION['tipo'] == 1) {
                                   echo "<div class='contenedor-mensaje-huerto-particular'>";
                                   echo "<div class='mensaje-huerto-particular'>";
-                                  echo "<div id='mensaje'><b>Gestione sus huertos usando el cuadro de la izquierda</b>Cambia de finca usando las flechas de la parte superior, luego añade todo los huertos necesarios";
+                                  echo "<div id='mensaje'><b>Gestione sus huertos haciendo uso el cuadro de la izquierda</b>Cambia de finca usando las flechas de la parte superior, luego añade todo los huertos necesarios";
                                   echo "</div></div></div>";
                                 }
                                 else if ($_SESSION['tipo'] == 2) {

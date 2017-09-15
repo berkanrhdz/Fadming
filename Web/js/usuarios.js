@@ -109,7 +109,7 @@ function acceder_ficha_usuario(identificador) {
 				data: 'identificador='+identificador,
 				success: function(datos) {
 					$(datos).each(function(i, valor) {
-						insertar_ficha_usuario(identificador, valor.nombre, valor.apellidos, valor.correo, valor.usuario, valor.imagen, valor.dia_anio, valor.mes, valor.dias);
+						insertar_ficha_usuario(identificador, valor.nombre, valor.apellidos, valor.correo, valor.usuario, valor.imagen, valor.dia_anio, valor.mes, valor.ultimo_estado, valor.dias_ultimo);
 					});
 				}
 	});
@@ -118,28 +118,36 @@ function acceder_ficha_usuario(identificador) {
 	});
 }
 
-function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, dia_ano, mes, dias) {
-	var formato_dias;
+function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, dia_ano, mes, ultimo_estado, dias_ultimo) {
+	var estado;
 	var dia = dia_ano.substr(0, 2);
 	var mes = meses_año[mes - 1];
 	var ano = dia_ano.substr(3, 4);
 	var formato_fecha = "Registrado el <b>" + dia + " de " + mes + " de " + ano + "</b>";
-	if (dias == 1) {
-		formato_dias = "Hace <b>" + dias + " día</b>";
+	if (dias_ultimo == 1) {
+		formato_dias = "Hace " + dias_ultimo + " día";
+		estado = ultimo_estado;
 	}
-	else if (dias == 0) {
-		formato_dias = "Creado <b>HOY</b>";
+	else if (dias_ultimo == 0) {
+		formato_dias = "Realizado HOY";
+		estado = ultimo_estado;
+	}
+	else if (dias_ultimo == null) {
+		formato_dias = "-";
+		estado = "Sin actividad";
 	}
 	else {
-		formato_dias = "Hace <b>" + dias + " días</b>";
+		formato_dias = "Hace " + dias + " días";
+		estado = ultimo_estado;
 	}
+	var formato_estado = "Último estado realizado <b>" + estado + "</b>" + formato_dias;
 	var formato_boton = "<input id='boton-eliminar-usuario' name='boton-eliminar-usuario' type='submit' value='Eliminar usuario' onclick='eliminar_usuario(" + id + ")'></input>";
 	document.getElementById('dato-usuario-nombre').innerHTML = nombre + " " + apellidos
 	document.getElementById('usuario-correo').innerHTML = correo;
 	document.getElementById('usuario-usuario').innerHTML = usuario;
 	document.getElementById("imagen-perfil").innerHTML = "<img src='data:image/png;base64," + imagen + "'>";
 	document.getElementById('union-empresa').innerHTML = formato_fecha;
-	document.getElementById('dias-union').innerHTML = formato_dias;
+	document.getElementById('ultimo-estado').innerHTML = formato_estado;
 	document.getElementById('contenedor-input-eliminar').innerHTML = formato_boton;
 }
 

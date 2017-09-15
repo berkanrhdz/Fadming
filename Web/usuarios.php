@@ -74,7 +74,7 @@
                             <div class="contenedor-datos-usuario-empresa">
                               <div class="contenedor-union-empresa">
                                 <div id="union-empresa"></div>
-                                <div id="dias-union"></div>
+                                <div id="ultimo-estado"></div>
                               </div>
                               <div class="contenedor-boton-eliminar-usuario">
                                 <div id="contenedor-input-eliminar"></div>

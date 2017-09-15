@@ -1617,7 +1617,7 @@ body .contenedor-principal {
 }
 
 .contenedor-ficha-usuario .contenedor-datos-usuario-empresa .contenedor-union-empresa #union-empresa {
-	width: 70%;
+	width: 50%;
 	height: 100%;
 	float: left;
 	background-color: #F7DB5C;
@@ -1637,8 +1637,8 @@ body .contenedor-principal {
 	font-size: 1.2em;
 }
 
-.contenedor-ficha-usuario .contenedor-datos-usuario-empresa .contenedor-union-empresa #dias-union {
-	width: 29%;
+.contenedor-ficha-usuario .contenedor-datos-usuario-empresa .contenedor-union-empresa #ultimo-estado {
+	width: 49%;
 	height: 100%;
 	float: right;
 	background-color: #5CA45E;
@@ -1654,7 +1654,7 @@ body .contenedor-principal {
 	font-size: 0.8em;
 }
 
-.contenedor-ficha-usuario .contenedor-datos-usuario-empresa .contenedor-union-empresa #dias-union b {
+.contenedor-ficha-usuario .contenedor-datos-usuario-empresa .contenedor-union-empresa #ultimo-estado b {
 	font-size: 1.2em;
 }
 
