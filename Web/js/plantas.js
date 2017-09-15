@@ -155,10 +155,32 @@ function gestionar_estados_planta() {
 		}
 	});
 	if (plantas_seleccionadas.length != 0) {
-		document.getElementById('estados-planta-seleccionada').innerHTML = "";
-		$('.contenedor-boton-descargar').hide();
-		animacion_gestionar_estados();
+		if (plantas_seleccionadas.length > 1) {
+			$('#seleccion-plantas').fadeOut("fast", function() {
+				$('#mensaje-confirmacion').fadeIn("fast", function() {
+					$('.contenedor-confirmacion').slideDown("fast");
+				});
+			});
+		}
+		else {
+			accion_boton_gestionar();
+		}
 	}
+}
+
+function accion_ocultar_confirmacion() {
+	$('.contenedor-confirmacion').slideUp(function() {
+		$('#mensaje-confirmacion').fadeOut(function() {
+			$('#seleccion-plantas').fadeIn();
+		});
+	});
+}
+
+function accion_boton_gestionar() {
+	accion_ocultar_confirmacion();
+	document.getElementById('estados-planta-seleccionada').innerHTML = "";
+	$('.contenedor-boton-descargar').hide();
+	animacion_gestionar_estados();
 }
 
 function animacion_gestionar_estados() {

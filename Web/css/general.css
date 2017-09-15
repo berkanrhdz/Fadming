@@ -994,7 +994,7 @@ body .contenedor-principal {
 }
 
 .contenedor-input-cambio .contenedor-inputs #boton-atras:hover {
-	background-image: url("../images/iconos/naranja/flecha-izquierda.png");
+	background-image: url("../images/iconos/amarillo/flecha-izquierda.png");
 	cursor: pointer;
 }
 
@@ -3152,6 +3152,116 @@ body .contenedor-principal {
 	background-color: #FAF5F6;
 }
 
+.contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-mensaje-confirmacion {
+	width: 100%;
+	height: 67%;
+	display: none;
+}
+
+.contenedor-anadir-seleccion .contenedor-mensaje-confirmacion .mensaje-confirmacion {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-mensaje-confirmacion .mensaje-confirmacion .contenedor-confirmacion {
+	width: 95%;
+	height: 70%;
+	margin: 0 auto;
+	background-color: #2A2B2A;
+	border-radius: 0.2em;
+	display: none;
+	border: 0.5px solid #BBB3B1;
+}
+
+.mensaje-confirmacion .contenedor-confirmacion #titulo-confirmacion {
+	width: 100%;
+	height: 30%;
+	border-top-left-radius: 0.2em;
+	border-top-right-radius: 0.2em;
+	background-image: url("../images/iconos/amarillo/atencion.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 7.5% 60%;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.mensaje-confirmacion .contenedor-confirmacion #texto-confirmacion {
+	width: 100%;
+	height: 40%;
+	font-family: sans-serif;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+
+.contenedor-confirmacion #texto-confirmacion text {
+	font-size: 1.2em;
+	font-family: sans-serif;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.mensaje-confirmacion .contenedor-confirmacion .botones-confirmacion {
+	width: 100%;
+	height: 30%;
+	background-color: #F7DB5C;
+	border-bottom-left-radius: 0.2em;
+	border-bottom-right-radius: 0.2em;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+}
+
+.contenedor-confirmacion .botones-confirmacion .fila-botones {
+	width: 100%;
+	height: 70%;
+}
+
+.contenedor-confirmacion .botones-confirmacion .fila-botones input {
+	width: 30%;
+	height: 100%;
+	border: 1.5px solid #2A2B2A;
+	background-color: transparent;
+	border-radius: 0.3em;
+	font-size: 0.8em;
+	font-family: sans-serif;
+	color: #2A2B2A;
+	font-weight: bold;
+	outline: none;
+}
+
+.contenedor-confirmacion .botones-confirmacion .fila-botones #boton-confirmar-confirmacion:hover {
+	background-color: #5CA45E;
+	font-size: 0.9em;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1.5px solid #5CA45E;
+	color: #FFFFFF;
+}
+
+.contenedor-confirmacion .botones-confirmacion .fila-botones #boton-cancelar-confirmacion:hover {
+	background-color: #9E3232;
+	font-size: 0.9em;
+	font-weight: bold;
+	cursor: pointer;
+	border: 1.5px solid #9E3232;
+	color: #FFFFFF;
+}
+
+.contenedor-confirmacion .botones-confirmacion .fila-botones #boton-confirmar-confirmacion {
+	margin-right: 0.5%;
+	margin-left: 19.5%;
+}
+
 .contenedor-finca-huertos-plantas .contenedor-anadir-seleccion .contenedor-anadir-gestionar {
 	width: 100%;
 	height: 34%;
@@ -3481,7 +3591,7 @@ body .contenedor-principal {
 }
 
 #estados-planta-seleccionada .estado-planta .flechas-orden #flecha-arriba:hover {
-	background-image: url("../images/iconos/naranja/flecha-arriba-2.png");
+	background-image: url("../images/iconos/amarillo/flecha-arriba-2.png");
 	cursor: pointer;
 }
 
@@ -3496,7 +3606,7 @@ body .contenedor-principal {
 }
 
 #estados-planta-seleccionada .estado-planta .flechas-orden #flecha-abajo:hover {
-	background-image: url("../images/iconos/naranja/flecha-abajo-2.png");
+	background-image: url("../images/iconos/amarillo/flecha-abajo-2.png");
 	cursor: pointer;
 }
 
@@ -3587,14 +3697,6 @@ body .contenedor-principal {
 	background-size: 45% 40%;
 	cursor: pointer;
 }
-
-/*.estados-botones-seleccionada #estados-planta-seleccionada .contenedor-mensaje-confirmacion {
-	width: 85%;
-	height: 75%;
-	background-color: #9E3232;
-	border-radius: 0.2em;
-	margin-left: 7.5%;
-}*/
 
 .contenedor-contenido-estados .estados-botones-seleccionada .contenedor-botones-gestionar {
 	width: 100%;
