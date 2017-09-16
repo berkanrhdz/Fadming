@@ -117,7 +117,7 @@ public class InicioSesion extends AppCompatActivity implements AsyncResponse, Vi
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            new NetworkAsyncTask("http://192.168.1.39/Fadming/Servidor/iniciar_sesion.php", nombresParametros, getProgressBarInicio(), this).execute(parametros);
+            new NetworkAsyncTask("http://192.168.1.41/Fadming/Servidor/iniciar_sesion.php", nombresParametros, getProgressBarInicio(), this).execute(parametros);
         } else {
             Toast.makeText(getApplicationContext(), ERROR_CONEXION, Toast.LENGTH_LONG).show();
         }

@@ -9,8 +9,10 @@
 
 package ull.tfg.fadming;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 
 public interface AsyncResponse {
-    void finalizarProceso(ArrayList<String> salida, int tipoRespuesta);
+    void finalizarProceso(ArrayList<String> salida, int tipoRespuesta) throws JSONException;
 }

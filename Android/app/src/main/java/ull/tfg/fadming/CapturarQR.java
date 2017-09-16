@@ -17,6 +17,7 @@ import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -29,6 +30,7 @@ import android.widget.Toast;
 import android.view.MotionEvent;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -48,15 +50,20 @@ public class CapturarQR extends AppCompatActivity implements View.OnClickListene
     final static String PARAMETRO_NOMBRE = "nombre";
     final static String PARAMETRO_ACTUAL = "actual";
     final static String PARAMETRO_DESCRIPCION = "descripcion";
+    final static String PARAMETRO_RESPUESTA = "respuesta";
+    final static String PARAMETRO_ESTADOS = "estados";
     final static String ERROR_QR = "No ha escaneado un código QR";
     final static String ERROR_NO_VALIDO = "El código QR no es válido";
     final static String ENTEROS_POSITIVOS = "^[0-9]+$";
     final static String ERROR_CONEXION = "Revise su conexión a la red";
+    final static String ERROR_PERMISO = "No tiene permiso para obtener los estados de esta planta";
     final static int ERROR_ACTUAL = -1;
     final static float TEXTO_BOTON_PULSADO = 18;
     final static float TEXTO_BOTON_NORMAL = 15;
     final static int ANTERIOR_ESTADO = -1;
     final static int SIGUIENTE_ESTADO = 1;
+    final static int NO_PERMISO = -1;
+    final static int PERMISO = 1;
 
     // DECLARACIÓN DE ATRIBUTOS.
     private TextView textViewUsuario;
@@ -227,12 +234,15 @@ public class CapturarQR extends AppCompatActivity implements View.OnClickListene
     public void obtenerEstadosPlanta() {
         ArrayList<String> nombresParametros = new ArrayList<>();
         ArrayList<String> parametros = new ArrayList<>();
-        nombresParametros.add(0, PARAMETRO_PLANTA);
-        parametros.add(0, getIdentificadorPlanta() + "");
+        nombresParametros.add(0, PARAMETRO_USUARIO);
+        nombresParametros.add(1, PARAMETRO_PLANTA);
+        parametros.add(0, String.valueOf(getPreferencias().getInt(PARAMETRO_IDENTIFICADOR, 0)));
+        parametros.add(1, getIdentificadorPlanta() + "");
+        System.out.println(parametros);
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            new NetworkAsyncTask("http://192.168.1.39/Fadming/Servidor/obtener_estados.php", nombresParametros, getProgressBarCapturar(), NetworkAsyncTask.RESPUESTA_ESTADOS, this).execute(parametros);
+            new NetworkAsyncTask("http://192.168.1.41/Fadming/Servidor/obtener_estados.php", nombresParametros, getProgressBarCapturar(), NetworkAsyncTask.RESPUESTA_ESTADOS, this).execute(parametros);
         } else {
             Toast.makeText(getApplicationContext(), ERROR_CONEXION, Toast.LENGTH_LONG).show();
         }
@@ -282,10 +292,21 @@ public class CapturarQR extends AppCompatActivity implements View.OnClickListene
     /**
      * Método que realiza el cambio en la vista de la actividad CapturarQR una vez que se analiza el código.
      */
-    public void iniciarVistaEstados() {
-        getListaEstados().setVisibility(View.VISIBLE);
-        getBotonAnteriorEstado().setVisibility(View.VISIBLE);
-        getBotonSiguienteEstado().setVisibility(View.VISIBLE);
+    public void iniciarVistaEstados(int respuesta) {
+        if (respuesta == NO_PERMISO) {
+            getListaEstados().setVisibility(View.INVISIBLE);
+            getBotonAnteriorEstado().setVisibility(View.INVISIBLE);
+            getBotonSiguienteEstado().setVisibility(View.INVISIBLE);
+            Toast toast = Toast.makeText(this, ERROR_PERMISO, Toast.LENGTH_SHORT);
+            TextView view = (TextView) toast.getView().findViewById(android.R.id.message);
+            if (view != null) view.setGravity(Gravity.CENTER);
+            toast.show();
+        }
+        else if (respuesta == PERMISO) {
+            getListaEstados().setVisibility(View.VISIBLE);
+            getBotonAnteriorEstado().setVisibility(View.VISIBLE);
+            getBotonSiguienteEstado().setVisibility(View.VISIBLE);
+        }
     }
 
     /**
@@ -307,12 +328,14 @@ public class CapturarQR extends AppCompatActivity implements View.OnClickListene
         ArrayList<String> parametros = new ArrayList<>();
         nombresParametros.add(0, PARAMETRO_PLANTA);
         nombresParametros.add(1, PARAMETRO_ACTUAL);
+        nombresParametros.add(2, PARAMETRO_IDENTIFICADOR);
         parametros.add(0, identificadorPlanta + "");
         parametros.add(1, nuevoEstadoActual + "");
+        parametros.add(2, String.valueOf(getPreferencias().getInt(PARAMETRO_IDENTIFICADOR, 0)));
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            new NetworkAsyncTask("http://192.168.1.39/Fadming/Servidor/actualizar_estado_actual.php", nombresParametros, NetworkAsyncTask.RESPUESTA_ACTUAL, this).execute(parametros);
+            new NetworkAsyncTask("http://192.168.1.41/Fadming/Servidor/actualizar_estado_actual.php", nombresParametros, NetworkAsyncTask.RESPUESTA_ACTUAL, this).execute(parametros);
         } else {
             Toast.makeText(getApplicationContext(), ERROR_CONEXION, Toast.LENGTH_LONG).show();
         }
@@ -359,12 +382,20 @@ public class CapturarQR extends AppCompatActivity implements View.OnClickListene
      * @param tipoRespuesta Tipo de respuesta del servidor.
      */
     @Override
-    public void finalizarProceso(ArrayList<String> salida, int tipoRespuesta) {
+    public void finalizarProceso(ArrayList<String> salida, int tipoRespuesta) throws JSONException {
         switch (tipoRespuesta) {
             case NetworkAsyncTask.RESPUESTA_ESTADOS: // Si es una respuesta de una consulta de obtención de estados.
-                setEstados(extraerDatosJSON(salida.get(0)));
-                iniciarVistaEstados();
-                rellenarListEstados(); // Rellenamos el ExpandableListView con los estados.
+                JSONArray resultadoJSONArray = new JSONArray(salida.get(0)); // Convertimos el String en el JSONArray.
+                int respuestaPermiso = resultadoJSONArray.getJSONObject(0).getInt(PARAMETRO_RESPUESTA);
+                if (respuestaPermiso == NO_PERMISO) {
+                    iniciarVistaEstados(respuestaPermiso);
+                }
+                else if (respuestaPermiso == PERMISO) {
+                    String arrayString = resultadoJSONArray.getJSONObject(1).getString(PARAMETRO_ESTADOS);
+                    setEstados(extraerDatosJSON(arrayString));
+                    iniciarVistaEstados(respuestaPermiso);
+                    rellenarListEstados(); // Rellenamos el ExpandableListView con los estados.
+                }
             break;
             case NetworkAsyncTask.RESPUESTA_ACTUAL: // Si es una respuesta de una consulta del estado actual.
                 int respuesta = Integer.parseInt(salida.get(0).charAt(1) + "");

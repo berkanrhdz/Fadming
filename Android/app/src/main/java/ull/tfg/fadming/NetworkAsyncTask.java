@@ -25,6 +25,8 @@ import android.net.Uri;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import org.json.JSONException;
+
 import java.util.ArrayList;
 
 public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayList<String>> {
@@ -129,7 +131,11 @@ public class NetworkAsyncTask extends AsyncTask<ArrayList<String>, Void, ArrayLi
                 getProgressBar().setVisibility(View.GONE);
             }
         }
-        delegate.finalizarProceso(resultado, getTipoRespuesta());
+        try {
+            delegate.finalizarProceso(resultado, getTipoRespuesta());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     public void writeStream(String datos, OutputStream outputStream) throws IOException {
