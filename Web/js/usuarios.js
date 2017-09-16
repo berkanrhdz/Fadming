@@ -137,7 +137,7 @@ function insertar_ficha_usuario(id, nombre, apellidos, correo, usuario, imagen, 
 		estado = "Sin actividad";
 	}
 	else {
-		formato_dias = "Hace " + dias + " días";
+		formato_dias = "Hace " + dias_ultimo + " días";
 		estado = ultimo_estado;
 	}
 	var formato_estado = "Último estado realizado <b>" + estado + "</b>" + formato_dias;
